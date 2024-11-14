@@ -1,0 +1,72 @@
+WITH guide_user AS (
+    -- Get the user for each section/guide once
+    SELECT DISTINCT s.id as section_id, g.user_id
+    FROM sections s
+    JOIN guides g ON s.guide_id = g.id
+)
+SELECT 
+    -- Answer information
+    a.id as answer_id,
+    a.value as student_answer,
+    a.is_correct,
+    a.created_at,
+    
+    -- User, grade and school information
+    u.id AS user_id,
+    g.id AS grade_id,
+    g.name AS grade_name,
+    sch.id AS school_id,
+    sch.name AS school_name,
+    
+    -- User level
+    ul.level AS user_level,
+    
+    -- Question details
+    q.options,
+    q.title AS question_title,
+    q.correct_option,
+    q.solution,
+    q.hint,
+    q.difficulty,
+    
+    -- Topic, subject, and axis information
+    t.id AS topic_id,
+    t.name AS topic_name,
+    subj.id AS subject_id,
+    subj.name AS subject_name,
+    ax.id AS axis_id,
+    ax.name AS axis_name,
+    
+    -- Guide and template information
+    g2.id AS guide_id,
+    t2.id AS template_id
+
+FROM answers a
+-- Join to get question information
+JOIN section_questions sq ON a.section_question_id = sq.id
+JOIN questions q ON sq.question_id = q.id
+
+-- Join to get user information through the CTE
+JOIN sections sec ON sq.section_id = sec.id
+JOIN guide_user gu ON sec.id = gu.section_id
+JOIN users u ON gu.user_id = u.id
+LEFT JOIN grades g ON u.grade_id = g.id
+LEFT JOIN schools sch ON sch.id = g.school_id  -- Fixed: getting school through grade
+
+-- Join to get user level (make sure to get only one record)
+LEFT JOIN LATERAL (
+    SELECT DISTINCT ON (user_id, topic_id) level
+    FROM user_levels
+    WHERE user_id = u.id AND topic_id = q.topic_id
+    ORDER BY user_id, topic_id, created_at DESC
+) ul ON true
+
+-- Join to get topic, subject, and axis information
+LEFT JOIN topics t ON q.topic_id = t.id
+LEFT JOIN subjects subj ON t.subject_id = subj.id
+LEFT JOIN axes ax ON subj.axis_id = ax.id
+
+-- Join to get guide and template information
+LEFT JOIN guides g2 ON sec.guide_id = g2.id
+LEFT JOIN section_templates st ON sec.section_template_id = st.id
+LEFT JOIN templates t2 ON st.template_id = t2.id;
