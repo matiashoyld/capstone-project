@@ -1,0 +1,457 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{fagbohun2024beyond}{article}{}
+      \name{author}{5}{}{%
+        {{hash=a6bd157e17c43fe53c1ac40f24647e60}{%
+           family={Fagbohun},
+           familyi={F\bibinitperiod},
+           given={Oluwole},
+           giveni={O\bibinitperiod}}}%
+        {{hash=5d0ddda3a367ceb26fbaeca02e391c22}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=88342a4b263b4f197820da52ff433cb2}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Emily},
+           giveni={E\bibinitperiod}}}%
+        {{hash=165a5da0696c74de50a07a9ec22071a4}{%
+           family={Brown},
+           familyi={B\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=bd1511dd03c1f299f5a01f43399dc6b9}{%
+           family={Wilson},
+           familyi={W\bibinitperiod},
+           given={Sarah},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {AI Research Press}%
+      }
+      \strng{namehash}{774a589ccd07cc765ba879f66568eb1b}
+      \strng{fullhash}{4d967cee8a5109f7c1ad1d79faee2b62}
+      \strng{bibnamehash}{774a589ccd07cc765ba879f66568eb1b}
+      \strng{authorbibnamehash}{774a589ccd07cc765ba879f66568eb1b}
+      \strng{authornamehash}{774a589ccd07cc765ba879f66568eb1b}
+      \strng{authorfullhash}{4d967cee8a5109f7c1ad1d79faee2b62}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Artificial Intelligence, Machine Learning and Data Science}
+      \field{number}{1}
+      \field{title}{Beyond Traditional Assessment: Exploring the Impact of Large Language Models on Grading Practices}
+      \field{volume}{1}
+      \field{year}{2024}
+      \field{pages}{1\bibrangedash 15}
+      \range{pages}{15}
+    \endentry
+    \entry{gao2023automatic}{article}{}
+      \name{author}{5}{}{%
+        {{hash=8ef2cd66ad393844ea9e562c2d24c7c6}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Rujun},
+           giveni={R\bibinitperiod}}}%
+        {{hash=cd816bf3c6cc7cfef55e113748d6f414}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yanyan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=173faddd012890ed5bc9aa2d327d9df9}{%
+           family={Wen},
+           familyi={W\bibinitperiod},
+           given={Yuxin},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=2eb69cb36752d6bbd86fdde71fa4bb3d}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Xiaohua},
+           giveni={X\bibinitperiod}}}%
+        {{hash=94e84dfe63cb039f5c539435abd9c772}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Xiaoning},
+           giveni={X\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{6b5917d7ac393b0a854b3fd06757c500}
+      \strng{fullhash}{e2399d4c359193fb9ec01a04990ba48f}
+      \strng{bibnamehash}{6b5917d7ac393b0a854b3fd06757c500}
+      \strng{authorbibnamehash}{6b5917d7ac393b0a854b3fd06757c500}
+      \strng{authornamehash}{6b5917d7ac393b0a854b3fd06757c500}
+      \strng{authorfullhash}{e2399d4c359193fb9ec01a04990ba48f}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computers and Education: Artificial Intelligence}
+      \field{title}{Automatic assessment of text-based responses in post-secondary education: A systematic review}
+      \field{volume}{4}
+      \field{year}{2023}
+      \field{pages}{100094}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.caeai.2023.100094
+      \endverb
+    \endentry
+    \entry{artsi2024large}{article}{}
+      \name{author}{6}{}{%
+        {{hash=b09786452dcd7f2b7966c5db1405f92b}{%
+           family={Artsi},
+           familyi={A\bibinitperiod},
+           given={Yaara},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=9acb5494cac577e6bf4c2b380f154290}{%
+           family={Schwartz},
+           familyi={S\bibinitperiod},
+           given={Roy},
+           giveni={R\bibinitperiod}}}%
+        {{hash=021afe1a22e950623dab8ced9490c2fa}{%
+           family={Beit-Or},
+           familyi={B\bibinithyphendelim O\bibinitperiod},
+           given={Eden},
+           giveni={E\bibinitperiod}}}%
+        {{hash=83da0addd7d994e979f95856b873a66f}{%
+           family={Gillis},
+           familyi={G\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=d0eb29d1e64b4dfce7697af0ca41a751}{%
+           family={Bachner-Hinenzon},
+           familyi={B\bibinithyphendelim H\bibinitperiod},
+           given={Noa},
+           giveni={N\bibinitperiod}}}%
+        {{hash=57f6cb8610794fff3232b35ebd3c1ae8}{%
+           family={Bachner},
+           familyi={B\bibinitperiod},
+           given={Yaacov\bibnamedelima G},
+           giveni={Y\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cold Spring Harbor Laboratory Press}%
+      }
+      \strng{namehash}{d1c24c01f113926de91acde1d2d92c8f}
+      \strng{fullhash}{3da26ffb63bd9b062e2af7ec67e6f57a}
+      \strng{bibnamehash}{d1c24c01f113926de91acde1d2d92c8f}
+      \strng{authorbibnamehash}{d1c24c01f113926de91acde1d2d92c8f}
+      \strng{authornamehash}{d1c24c01f113926de91acde1d2d92c8f}
+      \strng{authorfullhash}{3da26ffb63bd9b062e2af7ec67e6f57a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{medRxiv}
+      \field{title}{Large language models for generating medical examinations: systematic review}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.1101/2024.01.15.24101177
+      \endverb
+    \endentry
+    \entry{zelikman2023generating}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=2fd8923f53764e3b18d1164c3a6ae9c6}{%
+           family={Zelikman},
+           familyi={Z\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=28c1df25bcfadfde7065470ad1eeb4de}{%
+           family={Burns},
+           familyi={B\bibinitperiod},
+           given={Cynthia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=f974925c5c6cca1d67fd604cc9fc9c79}{%
+           family={Burstein},
+           familyi={B\bibinitperiod},
+           given={Jill},
+           giveni={J\bibinitperiod}}}%
+        {{hash=932b3ef407893863a89a5cdeadc8914e}{%
+           family={Sabatini},
+           familyi={S\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=33bee2d30dd5a612712e3d8beba79029}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3da4fce204e846c1591ecac80a28c64f}{%
+           family={Beigman\bibnamedelima Klebanov},
+           familyi={B\bibinitperiod\bibinitdelim K\bibinitperiod},
+           given={Beata},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{c9b4bb3c7dbda085eb00de886c750cd3}
+      \strng{fullhash}{66754b2e360962903744e501227e1f8b}
+      \strng{bibnamehash}{c9b4bb3c7dbda085eb00de886c750cd3}
+      \strng{authorbibnamehash}{c9b4bb3c7dbda085eb00de886c750cd3}
+      \strng{authornamehash}{c9b4bb3c7dbda085eb00de886c750cd3}
+      \strng{authorfullhash}{66754b2e360962903744e501227e1f8b}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Conference on Empirical Methods in Natural Language Processing}
+      \field{title}{Generating and Evaluating Tests for K-12 Students with Language Model Simulations: A Case Study on Sentence Reading Efficiency}
+      \field{year}{2023}
+      \field{pages}{1\bibrangedash 12}
+      \range{pages}{12}
+    \endentry
+    \entry{argyle2022out}{article}{}
+      \name{author}{7}{}{%
+        {{hash=0a9f2664192dc7787298765ed812cd79}{%
+           family={Argyle},
+           familyi={A\bibinitperiod},
+           given={Lisa\bibnamedelima P.},
+           giveni={L\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=829b955909f38764a6a74a0675c85af6}{%
+           family={Busby},
+           familyi={B\bibinitperiod},
+           given={Ethan\bibnamedelima C.},
+           giveni={E\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=89ed5a5c663a27f44f648c022f60ed2f}{%
+           family={Gubler},
+           familyi={G\bibinitperiod},
+           given={Joshua\bibnamedelima R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=47526fc1b7d909a8b8b705ffa6e2c09b}{%
+           family={Bail},
+           familyi={B\bibinitperiod},
+           given={Christopher\bibnamedelima A.},
+           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=488ba6af3f794bfca930717ef14e9aa9}{%
+           family={Howe},
+           familyi={H\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=c6772505366be5955dc214370f137831}{%
+           family={Rytting},
+           familyi={R\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod}}}%
+        {{hash=89414c7228e4e802fc839f44966f1b0d}{%
+           family={Wingate},
+           familyi={W\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{7e19c8b312d680d2fe3c20aabfcd1862}
+      \strng{fullhash}{b141de8f920881fff4a8a3a9816f75ea}
+      \strng{bibnamehash}{7e19c8b312d680d2fe3c20aabfcd1862}
+      \strng{authorbibnamehash}{7e19c8b312d680d2fe3c20aabfcd1862}
+      \strng{authornamehash}{7e19c8b312d680d2fe3c20aabfcd1862}
+      \strng{authorfullhash}{b141de8f920881fff4a8a3a9816f75ea}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Political Analysis}
+      \field{number}{4}
+      \field{title}{Out of One, Many: Using Language Models to Simulate Human Samples}
+      \field{volume}{30}
+      \field{year}{2022}
+      \field{pages}{506\bibrangedash 523}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1017/pan.2022.20
+      \endverb
+    \endentry
+    \entry{park2023generative}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=a6d2d4802375c9b3367011ada5e50822}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Joon\bibnamedelima Sung},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=68be5ac0dd5152d0d20643ce74ab8b84}{%
+           family={O'Brien},
+           familyi={O\bibinitperiod},
+           given={Joseph\bibnamedelima C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=673de07fbae5064d6de26518e5578970}{%
+           family={Cai},
+           familyi={C\bibinitperiod},
+           given={Carrie\bibnamedelima J.},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=5283a53c5c081c04252a659743f886e1}{%
+           family={Morris},
+           familyi={M\bibinitperiod},
+           given={Meredith\bibnamedelima Ringel},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=86c032bbc45c3b616f0a1170befc0e82}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Percy},
+           giveni={P\bibinitperiod}}}%
+        {{hash=bb1df70dce464605ddd9cf83485d8db1}{%
+           family={Bernstein},
+           familyi={B\bibinitperiod},
+           given={Michael\bibnamedelima S.},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{00721d9feeeac4f2c5b88627d28b83cf}
+      \strng{fullhash}{c5ec310abcc981054041fab155e9df12}
+      \strng{bibnamehash}{00721d9feeeac4f2c5b88627d28b83cf}
+      \strng{authorbibnamehash}{00721d9feeeac4f2c5b88627d28b83cf}
+      \strng{authornamehash}{00721d9feeeac4f2c5b88627d28b83cf}
+      \strng{authorfullhash}{c5ec310abcc981054041fab155e9df12}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology}
+      \field{title}{Generative Agents: Interactive Simulacra of Human Behavior}
+      \field{year}{2023}
+      \field{pages}{1\bibrangedash 22}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1145/3586183.3606740
+      \endverb
+    \endentry
+    \entry{xu2023leveraging}{article}{}
+      \name{author}{2}{}{%
+        {{hash=af1b3d03a2988742880c14aab59e513a}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Songlin},
+           giveni={S\bibinitperiod}}}%
+        {{hash=87f628db6da99dc0a2a20f276e51b3ac}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xiang},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{df201f5febd89dab0c154c02d7bc7743}
+      \strng{fullhash}{df201f5febd89dab0c154c02d7bc7743}
+      \strng{bibnamehash}{df201f5febd89dab0c154c02d7bc7743}
+      \strng{authorbibnamehash}{df201f5febd89dab0c154c02d7bc7743}
+      \strng{authornamehash}{df201f5febd89dab0c154c02d7bc7743}
+      \strng{authorfullhash}{df201f5febd89dab0c154c02d7bc7743}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2309.02590}
+      \field{title}{Leveraging generative artificial intelligence to simulate student learning behavior}
+      \field{year}{2023}
+      \verb{doi}
+      \verb 10.48550/arXiv.2309.02590
+      \endverb
+    \endentry
+    \entry{lu2024generative}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=204169b96001194bb4a37d639b5fe684}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Xinyi},
+           giveni={X\bibinitperiod}}}%
+        {{hash=fdaf600e968b3088a59382b99b028b2b}{%
+           family={Heffernan},
+           familyi={H\bibinitperiod},
+           given={Neil},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{d5a270dcfb9eb7765c43949456702be4}
+      \strng{fullhash}{d5a270dcfb9eb7765c43949456702be4}
+      \strng{bibnamehash}{d5a270dcfb9eb7765c43949456702be4}
+      \strng{authorbibnamehash}{d5a270dcfb9eb7765c43949456702be4}
+      \strng{authornamehash}{d5a270dcfb9eb7765c43949456702be4}
+      \strng{authorfullhash}{d5a270dcfb9eb7765c43949456702be4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 11th ACM Conference on Learning @ Scale}
+      \field{title}{Generative Students: Using LLM-Simulated Student Profiles to Support Question Item Evaluation}
+      \field{year}{2024}
+      \field{pages}{1\bibrangedash 12}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1145/3627111.3627576
+      \endverb
+    \endentry
+    \entry{mislevy1988collateral}{report}{}
+      \name{author}{1}{}{%
+        {{hash=7d59dbbd31e0442ed339e162c3b2e47a}{%
+           family={Mislevy},
+           familyi={M\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{7d59dbbd31e0442ed339e162c3b2e47a}
+      \strng{fullhash}{7d59dbbd31e0442ed339e162c3b2e47a}
+      \strng{bibnamehash}{7d59dbbd31e0442ed339e162c3b2e47a}
+      \strng{authorbibnamehash}{7d59dbbd31e0442ed339e162c3b2e47a}
+      \strng{authornamehash}{7d59dbbd31e0442ed339e162c3b2e47a}
+      \strng{authorfullhash}{7d59dbbd31e0442ed339e162c3b2e47a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{FINAL REPORT: Exploiting Collateral Information in the Estimation of Item Parameters}
+      \field{type}{techreport}
+      \field{year}{1988}
+    \endentry
+    \entry{thomas2002complex}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=4de45581654857937ed8ee51d0eb5ccd}{%
+           family={Thomas},
+           familyi={T\bibinitperiod},
+           given={D.\bibnamedelimi R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{32e8346d2abc0896ff5db28717597268}
+      \strng{fullhash}{32e8346d2abc0896ff5db28717597268}
+      \strng{bibnamehash}{32e8346d2abc0896ff5db28717597268}
+      \strng{authorbibnamehash}{32e8346d2abc0896ff5db28717597268}
+      \strng{authornamehash}{32e8346d2abc0896ff5db28717597268}
+      \strng{authorfullhash}{32e8346d2abc0896ff5db28717597268}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Applying Item Response Theory Methods to Complex Survey Data}
+      \field{year}{2002}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

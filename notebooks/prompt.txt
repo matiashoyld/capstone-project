@@ -57,19 +57,22 @@ Select your answer based on:
 - Typical mistakes someone at your level might make
 ### End Instructions ####
 
-### Begin Response Format ####
-Provide your response in this structure:
+### Begin Response Format ###
+Your response MUST be formatted as JSON with the following structure:
+{
 
-<thinking>Here goes your thinking process. You should write a few sentences describing your initial thoughts about the problem, how you would approach it, and any potential pitfalls you might encounter. Finally, you should mention your final choice and some rationale around why you chose it.</thinking>
-<answer>Your final choice. Between these two tags, you should only write one lower-case letter (a, b, c, d or e). Nothing more, so that I can parse it easily.</answer>
-<confidence>How sure you are about your answer. A number between 0 and 100. Only the number, no other characters, so that I can parse it easily.</confidence>
+    "response": {
 
-Initial thoughts: [Brief description of how you view the problem]
-Problem-solving attempt: [Your thought process]
-Confidence level: [How sure you are about your answer]
-Selected answer: [Your final choice]
-Reasoning: [Why you chose this answer]
-### End Response Format ####
+        "thinking": "Here goes your thinking process. You should write a few sentences describing your initial thoughts about the problem, how you would approach it, and any potential pitfalls you might encounter. Finally, you should mention your final choice and some rationale around why you chose it.",
+
+        "answer": "Your final choice. Between these two tags, you should only write one lower-case letter (a, b, c, d or e). Nothing more, so that I can parse it easily.",
+
+        "confidence": "How sure you are about your answer. A number between 0 and 100. Only the number, no other characters, so that I can parse it easily. This should be a number, not a string."
+
+    }
+
+}
+### End Response Format ###
 
 ### Begin Important Reminder ###
 Remember, you are simulating a student with your academic profile. Your response should reflect this ability level in both your thinking process and answer choice. Don't just write the correct answer, but try to simulate what a student with your profile would do.
