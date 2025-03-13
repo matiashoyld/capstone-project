@@ -1,0 +1,131 @@
+# Model Performance Metrics Comparison
+
+## LightGBM Models
+
+
+
+
+
+### LightGBM Model with Enhanced Feature Engineering (No Count Features)
+- Test RMSE: 0.9347
+- Test MAE: 0.7225
+- Test R²: 0.5321
+- Note: This model excludes questions with difficulty < -6 and does not use response count features
+- Note: Uses advanced text feature extraction, TF-IDF features, clustering, and stratified sampling
+### Random Forest Model with all-MiniLM-L6-v2 embeddings (Filtered: difficulty >= -6, No Count Features)
+- Mean CV RMSE: 1.0599 ± 0.0209
+- Test RMSE: 1.0355
+- Test MAE: 0.8312
+- Test R²: 0.4054
+- Note: This model excludes questions with difficulty < -6 and does not use response count features
+### LightGBM Model with Enhanced Feature Engineering (No Count Features)
+- Test RMSE: 0.9437
+- Test MAE: 0.7312
+- Test R²: 0.5231
+- Note: This model excludes questions with difficulty < -6 and does not use response count features
+- Note: Uses advanced text feature extraction, TF-IDF features, clustering, and stratified sampling
+### LightGBM Model with Fast Hyperparameter Optimization (No Count Features)
+- Test RMSE: 0.9280
+- Test MAE: 0.7269
+- Test R²: 0.5224
+- Note: This model excludes questions with difficulty < -6 and does not use response count features
+- Note: Hyperparameters were optimized using fast parallel Bayesian optimization
+### Model with all-MiniLM-L6-v2 embeddings (without ID features)
+- Mean CV RMSE: 1.4364 ± 0.0551
+- Test RMSE: 1.5657
+- Test MAE: 1.0451
+- Test R²: 0.3243
+
+### Model with all-MiniLM-L6-v2 embeddings + one-hot encoded ID features
+- Mean CV RMSE: 1.4294 ± 0.0545
+- Test RMSE: 1.5545
+- Test MAE: 1.0415
+- Test R²: 0.3339
+
+### Model without embeddings (simple model)
+- Mean CV RMSE: 1.4865 ± 0.0450
+- Test RMSE: 1.6225
+- Test MAE: 1.1146
+- Test R²: 0.2745
+
+### LightGBM Model with all-MiniLM-L6-v2 embeddings (Filtered: difficulty >= -6)
+- Mean CV RMSE: 0.6929 ± 0.0190
+- Test RMSE: 0.6508
+- Test MAE: 0.4905
+- Test R²: 0.7651
+- Note: This model excludes 234 questions with difficulty < -6
+- Warning: This model uses response count features that wouldn't be available for new questions
+
+### LightGBM Model with all-MiniLM-L6-v2 embeddings (Filtered: difficulty >= -6, No Count Features)
+- Mean CV RMSE: 0.9773 ± 0.0224
+- Test RMSE: 0.9456
+- Test MAE: 0.7512
+- Test R²: 0.5041
+- Note: This model excludes questions with difficulty < -6 and does not use response count features
+
+## Neural Network Models
+
+### Neural Network Model with all-MiniLM-L6-v2 embeddings (using questions_filtered.csv)
+- Mean CV RMSE: 1.1210
+- Test RMSE: 1.2916
+- Test MAE: 0.7292
+- Test R²: 0.5402
+
+### Neural Network Model with all-MiniLM-L6-v2 embeddings (using questions_master.csv)
+- Mean CV RMSE: 1.3811
+- Test RMSE: 1.6152
+- Test MAE: 1.0616
+- Test R²: 0.2809
+
+### Neural Network Model with all-MiniLM-L6-v2 embeddings (Filtered: difficulty >= -6)
+- Mean CV RMSE: 0.9440
+- Test RMSE: 0.9517
+- Test MAE: 0.7359
+- Test R²: 0.4977
+- Note: This model excludes 234 questions with very low difficulty (< -6) from the total 4696 questions
+- Warning: This model uses response count features that wouldn't be available for new questions
+
+### Neural Network Model with all-MiniLM-L6-v2 embeddings (Filtered: difficulty >= -6, No Count Features)
+- Mean CV RMSE: 0.9377
+- Test RMSE: 0.9663
+- Test MAE: 0.7408
+- Test R²: 0.4822
+- Note: This model excludes questions with difficulty < -6 and does not use response count features
+
+## Summary of Findings
+
+1. **Impact of Filtering Very Low Difficulty Questions:**
+   - Filtering out questions with difficulty < -6 dramatically improves model performance:
+     - LightGBM with counts: Test RMSE improved from 1.5545 to 0.6508 (58% improvement)
+     - Neural Network with counts: Test RMSE improved from 1.6152 to 0.9517 (41% improvement)
+
+2. **Impact of Removing Response Count Features:**
+   - Removing response count features (which wouldn't be available for new questions) reduces performance but still maintains good results:
+     - LightGBM filtered: R² drops from 0.7651 to 0.5041 (34% decrease)
+     - Neural Network filtered: R² drops from 0.4977 to 0.4822 (3% decrease)
+   - Neural networks appear more robust to the removal of count features
+
+3. **Model Comparison Without Response Counts:**
+   - When using only features available for new questions:
+     - LightGBM filtered (no counts): Test RMSE = 0.9456, R² = 0.5041
+     - Neural Network filtered (no counts): Test RMSE = 0.9663, R² = 0.4822
+   - LightGBM slightly outperforms the neural network in this realistic scenario
+
+4. **Other Findings:**
+   - Embeddings consistently improve performance across all model types
+   - Filtering has a more significant impact on LightGBM models than on neural networks
+   - The choice of dataset (questions_filtered.csv vs questions_master.csv) has a substantial impact on model performance
+
+## BERT Models
+
+
+### DistilBERT base uncased (Filtered: difficulty >= -6)
+- Test RMSE: 0.9505
+- Test MAE: 0.7480
+- Test R²: 0.4990
+- Note: This model excludes questions with difficulty < -6
+### BERT base uncased (Filtered: difficulty >= -6)
+- Test RMSE: 0.9206
+- Test MAE: 0.7231
+- Test R²: 0.5300
+- Note: This model excludes questions with difficulty < -6

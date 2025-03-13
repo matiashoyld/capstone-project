@@ -1,0 +1,262 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Capstone Project Handout
+% LaTeX Template
+% Version 1.0 (November 14, 2024)
+% 
+% Author:
+% Matías Hoyl
+% 
+% License:
+% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+% PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+    a4paper, % Paper size, use either a4paper or letterpaper
+    10pt, % Default font size, can also use 11pt or 12pt
+    twoside % Two side traditional mode where headers and footers change between odd and even pages
+]{LTJournalArticle}
+
+\usepackage{indentfirst} % Add this line to indent the first paragraph of each section
+\usepackage{tabularx}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable, skins}
+\usepackage{xcolor}
+\usepackage{float} % Add this line to include the float package
+\usepackage{enumitem} % Ensure this package is included
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+\usepackage{biblatex}
+\addbibresource{references.bib} % BibLaTeX bibliography file
+
+% Define slate color palette (keep your existing color definitions)
+\definecolor{slate-50}{HTML}{F8FAFC}
+\definecolor{slate-100}{HTML}{F1F5F9}
+\definecolor{slate-200}{HTML}{E2E8F0}
+\definecolor{slate-300}{HTML}{CBD5E1}
+\definecolor{slate-400}{HTML}{94A3B8}
+\definecolor{slate-500}{HTML}{64748B}
+\definecolor{slate-600}{HTML}{475569}
+\definecolor{slate-700}{HTML}{334155}
+\definecolor{slate-800}{HTML}{1E293B}
+\definecolor{slate-900}{HTML}{0F172A}
+
+% Updated box definitions
+\newtcolorbox{questionbox}[2][]{%
+    enhanced,
+    colback=slate-50,
+    colframe=slate-400,
+    boxrule=0.5pt,
+    arc=4pt,
+    title={#2},
+    fonttitle=\bfseries\color{white},
+    attach boxed title to top left={xshift=0.5cm,yshift=-\tcboxedtitleheight/2},
+    boxed title style={
+        colback=slate-400,
+        colframe=slate-400,
+        arc=2pt,
+        boxrule=0pt,
+    },
+    top=12pt, % Increased top padding
+    breakable,
+    #1
+}
+
+\newtcolorbox{studentbox}[2][]{%
+    enhanced,
+    colback=slate-100,
+    colframe=slate-500,
+    boxrule=0.5pt,
+    arc=4pt,
+    title={#2},
+    fonttitle=\bfseries\color{white},
+    attach boxed title to top left={xshift=0.5cm,yshift=-\tcboxedtitleheight/2},
+    boxed title style={
+        colback=slate-500,
+        colframe=slate-500,
+        arc=2pt,
+        boxrule=0pt,
+    },
+    top=12pt,
+    breakable,
+    #1
+}
+
+\newtcolorbox{llmbox}[2][]{%
+    enhanced,
+    colback=slate-200,
+    colframe=slate-600,
+    boxrule=0.5pt,
+    arc=4pt,
+    title={#2},
+    fonttitle=\bfseries\color{white},
+    attach boxed title to top left={xshift=0.5cm,yshift=-\tcboxedtitleheight/2},
+    boxed title style={
+        colback=slate-600,
+        colframe=slate-600,
+        arc=2pt,
+        boxrule=0pt,
+    },
+    top=12pt,
+    breakable,
+    #1
+}
+
+%----------------------------------------------------------------------------------------
+% TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\title{\Large Synthetic Students: Using Item Response Theory to Guide LLM-Based Answer Prediction}
+
+% Authors are listed in a comma-separated list with superscript numbers indicating affiliations
+\author{% 
+    Matías Hoyl
+}
+
+% Remove the \date command to eliminate the date
+% \date{}
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+% SECTION: CONTEXT
+%----------------------------------------------------------------------------------------
+\section{Context}
+Creating and testing educational assessments is expensive and time-consuming. This project combines Item Response Theory (IRT) with Large Language Models (LLMs) to simulate student responses to test questions. IRT measures student abilities and question difficulty but needs lots of data. LLMs can generate human-like responses but may be less statistically reliable.
+
+If successful, this approach could streamline the test development process by using synthetic students for initial item calibration, reducing the need for extensive field testing while maintaining assessment quality.
+
+We used data from Zapien, an educational platform in Chile, with 280,979 math responses from about 5,000 students. We cleaned the data by removing missing values, keeping only students with 20+ answers, and filtering out unrealistic response times. We added features like response times, number of attempts, and topic-specific skill levels.
+
+%----------------------------------------------------------------------------------------
+% SECTION: METHODS
+%----------------------------------------------------------------------------------------
+\section{Methods}
+
+\subsection{Simulation Approach}
+We tested if giving LLMs student ability data would help them predict student responses. We compared basic and detailed context scenarios.
+
+\subsubsection{Baseline Scenario}
+In the baseline scenario, the LLM was given minimal context about the student—only their age and grade level—to see if it could realistically simulate student responses without much information.
+
+\subsubsection{Experiment 1: User Level for Question Topic}
+In the enhanced scenario, the LLM was provided with the student's topic-specific ability level (\texttt{user\_level}), ranging from -3 (low) to 3 (high). This level was derived using IRT for the specific topic of the question being answered. We developed a rubric to help the LLM simulate realistic student behavior based on these skill levels.
+
+\subsubsection{Experiment 2: Prerequisite Topics Levels (Not yet tested)}
+In the second experiment, we provided the LLM with the student's ability levels in prerequisite topics. For each question, we identified 3-5 foundational topics that were essential building blocks for the current topic. The LLM received the student's skill level in these prerequisite topics, helping it better understand the student's readiness to answer the question.
+
+For example, when simulating a response to an algebra question, the LLM would receive the student's skill levels in basic arithmetic, order of operations, and variables - topics that are fundamental to algebraic understanding.
+
+
+\subsection{Experimental Design}
+Initial experiments used:
+\begin{itemize}
+    \item 20 representative questions balanced across grade levels
+    \item Four LLM models: gpt-4o-mini, claude-3.5-haiku, gemini-1.5-flash (we are also currently testing DeepSeek R1 reasoning model)
+    \item 5 repetitions per test case to account for variability
+\end{itemize}
+
+\subsection{Metrics}
+\begin{itemize}
+    \item \textbf{LLM Accuracy}: Checking if the response was correct
+    \item \textbf{Response Alignment}: If the response matched the correctness of the student's actual answer
+    \item \textbf{Exact Match}: If the LLM provided the identical answer as the student
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+% SECTION: PRELIMINARY RESULTS
+%----------------------------------------------------------------------------------------
+\section{Preliminary Results}
+
+Adding more context helped LLMs better simulate student responses. While baseline prompts led to high accuracy, enhanced prompts produced responses that better matched real student behavior, including mistakes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{../latex/images/llm_accuracy_comparison.png}
+    \caption{LLM Accuracy: Baseline vs Enhanced Prompts}
+    \label{fig:llm-accuracy}
+\end{figure}
+
+Response Alignment improved by up to 27\% with additional context, particularly for Anthropic's claude-3.5-haiku model. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{../latex/images/response_alignment_comparison.png}
+    \caption{Response Alignment: Baseline vs Enhanced Prompts}
+    \label{fig:response-alignment}
+\end{figure}
+
+Exact Match rates showed modest improvements, reflecting the complexity of replicating specific incorrect answers.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{../latex/images/exact_match_comparison.png}
+    \caption{Exact Match Rates: Baseline vs Enhanced Prompts}
+    \label{fig:exact-match}
+\end{figure}
+
+\subsection{LLM Reasoning Example}
+
+\begin{questionbox}{Example Question}
+    \textbf{Topic:} Multiplication of two-digit numbers \\
+    \textbf{Subject:} Natural Numbers \\
+    \textbf{Axis:} Arithmetic \\
+    
+    \textbf{Question:} What is the result of $31 \cdot 12$? \\
+    
+    \textbf{Options:}
+    \begin{itemize}
+        \item[(a)] 360
+        \item[(b)] 651
+        \item[(c)] 93
+        \item[(d)] 372
+        \item[(e)] None of the above
+    \end{itemize}
+    
+    \textbf{Correct Answer:} b (not shown to the LLM)\\
+    \textbf{Actual Student Answer:} c
+
+\end{questionbox}
+
+\begin{studentbox}{Student Characteristics}
+    \begin{tabularx}{\textwidth}{Xr}
+        \textbf{Age} & 12 \\
+        \textbf{Skill Level} & -2.63 \\
+        \textbf{Topic Previous Attempts} & 9 \\
+        \textbf{Topic Success Rate} & 55\% \\
+        \textbf{Subject Previous Attempts} & 34 \\
+        \textbf{Subject Success Rate} & 64\% \\
+        \textbf{Axis Previous Attempts} & 34 \\
+        \textbf{Axis Success Rate} & 64\% \\
+    \end{tabularx}
+\end{studentbox}
+
+\begin{llmbox}{Gemini 1.5 Flash Response}
+    \textbf{Thinking Process:} Okay, so it's multiplication with two-digit numbers.  I'm not the best at this.  Remember those long multiplication problems we did last month?  Those were tricky, and I always got confused with carrying over numbers. I guess I can try to do it step-by-step. I'll first multiply 1 by 31, which is 31. Then, I'll multiply 2 by 31, but I'm not sure how to do that exactly... maybe it's 62?  Hmm, I think it's 62. Now I have to add those two together.  But how do I add them? It's like adding 31 and 62. Maybe the answer is around 90 or something? I see a lot of options, maybe 93? But I'm not sure.  I think it's 93, but I'm not completely sure.  I'm not very good at multiplying two-digit numbers, so I'm probably wrong.
+    
+    \textbf{Response:} c
+    
+    \textbf{Confidence:} 60
+\end{llmbox}
+
+%----------------------------------------------------------------------------------------
+% SECTION: CHALLENGES AND FEEDBACK
+%----------------------------------------------------------------------------------------
+\section{Feedback Needed}
+
+The following are areas where I need feedback:
+
+\begin{enumerate}
+    \item \textbf{Topic Hierarchy for Experiment 2}: Looking for methods to build a hierarchy of topics. Are there existing providers or tools for this? Would using an LLM to build the graph be feasible?
+    
+    \item \textbf{Experience with Reasoning Models}: Recently started using reasoning models to handle multiple skill levels and topic nuances. They seem better at considering question substance. Has anyone worked with these? What were your results?
+    
+    \item \textbf{Literature Review}: Still seeking relevant papers and research in this area. Please share any recommendations.
+\end{enumerate}
+
+\end{document}

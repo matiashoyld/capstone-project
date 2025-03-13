@@ -1,0 +1,612 @@
+Automated Educational Question Generation at
+Different Bloom’s Skill Levels using Large
+Language Models: Strategies and Evaluation
+Nicy Scaria1, Suma Dharani Chenna1,2, Deepak Subramani1
+1Computational and Data Sciences, Indian Institute of Science, India
+2School of Computer Science and Engineering, VIT-AP University, India
+{nicyscaria,deepakns}@iisc.ac.in, sumadharanichenna@gmail.com
+Abstract. Developing questions that are pedagogically sound, relevant,
+and promote learning is a challenging and time-consuming task for edu-
+cators. Modern-day large language models (LLMs) generate high-quality
+content across multiple domains, potentially helping educators to de-
+velophigh-qualityquestions.Automatededucationalquestiongeneration
+(AEQG) is important in scaling online education catering to a diverse
+student population. Past attempts at AEQG have shown limited abil-
+ities to generate questions at higher cognitive levels. In this study, we
+examine the ability of five state-of-the-art LLMs of different sizes to gen-
+erate diverse and high-quality questions of different cognitive levels, as
+defined by Bloom’s taxonomy. We use advanced prompting techniques
+with varying complexity for AEQG. We conducted expert and LLM-
+based evaluations to assess the linguistic and pedagogical relevance and
+qualityofthequestions.OurfindingssuggestthatLLMscangeneraterel-
+evant and high-quality educational questions of different cognitive levels
+when prompted with adequate information, although there is a signifi-
+cant variance in the performance of the five LLMs considered. We also
+show that automated evaluation is not on par with human evaluation.
+Keywords: LargeLanguage Models ·AutomatedEducational Question
+Generation ·Bloom’s Taxonomy.
+1 Introduction
+Transformer-based pre-trained large language models developed in recent years
+havedrasticallyimprovedthequalityofnaturallanguagegeneration(NLG)tasks
+[24]. With an exponential increase in training data and model size, these models
+can generate complex text with human expert-level quality. The release of Ope-
+nAI’s ChatGPT made LLMs accessible to a wider audience who are not experts
+in natural language processing (NLP), allowing them to use them for their daily
+tasks. The language models are tuned to follow the user instructions through
+instruction-tuning [24]. They have zero-shot capabilities [10], which means that
+This is a preprint. The Version of Record of this contribution is published in In-
+ternational Conference on Artificial Intelligence in Education (LNAI,volume 14830),
+and is available online at https://doi.org/10.1007/978-3-031-64299-9_12arXiv:2408.04394v1  [cs.CL]  8 Aug 2024
+
+--- Page Break ---
+
+2 N. Scaria et al.
+if you prompt the LLM with detailed task descriptions, the model will create
+meaningful outputs. These LLMs have the potential to be used in different ways
+in education [9], including the creation of personalized content, assessments, and
+feedback.
+High-quality assessments enable learners to deeply engage with the subject
+and relate their learning to the real world. Assessments that focus on different
+cognitive skills as defined in Bloom’s taxonomy levels [2] (described in Table 1)
+help educators identify the gaps in student learning. This information allows
+them to adapt their teaching to better support students and also helps students
+understand their strengths and weaknesses. However, creating such assessments
+requires significant time and effort from educators [11]. Automated Educational
+Question Generation (AEQG) systems reduce the effort and cognitive load on
+teachers. Past research on AEQG methods required context information for the
+models to generate high-quality questions. Educational information is available
+from multiple sources today and choosing the right resource is challenging.
+Related Work : In the pre-LLM era, AQG research focused mainly on gen-
+erating questions using question-answer datasets such as SQuAD 2.0, and NQ.
+These data sets contained a context and an answer for which the question had
+to be created [25]. However, the limited availability of public datasets impeded
+the progress of AQG systems capable of producing good quality questions. Re-
+cent research in question generation is focused on using pretrained or fine-tuned
+LLMs for the process. Encoder decoder models, such as the Text-To-Text Trans-
+fer Transformer (T5) anddecoder-only models such asGPT3, along withcontext
+information, were used to generatequestions[17]. Pre-training these models with
+educational text also improved the quality of the questions generated [3].
+Recent research has shown promising results in evaluating the quality of
+machine-generated content using LLMs using Chain-of-Thought (CoT) prompt-
+ing on different evaluation criteria. G-EVAL [13], an evaluator model based
+on GPT4, significantly outperformed previous models and aligned with human
+judgments on summarization tasks. However, the results of some studies that
+used fine-tuned GPT3 models to evaluate the pedagogical quality of machine-
+generated questions were unsatisfactory [16,3]. Human expert or crowd evalua-
+tions have been extensively used to analyze the pedagogical quality of machine-
+generated questions [19,6].
+The questions generated by most AQG models generally test lower-order
+skills [20] or create questions that have answers directly mentioned in the text
+[25]. These questions are not enough to test the higher-order cognitive skills
+of students. Bloom’s taxonomy [2] serves as a guide for educators to generate
+questions to test different cognitive skills. Recent work [18] has used GPT4 to
+develop course material based on Bloom’s taxonomy.
+1.1 Objective and Research Questions
+Our approach utilizes the knowledge of the content inherently present in LLMs
+along with the addition of technical information on the question generation pro-
+cess in the prompt to generate educational questions. Although LLMs excel in
+
+--- Page Break ---
+
+AEQG at Different Bloom’s Skill Levels using LLMs 3
+Table 1. Revised Bloom’s taxonomy [2] in ascending order in the cognitive dimension
+Bloom’s level Description
+Remember Retrieve relevant knowledge from long-term memory.
+Understand Construct meaning from instructional messages, including oral, writ-
+ten, and graphic communication.
+Apply Carry out or use a procedure in a given situation.
+Analyze Break material into foundational parts and determine how parts relate
+to one another and the overall structure or purpose
+Evaluate Make judgments based on criteria and standards.
+Create Put elements together to form a coherent whole; reorganize into a new
+pattern or structure.
+various downstream tasks, they produce errors and inconsistencies [8], which can
+compromise the quality of the questions generated. This also varies significantly
+between different LLMs. Therefore, evaluating the quality of the questions gen-
+erated by LLMs is essential. While metrics such as the BLEU score or perplexity
+can assess machine-generated questions, they typically only examine linguistic
+characteristics [22]. In the present work, we perform a manual expert evalua-
+tion using the services of two educators in the AEQG topic’s domain and an
+automated LLM evaluation using an LLM that is not employed for AEQG.
+We used zero-shot and few-shot techniques and CoT prompting to generate
+questions for a graduate-level data science course using LLMs of different sizes.
+Five different prompt strategies of varying complexity were used to create these
+questions. Then, we performed a manual expert evaluation using the services of
+two educators in the AEQG topic’s domain and an automated LLM evaluation
+using an LLM that is not employed for AEQG. The evaluation was performed on
+a nine-item rubric to assess their linguistic and pedagogical quality [7] by experts
+and the LLM. The LLM evaluation is performed as a zero-shot classification task
+through a specially designed prompt.
+Specifically, we investigated answers to the following research questions.
+RQ1: Can instruction fine-tuned modern LLMs create high-quality and diverse
+educational questions at different cognitive levels based on Bloom’s taxonomy?
+RQ2: Does the size of the LLM significantly impact the model’s performance in
+educational question generation?
+RQ3: How does the amount of information provided in the prompt affect the
+quality of the questions generated?
+RQ4: Can LLMs create questions that are relatable to a specific population or
+context?
+RQ5:Caninstructionfine-tunedLLMsevaluategeneratededucationalquestions
+effectively, similar to human evaluators, when given the same instructions?
+In what follows, we first discuss the methodology. Then, we present and
+analyze the results before concluding with directions for future research.
+
+--- Page Break ---
+
+4 N. Scaria et al.
+2 Methodology
+Our study consists of two parts. We use modern LLMs for AEQG in the first
+partthroughvariouspromptingstrategies.Inthesecondpart,weperformhuman
+evaluation and LLM evaluation.
+2.1 Language Models
+Training a language model from scratch or fine-tuning the available models is
+expensive due to constraints in the availability of educational data and the
+cost associated with training. Therefore, we used a mix of open-source and
+proprietary state-of-the-art LLMs for the study. The models used for question
+generation are Mistral (Mistral-7B-Instruct-v0.1), Llama2 (Llama-2-70b-chat-
+hf), Palm 2 (chat-bison-001), GPT-3.5 (gpt-3.5-turbo-0613), and GPT-4 (gpt-
+4-0613). Among these, Mistral has 7 billion parameters, and GPT models are
+rumored to have trillions of parameters1. For LLM-based evaluation of the ques-
+tions, we used Gemini Pro (gemini-pro).
+2.2 Question Generation
+We used the five LLMs mentioned in Sect. 2.1 to generate questions of different
+cognitive levels. A higher temperature setting in LLMs results in a varied and
+unpredictable text, while a lower temperature setting makes the model output
+more deterministic and repetitive. Thus, we set the temperature of the LLMs at
+0.9 to promote variety and diversity in the generated questions.
+Content : The educational questions were generated for a graduate-level data
+science course comprising topics ranging from traditional machine learning algo-
+rithms, such as linear regression, to advanced topics in natural language process-
+ing, such as prompt engineering. We did not provide domain-specific information
+or context on these topics to the models for question generation. This approach
+was guided by the hypothesis that these models, trained using large amounts of
+recent Internet data, would possess inherent knowledge related to these contem-
+porary course topics.
+Prompt Design : In the present study, we generated questions by instructing
+the models with five prompt styles/strategies (PS1 to PS5), each differing in
+complexity. These prompts followed specific techniques of pattern reframing,
+itemizing reframing, and assertions to make it easier for the instruction fine-
+tuned LLMs to follow the specific instructions [15]. Furthermore, the prompts
+encouraged the model to incorporate Indian-specific examples or context within
+the question to ensure relevance for Indian students. The first set of prompts
+1The information about the number of parameters of the model is not publicly avail-
+able
+
+--- Page Break ---
+
+AEQG at Different Bloom’s Skill Levels using LLMs 5
+(PS1) consisted solely of these core instructions. In contrast, subsequent sets
+progressively added more specific information and instructions in the prompt to
+further refine the quality and relevance of the generated questions.
+There were mainly three significant additions to the prompts. First, the
+prompts were augmented with CoT instructions to make the LLM think se-
+quentially about how to proceed with the task. CoT prompting has been shown
+to improve the quality of LLM-generated content [23]. In the prompt, the LLM
+was also given the persona of a graduate-level university course instructor creat-
+ing questions for their students [15]. Second, the questions included definitions
+of the six cognitive levels of the revised Bloom’s taxonomy. This approach was
+taken under the hypothesis that augmenting the LLM with explicit knowledge
+of the revised Bloom’s taxonomy levels would enhance the quality of the gener-
+ated questions. Third, an expert-crafted example was provided for each Bloom’s
+taxonomy level. This few-shot approach, proven effective in different generative
+models [12], leverages human-crafted questions to guide the LLM’s understand-
+ing of how the questions need to be framed and, in turn, enhance its question
+generation capabilities. Using these three, we created four different prompts:
+(PS2) CoT prompt with skill explanation, (PS3) CoT prompt with example
+questions, (PS4) CoT prompt with skill and example questions, and (PS5) CoT
+prompt with skill, skill explanation, and example questions.
+We gave the same prompt to all LLMs in a specific combination, except for
+the topic-specific variables corresponding to each course topic, as given in the
+repository2. Each LLM generated six questions, one for each level of Bloom’s
+taxonomy corresponding to the 17 course topics. Each model generated 102
+questions, resulting in 510 questions for one combination, making it 2550 for the
+five prompt combinations.
+2.3 Human Evaluation
+Two experts evaluated the AEQG questions. Both experts deeply understand
+data science concepts and have experience teaching the subject to large graduate
+classes. The experts assessed the relevance and quality of the questions based on
+a nine-item rubric (Table 2; a modified version of [7]).
+The experts were presented with LLM-generated questions in random order
+without information other than the course topic on the prompt corresponding to
+the question.The expertshierarchically assessed each question,starting fromthe
+top of the rubric to the bottom. In the evaluation, each group of the evaluation
+criteria, as indicated in Table 2, has a stopping point. This structured approach
+streamlines the evaluation process, minimizing the overall time and effort re-
+quired for expert annotation. If Understandable is marked ‘no’, then none of the
+subsequent items are evaluated for that question and are automatically marked
+as ‘NA’, indicating not applicable. This design choice reflects the underlying
+principle that further evaluation of a question that is not understandable does
+not make sense. Similarly, within group 2, if the answer to clearis ‘no’, then the
+2https://github.com/nicyscaria/AEQG_Blooms_Evaluation_LLMs
+
+--- Page Break ---
+
+6 N. Scaria et al.
+evaluationstops,andtheremainingitemsareautomaticallymarkedas‘NA’.Ad-
+ditionally, if the response to Clearis ‘more_or_less’, then the Rephrase criteria
+of group 3 should be marked, and the evaluator should rephrase the question for
+clarity. The rephrased version of the question will be used for further evaluation.
+If the answer to Answerable in group 3 is ‘no’, the evaluation is stopped, and
+the remaining items of the rubric are marked ‘NA’. In group 4, if either Cen-
+tralorWouldYouUseIt is marked ‘no’, then the evaluation is stopped, and the
+Bloom’sLevel criteria is labeled ‘NA’; otherwise, the experts select the Bloom’s
+level for the question and concludes the evaluation of one question. The process
+is repeated for all the questions.
+Table 2. Hierarchical nine-item rubric used to evaluate questions generated by LLMs
+Rubric item Definition and response option
+Understandable Could you understand what the question is asking? (yes/no)
+TopicRelated Is the question related to the topic given in the prompt? (yes/no)
+Grammatical Is the question grammatically well-formed? (yes/no)
+Clear Is it clear what the question asks for? (yes/more_or_less/no)
+Rephrase Could you rephrase the question to make it clearer and error-free?
+(yes/no)
+Answerable Can students answer the question with the information or context
+provided within? (yes/no)
+Central Doyouthinkbeingable toanswer thequestion isimportant towork
+on the topic given in the prompt? (yes/no)
+WouldYouUseIt If you were a teacher teaching the course topic would you use this
+question or the rephrased version in the course? (yes/maybe/no)
+Bloom’sLevel What is the Bloom’s skill associated with the question? (remember,
+understand, apply, analyze, evaluate, and create)
+The AEQG questions were considered high quality if they met the following
+criteria: (1) experts marked ‘yes’ for Understandable ,Grammatical ,Clear, and
+Answerable ; (2) received a ‘yes’ or ‘maybe’ for WouldYouUseIt ; or (3) being
+marked ‘yes’ for ‘more_or_less’ in the Clearcriteria and subsequently marked
+‘yes’ for Rephrase . Furthermore, we utilized Bloom’sSkill to understand whether
+the LLM adheres to the instructions provided in the prompt. The LLM adhered
+to the instructions provided if the Bloom’sSkill labels of the experts match the
+Bloom’s skill level on the prompt.
+Experts perceive the questions generated by LLMs in different ways. This
+perception is influenced by various factors, such as their preference for writing,
+personal assumptions, prior knowledge, and attention to detail [1]. Therefore, it
+is essential to have a measure to ensure the consistency of the expert evalua-
+tion. We measure inter-rater reliability using percentage agreement and Cohen’s
+Kappa κ[14]. For the ordinal metrics, Clear,WillYouUseIt andBloom’sLevel ,
+
+--- Page Break ---
+
+AEQG at Different Bloom’s Skill Levels using LLMs 7
+we use quadratic weighted Cohen’s κ[5] instead of simple Cohen’s κto penalize
+situations with a significant rating difference.
+Along with the metrics discussed above, we explored the ability of LLMs to
+create questions relatable to a specific population or context, which, in this case,
+is India. To understand this, we curated and analyzed the contexts and themes
+specific to India that came up in the questions.
+2.4 Automated Evaluation
+Clearly, the above evaluation by a human expert is a laborious process. Auto-
+mated evaluation offers a scalable and efficient alternative for assessing large-
+scale educational content. We use Gemini Pro for the LLM-based evaluation of
+the generated questions. To ensure deterministic behavior, we set the decoding
+temperature of the model to 0. In automated evaluation, we assess the quality
+of LLM-generated questions without reference questions using the same crite-
+ria outlined in Sect.2.3. Recent studies have demonstrated the ability of LLMs
+to perform a reference-free evaluation for a variety of NLG tasks [13,21]. The
+prompt used in the prompt-based evaluator consisted of two components: (1) a
+detailed description of the evaluation criteria, evaluation instructions (instruc-
+tions to evaluate the questions in a hierarchical manner as discussed in Sect.2.3)
+along with the question and the course topic for which the question was gen-
+erated, and (2) CoT instructions describing the evaluation steps, along with
+providing the evaluator LLM the persona of a graduate-level data science course
+instructor. The detailed prompt template can be found on github.
+In addition to automated evaluation, we assessed the linguistic quality of the
+AEQG questions using a diversity measure based on the Paraphrase In N-gram
+Changes (PINC) score [4].
+PINC (s, c) =1
+NNX
+n=1
+1−|n-gram s∩n-gram c|
+|n-gram c|
+(1)
+PINC score is generally used to measure the novelty of n-grams in the auto-
+matically generated paraphrase of a sentence. In our case, we wanted to check
+if the questions generated by an LLM for a specific Bloom’s skill use the same
+structure or words on different topics. For that, we considered every question
+generated for a specific skill by the model as the source and calculated the PINC
+score considering every other question of the same skill and by the same model
+as the candidate question. Finally, the average of these scores was calculated
+for the AEQG questions generated by each LLM. A higher average PINC score
+indicates considerable diversity in the AEQG task.
+3 Results and Analysis
+We will be releasing the dataset, ‘DataScienceQ’4containing 2550 questions
+generated for the present study. First, we present and analyze the results of the
+
+--- Page Break ---
+
+8 N. Scaria et al.
+expert evaluation of these 2550 AEQG questions. We start by examining the
+agreement between experts on their evaluation using the percentage agreement
+and modified Cohen’s κvalues (Table 3). The percentage agreements and Co-
+hen’s κvalues are calculated only for questions not labeled ‘NA’ as discussed
+in Sect.2.3. The values in the table indicate that there is substantial agreement
+between experts on different evaluation criteria. The agreement is highest for the
+criteria TopicRelated ,Grammatical , and Central. As expected, subjective criteria
+likeRephrase andWouldYouUseIt have the lowest agreement. In our analysis, an
+AEQG question is considered as “High Quality” only when both evaluators rate
+it as“High Quality”.To assessalignmentwith Bloom’staxonomy, thesubsequent
+analysis focused only on these “High Quality” questions. In what follows, we dis-
+cuss the results for each research question stated in Sect. 1.1. Table 4 presents
+the key evaluation metrics (Sect. 2.3) for the analysis. Quality is measured as
+the percentage of AEQG questions that were selected as “High Quality” and skill
+is measured as the percentage of “High Quality” questions judged by experts to
+be at the same Bloom’s taxonomy levels as the one given in the prompt to the
+LLM for the AEQG task.
+Table 3. Expert inter-annotator agreement on the nine-item hierarchical rubric for
+AEQG questions.
+Simple prompt CoT & skill explanation CoT & example
+Rubric item % agree κ % agree κ % agree κ
+Understandable 99.60% 0.67 99.61% 0.80 100.00% 1.00
+TopicRelated 99.80% 0.95 99.80% 0.80 98.80% 0.93
+Grammatical 100.00% 1.00 100.00% 1.00 100.00% 1.00
+Clear 91.75% 0.67 97.42% 0.62 94.30% 0.61
+Rephrase 90.38% 0.76 90.91% 0.62 80.77% 0.59
+Answerable 93.41% 0.65 96.47% 0.69 94.75% 0.61
+Central 97.42% 0.78 99.77% 0.98 99.77% 0.94
+WouldYouUseIt 89.92% 0.58 94.82% 0.66 96.81% 0.69
+Bloom’sLevel 82.07% 0.83 88.14% 0.90 90.00% 0.89
+CoT, skill, and example CoT, skill, skill explanation and example
+Rubric item % agree κ % agree κ
+Understandable 100.00% 1.00 100.00% 1.00
+TopicRelated 99.80% 0.99 99.20% 0.96
+Grammatical 100.00% 1.00 100.00% 1.00
+Clear 93.30% 0.53 92.74% 0.66
+Rephrase 92.31% 0.73 75.00% 0.53
+Answerable 96.54% 0.81 93.89% 0.68
+Central 100.00% 1.00 100.00% 1.00
+WouldYouUseIt 95.64% 0.85 95.29% 0.82
+Bloom’s Level 90.36% 0.93 92.65% 0.93
+RQ1: Can instruction fine-tuned modern LLMs create high-quality
+and diverse educational questions at different cognitive levels based
+on Bloom’s taxonomy? Among all AEQG questions from the different LLMs
+4https://github.com/nicyscaria/AEQG_Blooms_Evaluation_LLMs
+
+--- Page Break ---
+
+AEQG at Different Bloom’s Skill Levels using LLMs 9
+and prompting strategies, 78% were rated as “High Quality” and among these
+65.56% were rated to match the intended skill level by both human raters (Ta-
+ble 4 ‘Overall’ Columns and ‘Overall’ row). The temperature of all LLMs was
+set at 0.9 to promote textual diversity, resulting in a PINC score average of
+0.92. These findings suggest that instruction fine-tuned LLMs demonstrate con-
+siderable potential to generate diverse and high-quality educational questions
+at different cognitive levels based on Bloom’s taxonomy. For PS1-PS5, 72.55%,
+70.58%, 71.56%, 86.27%, and 89.02% of the questions were identified as “High
+Quality" for Mistral 7B, Llama2 70B, Palm 2, GPT 3.5 and GPT 4 respectively.
+Similarly, 60%, 61.67%, 60%, 74.41%, and 70.04% of the questions followed ad-
+hered to Bloom’s taxonomy level given by experts respectively.
+RQ2: Does the size of the LLM significantly impact the model’s per-
+formance in educational question generation? Table 4 presents the per-
+formance metrics of the five LLMs for the five sets of prompts. For quality and
+adherence to Bloom’s taxonomy levels, GPT 4 and GPT 3.5 emerged as the top
+performers. Palm 2, despite its larger size compared to Mistral 7B and LLama2
+70B, demonstrated wide variance in the quality of the AEQG task for different
+prompt strategies. Palm 2 has only 36.99% Skill matching in a detailed and com-
+plex prompt (PS5), but it scores 70.51% in the PS3 prompt strategy. For PS5
+prompts, the Mistral 7B model performs better than the Llama2 70B model,
+which is counterintuitive. The reason for this performance difference could be
+due to the way these models process a long prompt. Thus, no clear pattern exists
+between the model size and AEQG performance.
+Table 4. Performance of the LLMs in the AEQG task. For each model and set of
+prompts PS1-PS5, the percentage of questions that are of high quality (Quality), ad-
+herence to Bloom’s taxonomy level (Skill), and the PINC score are presented.
+PS1: Simple prompt PS2: CoT & skill explanation PS3: CoT & example
+LLM Quality Skill PINC Quality Skill PINC Quality Skill PINC
+Mistral 7B 70.59% 56.94% 0.94 75.49% 68.83% 0.95 78.43% 45.00% 0.94
+Llama 2 70B 73.53% 57.33% 0.94 75.49% 71.43% 0.93 77.45% 58.23% 0.93
+Palm 2 61.76% 55.56% 0.93 73.53% 65.33% 0.94 76.47% 70.51% 0.93
+GPT 3.5 69.61% 81.69% 0.94 94.12% 89.58% 0.89 89.22% 64.84% 0.92
+GPT 4 75.49% 74.03% 0.93 87.25% 82.02% 0.92 91.18% 65.59% 0.92
+Overall 70.20% 66.36% 0.93 81.18% 76.32% 0.93 82.55% 61.04% 0.93
+PS4: CoT, skill, & PS5: CoT, skill, skill Overall
+example explanation & example
+LLM Quality Skill PINC Quality Skill PINC Quality Skill PINC
+Mistral 7B 71.57% 71.23% 0.93 66.67% 58.82% 0.94 72.55% 60.00% 0.94
+Llama 2 70B 77.45% 73.42% 0.91 49.02% 40.00% 0.93 70.58% 61.67% 0.93
+Palm 2 74.51% 69.74% 0.93 71.57% 36.99% 0.93 71.56% 60.00% 0.93
+GPT 3.5 87.25% 73.03% 0.90 91.18% 59.14% 0.91 86.27% 73.41% 0.91
+GPT 4 96.08% 75.51% 0.92 95.10% 56.64% 0.90 89.02% 70.04% 0.92
+Overall 81.37% 72.77% 0.92 74.71% 51.18% 0.92 78.00% 65.56% 0.93
+
+--- Page Break ---
+
+10 N. Scaria et al.
+RQ3: How does the amount of information provided in the prompt
+affect the quality of the questions generated? It is observed that the sim-
+ple prompt (PS1) performed poorly in the quality of the questions generated
+(Table 4). Overall, the performance improved with the addition of more infor-
+mation to the prompt. However, the amount of improvement varied between the
+five LLMs. Figure 1 shows that for Mistral, Llama 2 and Palm 2, PS3 gave the
+highest quality questions, with PS4 being close behind. PS4 gave the highest
+skill match for these three models, while the skill match for PS3 was low. Inter-
+estingly, PS5, which is the most complicated prompt used, reduced both quality
+and skill for these three models, indicating that while information enrichment
+improves AEQG, too much information in the prompt can be counterproductive.
+The GPT models also gave good performance for PS4, but their performance for
+PS2 to PS5 are more or less the same with respect to quality of questions. These
+two models did well in terms of skill match for PS2-PS4, and similar to the other
+three LLMs, the PS5 skill scores drop significantly. Our results indicate that a
+CoT prompt with a description of the skill and an example question performs
+best for AEQG.
+Fig. 1.Quality and Skill of prompting strategies for AEQG by different LLMs.
+RQ4: Can LLMs create questions that are relatable to a specific popu-
+lation or context? In our study, LLMs were asked to create questions that are
+relatable to students in India. Nine recurring themes that are specific to India
+emerged (Fig. 2). These included questions on Bollywood movies, traffic chal-
+lengesinIndiancitiesandtheirmitigationusingcomputervisiontechniques,and
+the Indian educational system. Given India’s significant dependence on agricul-
+ture, many questions focused on climate, crop yield, crop diseases, and cropping
+patterns.Inaddition,numerousquestions,specificallyonthetopicofnaturallan-
+guage processing, used Indian languages as examples. Interestingly, the Indian
+languagetextgeneratedbyopen-sourcemodels,Mistral7BandLlama270B,was
+often inaccurate and poor quality. From Fig. 2, it is also clear that compared to
+
+--- Page Break ---
+
+AEQG at Different Bloom’s Skill Levels using LLMs 11
+GPT 4 and GPT 3.5, the recurring themes occur less in the questions generated
+by other models. Some questions exhibited a tendency to unnecessarily specify
+India when the context was general. The expert evaluators rephrased these ques-
+tions. Furthermore, some questions reflect certain cultural generalizations about
+India that are not necessarily true, as evaluators have indicated.
+Fig. 2.Frequently repeated Indian contexts in the AEQG questions.
+RQ5:Caninstructionfine-tunedLLMsevaluategeneratededucational
+questions effectively, similar to human evaluators, when given the
+same instructions? We conducted an LLM-based evaluation to analyze the
+quality and adherence of machine-generated questions to different cognitive lev-
+els on the nine-item rubric in addition to the expert evaluation. We used Gemini
+Pro (gemini-pro), an LLM that is different from the five used for the AEQG task,
+for the evaluation (detailed methodology in Sect. 2.4). The results of the evalua-
+tion are given in Table 5. There is a significant discrepancy between LLM-based
+and expert evaluations. Interesting discrepancies emerged between Gemini Pro
+and expert evaluations, with Palm 2 excelling in automated evaluation, but un-
+derperforming in expert evaluation. In the Gemini Pro evaluation, even Llama
+2 70B and Mistral 7B also performed better in some cases. Our automated
+evaluation using Gemini Pro revealed a tendency of the model to classify most
+machine-generated questions as belonging to the ‘Apply’ or ‘Analyze’ levels on
+Bloom’sLevel . The observed performance dip of the LLMs in adhering to the
+
+--- Page Break ---
+
+12 N. Scaria et al.
+evaluator-LLM’s Bloom’s level can be attributed to this fact. This result indi-
+cates that extreme caution must be exercised when using LLMs for automated
+evaluation of generative tasks. In the future, our data set can be used to improve
+the automated evaluation of the questions as well.
+Table 5. Automated evaluation of AEQG questions: percentage of high-quality ques-
+tions and adherence to Bloom’s taxonomy level given by Gemini Pro.
+Simple prompt CoT & skill explanation CoT & example
+LLM Quality Skill Quality Skill Quality Skill
+Mistral 7B 82.35% 53.98% 61.76% 44.44% 70.59% 19.44%
+Llama 2 70B 79.41% 40.02% 65.69% 43.28% 80.39% 40.24%
+Palm 2 69.61% 39.43% 65.69% 49.25% 78.43% 40.00%
+GPT 3.5 82.35% 48.15% 67.65% 34.78% 75.49% 28.24%
+GPT 4 80.39% 38.09% 75.49% 35.06% 77.45% 37.97%
+CoT, skill, and example CoT, skill, skill explanation and example.
+LLM Quality Skill Quality Skill
+Mistral 7B 58.82% 40.00% 55.88% 31.57%
+Llama 2 70B 62.75% 39.06% 53.92% 34.54%
+Palm 2 77.45% 44.30% 69.61% 36.62%
+GPT 3.5 66.67% 33.82% 51.96% 30.18%
+GPT 4 73.53% 40.00% 66.67% 38.24%
+4 Discussion and Conclusion
+Our study demonstrates that LLMs can produce high-quality and diverse educa-
+tional questions aligned with Bloom’s taxonomy, requiring minimal input from
+educators, but the performance varies based on the size of the model and the
+prompt used to generate these questions. Larger proprietary models like GPT
+4 and GPT 3.5 outperform smaller open-source models across all the metrics
+in expert evaluation, but the same does not hold for the Palm 2 model. While
+adding a lot of information (skill explanation, example questions, and CoT in-
+structions) significantly reduced the performance of the LLMs, particularly for
+open-source models, optimal results were achieved with prompts including CoT
+instructions paired with either skill, skill explanation, or example questions. CoT
+instructions, with examples, resulted in more high-quality questions while com-
+promising on the adherence to Bloom’s skill. On the other hand, Bloom’s skill
+explanations with CoT instructions slightly reduced the number of high-quality
+questions but significantly boosted the performance of adherence to Bloom’s
+skill. The questions generated often incorporated contextually relevant Indian
+contexts, although some instances exhibited generalizations about India.
+In our research, the evaluation of 2550 questions took a considerable amount
+oftimeandeffortfromexpertevaluators.Althoughattentionwaspaidtomaking
+theevaluationprocessobjective,experts’decisionscanstillbesubjectivedepend-
+ing on who is evaluating them. However, the LLM-based evaluation proved to be
+less effective in our case. There was a considerable difference across all metrics
+
+--- Page Break ---
+
+AEQG at Different Bloom’s Skill Levels using LLMs 13
+in the case of the Gemini Pro evaluation compared to the expert evaluation. In-
+terestingly, in the Gemini Pro evaluation, Palm 2 outperformed other models on
+different evaluation metrics, even though expert evaluation suggested otherwise.
+This discrepancy might stem from the fact that Palm 2 and Gemini Pro are both
+Google’s models, potentially sharing similar training data or methodologies. We
+found that our evaluator model is suboptimal and does not align with the expert
+evaluation. This could be due to the lack of such examples that these models
+would have seen during their training. This requires the training of the LLM on
+evaluation datasets on specific subjects and evaluation metrics to make it robust
+for evaluation. This is a potential future direction of research.
+Our approach used the inherent knowledge of the content possessed by the
+LLMsonthetopicforAEQG.Thisrevealedlimitationsintheirunderstandingof
+specific domains. For example, Mistral 7B and Llama2 70B struggled on the top-
+ics of "prompt engineering", producing questions related to general engineering.
+Another interesting observation in the study was the inability of most models to
+generate high-quality questions at the ‘Create’ level of Bloom’s taxonomy. Thus,
+the present paper can be extended to use existing resources from the Internet
+or course material through databases to improve the performance of the model
+in question generation. We did not study the generation of questions for topics
+other than data science content, and such an exploration using the methodology
+showcased here could be a potential future direction for research.
+References
+1. Amidei, J., Piwek, P., Willis, A.: Rethinking the agreement in human evaluation
+tasks. In: Proceedings of the 27th International COLING. pp. 3318–3329 (2018)
+2. Anderson, L.W., Krathwohl, D.R.: A taxonomy for learning, teaching, and assess-
+ing: A revision of Bloom’s taxonomy of educational objectives: complete edition.
+Addison Wesley Longman, Inc. (2001)
+3. Bulathwela, S., Muse, H., Yilmaz, E.: Scalable educational question generation
+with pre-trained language models. In: AIED ’23. pp. 327–339. Springer (2023)
+4. Chen, D., Dolan, W.B.: Collecting highly parallel data for paraphrase evaluation.
+In: Proc of ACL’21. pp. 190–200 (2011)
+5. Cohen, J.: Weighted kappa: nominal scale agreement provision for scaled disagree-
+ment or partial credit. Psychological bulletin 70(4), 213 (1968)
+6. Horbach, A., Aldabe, I., Bexte, M., de Lacalle, O.L., Maritxalar, M.: Linguistic
+appropriateness and pedagogic usefulness of reading comprehension questions. In:
+Proc of LREC 2020. pp. 1753–1762 (2020)
+7. Horbach, A., Aldabe, I., Bexte, M., de Lacalle, O.L., Maritxalar, M.: Linguistic
+appropriateness and pedagogic usefulness of reading comprehension questions. In:
+Proceedings of the Twelfth Language Resources and Evaluation Conference. pp.
+1753–1762 (2020)
+8. Ji,Z.,Lee,N.,Frieske,R.,Yu,T.,Su,D.,Xu,Y.,Ishii,E.,Bang,Y.J.,Madotto,A.,
+Fung, P.: Survey of hallucination in natural language generation. ACM Computing
+Surveys 55(12), 1–38 (2023)
+9. Kasneci, E., Seßler, K., Küchemann, S., Bannert, M., Dementieva, D., Fischer, F.,
+Gasser, U., Groh, G., Günnemann, S., Hüllermeier, E., et al.: ChatGPT for good?
+
+--- Page Break ---
+
+14 N. Scaria et al.
+On opportunities and challenges of large language models for education. Learning
+and individual differences 103, 102274 (2023)
+10. Kojima, T., Gu, S.S., Reid, M., Matsuo, Y., Iwasawa, Y.: Large language models
+are zero-shot reasoners. Advances in NeurIPS 35, 22199–22213 (2022)
+11. Kurdi, G., Leo, J., Parsia, B., Sattler, U., Al-Emari, S.: A systematic review of au-
+tomatic question generation for educational purposes. IJAIED 30, 121–204 (2020)
+12. Liu,P.,Yuan,W.,Fu,J.,Jiang,Z.,Hayashi,H.,Neubig,G.:Pre-train,prompt,and
+predict: A systematic survey of prompting methods in natural language processing.
+ACM Computing Surveys 55(9), 1–35 (2023)
+13. Liu, Y., Iter, D., Xu, Y., Wang, S., Xu, R., Zhu, C.: G-eval: NLG evaluation using
+gpt-4 with better human alignment. In: Bouamor, H., Pino, J., Bali, K. (eds.)
+Proceedings of the 2023 Conference on EMNLP. pp. 2511–2522 (Dec 2023)
+14. McHugh, M.L.: Interrater reliability: the kappa statistic. Biochemia medica 22(3),
+276–282 (2012)
+15. Mishra, S., Khashabi, D., Baral, C., Choi, Y., Hajishirzi, H.: Reframing instruc-
+tional prompts to gptk’s language. In: Findings of ACL 2022. pp. 589–612 (2022)
+16. Moore, S., Nguyen, H.A., Bier, N., Domadia, T., Stamper, J.: Assessing the quality
+of student-generated short answer questions using gpt-3. In: EC-TEL. pp. 243–257.
+Springer (2022)
+17. Nguyen, H.A., Bhat, S., Moore, S., Bier, N., Stamper, J.: Towards generalized
+methods for automatic question generation in educational domains. In: EC-TEL.
+pp. 272–284. Springer (2022)
+18. Sridhar, P., Doyle, A., Agarwal, A., Bogart, C., Savelka, J., Sakr, M.: Harnessing
+llms in curricular design: Using gpt-4 to support authoring of learning objectives.
+arXiv preprint arXiv:2306.17459 (2023)
+19. Steuer, T., Bongard, L., Uhlig, J., Zimmer, G.: On the linguistic and pedagogical
+quality of automatic question generation via neural machine translation. In: EC-
+TEL 2021, Proceedings. pp. 289–294. Springer (2021)
+20. Ushio,A.,Alva-Manchego,F.,Camacho-Collados,J.:GenerativeLanguageModels
+for Paragraph-Level Question Generation. In: Proc of EMNLP ’22’ (Dec 2022)
+21. Wang, J., Liang, Y., Meng, F., Sun, Z., Shi, H., Li, Z., Xu, J., Qu, J., Zhou, J.:
+Is ChatGPT a good NLG evaluator? a preliminary study. In: Dong, Y., Xiao, W.,
+Wang, L., Liu, F., Carenini, G. (eds.) Proceedings of the 4th New Frontiers in
+Summarization Workshop. ACL (Dec 2023)
+22. Wang,Z.,Valdez,J.,BasuMallick,D.,Baraniuk,R.G.:Towardshuman-likeeduca-
+tional question generation with large language models. In: AIED ’22. pp. 153–166.
+Springer (2022)
+23. Wei, J., Wang, X., Schuurmans, D., Bosma, M., Xia, F., Chi, E., Le, Q.V., Zhou,
+D., et al.: Chain-of-thought prompting elicits reasoning in large language models.
+Advances in NeurIPS 35, 24824–24837 (2022)
+24. Zhang, H., Song, H., Li, S., Zhou, M., Song, D.: A survey of controllable text
+generation using transformer-based pre-trained language models. ACM Computing
+Surveys (2022)
+25. Zhang, R., Guo, J., Chen, L., Fan, Y., Cheng, X.: A review on question generation
+from natural language text. ACM TOIS 40(1), 1–43 (2021)
+
+--- Page Break ---
+

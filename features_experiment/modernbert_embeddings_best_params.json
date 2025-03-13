@@ -1,0 +1,15 @@
+{
+    "boosting_type": "gbdt",
+    "learning_rate": 0.010249544458622206,
+    "num_leaves": 49,
+    "max_depth": 11,
+    "min_data_in_leaf": 34,
+    "lambda_l1": 0.0004185557094128598,
+    "lambda_l2": 1.4551240565432076e-08,
+    "feature_fraction": 0.58698589658344,
+    "bagging_fraction": 0.8954745954146689,
+    "bagging_freq": 1,
+    "objective": "regression",
+    "metric": "rmse",
+    "verbose": -1
+}

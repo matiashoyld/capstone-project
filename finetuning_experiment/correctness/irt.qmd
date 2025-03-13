@@ -1,0 +1,212 @@
+---
+title: "IRT Analysis of Student Response Matrix"
+author: "Matías Hoyl"
+date: today
+format: 
+  html:
+    code-fold: true
+    theme: cosmo
+  pdf:
+    toc: true
+execute:
+  warning: false
+  message: false
+---
+
+## Setup
+
+```{r}
+#| label: setup
+#| message: false
+
+library(tidyverse)
+library(mirt)      # For IRT analysis
+library(psych)     # For descriptive statistics
+library(corrplot)  # For correlation visualization
+library(knitr)     # For tables
+```
+
+## Data Import
+
+```{r}
+#| label: data-import
+
+# Import the response matrix
+# First column is student ID, rest are responses (0/1) for each question
+responses_df <- read.csv("finetuning_experiment/predictions_matrix.csv", row.names = 1)
+
+# Convert to matrix for IRT analysis
+response_matrix <- as.matrix(responses_df)
+
+# Basic data check
+cat("Matrix dimensions:", dim(response_matrix), "\n")
+cat("Number of students:", nrow(response_matrix), "\n")
+cat("Number of questions:", ncol(response_matrix), "\n")
+```
+
+
+```{r}
+#| label: response-patterns
+
+# --------------------------------------------
+# Step 0: Install and Load Required Package
+# --------------------------------------------
+if (!require(mirt)) install.packages("mirt", dependencies = TRUE)
+library(mirt)
+
+# --------------------------------------------
+# Step 1: Load and Prepare the Dataset
+# --------------------------------------------
+
+# Assuming your data is already loaded as 'responses_df'
+data <- responses_df
+
+# Drop identifier column if present (assumes first column is an ID)
+response_matrix <- data[, -1]
+
+# --------------------------------------------
+# Step 2: Validate and Clean the Response Matrix
+# --------------------------------------------
+
+# Ensure data is numeric
+response_matrix <- as.data.frame(lapply(response_matrix, as.numeric))
+
+# Replace negative values or invalid responses with NA
+response_matrix[response_matrix < 0] <- NA
+
+# Handle missing values (either replace NA with 0 or let mirt handle NA)
+response_matrix[is.na(response_matrix)] <- 0
+
+# --------------------------------------------
+# Step 3: Fit Initial 2PL Model to Extract Parameters
+# --------------------------------------------
+
+# Fit a basic 2PL model
+mod_initial <- mirt(response_matrix, 1, itemtype = '2PL', method = 'EM')
+
+# Extract parameter values for modification
+pars <- mod2values(mod_initial)
+
+# --------------------------------------------
+# Step 4: Apply Constraints to Discrimination Parameters
+# --------------------------------------------
+
+# Apply lower and upper bounds for discrimination ('a1')
+pars$lower[pars$name == 'a1'] <- 0.2  # Lower bound
+pars$upper[pars$name == 'a1'] <- 3    # Upper bound
+
+# --------------------------------------------
+# Step 5: Fit Constrained 2PL Model with Convergence Control
+# --------------------------------------------
+
+# Define technical settings for faster convergence
+tech_settings <- list(NCYCLES = 500,  # Maximum number of iterations
+                      TOL = 1e-4)     # Convergence tolerance
+
+# Fit the constrained model using modified parameters and technical settings
+mod_constrained <- mirt(response_matrix, 1, itemtype = '2PL', method = 'EM', 
+                        pars = pars, technical = tech_settings)
+
+# --------------------------------------------
+# Step 6: Extract and Display Model Parameters
+# --------------------------------------------
+
+# Extract constrained item parameters
+constrained_params <- coef(mod_constrained, IRTpars = TRUE, simplify = TRUE)$items
+print("Constrained Item Parameters:")
+print(constrained_params)
+
+# --------------------------------------------
+# Step 7: Analyze and Visualize Results
+# --------------------------------------------
+
+# Plot distribution of student abilities (Theta)
+abilities <- fscores(mod_constrained)
+hist(abilities, main = "Distribution of Student Abilities", xlab = "Theta", breaks = 20)
+
+# Plot Item Characteristic Curves (ICCs) for selected items
+plot(mod_constrained, type = 'trace', which.items = c(1, 2, 3))  # Modify item indices as needed
+
+# Plot Test Information Function (TIF)
+plot(mod_constrained, type = 'info')
+
+# --------------------------------------------
+# Step 8: Evaluate Item Fit (Optional)
+# --------------------------------------------
+
+# Check item fit statistics to detect problematic questions
+item_fit <- itemfit(mod_constrained)
+print("Item Fit Statistics:")
+print(item_fit)
+
+
+```
+
+
+```{r}
+#| label: irt-models
+
+# Check item fit statistics
+item_fit <- itemfit(model_2pl)
+print(item_fit)
+
+```
+
+## Model Comparison and Evaluation
+
+```{r}
+#| label: model-evaluation
+
+# Compare models using AIC and BIC
+aic_1pl <- AIC(model_1pl)
+bic_1pl <- BIC(model_1pl)
+aic_2pl <- AIC(model_2pl)
+bic_2pl <- BIC(model_2pl)
+
+comparison_df <- data.frame(
+  Model = c("1PL (Rasch)", "2PL"),
+  AIC = c(aic_1pl, aic_2pl),
+  BIC = c(bic_1pl, bic_2pl)
+)
+
+kable(comparison_df, caption = "Model Comparison")
+
+# Plot Item Characteristic Curves for a few items
+plot(model_2pl, type = "trace", which.items = 1:6)
+```
+
+## Item Information Analysis
+
+```{r}
+#| label: item-information
+
+# Plot Test Information Function
+plot(model_2pl, type = "info")
+
+# Plot Item Information Functions for most informative items
+plot(model_2pl, type = "info", 
+     which.items = most_informative$question[1:5])
+```
+
+## Summary Statistics
+
+```{r}
+#| label: summary-stats
+
+# Calculate summary statistics
+summary_stats <- data.frame(
+  Metric = c("Mean Difficulty", "SD Difficulty", 
+             "Mean Discrimination", "SD Discrimination",
+             "Mean Item Information", "SD Item Information"),
+  Value = c(
+    mean(params_2pl_df$difficulty),
+    sd(params_2pl_df$difficulty),
+    mean(params_2pl_df$discrimination),
+    sd(params_2pl_df$discrimination),
+    mean(params_2pl_df$information),
+    sd(params_2pl_df$information)
+  )
+)
+
+kable(summary_stats, caption = "Summary Statistics", digits = 3)
+```

@@ -1,0 +1,728 @@
+Question Difﬁculty Prediction for
+READING Problems in Standard Tests
+Zhenya Huang,†Qi Liu,†∗, Enhong Chen,†Hongke Zhao,†
+Mingyong Gao,‡Si Wei,‡Yu Su,/flatGuoping Hu‡
+†School of Computer Science and Technology, University of Science and Technology of China
+{huangzhy, zhhk }@mail.ustc.edu.cn, {qiliuql, cheneh}@ustc.edu.cn
+‡iFLYTEK Research, {mygao2, siwei, gphu}@iﬂytek.com
+/flatSchool of Computer Science and Technology, Anhui University, yusu@iﬂytek.com
+Abstract
+Standard tests aim to evaluate the performance of exami-
+nees using different tests with consistent difﬁculties. Thus,
+a critical demand is to predict the difﬁculty of each test ques-tion before the test is conducted. Existing studies are usually
+based on the judgments of education experts (e.g., teachers),
+which may be subjective and labor intensive. In this paper, wepropose a novel Test-aware Attention-based Convolutional
+Neural Network (TACNN) framework to automatically solve
+this Question Difﬁculty Prediction (QDP) task for READ-ING problems (a typical problem style in English tests) in
+standard tests. Speciﬁcally, given the abundant historical test
+logs and text materials of questions, we ﬁrst design a CNN-based architecture to extract sentence representations for the
+questions. Then, we utilize an attention strategy to qualify the
+difﬁculty contribution of each sentence to questions. Consid-
+ering the incomparability of question difﬁculties in different
+tests, we propose a test-dependent pairwise strategy for train-ing TACNN and generating the difﬁculty prediction value.
+Extensive experiments on a real-world dataset not only show
+the effectiveness of TACNN, but also give interpretable in-sights to track the attention information for questions.
+1 Introduction
+In the widely used standard test, such as TOEFL orSAT,e x -
+aminees are often allowed to retake tests and choose higher
+scores for college admission (Zhang and Yanling 2008). Thisrule brings an important requirement that we should selecttest papers with consistent difﬁculties to guarantee the fair-ness. Therefore, measurements on tests have attracted muchattention (Boopathiraj and Chellamani 2013).
+Among the measurements, one of the most crucial de-
+mands is predicting the difﬁculty of each speciﬁc test ques-
+tion, i.e., the percentage of examinees who answer the ques-
+tion wrong (Hontangas et al. 2000). Unfortunately, the ques-tion difﬁculty is not directly observable before the test isconducted, and traditional methods often resort to exper-tise, such as manual labeling or artiﬁcial tests organiza-tion (Fuchs et al. 1992). Obviously, these human-based so-lutions are limited in that they are subjective and labor in-tensive, and the results could also be biased or misleading
+Copyright c/circlecopyrt2017, Association for the Advancement of Artiﬁcial
+Intelligence (www.aaai.org). All rights reserved.∗Corresponding author.
+(TD) Larry was on another of his underwater expeditions but this 
+time, it was different . He decided to take his daughter along with 
+him. She was only ten years old.[...] Dangerous areas did not prevent 
+him from continuing his search. Sometimes, he was limited to a 
+cage underwater but that did not bother him.  [...]Already, she 
+looked like she was much braver than had been then. This was the 
+key to a successful underwater expedition.
+(TQ)
+Q1:In what way was this expedition different for Larry?
+A. His daughter had grown up.
+B. He had become a famous diver.
+C. His father would dive with him.
+D.His daughter would dive with him.
+(TQ)
+Q2:Why did Larry have to stay in a cage underwater sometimes?
+A.To protect himself from danger.
+             B. To dive into the deep water.
+             C. To admire the underwater view.
+D. To take photo more conveniently.
+n wha
+A
+B
+C
+D
+A
+       B
+       C
+D(TO)
+(TO)
+(a) A READING problemT1 T2 T3 T4 T5 T6 T7 T800.20.40.60.81Difficulty (P)Q1
+Q2
+(b) Difﬁculties in tests
+Figure 1: Two questions of READING problem in tests.
+(we will illustrate this discovery experimentally). Therefore,
+it is an urgent issue to automatically predict question difﬁ-culty without manual intervention. Fortunately, with abun-dant tests recorded by automatic test paper marking sys-tems, test logs of examinees and text materials of questions,as the auxiliary information, become more and more avail-able, which beneﬁts a data-driven solution to this QuestionDifﬁculty Prediction (QDP) task, especially for the typicalREADING problems. For example, Figure 1(a) shows an ex-ample of a READING problem with 2 questions, and eachquestion contains the corresponding materials of document(TD), question (TQ) and options (TO).
+Actually, there are some efforts on text understanding for
+READING problems, e.g., machine comprehension (Yin,
+Ebert, and Sch ¨utze 2016; Sachan et al. 2015). However,
+these works could not be directly applied to QDP in stan-
+dard tests due to the unique challenges in this task. First,READING problems contain multiple parts of text materi-als (i.e., TD, TQ and TO in Figure 1(a)), which requires anuniﬁed way to understand and represent them from a seman-tic perspective. Second, it is necessary to distinguish the im-portance of text materials to a speciﬁc question, because dif-ferent questions concern different parts of texts. For exam-ple,Q
+1in Figure 1(a) concentrates more on the highlighted
+“blue” sentences while Q2focuses more on the “green”
+ones. Third, as shown in Figure 1(b), question (Q 1,Q2) dif-
+ﬁculties are obviously different in different tests (T 1toT8).
+This evidence indicates that different questions are incom-parable in different tests. E.g., we cannot conclude that Q
+2
+with difﬁculty 0.6 in T1is more difﬁcult than Q1with 0.37Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence (AAAI-17)
+1352
+
+--- Page Break ---
+
+inT2, because the examinees are also different. Thus, it is
+necessary to take these difﬁculty biases into consideration
+for QDP .
+To solve QDP with addressing the challenges above, we
+propose a novel Test-aware Attention-based Convolutional
+Neural Network (TACNN) framework to automatically pre-
+dict question difﬁculty for READING problems before the
+test is conducted. Speciﬁcally, given the historical test logsand text materials of questions, we ﬁrst design an uniﬁedCNN-based architecture to exploit the semantic representa-tions for all text materials (i.e., TD, TQ and TO), so that themultiple parts of texts for each question can be modeled in a
+common comparable space. Then, we qualify the difﬁculty
+contribution of each sentence to one question by utilizing anattention strategy. Next, for training TACNN and generatingthe difﬁculty prediction value of each question, we proposea test-dependent pairwise strategy to wipe out the difﬁcultybiases in different tests. Finally, extensive experiments on alarge-scale real-world dataset validate both effectiveness andexplanatory power of our proposed framework. To the bestof our knowledge, this is the ﬁrst comprehensive data-drivensolution to QDP task in standard tests.
+2 Related Work
+Generally, the related work can be classiﬁed into the follow-ing two categories, i.e., question difﬁculty studies in educa-tional psychology and text understanding in NLP ﬁeld.
+Question Difﬁculty in Educational Psychology. Ques-
+tion difﬁculty has been studied for a long time in the ﬁeldof educational psychology. Some prior works focused onevaluating the possible factors contributed to question dif-ﬁculty. For example, Beck et al. (1997) held that both ques-
+tion attributes and examinees’ abilities affected question dif-ﬁculties. Kubinger et al. (2007) found that some attributeswere relevant to question difﬁculty, such as question types,question structures and knowledge depth. Another directionmade attempts to leverage examinees’ feedbacks from testsfor question evaluation and formed some psychological the-ories, e.g., classic test theory (CTT) (Alagumalai and Curtis
+2005) and cognitive diagnosis assessment (CDA) (DiBello,
+Roussos, and Stout 2006; Wu et al. 2015). CTT evaluated
+question difﬁculty from a statistical perspective while CDAconsidered it as a parameter obtained from examinees’ re-sponses modeled by a logistic-like function. For predictingquestion difﬁculty in practice, traditional solutions often re-sort to expertise, which heavily relies on manual-labeling fortest preparations (Fuchs et al. 1992).
+The common limitation of these works is the requirement
+of manual intervention, which takes a lot of human effortsand expertise. Differently, our study is a complete solutionfrom a data-driven modeling perspective.
+Text Understanding in NLP Field. One of the most cru-
+cial steps in our framework is the understanding and repre-
+sentations of all text materials (Hua et al. 2015; Cui et al.
+2016), which aims at extracting textual difﬁculties for ques-tions in READING problems. This is relevant to many re-searches in nature language process (NLP), such as questionselection (Y u et al. 2014), textual entailment (Bowman et al.2015) and machine comprehension (Yin, Ebert, and Sch ¨utze2016; Sachan et al. 2015). Generally, existing methods could
+be classiﬁed into two categories: language modeling (Smithet al. 2015) and neural network (NN) (Hermann et al. 2015).In language modeling, some representative works put muchemphasis on exploiting syntactic and semantic structures ofeach question including sentence structures (Bilotti et al.2007) and lexical grammars (Wang, Smith, and Mitamura2007). In contrast, NN-based models tried to automatically
+transform questions into semantic representations. For ex-ample, Hermann et al. (2015) proposed a two-layer deepLSTM model for learning text contexts of each question as
+dynamic ones over the documents. Yin et al. (2016) incorpo-
+rated attention methods into CNN to model questions fromwords, phrases to sentences views.
+However, all these solutions focused on how hard the ma-
+chines could choose answers rather than predicting difﬁ-culties in standard tests. Therefore, existing solutions couldhardly be directly applied to QDP task.
+Table 1: A toy example of test logs.
+TestId ExamineeId QuestionId Score
+T1 U1 Q1 1
+T1 U1 Q2 1
+T1 U2 Q1 0
+T1 U2 Q2 1
+T2 U4 Q3 1
+T2 U5 Q3 1
+T2 U6 Q3 0
+... ... ... ...
+3 TACNN Framework
+In this section, we ﬁrst formally introduce the QDP task, andthen we introduce the technical details of TACNN. At last,we propose the test-dependent pairwise training strategy.
+Problem and Study Overview
+In this paper, we focus on QDP for READING problems instandard tests, while some other types of problems, such as
+LISTENING, WRITING and SPEAKING, will be discussedand studied in the future.
+Deﬁnition 1 (
+PROBLEM DEFINITION ). F ormally, given a
+set of questions of READING problems with corresponding
+text materials including document (TD), question (TQ) andoptions (TO), and each question Q
+ihas a difﬁculty attribute
+Pi(e.g.,0.6) obtained from test logs (see Table 1), our goal is
+to leverage the combined instances of question Qiavailable
+(see Table 2) to train a prediction model M(i.e., TACNN),
+which can be used to estimate the difﬁculties for questionsin the newly-conducted tests.
+As shown in Figure 2, our solution is a two-stage frame-
+work, which contains a training stage and a testing stage:1) In the training stage, given test logs of examinees aswell as text materials of questions (see Table 2), we pro-
+pose TACNN to understand and represent all text materials
+of each question Q
+ias corresponding predicted textual dif-
+ﬁculty /tildewidePi. Then considering the difﬁculty biases shown in
+1353
+
+--- Page Break ---
+
+Table 2: Examples of question instances combined with test logs and question materials.
+Text Materials
+Difﬁculty (P) QuestionId (Q) TestId (T) Document (TD) Question (TQ) Options (TO)
+0.4276 Q1 T1 Larry was on... In what way... His daughter had... He had become... His father... His daughter...
+0.4827 Q2 T1 Larry was on... Why did Larry... To protect himself... To dive into... To admire the... To take photo...
+0.5494 Q3 T1 Larry was on... What can be... Larry had some... Larry liked the... Divers had to... Ten-year-old...
+? Q4 T2 Are you... Why do people... They eat too... They sleep too... Their body... The weather...
+TACNN
+cTest logs
+Test-dependent LossModel
+TACNN
+Mode l
+c
+Prediction
+ Tt
+ d
+(TD) Larry was on another of his underwater expeditions but this time, it 
+was different. He decided to take his daughter along with him. She was 
+only ten years old.  [...].
+(TQ)
+Q1:In what way was this expedition different for Larry?
+              A. His daughter had grown up.
+              B. He had become a famous diver.
+              C. His father would dive with him.
+              D. His daughter would dive with him.
+Text 
+Materials
+Training
+Testing
+   
+B
+      
+C
+ 
+D(TO)
+Figure 2: The ﬂowchart overview of our work.
+Figure 1(b), we propose a test-dependent pairwise strategy
+for training TACNN. 2) In the testing stage, after obtainingthe trained TACNN, for each new question without test logs,we could estimate its difﬁculty with the available text mate-rials.
+Components of TACNN
+In this subsection, we will introduce the technical details ofTACNN, which learns to represent text materials of ques-tions as predicted difﬁculties. As shown in Figure 3, TACNNmainly consists of four components, i.e., Input Layer , Sen-
+tence CNN Layer , Attention Layer and Prediction Layer.Speciﬁcally, Sentence CNN Layer and Attention Layer arethe most critical techniques, i.e., the former aims at learningall text materials of each question from a sentence semanticperspective, which is further illustrated in Figure 4; whilethe latter learns attention representations for each questionby qualifying the contributions of its text materials.
+Input Layer. The input to TACNN is all text materials of a
+questionQ
+i, i.e., document (TD i), question ( TQi) and op-
+tions (TO i). Intuitively, TDiis formalized with a sequence
+of sentences TDi={s1,s2,...,s M}whereMis the se-
+quence length. TQiand each option in TOiare all individ-
+ual sentences. Moreover, each sentence is combined with a
+sequence of words s={w1,w2,...,w N}wherewi∈Rd0
+is initialized by d0-dimensional pre-trained word embedding
+andNis the length of sentence. As a result, the document is
+depicted by a tensor TDi∈RM×N×d0, and question TQi
+or each option in TOiis a matrix s∈RN×d0.
+Sentence CNN Layer. The second layer is Sentence CNN
+Layer, where we target at learning each sentence repre-sentation from word level. Here, we select CNN-based ar-chitecture with the following reasons: 1) By leveragingconvolution-pooling operations, CNN is more suitable forcapturing dominated information of each sentence from lo-cal to global views (Yin, Ebert, and Sch ¨utze 2016). This is
+consistent with the common reading habit that examineesusually understand each sentence by some local key words.2) CNN can exploit the interactions between words at largerscales and learns the deep comparable semantic representa-tions for sentences. 3) Compared with other deep learningstructures, e.g., DNN or RNN, CNN leverages shared con-
+volution ﬁlters for training, which reduces the model com-plexity (Ma, Lu, and Li 2015).
+As illustrated in Figure 4, Sentence CNN Layer is a vari-
+ant of the traditional one (Collobert et al. 2011) that al-
+ternates several layers of convolution and p-max pooling,
+where each sentence is gradually summarized to a ﬁxedlength vectorial representation in ﬁnal. Here, we introducethe ﬁrst convolution-pooling operation in detail, and the fol-lowing deeper ones are deﬁned in the similar way.
+Concretely, as shown in Figure 4, given the sentence ma-
+trix input s∈R
+N×d0, the wide convolution operates on a
+sliding window of every kwords with a kernel k×1. For-
+mally, given the input sentence s={w1,w2,...,w N}, the
+ﬁrst convolution operation is set to obtain a new hidden se-
+quence, i.e., hc={/vectorhc
+1,...,/vectorhc
+N+k−1}, where:
+/vectorhc
+i=σ(G·[wi−k+1⊕···⊕wi]+b), (1)
+here, G∈Rd×kd0,b∈Rdare the convolution parameters,
+anddis the output dimension. σ(x)is a nonlinear activation
+functionReLU(x)=m a x ( 0 ,x).“⊕” is the operation that
+concatenates kword vectors into a long vector.
+With the convolution process, the sequential kwords are
+composed to a local semantic representation. Then, we ex-
+ploitp-max pooling operation to merge the features from
+convolution sequence hcinto a new global hidden sequence,
+i.e.,hcp={/vectorhcp
+1,...,/vectorhcp
+⌊(N+k−1)/p⌋}, where
+/vectorhcp
+i=⎡
+⎣max⎡⎣h
+c
+i−p+1,1
+···
+hc
+i,1⎤
+⎦,···,max⎡⎣h
+c
+i−p+1,d
+···
+hci,d⎤
+⎦⎤⎦. (2)
+After that, more layers of convolution-pooling processes
+are set to gradually summarize the global interactions of
+words in a sentence and ﬁnally reach a vectorial represen-
+tation one s∈Rd1, whered1is the output dimension of
+Sentence CNN Layer.
+As a result, the document is transformed into a matrix
+TDi∈RM×d1withMsentence representations, and texts
+1354
+
+--- Page Break ---
+
+Input Layer Sentence CNN LayerAttention Layer
+ Prediction Layer
+concatenate
+Input Layer
+Attention Laye r
+Sentence
+CNN La yer
+operation output
+emb (d0=200)words
+emb (d0=200)words
+emb (d0=200)words
+sentences
+sentence emb (d1=600)
+sentence emb (d1=600)
+sentence emb (d1=600)doc-level attention
+opt-level attention
+words
+convolutions
++
+ p-max poolings
+full connectedprediction
+600600
+1800
+200
+Figure 3: TACNN framework. The numbers in TACNN are the dimensions of corresponding feature vectors.wordsconvolution (wide) p-max pooling
+ convolution
+(
+wide
+)
+ p
+-
+max poolin g
+emb
+more convolution and p-max pooling
+sentence
+sentence
+(
+ )
+ p
+ pg
+...
+Figure 4: Sentence CNN, which contains several layers of
+convolution and p-max pooling.
+of question TQiand each option in TOiare all sentence
+semantic vectors s∈Rd1, which is shown in Figure 3.
+Attention Layer. After obtaining sentence representations
+from Sentence CNN Layer, Attention Layer aims at de-
+tecting difﬁculty attention representations for each question.As shown in Figure 1(a), Q
+1pays more attention to the
+highlighted “blue” sentences while Q2focuses more on the
+“green” ones. This evidence suggests that the same texts(i.e., document) should have different representations basedon the given questions. Therefore, it is necessary to qualifythe contributions of text materials to a speciﬁc question andlearn the attention representations for it.
+Methodology-wise, the attention representations are mod-
+eled as vectors by a weighted sum aggregated result of
+the sentence representations from both document-level andoption-level perspectives. Formally, for a speciﬁc questionQ
+i, the document-level attention vector DAiis as follows:
+DA i=M/summationdisplay
+j=1αjsTD i
+j,α j=cos(sTD i
+j,sTQ i), (3)
+wheresTD i
+j is thej-th sentence in TDi,sTQ iis the sentence
+representation of question material TQi;Cosine similarities
+αjare denoted as the attention scores for measuring the im-
+portance of sentence sjin document TDifor question Qi.Similar to the document-level attention vector DAi, the
+option-level attention vector OAifor question Qicould also
+be modeled as the form of Eq. (3).
+Particularly, the attention scores αjgreatly enhance the
+explanatory power of TACNN. It enables us to extract sen-
+tences with high scores as dominant information for a spe-ciﬁc question, which is helpful for visualizing the model. Inthe experiments, we will conduct a deep analysis on atten-tion results to a speciﬁc question.Prediction Layer. The last layer is Prediction Layer, where
+we target at predicting difﬁculty /tildewideP
+iof question Qileveraged
+by the document-attention DAi, the option-attention OAi
+and the sentence representation sTQ iitself. Speciﬁcally, we
+ﬁrst aggregate them by concatenation operation, then utilizea classical full-connected network (Hecht-Nielsen 1989) tolearn the overall difﬁculty representation o
+iand ﬁnally pre-
+dict the difﬁculty /tildewidePiby logistic function:
+oi=ReLU(W1·[DA i⊕OA i⊕sTQ i]+b1),
+/tildewidePi=Sigmoid( W2·oi+b2), (4)
+where W1,b1,W2,b2are parameters to tune the network.
+Test-dependent pairwise training strategy
+In this subsection, we propose a pairwise training strategyfor TACNN. As shown in Figure 2, after obtaining the pre-dicted textual difﬁculty from text materials of each questionvia TACNN, we need to deﬁne a proper loss function tomake our learning possible in training. In the following, weﬁrst straightforwardly deﬁne a test-independent loss func-tion and then introduce the test-dependent loss function.Test-independent loss function. Since the question difﬁ-
+culty is not directly observable, we obtain the real difﬁcultyof each question followed by the deﬁnition in (Hontangas etal. 2000) from the test logs. For example, in Table 1, the realdifﬁculty of question Q
+1could be P1=( 1+0 ) /2=0.5.
+Therefore, we could formulate the QDP task in a supervisedway. Intuitively, if we ignore the test characteristics, givenall question instances (as shown in Table 2), we could simply
+1355
+
+--- Page Break ---
+
+Table 3: The statistics of the dataset.
+Statistics V alues
+# of test logs 28,818,047
+# of examinees 1,019,415
+# of tests 4,085
+# of READINGs 8,220
+# of questions 30,817
+Average questions per test 14.167
+Average tests per question 1.877
+formulate the test-independent objective function by mini-
+mizing the least square loss with a l2-regularization term:
+J(Θ) =/summationdisplay
+Qi(Pi−M(Qi))2+λΘ||ΘM||2, (5)
+whereM represents the TACNN that transforms text ma-
+terials of question Qiinto predicted difﬁculty /tildewidePi(Eq. (4)).
+ΘMdenotes all parameters in TACNN and λΘis the regu-
+larization hyperparameter.
+However, as mentioned in Figure 1(b), these calculated
+difﬁculties of questions are test-dependent, which meansdifferent questions in different tests are incomparable. Forexample, in Table 1, the difﬁculty of Q
+1is 0.5 and the difﬁ-
+culty ofQ3is 0.33, we cannot get the conclusion that Q1is
+more difﬁcult than Q3because they are in different tests (dif-
+ferent TestId) with different examinees. Therefore, if we di-rectly adopt the test-dependent objective function (Eq. (5)),it may introduce some biases into the optimization.
+Fortunately, we realize that difﬁculties of questions in
+same tests are comparable, e.g., Q
+1is more difﬁcult than Q2
+in Table 1 because they are both in test T1. Motivating by
+this, we can model and optimize the difﬁculty comparisonfor a pair of questions in same tests by a pairwise strategy.
+Test-dependent pairwise loss function. Formally, we ﬁrst
+construct our test-dependent training triples {(T
+t,Qi,Qj)},
+as shown in Figure 2, which denotes two different questions
+QiandQjin the same test Tt. Then the objective function
+turns to the test-dependent one as:
+J(Θ) =/summationdisplay
+(Tt,Qi,Qj)((Pt
+i−Pt
+j)−(M(Qi)−M(Q j)))2+λΘ||ΘM||2,(6)
+wherePt
+iandPt
+jdenote the real difﬁculties of question Qi
+andQjin testTt, respectively. In this way, we can learn the
+model, i.e., TACNN, by directly minimizing the function JΘ
+using AdaDelta (Zeiler 2012).
+Then, given M, we could estimate question difﬁculties of
+new READING problems only based on the given text ma-terials. Please note that, though we design a test-dependentpairwise strategy for model training, TACNN can be directly
+adopted for estimating the “absolute difﬁculty values” (e.g.,0.6) of each new question, since the difﬁculties of ques-tions are now reﬂected from the text perspective, such as thewords used in the texts. After estimating the difﬁculties of
+all the questions in a new test paper, we can decide whetherto choose this test paper into the standard test or not.5 10 15 20 25 300100200300400500600700
+Number of SentencesNumber of Documents
+(a) Sentences distribution10 20 30 40 5002000400060008000
+Number of WordsNumber of Sentences
+(b) Words distribution
+Figure 5: Statistics of observed records.
+4 Experiments
+In this section, we ﬁrst compare the performance of TACNNagainst the baseline approaches on QDP task. Then, wemake experts comparisons to valid the practical signiﬁcanceof TACNN. At last, we conduct a case study to visualize the
+explanatory power of TACNN.
+Dataset Description
+The experimental dataset supplied by IFLYTEK is collectedfrom real-world standard tests for READING problems,which contains nearly 3 million test logs of thousands ofChinese senior high schools from the year 2014 to 2016.
+For preprocessing, we ﬁlter the questions without any testlog because we cannot obtain their difﬁculties, and Table 3
+shows the basic statistics of the dataset after pruning.
+Experimental Setup
+Word Embedding. The word embeddings in Input Layer
+are trained on a large-scale gigaword corpus using public
+word2vec tool (Mikolov and Dean 2013) with the dimen-
+sion 200. Words from READING problems which are notpresented in the pre-trained words are initialized randomly.
+TACNN Setting. In TACNN, we set the maximum length
+M(N) of sentences (words) in documents (sentences) as 25
+(40) (zero padded when necessary) according to our obser-
+vation in Figure 5, i.e., 95% documents (sentences) containsless than 25 (40) sentences (words). Four layers of convolu-tion (three wide convolutions, one narrow convolution) andmax-pooling are employed for the Sentence CNN Layer toaccommodate the sentence length N, where the numbers of
+the feature maps for four convolutions are (200, 400, 600,600) respectively. Also, we set the kernel size kas 3 for all
+convolution layers and the pooling window pas (3, 3, 2, 1)
+for each max pooling, respectively.
+Training Setting. We follow (Orr and M ¨uller 2003) and
+randomly initialize all matrix and vector parameters in
+TACNN with uniform distribution in the range between
+−/radicalbig
+6/(nin+nout)and/radicalbig
+6/(nin+nout), where nin
+andnout are the numbers of input and output feature sizes of
+the corresponding matrices, respectively. During the training
+process, all parameters in TACNN are tuned. Moreover, weset mini batches as 32 for training and we also use dropout(with probability 0.2) in order to prevent overﬁtting.
+1356
+
+--- Page Break ---
+
+60% 40% 20% 10%0.20.210.22
+TestRatioRMSEHABCNN
+CNN
+ACNN
+TCNN
+TACNN
+(a) The performance on RMSE60% 40% 20% 10%0.570.620.67
+TestRatioDOAHABCNN
+CNN
+ACNN
+TCNN
+TACNN
+(b) The performance on DOA60% 40% 20% 10%0.20.250.30.350.40.45
+TestRatioPCCHABCNN
+CNN
+ACNN
+TCNN
+TACNN
+(c) The performance on PCC60% 40% 20% 10%0.130.180.230.280.330.380.43
+TestRatioPRHABCNN
+CNN
+ACNN
+TCNN
+TACNN
+(d) The performance on PR
+Figure 6: Overall performance on the task of QDP .
+Table 4: TACNN v.s. Experts on QDP task with PCC metric.
+Test TACNN EpAvg Ep1 Ep2 Ep3 Ep4 Ep5 Ep6 Ep7
+T1 0.41 0.21 0.18 0.13 0.38 -0.08 -0.04 0.01 0.14
+T2 0.63 0.68 0.45 0.32 0.52 -0.01 -0.44 0.53 0.37
+T3 0.78 0.70 0.52 0.63 0.28 0.44 -0.29 0.45 0.52
+T4 0.63 0.40 -0.09 0.07 0.31 0.48 -0.40 0.58 -0.08
+T5 0.53 0.56 0.39 0.32 0.29 0.29 0.43 0.51 0.47
+T6 0.47 0.22 0.21 0.01 0.27 -0.23 0.10 0.24 0.17
+T7 0.81 0.73 0.58 0.29 0.72 0.72 0.70 0.59 0.69
+T8 0.77 0.45 0.35 0.45 0.24 0.14 0.19 0.45 0.64
+T9 0.81 0.55 0.25 0.54 0.35 0.53 0.13 0.32 0.36
+T10 0.76 0.57 0.49 -0.13 0.72 0.25 0.22 0.32 0.60
+T11 0.90 0.77 0.44 0.57 0.59 0.41 0.36 0.08 0.83
+T12 0.60 0.62 0.59 0.73 0.60 0.54 0.48 0.62 0.54
+Avg 0.68 0.54 0.36 0.33 0.44 0.29 0.12 0.39 0.44
+Std 0.14 0.18 0.19 0.26 0.17 0.27 0.34 0.19 0.25
+Baseline Approaches
+Since there have been few prior methods to directly solve
+QDP task in standard tests, we ﬁrst introduce some variantsof TACNN to highlight the effectiveness of each componentof our framework. The details of variants are as follows:
+•CNN : CNN is a framework with attention-ignored strat-
+egy and test-independent loss (Eq. (5)). Here, the
+attention-ignored strategy means the attention scores αin
+Eq. (3) are the same for all sentences in correspondingmaterials (i.e., documents or options).
+•ACNN : ACNN is a framework with attention strategy
+(Eq. (3)) and test-independent loss (Eq. (5)).
+•TCNN : TCNN is a framework with attention-ignored
+strategy and test-dependent loss (Eq. (6)).
+Besides, we also select HABCNN, whose network archi-
+tecture is most similar to ours, as another baseline:
+•HABCNN : A machine comprehension model from (Yin,
+Ebert, and Sch ¨utze 2016) with a kind of CNN and sen-
+tence attention. To apply it to QDP task, we adopt its orig-
+inal network architecture and make it a little change byadapting its original softmax based objective to our test-
+dependent loss (Eq. (6)).
+Both TACNN and baselines are all implemented by
+Theano (Bergstra et al. 2010) and all experiments are run
+on a Tesla K20m GPU.Evaluation Metrics
+To measure the performance of TACNN, we ﬁrst use thewidely used Root Mean Squared Error (RMSE) (Salakhut-
+dinov and Mnih 2011) for QDP precision comparison. Be-sides, we adopt Degree of Agreement (DOA) (Liu et al.
+2012) from ranking perspective to measure the percentageof correctly ranked difﬁculties of question pairs.
+We also borrow metrics from educational psychology
+for evaluation from the test analysis perspective. In educa-tional psychology, for test T
+i, the higher positive correla-
+tion between real difﬁculties and predictions of questions,the better performances (Brizuela and Montero-Rojas 2013).Thus, we use the average Pearson Correlation Coefﬁcient
+(PCC) (Benesty et al. 2009) of all tests to measure the corre-lation performance. Moreover, we also adopt t-test passing
+ratio (PR), which is denoted as the percentage of tests which
+pass t-test at conﬁdence level of 0.05, to evaluate conﬁdenceperformance.
+In summary, the smaller the RMSE is, the better perfor-
+mance the results have. For the other three (DOA, PCC, PR),the larger, the better.
+Experimental Results
+Overall QDP Results. To observe how the models behave at
+different data sparsity, we randomly select 60%, 40%, 20%,10% of standard tests as testing sets, and the rests as trainingsets, respectively. Note that, to ensure that the questions intesting sets are all new questions and prevent overﬁtting, wealso remove the questions in training sets with same docu-ments which exist in testing sets. Thus, there are no overlapsbetween the questions in training sets and testing sets.
+Figure 6 shows the overall QDP results of all models. We
+can see that TACNN performs best. Speciﬁcally, by opti-mizing the test-dependent pairwise loss, it beats CNN andACNN. By qualifying the contributions of texts with the at-tention strategy, it beats TCNN. Then, HABCNN doesn’tperform as well as TACNN, which indicates that the ar-
+chitecture of HABCNN which aims for the machine com-
+prehension task is unsuitable for QDP task. Last but notleast, we can see that models with test-dependent pairwiseloss (TACNN, TCNN, HABCNN) perform better than thosewith test-independent loss (CNN, ACNN). This observa-tion suggests that question difﬁculties are test-dependent anddemonstrates the rationality of pairwise training strategy.
+1357
+
+--- Page Break ---
+
+Larry was on another of his underwater expeditions...
+He decided to take his daughter along with him...
+This would be her first trip with her father on what...
+Larry first began diving when he was his daughter...
+Then, there was the instructor.
+He gave him a short lesson before allowing him...
+After the first expedition, Larry is later diving...
+There was never a dull moment. In his black and...
+Dangerous areas did not prevent him from ...
+Sometimes, he was limited to a cage underwater...
+Larry has first expedition without his father was...
+Fortunately for him, a man offered to take him...
+He hoped she would be able to continue the...
+This was the key to a successful underwater...
+Larry was on an other of his  under water
+expeditio ns
+...
+He decided to take his daughter along with him
+ ..
+.
+This would be her first trip with her father on
+ what
+...
+Larry first began diving when he was his daughte r
+..
+.
+Then
+,
+there was the instructor
+.
+He gave him a short lesson before allowin g
+him
+...
+After the first expedition
+ ,
+Larry
+i
+s later
+divin g
+...
+There was never a dull moment
+ .
+In his
+black and
+...
+Dangerous areas did not prevent him from
+ ...
+Sometimes
+ , 
+he was limited to a cag e
+underwater
+...
+Larry
+has
+first expedition without his
+ father was
+...
+Fortunate ly for hi m
+,
+a man offered to take
+him
+...
+He hoped she would be able to continue
+ the
+...
+This was the ke y to a successful
+ underwater
+...
+L
+HH
+HHH
+TT
+TT
+L
+L
+T
+HHHH
+HH
+HHH
+AA
+TT
+TT
+DD
+DD
+TT
+SS
+SS
+L
+F
+L
+F
+H
+ʞ
+ʞ
+ʞ
+ʞ
+T
+H
+T
+Figure 7: Attention visualization of the document material
+for question Q2in Figure 1(a), where too long sentences are
+truncated with “...”. The left bar charts denote the distribu-tion of attention scores over sentences in the document.
+Experts Comparison. To demonstrate the practical signif-
+icance of TACNN, we select 12 standard tests and invite 7
+experts (high school teachers) who are familiar with READ-ING problems to do QDP task manually. In detail, each se-lected test contains 4 READING problems and 16 questions.Experts (denoted as Ep1 to Ep7) are asked to answer thequestions and then value the difﬁculties individually. Fur-thermore, we average their predictions which is denoted as
+EpAvg. Thus we totally obtain 8 experts’ predictions. Fol-
+lowing educational psychology, we use PCC to assess thecorrelations between all predictions and real difﬁculties intests. All the results are shown in Table 4.
+As we can see, TACNN outperforms all experts in most
+cases, which means predictions from TACNN are the mostcorrelated to the practices. Besides, we also observe that pre-dictions from experts are not always consistent. Speciﬁcally,for each test, there are some experts doing the QDP taskwell (e.g., Ep2 in T3) but others may fail (e.g., Ep5 in T3),because they all make the predictions by subjective judg-ments, which are hardly of the same minds. Thus, experts’predictions may be misleading sometimes.
+Case Study. One important characteristic of TACNN is its
+explanatory power to distinguish the difﬁculty contributions
+of text materials to a speciﬁc question, i.e., the attentionscoresαin Eq. (3). Figure 7 shows the attention scores of
+each sentence in the document for question Q
+2(“Why did
+Larry have to stay in a cage underwater sometimes?”) in Fig-ure 1(a). We can see that four highlighted “red” sentences inthe document have the highest attention scores
+1, indicating
+they contribute the most difﬁculty to Q2. This visualization
+hints that TACNN provides a good way for a question tocapture key information for model explanations.
+Discussion. From the experimental results, we can observe
+that TACNN works well for QDP task in standard tests. Fur-
+thermore, the case study shows that our framework couldgive interpretive results.
+In the future, there are still some directions for further
+1For better illustration, we omit the attention scores of options.studies. First, we will make our efforts to design a more ef-ﬁcient learning algorithm for TACNN. Second, we are also
+willing to extend TACNN to solve QDP task in other types
+of problems in English tests, such as LISTENING, WRIT-ING (Leki, Cumming, and Silva 2010) and SPEAKING, andalso in other subjects, e.g., MA TH.
+5 Conclusions
+In this paper, we proposed a novel Test-aware Attention-
+based Convolutional Neural Network (TACNN) framework
+to solve QDP task for READING problems in standard tests.Speciﬁcally, we ﬁrst designed a CNN-based architecture forexploiting sentence representations for the text materialsof questions. Then, we qualiﬁed the contributions of sen-tences to question difﬁculties by an attention strategy. Fi-nally, we proposed a test-dependent pairwise strategy fortraining TACNN and generating the difﬁculty prediction val-ues. The experimental results on a real-world dataset clearlydemonstrated both the effectiveness and explanatory powerof our proposed framework. We hope this work could leadto more studies in the future.
+6 Acknowledgements
+The authors thank National Education Examinations Au-thority for providing valuable evaluations for our exper-iments. This research was partially supported by grantsfrom the National Science Foundation for DistinguishedY oung Scholars of China (Grant No. 61325010), the Na-tional Natural Science Foundation of China (Grants No.61403358 and 61672483), and the National High Technol-ogy Research and Development Program of China (GrantNo. 2015AA015409). Qi Liu gratefully acknowledges thesupport of the Y outh Innovation Promotion Association ofCAS (No. 2014299).
+References
+Alagumalai, S., and Curtis, D. D. 2005. Classical test the-ory. In Applied Rasch measurement: A book of exemplars.
+Springer. 1–14.
+Beck, J.; Stern, M.; and Woolf, B. P . 1997. Using the student
+model to control problem difﬁculty. In User Modeling, 277–
+288. Springer.
+Benesty, J.; Chen, J.; Huang, Y .; and Cohen, I. 2009. Pear-
+son correlation coefﬁcient. In Noise reduction in speech pro-
+cessing. Springer. 1–4.
+Bergstra, J.; Breuleux, O.; Bastien, F.; Lamblin, P .; Pascanu,
+R.; Desjardins, G.; Turian, J.; Warde-Farley, D.; and Bengio,Y . 2010. Theano: A cpu and gpu math compiler in python.InProc. 9th Python in Science Conf, 1–7.
+Bilotti, M. W.; Ogilvie, P .; Callan, J.; and Nyberg, E. 2007.
+Structured retrieval for question answering. In Proceedings
+of the 30th annual international ACM SIGIR conference on
+Research and development in information retrieval, 351–358. ACM.
+Boopathiraj, C., and Chellamani, K. 2013. Analysis of test
+items on difﬁculty level and discrimination index in the test
+1358
+
+--- Page Break ---
+
+for research in education. International Journal of Social
+Science & Interdisciplinary Research 2(2):189–193.
+Bowman, S. R.; Angeli, G.; Potts, C.; and Manning, C. D.
+2015. A large annotated corpus for learning natural language
+inference. arXiv preprint arXiv:1508.05326.
+Brizuela, A., and Montero-Rojas, E. 2013. Prediction ofthe difﬁculty level in a stan-dardized reading comprehensiontest: Con-tributions from cognitive psychology and psycho-metrics. relieve 19:3149.
+Collobert, R.; Weston, J.; Bottou, L.; Karlen, M.;Kavukcuoglu, K.; and Kuksa, P . 2011. Natural language pro-cessing (almost) from scratch. Journal of Machine Learning
+Research 12(Aug):2493–2537.
+Cui, Y .; Chen, Z.; Wei, S.; Wang, S.; Liu, T.; and Hu, G.
+2016. Attention-over-attention neural networks for readingcomprehension. arXiv preprint arXiv:1607.04423.
+DiBello, L. V .; Roussos, L. A.; and Stout, W. 2006. 31a re-
+view of cognitively diagnostic assessment and a summary ofpsychometric models. Handbook of statistics 26:979–1030.
+Fuchs, L. S.; Fuchs, D.; Hamlett, C. L.; and Ferguson,C. 1992. Effects of expert system consultation withincurriculum-based measurement, using a reading maze task.Exceptional children 58(5):436–450.
+Hecht-Nielsen, R. 1989. Theory of the backpropagationneural network. In Neural Networks, 1989. IJCNN., Inter-
+national Joint Conference on, 593–605. IEEE.
+Hermann, K. M.; Kocisky, T.; Grefenstette, E.; Espeholt, L.;
+Kay, W.; Suleyman, M.; and Blunsom, P . 2015. Teachingmachines to read and comprehend. In Advances in Neural
+Information Processing Systems, 1693–1701.
+Hontangas, P .; Ponsoda, V .; Olea, J.; and Wise, S. L. 2000.
+The choice of item difﬁculty in self-adapted testing. Euro-
+pean Journal of Psychological Assessment 16(1):3–12.
+Hua, W.; Wang, Z.; Wang, H.; Zheng, K.; and Zhou, X.2015. Short text understanding through lexical-semanticanalysis. In 2015 IEEE 31st International Conference on
+Data Engineering, 495–506. IEEE.
+Kubinger, K. D., and Gottschall, C. H. 2007. Item difﬁ-
+culty of multiple choice tests dependant on different itemresponse formats–an experiment in fundamental research onpsychological assessment. Psychology science 49(4):361.
+Leki, I.; Cumming, A.; and Silva, T. 2010. A synthesis of
+research on second language writing in English. Routledge.
+Liu, Q.; Chen, E.; Xiong, H.; Ding, C. H.; and Chen, J. 2012.
+Enhancing collaborative ﬁltering by user interest expansionvia personalized ranking. IEEE Transactions on Systems,
+Man, and Cybernetics, Part B (Cybernetics) 42(1):218–233.
+Ma, L.; Lu, Z.; and Li, H. 2015. Learning to answer ques-
+tions from image using convolutional neural network. arXiv
+preprint arXiv:1506.00333.
+Mikolov, T., and Dean, J. 2013. Distributed representations
+of words and phrases and their compositionality. Advances
+in neural information processing systems.
+Orr, G. B., and M ¨uller, K.-R. 2003. Neural networks: tricks
+of the trade. Springer.Sachan, M.; Dubey, A.; Xing, E. P .; and Richardson, M.
+2015. Learning answerentailing structures for machine com-
+prehension. In Proceedings of ACL, 239–249.
+Salakhutdinov, R., and Mnih, A. 2011. Probabilistic matrixfactorization. In NIPS, volume 20, 1–8.
+Smith, E.; Greco, N.; Bosnjak, M.; and Vlachos, A. 2015. Astrong lexical matching method for the machine comprehen-sion test. In Proceedings of the 2015 Conference on Empir-
+ical Methods in Natural Language Processing, 1693–1698.Association for Computational Linguistics.
+Wang, M.; Smith, N. A.; and Mitamura, T. 2007. What is
+the jeopardy model? a quasi-synchronous grammar for qa.InEMNLP-CoNLL, volume 7, 22–32.
+Wu, R.; Liu, Q.; Liu, Y .; Chen, E.; Su, Y .; Chen, Z.; andHu, G. 2015. Cognitive modelling for predicting examineeperformance. In Proceedings of the 24th International Con-
+ference on Artiﬁcial Intelligence , 1017–1024. AAAI Press.
+Y
+in, W.; Ebert, S.; and Sch ¨utze, H. 2016. Attention-based
+convolutional neural network for machine comprehension.arXiv preprint arXiv:1602.04341.
+Y u, L.; Hermann, K. M.; Blunsom, P .; and Pulman, S. 2014.
+Deep learning for answer sentence selection. arXiv preprint
+arXiv:1412.1632.
+Zeiler, M. D. 2012. Adadelta: an adaptive learning rate
+method. arXiv preprint arXiv:1212.5701.
+Zhang, and Yanling. 2008. Repeater analyses for toeﬂ ibt.Research Memorandum Ets Rm.
+1359
+
+--- Page Break ---
+

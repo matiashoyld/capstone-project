@@ -1,0 +1,14 @@
+{
+    "MPNet LightGBM Simple": {
+        "Mean CV RMSE": "0.9823 \u00b1 0.0397",
+        "Test RMSE": "0.9326",
+        "Test MAE": "0.7223",
+        "Test R\u00b2": "0.5177"
+    },
+    "MPNet Enhanced Neural Network": {
+        "Mean CV RMSE": "0.9517 \u00b1 0.0364",
+        "Test RMSE": "0.9379",
+        "Test MAE": "0.7430",
+        "Test R\u00b2": "0.5122"
+    }
+}
