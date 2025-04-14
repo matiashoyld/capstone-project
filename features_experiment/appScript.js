@@ -53,7 +53,7 @@ function getStepByStep(question, option_a, option_b, option_c, option_d, option_
     * @returns {string} The generated response text from Gemini
     */
   function geminiFlash(prompt) {
-    const apiKey = 'AIzaSyBth1qohGO3qZi8hw3tS4ig-vA0c-AZFVk';
+    const apiKey = '';
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
   
     const headers = {
@@ -105,7 +105,7 @@ function getStepByStep(question, option_a, option_b, option_c, option_d, option_
     * @returns {string} The generated response text from Gemini
     */
   function geminiFlashLite(prompt) {
-    const apiKey = 'AIzaSyBth1qohGO3qZi8hw3tS4ig-vA0c-AZFVk';
+    const apiKey = '';
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${apiKey}`;
   
     const headers = {
