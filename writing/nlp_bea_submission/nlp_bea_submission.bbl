@@ -1,0 +1,188 @@
+\begin{thebibliography}{23}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{AlKhuzaey et~al.(2024)AlKhuzaey, Grasso, Payne
+  et~al.}]{alkhuzaey2023text}
+S.~AlKhuzaey, F.~Grasso, T.~R. Payne, and 1 others. 2024.
+\newblock \href {https://doi.org/10.1007/s40593-023-00362-1} {Text-based
+  question difficulty prediction: A systematic review of automatic approaches}.
+\newblock \emph{International Journal of Artificial Intelligence in Education},
+  34:862--914.
+
+\bibitem[{Aradelli(2020)}]{aradelli2020transformers}
+Giovanni Aradelli. 2020.
+\newblock \href {https://hdl.handle.net/10589/170785} {Transformers for
+  question difficulty estimation from text}.
+\newblock Master's thesis, Politecnico di Milano, 12.
+
+\bibitem[{Benedetto et~al.(2021)Benedetto, Aradelli, Cremonesi, Cappelli,
+  Giussani, and Turrin}]{benedetto2021transformers}
+Luca Benedetto, Giovanni Aradelli, Paolo Cremonesi, Andrea Cappelli, Andrea
+  Giussani, and Roberto Turrin. 2021.
+\newblock \href {https://aclanthology.org/2021.bea-1.16/} {On the application
+  of transformers for estimating the difficulty of multiple-choice questions
+  from text}.
+\newblock In \emph{Proceedings of the 16th Workshop on Innovative Use of NLP
+  for Building Educational Applications}, pages 147--157, Online. Association
+  for Computational Linguistics.
+
+\bibitem[{Benedetto et~al.(2020{\natexlab{a}})Benedetto, Cappelli, Turrin, and
+  Cremonesi}]{benedetto2020framework}
+Luca Benedetto, Andrea Cappelli, Roberto Turrin, and Paolo Cremonesi.
+  2020{\natexlab{a}}.
+\newblock \href {https://arxiv.org/abs/2004.13530} {Introducing a framework to
+  assess newly created questions with natural language processing}.
+
+\bibitem[{Benedetto et~al.(2020{\natexlab{b}})Benedetto, Cappelli, Turrin, and
+  Cremonesi}]{benedetto2020r2de}
+Luca Benedetto, Andrea Cappelli, Roberto Turrin, and Paolo Cremonesi.
+  2020{\natexlab{b}}.
+\newblock \href {https://arxiv.org/abs/2001.07569} {R2de: a nlp approach to
+  estimating irt parameters of newly generated questions}.
+\newblock \emph{Preprint}, arXiv:2001.07569.
+
+\bibitem[{Bulut et~al.(2023)Bulut, Bulut, and Arikan}]{bulut2023evaluating}
+Hatice~Cigdem Bulut, Okan Bulut, and Serkan Arikan. 2023.
+\newblock \href {https://doi.org/10.1080/15305058.2022.2044821} {Evaluating
+  group differences in online reading comprehension: The impact of item
+  properties}.
+\newblock \emph{International Journal of Testing}, 23(1):10--33.
+
+\bibitem[{Choi and Moon(2020)}]{choi2020predicting}
+Inn-Chull Choi and Youngsun Moon. 2020.
+\newblock \href {https://doi.org/10.1080/15434303.2019.1674315} {Predicting the
+  difficulty of efl tests based on corpus linguistic features and expert
+  judgment}.
+\newblock \emph{Language Assessment Quarterly}, 17(1):18--42.
+
+\bibitem[{Didolkar et~al.(2024)Didolkar, Goyal, Ke, Guo, Valko, Lillicrap,
+  Rezende, Bengio, Mozer, and Arora}]{didolkar2024metacognitive}
+Aniket Didolkar, Anirudh Goyal, Nan~Rosemary Ke, Siyuan Guo, Michal Valko,
+  Timothy Lillicrap, Danilo~Jimenez Rezende, Yoshua Bengio, Michael~Curtis
+  Mozer, and Sanjeev Arora. 2024.
+\newblock \href {https://api.semanticscholar.org/CorpusID:269921384}
+  {Metacognitive capabilities of llms: An exploration in mathematical problem
+  solving}.
+\newblock \emph{ArXiv}, abs/2405.12205.
+
+\bibitem[{Gombert et~al.(2024)Gombert, Menzel, Di~Mitri, and
+  Drachsler}]{gombert2024predicting}
+Sebastian Gombert, Lukas Menzel, Daniele Di~Mitri, and Hendrik Drachsler. 2024.
+\newblock \href {https://aclanthology.org/2024.bea-1.40/} {Predicting item
+  difficulty and item response time with scalar-mixed transformer encoder
+  models and rational network regression heads}.
+\newblock In \emph{Proceedings of the 19th Workshop on Innovative Use of NLP
+  for Building Educational Applications (BEA 2024)}, pages 483--492, Mexico
+  City, Mexico. Association for Computational Linguistics.
+
+\bibitem[{Ha and Yaneva(2018)}]{yaneva2018automatic}
+Le~An Ha and Victoria Yaneva. 2018.
+\newblock \href {https://doi.org/10.18653/v1/W18-0548} {Automatic distractor
+  suggestion for multiple-choice tests using concept embeddings and information
+  retrieval}.
+\newblock In \emph{Proceedings of the Thirteenth Workshop on Innovative Use of
+  {NLP} for Building Educational Applications}, pages 389--398, New Orleans,
+  Louisiana. Association for Computational Linguistics.
+
+\bibitem[{Ha et~al.(2019)Ha, Yaneva, Baldwin, and Mee}]{yaneva2019predicting}
+Le~An Ha, Victoria Yaneva, Peter Baldwin, and Janet Mee. 2019.
+\newblock \href {https://doi.org/10.18653/v1/W19-4402} {Predicting the
+  difficulty of multiple choice questions in a high-stakes medical exam}.
+\newblock In \emph{Proceedings of the Fourteenth Workshop on Innovative Use of
+  NLP for Building Educational Applications}, pages 11--20, Florence, Italy.
+  Association for Computational Linguistics.
+
+\bibitem[{Huang et~al.(2017)Huang, Liu, Chen, Zhao, Gao, Wei, Su, and
+  Hu}]{huang2017question}
+Zhenya Huang, Qi~Liu, Enhong Chen, Hongke Zhao, Mingyong Gao, Si~Wei, Yu~Su,
+  and Guoping Hu. 2017.
+\newblock \href {https://doi.org/10.5555/3298239.3298437} {Question difficulty
+  prediction for reading problems in standard tests}.
+\newblock In \emph{Proceedings of the Thirty-First AAAI Conference on
+  Artificial Intelligence}, AAAI'17, page 1352–1359. AAAI Press.
+
+\bibitem[{Impara and Plake(1998)}]{impara1998teachers}
+James~C. Impara and Barbara~S. Plake. 1998.
+\newblock \href {https://doi.org/10.1111/j.1745-3984.1998.tb00528.x} {Teachers'
+  ability to estimate item difficulty: A test of the assumptions in the angoff
+  standard setting method}.
+\newblock \emph{Journal of Educational Measurement}, 35(1):69--81.
+
+\bibitem[{Kapoor et~al.(2025)Kapoor, Truong, Haber, Ruiz-Primo, and
+  Domingue}]{kapoor2025prediction}
+Radhika Kapoor, Sang~T. Truong, Nick Haber, Maria~Araceli Ruiz-Primo, and
+  Benjamin~W. Domingue. 2025.
+\newblock \href {https://arxiv.org/abs/2502.20663} {Prediction of item
+  difficulty for reading comprehension items by creation of annotated item
+  repository}.
+\newblock \emph{Preprint}, arXiv:2502.20663.
+
+\bibitem[{Kurdi et~al.(2017)Kurdi, Parsia, and Sattler}]{kurdi2016experimental}
+Ghader Kurdi, Bijan Parsia, and Uli Sattler. 2017.
+\newblock \href {https://doi.org/10.1007/978-3-319-54627-8_3} {An experimental
+  evaluation of automatically generated multiple choice questions from
+  ontologies}.
+\newblock pages 24--39.
+
+\bibitem[{Lawrence et~al.(2022)Lawrence, Knoph, McIlraith, Kulesz, and
+  Francis}]{lawrence2022reading}
+Joshua~F. Lawrence, Rebecca Knoph, Autumn McIlraith, Paulina~A. Kulesz, and
+  David~J. Francis. 2022.
+\newblock \href {https://doi.org/10.1002/rrq.434} {Reading comprehension and
+  academic vocabulary: Exploring relations of item features and reading
+  proficiency}.
+\newblock \emph{Reading Research Quarterly}, 57(2):669--690.
+
+\bibitem[{Liu et~al.(2023)Liu, Singh, Freeman, Co-Reyes, and
+  Liu}]{liu2023improving}
+Yixin Liu, Avi Singh, C.~Daniel Freeman, John~D. Co-Reyes, and Peter~J. Liu.
+  2023.
+\newblock \href {https://api.semanticscholar.org/CorpusID:264146593} {Improving
+  large language model fine-tuning for solving math problems}.
+\newblock \emph{ArXiv}, abs/2310.10047.
+
+\bibitem[{Qiu et~al.(2019)Qiu, Wu, and Fan}]{qiu2019question}
+Zhaopeng Qiu, Xian Wu, and Wei Fan. 2019.
+\newblock \href {https://doi.org/10.1145/3357384.3358013} {Question difficulty
+  prediction for multiple choice problems in medical exams}.
+\newblock pages 139--148.
+
+\bibitem[{Rasch(1960)}]{rasch1960}
+Georg Rasch. 1960.
+\newblock Probabilistic models for some intelligence and attainment tests.
+\newblock \emph{Danish Institute for Educational Research}.
+
+\bibitem[{Rudner(2010)}]{rudner2010implementing}
+Lawrence Rudner. 2010.
+\newblock \href {https://doi.org/10.1007/978-0-387-85461-8_8} {Implementing the
+  graduate management admission test computerized adaptive test}.
+\newblock pages 151--165.
+
+\bibitem[{Sadihin et~al.(2024)Sadihin, Rodriguez, and
+  Chen}]{sadihin2024proposalml}
+Bryan~Constantine Sadihin, Hector~Rodriguez Rodriguez, and Matteo~Jiahao Chen.
+  2024.
+\newblock \href {https://openreview.net/forum?id=CE85qdNSlp} {[proposal-{ML}]
+  mining misconception in mathematics}.
+\newblock In \emph{Submitted to Tsinghua University Course: Advanced Machine
+  Learning}.
+\newblock Under review.
+
+\bibitem[{Scaria et~al.(2024)Scaria, Dharani~Chenna, and
+  Subramani}]{scaria2024automated}
+Nicy Scaria, Suma Dharani~Chenna, and Deepak Subramani. 2024.
+\newblock \href {https://doi.org/10.1007/978-3-031-64299-9_12} {\emph{Automated
+  Educational Question Generation at Different Bloom’s Skill Levels Using
+  Large Language Models: Strategies and Evaluation}}, page 165–179.
+\newblock Springer Nature Switzerland.
+
+\bibitem[{Xue et~al.(2020)Xue, Yaneva, Runyon, and Baldwin}]{xue2020predicting}
+Kang Xue, Victoria Yaneva, Christopher Runyon, and Peter Baldwin. 2020.
+\newblock \href {https://doi.org/10.18653/v1/2020.bea-1.20} {Predicting the
+  difficulty and response time of multiple choice questions using transfer
+  learning}.
+\newblock In \emph{Proceedings of the Fifteenth Workshop on Innovative Use of
+  NLP for Building Educational Applications}, pages 193--197, Seattle, WA, USA
+  {\textrightarrow} Online. Association for Computational Linguistics.
+
+\end{thebibliography}

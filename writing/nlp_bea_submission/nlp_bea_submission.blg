@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: nlp_bea_submission.aux
+The style file: acl_natbib.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: custom.bib
+Warning--I'm ignoring lawrence2022reading's extra "doi" field
+--line 200 of file custom.bib
+Warning--empty booktitle in benedetto2020framework
+Warning--empty booktitle in kurdi2016experimental
+Warning--empty booktitle in qiu2019question
+Warning--empty booktitle in rudner2010implementing
+You've used 23 entries,
+            3764 wiz_defined-function locations,
+            909 strings with 13061 characters,
+and the built_in function-call counts, 18751 in all, are:
+= -- 1669
+> -- 878
+< -- 18
++ -- 354
+- -- 263
+* -- 1243
+:= -- 2714
+add.period$ -- 98
+call.type$ -- 23
+change.case$ -- 216
+chr.to.int$ -- 26
+cite$ -- 27
+duplicate$ -- 1147
+empty$ -- 1344
+format.name$ -- 330
+if$ -- 4173
+int.to.chr$ -- 2
+int.to.str$ -- 2
+missing$ -- 243
+newline$ -- 119
+num.names$ -- 92
+pop$ -- 627
+preamble$ -- 1
+purify$ -- 179
+quote$ -- 0
+skip$ -- 1015
+stack$ -- 0
+substring$ -- 641
+swap$ -- 665
+text.length$ -- 25
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 204
+warning$ -- 4
+while$ -- 100
+width$ -- 0
+write$ -- 309
+(There were 5 warnings)
