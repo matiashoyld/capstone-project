@@ -7,7 +7,9 @@ notebook; these functions focus on **single, reusable actions**.
 import os, pickle
 import pandas as pd, numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler, LabelEncoder
+from sklearn.preprocessing import StandardScaler, LabelEncoder, OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
 
 # --------------------------------------------------
 #  Split questions into train / val / test
@@ -83,19 +85,65 @@ def prepare_nn_datasets(
     question_col,
     correctness_col,
     numerical_feature_cols,
+    categorical_feature_cols_to_encode,
     embedding_dim,
 ):
     """Build numpy arrays for Keras.
 
-    Returns (train_ds, train_y, val_ds, val_y, preprocessors)
+    Returns (train_ds, train_y, val_ds, val_y, preprocessors, final_numerical_cols)
     """
     train_df = merged_df[merged_df[question_col].isin(train_q_ids)].copy()
     val_df   = merged_df[merged_df[question_col].isin(val_q_ids)].copy()
 
-    # ------------------------------------------------ numeric features
+    # --- NEW: Coerce original numerical columns to numeric, handling '#ERROR!' ---
+    for col in numerical_feature_cols:
+        train_df[col] = pd.to_numeric(train_df[col], errors='coerce')
+        val_df[col] = pd.to_numeric(val_df[col], errors='coerce')
+    # NaNs resulting from coercion (e.g., from '#ERROR!') will be handled by fillna later.
+
+    # --- NEW: Handle potential NaNs in categorical columns before OHE ---
+    for col in categorical_feature_cols_to_encode:
+        train_df[col] = train_df[col].fillna('Unknown').astype(str)
+        val_df[col] = val_df[col].fillna('Unknown').astype(str)
+    
+    # --- NEW: One-Hot Encode specified categorical features ---
+    ohe_transformers = []
+    if categorical_feature_cols_to_encode:
+        ohe = OneHotEncoder(handle_unknown='ignore', sparse_output=False)
+        # Fit OHE on training data only
+        ohe.fit(train_df[categorical_feature_cols_to_encode])
+        
+        train_ohe_features = ohe.transform(train_df[categorical_feature_cols_to_encode])
+        val_ohe_features = ohe.transform(val_df[categorical_feature_cols_to_encode])
+        
+        ohe_feature_names = ohe.get_feature_names_out(categorical_feature_cols_to_encode)
+        
+        train_ohe_df = pd.DataFrame(train_ohe_features, columns=ohe_feature_names, index=train_df.index)
+        val_ohe_df = pd.DataFrame(val_ohe_features, columns=ohe_feature_names, index=val_df.index)
+        
+        # Combine OHE features with original numerical features
+        # Fill NaNs in numerical_feature_cols (which might include NaNs from coerced errors) before concatenating
+        train_numerical_part = train_df[numerical_feature_cols].fillna(0)
+        val_numerical_part = val_df[numerical_feature_cols].fillna(0)
+        
+        train_df_numerical_combined = pd.concat([train_numerical_part, train_ohe_df], axis=1)
+        val_df_numerical_combined = pd.concat([val_numerical_part, val_ohe_df], axis=1)
+        
+        final_numerical_cols = numerical_feature_cols + list(ohe_feature_names)
+    else:
+        ohe = None
+        ohe_feature_names = []
+        # Fill NaNs in numerical_feature_cols (which might include NaNs from coerced errors)
+        train_df_numerical_combined = train_df[numerical_feature_cols].fillna(0)
+        val_df_numerical_combined = val_df[numerical_feature_cols].fillna(0)
+        final_numerical_cols = numerical_feature_cols
+
+    # ------------------------------------------------ numeric features scaling
+    # train_df_numerical_combined and val_df_numerical_combined should now be purely numeric
+    # (original numericals coerced and NaN-filled, OHE are inherently numeric)
     scaler = StandardScaler()
-    train_num = scaler.fit_transform(train_df[numerical_feature_cols])
-    val_num   = scaler.transform(val_df[numerical_feature_cols])
+    train_num = scaler.fit_transform(train_df_numerical_combined[final_numerical_cols])
+    val_num   = scaler.transform(val_df_numerical_combined[final_numerical_cols])
 
     # ------------------------------------------------ user ids
     users = pd.concat([train_df[user_col], val_df[user_col]]).unique()
@@ -130,10 +178,14 @@ def prepare_nn_datasets(
         user_id_to_index = uid2idx,
         user_vocab_size = len(uid2idx) + 1,
         embedding_dim = embedding_dim,
-        numerical_features = numerical_feature_cols,
+        original_numerical_features = numerical_feature_cols,
+        categorical_features_encoded = categorical_feature_cols_to_encode,
+        ohe_encoder = ohe,
+        ohe_feature_names = list(ohe_feature_names),
+        final_numerical_cols = final_numerical_cols
     )
 
-    return train_ds, train_y, val_ds, val_y, preprocessors
+    return train_ds, train_y, val_ds, val_y, preprocessors, final_numerical_cols
 
 # --------------------------------------------------
 #  Dump preprocessors
@@ -153,3 +205,69 @@ def load_preprocessors(load_dir: str) -> dict:
         preprocessors = pickle.load(f)
     print(f"✅ Loaded preprocessors from {path}")
     return preprocessors
+
+# --- NEW: make_dataset function for test/evaluation data ---
+def make_dataset(
+    df, 
+    q_ids, 
+    preprocessors, 
+    combined_embeddings, 
+    user_col, 
+    question_col, 
+    correctness_col
+):
+    """Prepares a dataset (e.g., test set) using fitted preprocessors."""
+    data_df = df[df[question_col].isin(q_ids)].copy()
+
+    original_numerical_cols = preprocessors['original_numerical_features']
+    categorical_cols = preprocessors.get('categorical_features_encoded', [])
+    ohe = preprocessors.get('ohe_encoder')
+    ohe_feature_names = preprocessors.get('ohe_feature_names', [])
+    final_numerical_cols = preprocessors['final_numerical_cols'] # Get the full list of columns for the scaler
+
+    # Coerce original numerical columns to numeric, handling '#ERROR!'
+    for col in original_numerical_cols:
+        data_df[col] = pd.to_numeric(data_df[col], errors='coerce')
+    
+    # Fill NaNs for categorical columns before transforming
+    for col in categorical_cols:
+        data_df[col] = data_df[col].fillna('Unknown').astype(str)
+
+    if ohe and categorical_cols:
+        ohe_features = ohe.transform(data_df[categorical_cols])
+        ohe_df = pd.DataFrame(ohe_features, columns=ohe_feature_names, index=data_df.index)
+        
+        data_numerical_part = data_df[original_numerical_cols].fillna(0)
+        data_numerical_combined = pd.concat([data_numerical_part, ohe_df], axis=1)
+    else:
+        data_numerical_combined = data_df[original_numerical_cols].fillna(0)
+    
+    # Ensure all final numerical columns are present and in correct order for the scaler, fill NaNs
+    for col in final_numerical_cols:
+        if col not in data_numerical_combined.columns:
+            data_numerical_combined[col] = 0 
+    data_numerical_combined = data_numerical_combined[final_numerical_cols].fillna(0)
+
+    # --- Numeric features: Scale using fitted scaler --- (Uses final_numerical_cols implicitly via data_numerical_combined)
+    scaler = preprocessors['scaler']
+    num_features = scaler.transform(data_numerical_combined) # This df must match what the scaler was fit on
+
+    # --- User IDs: Map using fitted mapping ---
+    uid2idx = preprocessors['user_id_to_index']
+    user_features = data_df[user_col].map(uid2idx).fillna(0).astype(int).values
+
+    # --- Embeddings ---
+    emb_map = combined_embeddings.get("formatted_embeddings", {})
+    default_emb = np.zeros(preprocessors['embedding_dim'])
+    emb_features = np.vstack([emb_map.get(q, default_emb) for q in data_df[question_col]])
+
+    # --- Labels ---
+    labels = data_df[correctness_col].astype(int).values
+
+    dataset_inputs = {
+        "user_input": user_features,
+        "numerical_input": num_features,
+        "embedding_input": emb_features,
+    }
+    
+    return dataset_inputs, labels

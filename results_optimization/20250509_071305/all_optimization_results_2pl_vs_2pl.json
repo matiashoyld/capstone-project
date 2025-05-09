@@ -1,0 +1,249 @@
+[
+  {
+    "config_name": "default_regularized_2pl_vs_2pl_binIRT",
+    "nn_config": {
+      "user_embedding_dim": 8,
+      "dropout_rate": 0.3,
+      "l2_reg": 0.001,
+      "learning_rate": 0.001,
+      "dense_layers": [
+        64,
+        32
+      ],
+      "epochs": 30,
+      "batch_size": 1024,
+      "patience_es": 5
+    },
+    "test_metrics": {
+      "accuracy": 0.738724426534408,
+      "auc": 0.7522997544564003,
+      "precision": 0.7763624173929701,
+      "recall": 0.8866283839212469,
+      "f1": 0.8278397630658463
+    },
+    "irt_comparison": {
+      "pearson": 0.5267116316197527,
+      "spearman": 0.549026142751087,
+      "n": 449,
+      "disc_corr_orig_vs_pred_disc": -0.13724911656186511,
+      "disc_corr_orig_diff_vs_pred_disc": 0.46103306735622046,
+      "disc_corr_pred_diff_vs_pred_disc": 0.9224948184241457
+    }
+  },
+  {
+    "config_name": "config_A_larger_embed_less_dropout_2pl_vs_2pl_binIRT",
+    "nn_config": {
+      "user_embedding_dim": 16,
+      "dropout_rate": 0.2,
+      "l2_reg": 0.0005,
+      "learning_rate": 0.001,
+      "dense_layers": [
+        64,
+        32
+      ],
+      "epochs": 40,
+      "batch_size": 512,
+      "patience_es": 7
+    },
+    "test_metrics": {
+      "accuracy": 0.7411655300681959,
+      "auc": 0.7571816132468578,
+      "precision": 0.7788724948334695,
+      "recall": 0.8863002461033634,
+      "f1": 0.829121047784713
+    },
+    "irt_comparison": {
+      "pearson": 0.5126503876896255,
+      "spearman": 0.549218899140948,
+      "n": 449,
+      "disc_corr_orig_vs_pred_disc": -0.10693163977934658,
+      "disc_corr_orig_diff_vs_pred_disc": 0.43772948086555374,
+      "disc_corr_pred_diff_vs_pred_disc": 0.9176670549515987
+    }
+  },
+  {
+    "config_name": "config_B_more_epochs_smaller_lr_2pl_vs_2pl_binIRT",
+    "nn_config": {
+      "user_embedding_dim": 8,
+      "dropout_rate": 0.3,
+      "l2_reg": 0.001,
+      "learning_rate": 0.0005,
+      "dense_layers": [
+        64,
+        32
+      ],
+      "epochs": 50,
+      "batch_size": 1024,
+      "patience_es": 10
+    },
+    "test_metrics": {
+      "accuracy": 0.7398093614383137,
+      "auc": 0.7547622638310785,
+      "precision": 0.7845828414010232,
+      "recall": 0.8722450095706864,
+      "f1": 0.8260948385258851
+    },
+    "irt_comparison": {
+      "pearson": 0.5527149522998636,
+      "spearman": 0.5709913564534944,
+      "n": 449,
+      "disc_corr_orig_vs_pred_disc": -0.17516391759460256,
+      "disc_corr_orig_diff_vs_pred_disc": 0.48594408229585817,
+      "disc_corr_pred_diff_vs_pred_disc": 0.9144315451022349
+    }
+  },
+  {
+    "config_name": "config_C_shallow_network_2pl_vs_2pl_binIRT",
+    "nn_config": {
+      "user_embedding_dim": 8,
+      "dropout_rate": 0.3,
+      "l2_reg": 0.001,
+      "learning_rate": 0.0005,
+      "dense_layers": [
+        32
+      ],
+      "epochs": 50,
+      "batch_size": 1024,
+      "patience_es": 10
+    },
+    "test_metrics": {
+      "accuracy": 0.7396156230626162,
+      "auc": 0.7529502725231176,
+      "precision": 0.778312557154546,
+      "recall": 0.8843861088323762,
+      "f1": 0.8279657979622139
+    },
+    "irt_comparison": {
+      "pearson": 0.5450541226227287,
+      "spearman": 0.568411019196097,
+      "n": 449,
+      "disc_corr_orig_vs_pred_disc": -0.19104112925511352,
+      "disc_corr_orig_diff_vs_pred_disc": 0.4825389298790681,
+      "disc_corr_pred_diff_vs_pred_disc": 0.9115323706400851
+    }
+  },
+  {
+    "config_name": "config_D_wider_network_2pl_vs_2pl_binIRT",
+    "nn_config": {
+      "user_embedding_dim": 16,
+      "dropout_rate": 0.3,
+      "l2_reg": 0.001,
+      "learning_rate": 0.0005,
+      "dense_layers": [
+        128,
+        64
+      ],
+      "epochs": 50,
+      "batch_size": 1024,
+      "patience_es": 10
+    },
+    "test_metrics": {
+      "accuracy": 0.7404293242405455,
+      "auc": 0.7578333925992192,
+      "precision": 0.7858200118413262,
+      "recall": 0.8710418375717801,
+      "f1": 0.8262392031748502
+    },
+    "irt_comparison": {
+      "pearson": 0.5776417971988316,
+      "spearman": 0.6008558701877186,
+      "n": 449,
+      "disc_corr_orig_vs_pred_disc": -0.14771492310216075,
+      "disc_corr_orig_diff_vs_pred_disc": 0.51953892764487,
+      "disc_corr_pred_diff_vs_pred_disc": 0.9231024215396672
+    }
+  },
+  {
+    "config_name": "config_E_varied_dropout_l2_2pl_vs_2pl_binIRT",
+    "nn_config": {
+      "user_embedding_dim": 8,
+      "dropout_rate": 0.4,
+      "l2_reg": 0.005,
+      "learning_rate": 0.0005,
+      "dense_layers": [
+        64,
+        32
+      ],
+      "epochs": 50,
+      "batch_size": 1024,
+      "patience_es": 10
+    },
+    "test_metrics": {
+      "accuracy": 0.7395381277123373,
+      "auc": 0.7486392926971815,
+      "precision": 0.7741476599174926,
+      "recall": 0.8928630024610337,
+      "f1": 0.8292782038908925
+    },
+    "irt_comparison": {
+      "pearson": 0.5390356410073338,
+      "spearman": 0.5567919450631031,
+      "n": 449,
+      "disc_corr_orig_vs_pred_disc": -0.1725470173686454,
+      "disc_corr_orig_diff_vs_pred_disc": 0.4820308103286114,
+      "disc_corr_pred_diff_vs_pred_disc": 0.8889248447522108
+    }
+  },
+  {
+    "config_name": "config_F_lower_lr_more_patience_2pl_vs_2pl_binIRT",
+    "nn_config": {
+      "user_embedding_dim": 8,
+      "dropout_rate": 0.25,
+      "l2_reg": 0.0005,
+      "learning_rate": 0.0002,
+      "dense_layers": [
+        64,
+        32
+      ],
+      "epochs": 60,
+      "batch_size": 1024,
+      "patience_es": 12
+    },
+    "test_metrics": {
+      "accuracy": 0.7408168009919405,
+      "auc": 0.7567356488138771,
+      "precision": 0.779718255499807,
+      "recall": 0.883893902105551,
+      "f1": 0.8285443313767206
+    },
+    "irt_comparison": {
+      "pearson": 0.5556159716459904,
+      "spearman": 0.5886093435146886,
+      "n": 449,
+      "disc_corr_orig_vs_pred_disc": -0.10970782434739988,
+      "disc_corr_orig_diff_vs_pred_disc": 0.49262460256725865,
+      "disc_corr_pred_diff_vs_pred_disc": 0.9311773512640028
+    }
+  },
+  {
+    "config_name": "config_D_wider_network_2pl_vs_2pl_rawProbIRT",
+    "nn_config": {
+      "user_embedding_dim": 16,
+      "dropout_rate": 0.3,
+      "l2_reg": 0.001,
+      "learning_rate": 0.0005,
+      "dense_layers": [
+        128,
+        64
+      ],
+      "epochs": 50,
+      "batch_size": 1024,
+      "patience_es": 10
+    },
+    "test_metrics": {
+      "accuracy": 0.7438391196528208,
+      "auc": 0.7585914834285785,
+      "precision": 0.7852047297957588,
+      "recall": 0.8788624555646705,
+      "f1": 0.8293979510206189
+    },
+    "irt_comparison": {
+      "pearson": 0.5820351370059064,
+      "spearman": 0.5917471364937956,
+      "n": 449,
+      "disc_corr_orig_vs_pred_disc": 0.15741382270908583,
+      "disc_corr_orig_diff_vs_pred_disc": -0.5122931665101925,
+      "disc_corr_pred_diff_vs_pred_disc": -0.8045271430073604
+    }
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "pearson": 0.5527149522998636,
+  "spearman": 0.5709913564534944,
+  "n": 449,
+  "disc_corr_orig_vs_pred_disc": -0.17516391759460256,
+  "disc_corr_orig_diff_vs_pred_disc": 0.48594408229585817,
+  "disc_corr_pred_diff_vs_pred_disc": 0.9144315451022349
+}
