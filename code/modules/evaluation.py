@@ -137,9 +137,15 @@ def prediction_matrix(data_df, q_ids, preprocessors, model, combined_embeddings,
     for col in final_numerical_cols:
         if col not in q_numerical_combined.columns:
             q_numerical_combined[col] = 0
-    q_numerical_combined = q_numerical_combined[final_numerical_cols].fillna(0)
+    # Ensure the columns are in the same order as when the scaler was fitted.
+    # If final_numerical_cols is empty, this will correctly result in an empty DataFrame slice.
+    q_numerical_combined = q_numerical_combined.reindex(columns=final_numerical_cols, fill_value=0)
     
-    num_batch_scaled = scaler.transform(q_numerical_combined) # Shape: (len(q_ids), num_feature_count)
+    # num_batch_scaled = scaler.transform(q_numerical_combined) # Shape: (len(q_ids), num_feature_count)
+    if scaler and final_numerical_cols: # Check if scaler exists and there are columns to transform
+        num_batch_scaled = scaler.transform(q_numerical_combined)
+    else: # No scaler used or no numerical features
+        num_batch_scaled = np.empty((len(q_ids), 0))
 
     # Embeddings (only if emb_dim > 0)
     emb_batch = None

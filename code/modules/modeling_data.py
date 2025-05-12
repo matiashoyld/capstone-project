@@ -139,11 +139,14 @@ def prepare_nn_datasets(
         final_numerical_cols = numerical_feature_cols
 
     # ------------------------------------------------ numeric features scaling
-    # train_df_numerical_combined and val_df_numerical_combined should now be purely numeric
-    # (original numericals coerced and NaN-filled, OHE are inherently numeric)
     scaler = StandardScaler()
-    train_num = scaler.fit_transform(train_df_numerical_combined[final_numerical_cols])
-    val_num   = scaler.transform(val_df_numerical_combined[final_numerical_cols])
+    if final_numerical_cols: # Check if there are any numerical features to scale
+        train_num = scaler.fit_transform(train_df_numerical_combined[final_numerical_cols])
+        val_num   = scaler.transform(val_df_numerical_combined[final_numerical_cols])
+    else: # No numerical features, create empty arrays with correct shape for Keras
+        train_num = np.empty((len(train_df), 0))
+        val_num = np.empty((len(val_df), 0))
+        scaler = None # No scaler was fit or used
 
     # ------------------------------------------------ user ids
     users = pd.concat([train_df[user_col], val_df[user_col]]).unique()
@@ -246,11 +249,16 @@ def make_dataset(
     for col in final_numerical_cols:
         if col not in data_numerical_combined.columns:
             data_numerical_combined[col] = 0 
-    data_numerical_combined = data_numerical_combined[final_numerical_cols].fillna(0)
+    # Ensure the columns are in the same order as when the scaler was fitted.
+    # If final_numerical_cols is empty, this will correctly result in an empty DataFrame slice.
+    data_numerical_combined = data_numerical_combined.reindex(columns=final_numerical_cols, fill_value=0)
 
-    # --- Numeric features: Scale using fitted scaler --- (Uses final_numerical_cols implicitly via data_numerical_combined)
+    # --- Numeric features: Scale using fitted scaler --- 
     scaler = preprocessors['scaler']
-    num_features = scaler.transform(data_numerical_combined) # This df must match what the scaler was fit on
+    if scaler and final_numerical_cols: # Check if scaler exists and there are columns to transform
+        num_features = scaler.transform(data_numerical_combined) 
+    else: # No scaler used or no numerical features
+        num_features = np.empty((len(data_df), 0))
 
     # --- User IDs: Map using fitted mapping ---
     uid2idx = preprocessors['user_id_to_index']

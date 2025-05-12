@@ -1,0 +1,1192 @@
+See discussions, st ats, and author pr ofiles f or this public ation at : https://www .researchgate.ne t/public ation/337015779
+Question Difﬁculty Prediction for Multiple Choice Problems in Medical Exams
+Conf erence Paper  · No vember 2019
+DOI: 10.1145/3357384.3358013
+CITATIONS
+37READS
+1,022
+3 author s, including:
+Zhaopeng Qiu
+Peking Univ ersity
+35 PUBLICA TIONS    1,062  CITATIONS    
+SEE PROFILE
+Xian Wu
+South China Univ ersity of T echnolog y
+134 PUBLICA TIONS    3,143  CITATIONS    
+SEE PROFILE
+All c ontent f ollo wing this p age was uplo aded b y Zhaopeng Qiu  on 09 Oct ober 2021.
+The user has r equest ed enhanc ement of the do wnlo aded file.
+
+--- Page Break ---
+
+Question Difficulty Prediction for Multiple Choice
+Problems in Medical Exams
+Zhaopeng Qiu
+Tencent Medical AI Lab
+zhaopengqiu@tencent.comXian Wu
+Tencent Medical AI Lab
+kevinxwu@tencent.comWei Fan
+Tencent Medical AI Lab
+davidwfan@tencent.com
+ABSTRACT
+In the ITS (Intelligent Tutoring System) services, personalized ques-
+tion recommendation is a critical function in which the key chal-
+lenge is to predict the difficulty of each question. Given the difficulty
+of each question, ITS can allocate suitable questions for students
+with varied knowledge proficiency. Existing approaches mainly
+relied on expert labeling, which is both subjective and labor inten-
+sive. In this paper, we propose a Document enhanced Attention
+based neural Network(DAN) framework to predict the difficulty of
+multiple choice problems in medical exams. DAN consists of three
+major steps: (1) In addition to stem and options, DAN retrieves
+relevant medical documents to enrich the content of each question;
+(2) DAN breaks down the question’s difficulty into two parts: the
+hardness for recalling the knowledge assessed by the question and
+the confusion degree to exclude distractors. For each part, DAN
+introduces corresponding attention layers to model it; (3) DAN
+combines two parts of difficulties together to predict the overall
+difficulty. We collect a real-world data set from one of the largest
+medical online education websites in China. And the experimental
+results demonstrate the effectiveness of the proposed framework.
+CCS CONCEPTS
+•Applied computing →Education.
+KEYWORDS
+educational mining, question difficulty prediction, document re-
+trieval, attention
+ACM Reference Format:
+Zhaopeng Qiu, Xian Wu, and Wei Fan. 2019. Question Difficulty Prediction
+for Multiple Choice Problems in Medical Exams. In The 28th ACM Interna-
+tional Conference on Information and Knowledge Management (CIKM’19),
+November 3–7, 2019, Beijing, China. ACM, New York, NY, USA, 10 pages.
+https://doi.org/10.1145/3357384.3358013
+1 INTRODUCTION
+Intelligent Tutoring System(ITS) services are widely adopted in
+a broad range of domains. For example, Duolingo (a platform for
+learning English) attracted 300 million active users. Among all
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page. Copyrights for components of this work owned by others than ACM
+must be honored. Abstracting with credit is permitted. To copy otherwise, or republish,
+to post on servers or to redistribute to lists, requires prior specific permission and/or a
+fee. Request permissions from permissions@acm.org.
+CIKM ’19, November 3–7, 2019, Beijing, China
+©2019 Association for Computing Machinery.
+ACM ISBN 978-1-4503-6976-3/19/11. . . $15.00
+https://doi.org/10.1145/3357384.3358013application domains, medical ITS is one of the most appealing ones
+where doctors can consolidate knowledge and develop expertise.
+In ITS services, personalized exercise recommendation is an es-
+sential function which can help students improve study efficiency
+and enhance user experience. A key challenge in personalized ex-
+ercise recommendation is to predict the difficulty of each question.
+The difficulty of a question refers to the percentage of students
+who answer this question wrongly. Given the difficulties of ques-
+tions, ITS can recommend suitable questions for students with
+varied knowledge proficiency. Furthermore, ITS can automatically
+compose a discrimination test by selecting questions at different
+difficulty levels.
+However, the question difficulty is not known before students
+actually take it. To estimate the difficulty in advance, a straight-
+forward way is to ask teachers or experts to label according to
+their experience. In practice, such manual estimation is not feasible.
+First, this manner is labor intensive and hard to scale, especially for
+ITS services with massive questions; Second, teachers or experts
+label according to their subjective opinions, which may lead to the
+biased and misleading results[ 6]. Another manner is to sample a
+small number of students and use their error rate to estimate the
+difficulty. Although such a manner is less biased than the first one,
+it is also labor intensive and brings challenges in the student sample
+strategy.
+Recently, non-human based and data-driven solutions emerge.
+For example, [ 6] focuses on reading comprehension problems in
+standard English tests, which is similar to the problems in SQuAD
+contest1. [6] utilizes the reading passage, question, and options to-
+gether to predict the question’s difficulty. However, it is non-trivial
+to directly apply [ 6] to the multiple choice problems (MCP) in med-
+ical exams. As in reading comprehension problems, the answers
+to questions can be inferred from the given passages, which also
+means that the given passages are vital for this difficulty prediction
+solution. In other words, the required knowledge is self-contained.
+While in medical exams, except for the stem and options, no back-
+ground knowledge is given.
+The MCP is a typical problem style in medical exams, and the
+National Medical Licensing Examination in China uses the MCP
+as the primary question type. Figure 1 shows two examples. Each
+MCP only contains a question text and five candidate answers with
+four distractors.
+To estimate the question difficulty for MCPs in medical exams,
+we propose a novel Document enhanced Attention based neural
+Network (DAN) framework. DAN consists of three major compo-
+nents: (1) We build a database of medical papers and textbooks.
+Given a question, we use its stem and options to compose queries
+and retrieve relevant medical documents to enrich the context. Then
+1https://rajpurkar.github.io/SQuAD-explorer/
+Session: Long - Biomedical Informatics
+CIKM ’19, November 3–7, 2019, Beijing, China
+139
+
+--- Page Break ---
+
+2 zp10211059
+1.The preferred test for diagnosis of heart failure is:
+A. Chest X-ray
+B. Echocardiogram
+C. Left ventricular angiography
+D. Stress test
+E. ECG
+Answer: C
+2.Female, 62 years old. Hypertensive patients, suddenly palpitations, shortness of breath,
+coughing up pink tinged foam sputum. Physical examination: BP 200/126 mmHg, heart rate 146
+beats/min. In addition to other treatments, which of the following drugs should be used:
+A. Lanatoside C, Nitroglycerin, ISOprenaline
+B. Strophanthink, Sodium nitroprusside, Propranolol
+C. Guanethidine, Phentolamine, Lanatoside C
+D. Sodium nitroprusside, Lanatoside C, Furosemide
+E. Nitroglycerin, Lanatoside C, Dopamine
+Answer: D
+Manuscript submitted to ACMFigure 1: Two examples of multiple choice problems in med-
+ical exams.
+we leverage a BiLSTM-based architecture to generate the semantic
+representations for all text materials (i.e., the stem, option, and
+retrieved medical text); (2) We break down the question’s difficulty
+into two parts: the confusion and recall. Confusion refers to the
+difficulty to separate the correct answer from the distractors, while
+recall refers to the difficulty to recall the knowledge assessed by
+the question. Next, we introduce two attention layers to model
+two types of difficulties, respectively; (3) We combine two types of
+difficulties to predict the overall difficulty. We collect a real-world
+data set from one of the largest medical online education websites
+in China. Moreover, the experimental results demonstrate the ef-
+fectiveness of our proposed framework. As far as we know, this is
+the first comprehensive data-driven solution to question difficulty
+prediction task for multiple choice problems in medical exams.
+2 RELATED WORKS
+Question difficulty has been widely studied in educational psychol-
+ogy. In recent years, some research efforts have devoted to machine
+learning based question difficulty prediction. In this section, we
+discuss two categories of related work.
+Question Difficulty in Educational Psychology . On the one
+hand, Susanti[ 16] investigated the relations between several factors
+of questions and the corresponding question difficulty. On another
+hand, question difficulty prediction has been widely studied in some
+theories. Classical test theory (CTT) is a body of related psychometric
+theory that predicts outcomes of psychological testing such as the
+difficulty of items or the ability of test-takers. CTT utilizes statistical
+methods to predict question difficulty. Item response theory (IRT) is
+another theory, based on the application of related mathematical
+models, evaluating the latent traits of the people and questions.
+The latent traits of questions contain the question difficulty. The
+Rasch model, a particular case of IRT, is a probabilistic model and
+evaluates question difficulty from examinees’ responses modeled
+by a logistic-like function. All of Gajjar[ 2], Rao[ 15], and Luger[ 10]
+utilize the Rasch model and student feedback to predict question
+difficulty.
+However, the common limitation of these works is that they are
+all labor intensive. Hence none of these works apply to the ITS
+services, which have massive questions. Differently, our work is an
+entirely data-driven solution.Text-based Question Difficulty Prediction . Considerable re-
+search efforts[ 8,9,11,13,25] have been devoted recently to using
+NLP (Natural Language Processing) methods to predict question
+difficulty. Loukina et al.[ 9] have revealed that a system based on
+multiple text complexity features, such as word unfamiliarity and
+the average frequency of long sentences, can predict question diffi-
+culty. Ulrike et al.[ 13] approximated the question difficulty by the
+amount of variation in student answers. They measured the an-
+swer variation as the average similarity of student answers among
+themselves or their average similarity with the reference answer.
+These works all required the manual design of textual features,
+which are vital issues for these solutions. However, not all these
+features are suitable for other applications. Differently, our work is
+an end-to-end framework, which needs no other manual designed
+features.
+The work closest to ours is that of Huang et al.[ 6]. They pro-
+posed a non-human based and data-driven solution focusing on
+question difficulty prediction for reading comprehension problems
+in standard English tests. This work utilized the reading passage,
+the question, and the options to predict the question difficulty. This
+solution first utilized a CNN-based architecture to extract sentence
+representations for the questions. Then, it used an attention strat-
+egy to qualify the difficulty contribution of each sentence in reading
+passage and options. Finally, it aggregated the semantic representa-
+tions of the documents, the questions, and the options to predict
+the question difficulty.
+In reading comprehension problems, the answers to questions
+can be inferred from the given passages, which also means that
+the given passages are vital for this difficulty prediction solution.
+While in medical exams, except for the stem and options, no read-
+ing passage is given. Hence, it is non-trivial to directly apply this
+solution to difficulty prediction for the MCPs in medical exams.
+Nevertheless, this solution used CNN, which is hard to capture the
+information in long-range contexts, to encode the text.
+3 DAN FRAMEWORK
+In this section, we first introduce several basic concepts used in this
+paper. Then we formally define the problem of question difficulty
+prediction. Finally, we present the technical details of our question
+difficulty prediction framework DAN.
+3.1 Problem Definition and Framework
+Overview
+In this paper, we focus on the question difficulty prediction for
+MCPs (see Figure 1) in medical exams. Let Qdenote the set of
+medical questions. Each question Q∈Qhas a difficulty attribute
+Pobtained from student test logs, a correct answer A, and four
+distractors{C1,C2,C3,C4}.
+Problem Definition .Formally, given the question set Q, the goal
+is to leverage all questions Q∈Qto train a modelM(i.e., DAN)
+which can be used to estimate the difficulties for questions in the
+newly-conducted recommendation.
+As shown in Figure 2, DAN is a two-stage framework. The first
+stage is a document retrieval system, which is used to retrieve med-
+ical documents possibly related to the questions. The second stage
+Session: Long - Biomedical Informatics
+CIKM ’19, November 3–7, 2019, Beijing, China
+140
+
+--- Page Break ---
+
+is a neural network based question difficulty prediction model. We
+will address each component in detail in the following subsections.
+3.2 Document Retrieval
+When the students try to solve the medical questions, they will first
+recall the medical documents related to the knowledge assessed
+by the questions. Then they can infer the correct answers accord-
+ing to the remembered medical documents. DAN also first uses
+the document retrieval module to retrieve the medical documents
+related to the questions to enrich the contexts of questions to sim-
+ulate human behaviors. Considering that the candidate answer is
+relatively short and may not contain enough information for ques-
+tion difficulty prediction, we concatenate the question and each
+candidate answer as a statement. Given a question Qand one of
+its candidate answers ( AorCi), we append the correct answer to
+the question to form a question-answer statement Sa=Q+Aor
+append a distractor to the question to form a question-distractor
+statement Si=Q+Ci(i∈[1,4]). Then we use a statement as a
+query to perform an Elastic Search[ 3] based retrieval over the med-
+ical materials. The retrieved documents related to Saare denoted
+asDa={Da
+1,Da
+2, ...,Da
+N}and the retrieved documents related to
+Siare denoted as Dci={Dci
+1,Dci
+2, ...,Dci
+N}, where Nstands for the
+number of retrieved documents. The retrieved documents Daand
+Dciare the Nmost related to SaandSidocuments, respectively.
+Inspired by some machine reading comprehension works [ 4,22,
+24], we use BM25 to measure the relevance between the question-
+answer statement and the medical material. The BM25 measures the
+relevance scores according to common words between the queries
+and documents, with the consideration of the word importance.
+Moreover, the most important words in questions and medical
+documents are medical entities, which also always have larger
+relevance scores for queries. Hence, the retrieved documents in
+general contain some common medical entities with the questions,
+which guarantee the semantic relevance between the questions and
+the retrieved documents.
+3.3 The Prediction Model
+The prediction model is designed to predict the question difficulty
+given a question Qwith its candidate answers ( Aand{Ci}i=4
+i=1) and
+the relevant medical materials ( Daand{Dci}i=4
+i=1).
+As shown in Figure 2, the model contains two key modules which
+evaluate the following two types of difficulties, respectively.
+•Recall difficulty : When a student starts to solve a medical
+question, she/he will first probe into her/his memory to recall
+the knowledge related to this question. If the medical books
+or the teachers have mentioned the knowledge assessed by
+this question multiple times, the student will be familiar
+with the assessed knowledge and further can evoke a large
+amount of relevant knowledge, which can help her/him to
+solve this question easily. In contrast, if the medical books or
+the teachers rarely mention the knowledge assessed by this
+question, it will be hard for the student to solve this question.
+We call the difficulty caused by the rareness of the assessed
+knowledge as recall difficulty. To measure the recall difficulty
+of a question Q, we evaluate the semantic relevance between
+the retrieved medical documents Da(like the knowledge
+2019/5/22 上午10(15CIKM.drawio
+第 1 ⻚页（共 1 ⻚页）https://www.draw.io/SaDaS1Dc1S4Dc4SaDaS1Dc1S4Dc4Lookup&Bi-LSTMConfusion DifficultyModuleRecall Difficulty ModulePcPr PRecall DifficultyConfusionDifficultyDifficulty
+MedicalDocument DBQQuestionACorrectanswerC1C2C3C4DistractorsDocuments relatedto Q+ADocuments relatedto Q+C1Documents relatedto Q+C4............WeightPredictionLayer1−γγ
+Document RetrievalPrediction ModelFigure 2: DAN framework.
+recalled by the students) and the question-answer statement
+Sain our proposed framework.
+•Confusion difficulty : In each MCP, there are four distrac-
+tors. In order to examine the students, question writers are
+instructed to make their distractors plausible yet clearly in-
+correct. The surface plausibility that the question writer has
+intentionally built into distractors will confuse the students
+and hinder them from excluding the distractors. We call the
+difficulty caused by the distractors as confusion difficulty.
+To measure the confusion difficulty of a question Q, we eval-
+uate the semantic similarity between the question-distractor
+statements{Si}i=4
+i=1and the question-answer statement Sa
+in our proposed framework.
+The model first uses Bi-LSTM to encode each text sequence. Then
+the model will encode two types of difficulties by two modules: 1)
+confusion difficulty module; 2) recall difficulty module. Finally, the
+model aggregates two types of difficulties to predict the overall
+question difficulty.
+Encoding Layer. Given a question-answer statement Sa={wa
+t}t=LQ
+t=1
+and a medical document Da
+j={wm
+t}t=LD
+t=1ofNrelevant documents,
+we first convert every word wto its d-dimensional vector evia an
+embedding matrix E∈R|V|×d, where Vis the vocabulary. Then
+we use the Bi-LSTM to extract the contextual representation for
+each word.
+The outputs of the bi-directional LSTM are two matrices: Sa∈
+RLQ×dandDa
+j∈RLD×d. For each question-distractor statement
+Siand its relevant medical document Dci
+j, we also can obtain two
+matrices Si∈RLQ×dandDci
+j∈RLD×dvia the same encoding
+process. LQandLDare the maximum lengths of Sa(Si) and Da
+j(Dci
+j),
+respectively, and dis the dimension of word embedding.
+Session: Long - Biomedical Informatics
+CIKM ’19, November 3–7, 2019, Beijing, China
+141
+
+--- Page Break ---
+
+Figure 3: The recall difficulty module.
+Recall Difficulty Module . As mentioned above, if the medical
+books rarely mention the knowledge assessed by a question, it will
+be hard for the students to solve this question. In contrast, if the
+retrieved medical documents have a strong correlation with the
+question, it will mean that the question is mentioned by the medical
+books multiple times, which will also mean that the students can
+recall easily the knowledge assessed by the question. Hence, we
+evaluate the semantic relevance between the retrieved medical
+documents Da(like the knowledge recalled by the student) and
+the question-answer statement Sato measure the recall difficulty.
+Figure 3 shows the recall difficulty module we proposed.
+The inputs of this module are the contextual representations of
+the question-answer statement and its retrieved documents, i.e., Sa
+and{Da
+j}j=N
+j=1. The similarity between Saand{Da
+j}j=N
+j=1is calcu-
+lated by the following four steps.
+(1) Rereading medical documents
+There exists a semantic gap between the medical documents
+and the question because they are collected from different sources.
+Hence, the medical documents first are reread with the help of
+the question-answer statement to gain a deeper understanding.
+Inspired by some machine reading comprehension works[ 14,17,
+19,22,24], we use the attention mechanism to incorporate the
+question-answer information into the medical documents and fuse
+the question-aware representations and original representations
+for better semantic understanding.
+Given input matrices U∈RLU×dandV∈RLV×d, the attention
+function is defined as
+αi,j=Ui:◦V:j√
+d,M=Attn(U ,V)=exp(αij)Í
+iexp(αij)
+i,j(1)
+where◦denotes the element-wise multiplication operation, and
+M∈RLU×LVdenotes the attention weight matrix.
+We first introduce the attention layer to align the question-
+answer statement representation Saagainst each medical document
+representation Da
+j. Then we introduce the fusion layer to combinethe original document representation and the question-aware repre-
+sentation together to form a new semantic representation, i.e., eDa
+j.
+We adopt the fusion kernel used in recent works[ 1,12] for better
+semantic understanding.
+Da
+j=MdjSa,Mdj=Attn(Da
+j,Sa) (2)
+eDa
+j=Fuse(Da
+j,Da
+j)=tanh([Da
+j;Da
+j;Da
+j◦Da
+j;Da
+j−Da
+j]Wf+bf)
+(3)
+where Wf∈R4d×dandbf∈Rdare the parameters to learn. [;]
+denotes the column-wise concatenation and −denotes the element-
+wise subtraction between two matrices.
+In order to predict the recall difficulty, we introduce two layers
+to collect the sentence-level and word-level similarity information,
+respectively. Intuitively, the retrieved medical documents may only
+contain some keywords related to the question, but not be relevant
+to the question at the sentence level. Hence, in addition to the fine-
+grained word-level similarity information, we compare the sentence
+representations of the medical documents and the question-answer
+statement to collect the sentence-level similarity information in
+order to void producing biased results misdirected by some words.
+(2) Sentence-level matching
+For each medical document eDa
+j, we use two following steps to
+calculate the sentence-level semantic similarity between it and the
+question-answer statement.
+First, both the document’s representation eDa
+jand the question-
+answer statement’s representation Saare self-aligned to obtain
+sentence-level representations hd
+j∈Rdandha∈Rd, respectively.
+ra
+k=ReLU(Sa,k:Wa
+д+ba
+д),ra
+k=exp(ra
+k)
+Í
+kexp(ra
+k)(4)
+ha=Õ
+kra
+kSa,k: (5)
+rd
+j,k=ReLU(eDa
+j,k:Wd
+д+bd
+д),rd
+j,k=exp(rd
+j,k)
+Í
+kexp(rd
+j,k)(6)
+hd
+j=Õ
+krd
+j,keDa
+j,k: (7)
+where Waд∈Rd×1,Wdд∈Rd×1,baд∈R, and bdд∈Rare trainable
+parameters. Sa,k:andeDa
+j,k:denote the k-th row of Saand the k-th
+row of eDa
+j, respectively.
+After that, the retrieved medical documents are considered one
+by one to capture the sentence-level correlation information with
+the question-answer statement.
+δj=haWphd
+j+bp (8)
+where Wpis a trainable bilinear projection matrix, and bp∈Ris
+also a parameter to learn. δjis the sentence-level semantic similar-
+ity between the question-answer statement and its j-th retrieved
+medical document.
+(3) Word-level matching
+In this layer, the retrieved medical documents {eDa
+j}j=N
+j=1are one-
+by-one compared with the question-answer statement Saat the
+word level to collect the fine-grained semantic similarity infor-
+mation. Specifically, for each medical document eDa
+j, we perform
+Session: Long - Biomedical Informatics
+CIKM ’19, November 3–7, 2019, Beijing, China
+142
+
+--- Page Break ---
+
+the following three operations to calculate the semantic similarity
+between it and the question-answer statement Saat the word-level.
+First, we use the attention function Attn(·,·)to align the re-
+trieved medical document eDa
+jto the question-answer statement
+Sa.
+Fd
+j=Attn(S a,eDa
+j)eDa
+j (9)
+Secondly, we collect the similarity information at each position
+of the question-answer statement.
+eSr
+j=ReLU(Sr
+jWr
+m+br
+m),Sr
+j=[Sa−Fd
+j;Sa◦Fd
+j] (10)
+where Wrm∈R2d×dandbrm∈Rdare trainable parameters.
+Finally, we combine the sentence-level similarity information
+and word-level similarity information to obtain an overall com-
+prehensive representation of the semantic similarity between the
+question-answer statement and its j-th retrieved medical document.
+bSr
+j=δjeSr
+j (11)
+(4) Prediction layer
+In this layer, we first use mean-pooling and max-pooling to fuse
+the similarity information of all positions of the question-answer
+statement. For bSd
+j,
+˜tr
+j=MeanPooling( bSr
+j),ˆtr
+j=MaxPooling( bSr
+j) (12)
+Then we concatenate the similarity information from all re-
+trieved medical documents (i.e., {˜tr
+j}j=N
+j=1and{ˆtr
+j}j=N
+j=1) to predict
+the recall difficulty Pr.
+tr=ReLU([{˜tr
+j}j=N
+j=1;{ˆtr
+j}j=N
+j=1]Wr
+1+br
+1) (13)
+Pr=Siдmoid(trWr
+2+br
+2) (14)
+where Wr
+1∈R2N d×h,Wr
+2∈Rh×1,br
+1∈Rh, and br
+2∈Rare
+trainable parameters.
+Confusion Difficulty Module. The confusion difficulty repre-
+sents the degree of interference caused by four distractors. Rather
+than merely utilizing the low level "literal similarities" to measure
+the degree of interference, we first use the relevant medical doc-
+uments to enrich the semantic representations of the candidate
+answers and then measure the semantic similarities among the
+candidate answers to measure the degree of interference. Figure 4
+shows the confusion difficulty module.
+As the recall difficulty module, the confusion difficulty module
+also collect the semantic similarity information to measure a part
+of question difficulty and use the Saas an input. However, there are
+some differences between other inputs of two modules, i.e., the four
+question-distractor statements {Si}i=4
+i=1and the retrieved medical
+documents Da. Hence, there are also some differences between the
+two modules’ architectures.
+•There exists a semantic gap between the medical documents
+and the question-answer statement because they are gath-
+ered from different sources. In contrast, the question-distractor
+statements have the same source as the question-answer
+statement. Nevertheless, the surface plausibility has guar-
+anteed that each distractor has close semantic relevance to
+the correct answer. Hence, we do not need to leverage the
+question-answer statement to reread the question-distractor
+statements in the confusion difficulty module.
+2019/5/22 上午10(19CIKM.drawio
+第 1 ⻚页（共 1 ⻚页）https://www.draw.io/Da1Dc11Dc41SaDaS1Dc1S4Dc4......Da2.....DaNDc12.....Dc1NDc42.....Dc4NInput LayerS˜aS˜1S˜4EnrichingStatementsSˆ1Sˆ4............Word-levelMatchingt̃c1t̂c1PcPredictionLayer
+Question-Correct Answer PairQuestion-Distractor PairRetrieved Medical Documentst˜c4t̂c4Figure 4: The confusion difficulty module.
+•Each distractor has nature semantic relevance to the cor-
+rect answer as mentioned above. Meanwhile, most of the
+distractors only have a short sequence, as the two examples
+shown in Figure 1. Hence, we only collect semantic similarity
+information at the word-level in confusion difficulty module.
+The inputs of this module are the contextual representations of
+question-candidate answer statements and retrieved medical doc-
+uments, i.e., Sa,{Si}i=4
+i=1,Da, and{Dci}i=4
+i=1. As the recall difficulty
+module, we compare all question-distractor statements one by one
+with the question-answer statement to collect the semantic similar-
+ity information. For simplicity, we consider the question-distractor
+statement Sias a case in the following details. The similarity be-
+tween SaandSiis calculated by the following three steps.
+(1) Enriching statements
+In order to enrich the semantic representation of each candidate
+answer, we first use the attention mechanism to attend the relevant
+medical documents to candidate answers. We use the question-
+answer statement Saand its relevant documents Daas an example
+to demonstrate the attention process:
+First, we join all documents {Da
+i}i=N
+i=1together to form a large
+matrix.
+Da=[Da
+1|Da
+2|...|Da
+N] (15)
+where[|]denotes the row-wise concatenation.
+We secondly leverage the attention function Attn(·,·)to incor-
+porate the document information into the question-answer context,
+and obtain the document-aware statement representation Sa.
+Sa=MaDa,Ma=Attn(S a,Da) (16)
+Finally, we combine the original vectors Saand the document-
+aware vectors Satogether to form an enriched semantic represen-
+tation of the question-answer statement.
+eSa=Fuse(S a,Sa) (17)
+Session: Long - Biomedical Informatics
+CIKM ’19, November 3–7, 2019, Beijing, China
+143
+
+--- Page Break ---
+
+where Fuse(·,·)is the same as the fusion kernel used by the recall
+difficulty module.
+Likewise, we also can attend the knowledge of relevant doc-
+uments to the question-distractor statements {Si}i=4
+i=1to obtain
+enriched representations {eSi}i=4
+i=1.
+(2) Word-level matching
+Inspired by previous works[ 14,23], the correct answer is com-
+pared with all distractors one-by-one to collect the information
+describing the extent of pairwise interference. Specifically, for the
+question-answer statement eSa, the interference information gath-
+ered from the question-distractor statement eSiis computed as:
+ÛSi=[eSa−Fc
+i;eSa◦Fc
+i],Fc
+i=Attn(eSa,eSi)eSi (18)
+bSi=ReLU(ÛSiWc
+m+bc
+m) (19)
+where Wcm∈R2d×dandbcm∈Rdare trainable parameters. bSi
+represents the interference information gathered from the i-th dis-
+tractor.
+(3) Prediction layer
+In this layer, we first use row-wise mean-pooling and row-wise
+max-pooling to fuse the interference information at all positions
+of the question-answer statement to get the final comprehensive
+representation for each distractor. For bSi,
+˜tc
+i=MeanPooling( bSc
+i),ˆtc
+i=MaxPooling( bSc
+i) (20)
+Then we aggregate the interference information collected from
+all distractors together.
+tc=ReLU([{˜tc
+i}i=4
+i=1;{ˆtc
+i}i=4
+i=1]Wc
+1+bc
+1) (21)
+where Wc
+1∈R8d×handbc
+1∈Rhare the parameters to learn.
+Finally, the interference information is input into a feed-forward
+network to predict a scalar Pc, which is the confusion difficulty.
+Pc=Siдmoid(tcWc
+2+bc
+2) (22)
+where Wc
+2∈Rh×1andbc
+2∈Rare trainable parameters.
+Prediction Layer. Intuitively, different types of questions have
+different focuses and investigate the different abilities of students.
+The "knowledge " type of questions (like the first example in Figure 1)
+require that students remember accurately the knowledge assessed
+by the questions. Hence, the distractors of this type of questions may
+be more confused, which will undoubtedly increase the confusion
+difficulty. The "inference " type of questions (like the second example
+in Figure 1) examine more knowledge points than the "knowledge "
+type of questions. For example, the first question in Figure 1 only
+examines the knowledge about the diagnosis of heart failure, but
+the knowledge points assessed by the second question contain
+hypertension, acute heart failure, antihypertensive drugs, diuretics
+and so on. Hence, it is hard for students to recall all knowledge
+relevant to the "inference " type of questions.
+Based on this intuition, we take the weighted sum of the confu-
+sion difficulty Pcand the recall difficulty Pras the overall difficulty
+ePand use the semantic representation of the question to calculate
+the weights. To get the comprehensive semantic representation of
+the question, we conduct row-wise pooling operations and con-
+catenation operation. Then we input the question representation
+0.0 0.2 0.4 0.6 0.8 1.0
+Correct proportion010203040506070# of studentsFigure 5: The distribution of the correct proportions of stu-
+dents. The correct proportion of a student is the division be-
+tween the number of questions she/he answered correctly
+and the number of questions she/he answered.
+into a fully connected layer to predict the weight of the confusion
+difficulty. Finally, the question difficulty is predicted as:
+eq=MeanPooling(S a),ˆq=MaxPooling(S a) (23)
+γ=Siдmoid([eq; ˆq]Wγ+bγ) (24)
+eP=γPc+(1−γ)Pr (25)
+Training. The question difficulty cannot be directly observed.
+Hence, we obtain the real difficulty of each question from the test
+logs, followed the previous works[ 5,6]. Figure 6 shows a toy exam-
+ple of test logs. There are two ways to obtain the real difficulty.
+(1) Proportion incorrect
+A simple approach is to calculate the proportion of incorrect
+answers by dividing the number of students who have answered
+the question incorrectly by the number of students who have re-
+sponded to the question[ 5,6,21]. The real difficulty of Qi∈Qcan
+be computed as follows:
+Pi=дi/Gi (26)
+whereдirepresents the number of students who have answered
+question Qiincorrectly, and Girepresents the number of students
+who have responded to question Qi. For example, in Figure 6, the
+real difficulty of the question Q1isP1=1/3=0.333.
+(2) Rasch model
+If all of the students have answered all of the questions, the first
+way could estimate the difficulty accurately. However, not all of the
+students answered all of the questions in our test logs. Meanwhile,
+as shown in Figure 5, the abilities of the students were also different.
+The existence of these two facts will result in that the first way
+has some bias in the estimation process. For example, as shown in
+Figure 6, the difficulties, estimated by the first way, of Q3andQ4are
+the same. However, student U3who answered Q3incorrectly per-
+forms better than student U4who answered Q4incorrectly, which
+means that Q3may be more difficult than Q4.
+The Rasch model[ 18,21] inItem Response Theory can be used to
+estimate the question difficulty with the consideration of the student
+ability. The Rasch model describes the probability of answering a
+question correctly by a logistic-like function.
+πij=Probability(Yij=1)=exp(βj−Pi)
+1+exp(βj−Pi)(27)
+whereπijdenotes the probability that student Ujwill answer ques-
+tionQicorrectly,βjdenotes the ability level of student Uj, and Yij
+denotes the score of student Ujon question Qi(1 denotes Ujanswer
+Session: Long - Biomedical Informatics
+CIKM ’19, November 3–7, 2019, Beijing, China
+144
+
+--- Page Break ---
+
+2 zp10211059
+StudentID QuestionID Student Answer Correct Answer Score
+U1 Q1 A B 0
+U2 Q1 B B 1
+U3 Q1 B B 1
+U4 Q2 A C 0
+U3 Q3 D C 0
+U4 Q4 A D 0
+... ... ... ... ...
+Manuscript submitted to ACMFigure 6: A toy example of test logs.
+Qicorrectly, and 0 indicates Ujanswer Qiincorrectly). By fitting
+our test logs with the Rasch model, we can estimate the student
+abilityβand the question difficulty Piteratively. After estimating,
+we use Min-Max normalization to scale the difficulty between 0
+and 1, and the larger the difficulty is, the more difficult the question
+is.
+We define the training loss (to be minimized) as the sum of the
+least square loss and a l2-regularization term.
+L(θ)=i=|Q|Õ
+i=1(Pi−ePi)2+λ||θM|| (28)
+where Piis the real difficulty, estimated by proportion incorrect or
+the Rasch model, of question Qi,ePiis the predicted difficulty (see
+Eq.(25)),θMdenotes all trainable parameters in DAN, and λis the
+regularization weight.
+4 EXPERIMENTS
+In this section, we evaluate the effectiveness of DAN on a real-
+world dataset. First, we introduce our experiment setup. Then, we
+demonstrate that DAN outperforms all baseline methods. We fur-
+ther conduct the ablation analysis and qualitative analysis to pro-
+vide further insight into how different difficulty components affect
+the integrated system.
+4.1 Experiment Setup
+4.1.1 Dataset. The real-world dataset is collected from one of the
+largest medical online education websites in China. This dataset
+consists of more than 800,000 test logs (see Figure 6) and is collected
+from September 2017 to July 2018. After receiving the dataset, we
+preprocess it in two steps:
+•Drop duplicates : In this data set, some students solve the
+same question multiple times. These students may repeat
+answer the same question to consolidate their knowledge.
+However, since we use the ratio of students who answered a
+question incorrectly to obtain the real difficulty, such dupli-
+cate attempts could lower the acquired difficulty. Hence, we
+drop the students’ duplicate test logs and only reserve the
+first attempt. After dropping duplicates, a test log represents
+a unique <student, question> pair.
+•Filter : If only a small count of students have tried to solve a
+question, the obtained difficulty of this question will have
+severe randomness. Hence, we filter the questions having
+no more than 10 test logs.
+After pruning, we conduct the statistics on the dataset. Table 1
+shows some statistics results. Figure 7(a) shows the distribution
+of the counts of students answered the questions. We can see thatTable 1: The statistics of the dataset.
+Statistics Values
+# of test logs 691,680
+# of students 394
+# of questions 16,342
+Average test logs per question 43.325
+Average test logs per student 1755.533
+0 25 50 75 100 125
+Number of students050010001500Number of questions
+(a) The student count distribution.
+0.2 0.4 0.6 0.8 1.0
+Correct answer ratio050010001500Number of questions
+(b) Number of questions w.r.t correct an-
+swer ratio.
+0.0 0.2 0.4 0.6 0.8 1.0
+Normalized correct answer ratio0200400600Number of questions(c) Number of questions w.r.t correct an-
+swer ratio normalized by the Rasch model.
+Figure 7: Statistics of question set.
+most questions are answered by more than 25 students. Figure 7(b)
+shows the distribution of correct answer ratios of questions. We can
+see that the correct answer ratios of questions are nearly a linear
+distribution. The high value at 1.0 suggests that there are some easy
+questions answered correctly by all students. Figure 7(c) shows the
+distribution of normalized correct answer ratios of questions. The
+correct answer ratios, normalized by the Rasch model, of questions
+are nearly a normal distribution.
+The unstructured medical materials (used by the document re-
+trieval) consist of 2,130,128 published paper in the medical domain
+and 518 professional medical textbooks.
+4.1.2 Model Details. Word embedding is pretrained using the whole
+unstructured medical materials with a vector dimension of 200 (i.e.,
+d=200), and the learned vector representations are shared across
+different components of the proposed method. All text materials
+used by DAN are truncated to no more than 100 words. Both each
+distractor and the correct answer have five relevant medical doc-
+uments, i.e., N=5. The Bi-LSTM in the encoding layer also have
+a dimension of 200. The parameters of the Bi-LSTM are shared
+between the processing of questions and documents. The hidden
+layer in the prediction layer has a dimension of 200, i.e., h=200.
+4.1.3 Training Settings. The model is trained with a mini-batch
+size of 32. We use Adam optimizer with a learning rate of 0.0005.
+Session: Long - Biomedical Informatics
+CIKM ’19, November 3–7, 2019, Beijing, China
+145
+
+--- Page Break ---
+
+The dropout rate is set to 0.2 to reduce overfitting. The L2 weight
+decayλis set to 0.001.
+4.2 Baseline Approaches
+Since DAN is an end-to-end difficulty prediction model, we only
+select a few end-to-end models as baselines with different con-
+siderations. Moreover, we also introduce two variants of DAN to
+highlight the effectiveness of each module of our framework. There
+are a total of five baseline approaches, including two variants of
+DAN.
+SVM+TF-IDF: SVM is a commonly used machine learning method.
+TF-IDF is also a frequently used feature in many NLP tasks. We
+choose this method to help to understand the overall difficulty of
+this prediction task.
+Bi-LSTM: Bi-LSTM is also a commonly used method in NLP. In
+order to help in understanding the overall difficulty of this task and
+demonstrate the effectiveness of two difficulty modules, we choose
+it as another baseline approach. We use a Bi-LSTM to encode the
+question-candidate answer statements to obtain the semantic rep-
+resentation and use a fully connected layer to predict the difficulty.
+TACNN+Document Retrieval2:TACNN is a question diffi-
+culty prediction model for reading comprehension problems in
+standard English tests[ 6]. To the best of our knowledge, TACNN
+is the only data-driven end-to-end solution to question difficulty
+prediction task. Hence, we select this model to compare with our
+model. To apply it to our medical dataset, we need to make some
+changes as follows:
+•Since the medical dataset does not contain the reading pas-
+sages utilized by TACNN, we integrate the document re-
+trieval module of DAN into it.
+•The sentence length in the medical dataset is different from
+the sentence length in English test dataset. Hence, we need
+to change the pooling window sizes in CNN layer of TACNN
+to fit the lengths of the medical documents. Specifically, we
+set the pooling window sizes as (6, 6, 2, 4).
+DANC: a framework which only has the confusion difficulty
+module. We choose this framework to highlight the effectiveness
+of confusion difficulty module.
+DANR: a framework which only has the recall difficulty module.
+We choose this framework to highlight the effectiveness of recall
+difficulty module.
+Both DAN and all baseline methods are implemented by PyTorch,
+and all experiments are run on a Tesla P40 GPU.
+4.3 Performance Metrics
+We evaluate all the models from both regression and rank per-
+spectives. We omit the calculation details of all metrics for lack of
+space.
+•Root Mean Squared Error(RMSE) and Mean Absolute Error(MAE).
+We use RMSE and MAE to measure the distance between
+the predicted difficulty and the real difficulty. Values closer
+to zero indicate better performances.
+•Spearman Rank Correlation Coefficient(SCC). We use SCC to
+measure the correlation between predicted difficulties and
+2Because TACNN is not open source, we implemented our version based on PyTorch.real difficulties. The larger the SCC is, the better performance
+the model has.
+•Kendall Rank Correlation Coefficient(KCC). Kendall Rank Cor-
+relation Coefficient[ 7] is also widely used in many regression
+problems in NLP[ 20]. We use it as another rank-based per-
+formance metric.
+We perform 5-fold cross-validation and use paired two-tailed
+t-test to measure the statistical significance between DAN and the
+best baseline model ablating either DANR or DANC.
+4.4 Performance Comparison
+The experimental results of all the models, averaged over all five
+folds, are summarized in Table 2.
+There are several observations: First, our proposed complete
+model, DAN, outperforms all baseline models significantly with
+all metrics. Note that not only are the difficulties predicted by
+DAN closer to real difficulties but also they have better agreement
+with real difficulties. Second, DANR and DANC outperform other
+baseline models, which indicates the effectiveness of the confusion
+difficulty module and recall difficulty module. Third, SVM and Bi-
+LSTM perform worse than other models. This observation suggests
+that the question difficulty prediction for multiple choice problems
+in medical exams is a challenging task, which is difficult to solve
+only with simple models and shallow semantic information.
+In summary, all the above observations demonstrate that DAN
+has an excellent ability to predict the difficulties of multiple choice
+problems by incorporating the confusion difficulty module and the
+recall difficulty module.
+4.5 Varying the Amount of Training Data
+To investigate the learning curve of all models under two kinds of
+difficulty settings when varying the amount of training data, we
+evaluate all models by using the 25%, 50%, and 75% subsets from
+the training data of each fold. Note that the testing data in each fold
+remains unchanged. The experimental results of all models, aver-
+aged over all five folds, are summarized in Figure 8. There are two
+observations: First, under two kinds of real difficulty definitions,
+we can see that when the amount of training data is small(25%),
+the performance on RMSE of all models is similar. However, when
+increasing the amount of training data to 50%, DAN and its two
+variants outperform other baseline methods and lead them at 75%
+and 100% training data. This observation suggests that DAN has a
+stronger learning ability which can catch more semantic informa-
+tion. Second, when varying the amount of training data, DAN and
+its variants always have a better performance on two rank-based
+metrics. This observation indicates that the difficulties predicted
+by DAN have better agreement with the real difficulties.
+4.6 Ablation Analysis
+In order to highlight the individual contribution of each difficulty
+module, we run an ablation study. As shown in Table 2, we can ob-
+serve a performance decrease by removing the confusion difficulty
+module or the recall difficulty module. Besides, we also can see
+that DANC performs better than DANR. This observation suggests
+that the confusion difficulty can reflect the question difficulty more
+accurately than the recall difficulty, which may be decided by the
+Session: Long - Biomedical Informatics
+CIKM ’19, November 3–7, 2019, Beijing, China
+146
+
+--- Page Break ---
+
+Table 2: The performance results
+Rasch model difficulty Proportion incorrect difficulty
+Models RMSE MAE SCC KCC RMSE MAE SCC KCC
+SVM 0.1716 0.1413 0.3026 0.2043 0.1913 0.1539 0.2926 0.1981
+Bi-LSTM 0.1451 0.112 0.5835 0.4163 0.165 0.1235 0.5407 0.3826
+TACNN 0.1349 0.1063 0.6238 0.4493 0.1585 0.1267 0.5876 0.4191
+DANR 0.1319 0.1021 0.6531 0.4736 0.1537 0.1136 0.6249 0.4503
+DANC 0.1321 0.1018 0.6548 0.4739 0.1524 0.1121 0.6295 0.4539
+DAN 0.1311∗0.1016∗0.6611∗∗0.4789∗∗0.1521∗∗0.1119∗∗0.6373∗∗0.4602∗∗
+**p<0.01,*p<0.05
+40 60 80 100
+% of training data0.1300.1350.1400.1450.1500.1550.1600.165RMSE
+DAN
+TACNN
+DANC
+DANR
+Bi-LSTM
+40 60 80 100
+% of training data0.1000.1050.1100.1150.1200.1250.1300.135MAE
+DAN
+TACNN
+DANC
+DANR
+Bi-LSTM
+40 60 80 100
+% of training data0.300.350.400.450.500.550.600.65SCC
+DAN
+TACNN
+DANC
+DANR
+Bi-LSTM
+40 60 80 100
+% of training data0.200.250.300.350.400.45KCC
+DAN
+TACNN
+DANC
+DANR
+Bi-LSTM
+(
+a) The Rasch model difficulty
+40 60 80 100
+% of training data0.150.160.170.180.19RMSE
+DAN
+TACNN
+DANC
+DANR
+Bi-LSTM
+40 60 80 100
+% of training data0.110.120.130.140.150.16MAE
+DAN
+TACNN
+DANC
+DANR
+Bi-LSTM
+40 60 80 100
+% of training data0.250.300.350.400.450.500.550.600.65SCC
+DAN
+TACNN
+DANC
+DANR
+Bi-LSTM
+40 60 80 100
+% of training data0.200.250.300.350.400.45KCC
+DAN
+TACNN
+DANC
+DANR
+Bi-LSTM
+(
+b) The proportion incorrect difficulty
+Figure 8: Varying the amount of training data. Since SVM performs far worse than other models, we do not illustrate its results.
+character of the multiple choice problem. The recall difficulty is
+caused by the rareness of the knowledge assessed by the question.
+However, in multiple choice problems, even though that the stu-
+dents are unfamiliar with the correct answer, they still can use
+the method of exclusion to select out the correct answer if they
+are familiar with four distractors. In other words, the comparison
+between the correct answer and the distractors can decrease the
+recall difficulty. Hence, it indicates the comparison structure in
+confusion difficulty module (as shown in Figure 4) can reflect the
+recall difficulty to some extent.
+4.7 Qualitative Analysis
+The design of confusion difficulty module and recall difficulty mod-
+ule enables convenient interpretation of the source of the question
+difficulty.
+Intuitively, we think that the four distractors create the con-
+fusion difficulty of the question. Based on this intuition, in the
+confusion difficulty module, we use the co-attention strategy toextract the confusion information between the correct answer and
+each distractor (see Eq.(18)). The co-attention weights represent
+the semantic similarity between the correct answer and the dis-
+tractor. The more similar a distractor and the correct answer are,
+the more contribution the distractor makes to the confusion diffi-
+culty. Figure 9(a) shows an example. We can see that in a statement
+the part most relevant to the correct answer is its distractor part.
+Moreover, the most relevant to the correct answer is the second
+statement. This observation means the second distractor makes the
+most significant contribution to the confusion difficulty. Figure 9(b)
+shows the count distribution of answers provided by students to
+the example question. We can see most students who answered this
+question incorrectly select the second distractor. This observation
+also means the second distractor is the most confusing candidate,
+which agrees with the analysis result from the attention heat map.
+In the recall difficulty module, we capture the sentence-level
+similarity information between the question-answer statement and
+Session: Long - Biomedical Informatics
+CIKM ’19, November 3–7, 2019, Beijing, China
+147
+
+--- Page Break ---
+
+2019/5/16CIKM.drawio
+1/1Question 
+Distractors (a) Attention heat map.
+Correct answer Distractor 1 Distractor 2 Distractor 3 Distractor 4051015# of students (b) The distribution of stu-
+dent answers.
+Figure 9: Left: attention heat map from confusion difficulty
+module. A darker color indicates larger attention weight.
+In order to enable relevance comparisons among different
+statements, we apply a softmax over the attention weights
+of all words in all statements. Right: the distribution of stu-
+dent answers.
+2019/5/17CIKM.drawio
+1/1
+Text Effective filtration pressure = (capillary blood pressure + tissue fluid colloidosmotic pressure) ­ (plasma colloid osmotic pressure + tissue fluid hydrostatic pressure)The filtration kinetics at any point on the glomerular capillaries can be expressed aseffective filtration pressure. Similar to the case of tissue fluid produced by thesystemic capillary bed, glomerular effective filtration pressure refers to the differencebetween the power that promotes ultrafiltration and the resistance to ultrafiltration... The formation of tissue fluid: If the effective filtration pressure is positive, it meansthat liquid is filtered out of the capillaries; if it is negative, it means that liquid isreabsorbed back into the capillaries. The amount of liquid filtered through thecapillary wall per unit time is equal to the product of the effective filtration pressure... The effective osmotic pressure, that is, the difference between the plasma colloidosmotic pressure and the tissue fluid colloid osmotic pressure, is the main forcelimiting the formation of tissue fluid. Plasma colloid osmotic pressure is primarilydependent on plasma protein, especially albumin concentration... Effective filtration pressure = (45 + 0) ­ (25 + 10) = 10mmHg 
+Sentence­level semantic similarity
+Figure 10: Sentence-level semantic similarity visualization.
+the retrieved medical documents. Figure 10 shows the sentence-
+level similarities between the question-answer statement (shown
+in Figure 9) and its retrieved medical documents. We can see that
+the third document is most related to the question, indicating that
+it makes the most significant contribution to alleviating the recall
+difficulty of the question.
+In summary, two visualization results hint that DAN provides a
+good way for the interpretation of the difficulty source of a question.
+5 CONCLUSIONS
+In this paper, we propose a novel Document enhanced Attention
+based neural Network(DAN) framework to automatically predict
+question difficulty for multiple choice problems in medical exams.
+For the proposed DAN, we design two methods based on differ-
+ent attention strategies to model two types of question difficulties,
+which are combined together to predict the overall difficulty. Exper-
+imental results on a real world dataset demonstrate the superiority
+of our proposed model and the effectiveness of two question diffi-
+culty components. Now, we only apply the DAN in medical exams,
+but it can be easily adapted to the multiple choice problems of other
+domain if we have the textbooks used by the retrieval module and
+the exam records used by obtaining the ground truth because the
+prediction model is agnostic to language and domain.REFERENCES
+[1]Qian Chen, Xiaodan Zhu, Zhen-Hua Ling, Diana Inkpen, and Si Wei. 2017. Neural
+natural language inference models enhanced with external knowledge. arXiv
+preprint arXiv:1711.04289 (2017).
+[2]Sanju Gajjar, Rashmi Sharma, Pradeep Kumar, and Manish Rana. 2014. Item
+and test analysis to identify quality multiple choice questions (MCQs) from
+an assessment of medical students of Ahmedabad, Gujarat. Indian journal of
+community medicine: official publication of Indian Association of Preventive &
+Social Medicine 39, 1 (2014), 17.
+[3]Clinton Gormley and Zachary Tong. 2015. Elasticsearch: The Definitive Guide: A
+Distributed Real-Time Search and Analytics Engine. " O’Reilly Media, Inc.".
+[4]Yu Hao, Xien Liu, Ji Wu, and Ping Lv. 2018. Exploiting Sentence Embedding for
+Medical Question Answering. In AAAI.
+[5]Pedro Hontangas, Vicente Ponsoda, Julio Olea, and Steven L Wise. 2000. The
+choice of item difficulty in self-adapted testing. European Journal of Psychological
+Assessment 16, 1 (2000), 3.
+[6]Zhenya Huang, Qi Liu, Enhong Chen, Hongke Zhao, Mingyong Gao, Si Wei, Yu
+Su, and Guoping Hu. 2017. Question Difficulty Prediction for READING Problems
+in Standard Tests.. In AAAI. 1352–1359.
+[7]Maurice G Kendall. 1938. A new measure of rank correlation. Biometrika 30, 1/2
+(1938), 81–93.
+[8]Qi Liu, Zai Huang, Zhenya Huang, Chuanren Liu, Enhong Chen, Yu Su, and
+Guoping Hu. 2018. Finding Similar Exercises in Online Education Systems. In
+KDD.
+[9]Anastassia Loukina, Su-Youn Yoon, Jennifer Sakano, Youhua Wei, and Kathy
+Sheehan. 2016. Textual complexity as a predictor of difficulty of listening items in
+language proficiency tests. In Proceedings of COLING 2016, the 26th International
+Conference on Computational Linguistics: Technical Papers. 3245–3253.
+[10] Sarah KK Luger and Jeff Bowles. 2013. Two methods for measuring question
+difficulty and discrimination in incomplete crowdsourced data. In First AAAI
+Conference on Human Computation and Crowdsourcing.
+[11] Josiane Mothe and Ludovic Tanguy. 2005. Linguistic features to predict query
+difficulty. In ACM Conference on research and Development in Information Retrieval,
+SIGIR, Predicting query difficulty-methods and applications workshop. 7–10.
+[12] Lili Mou, Rui Men, Ge Li, Yan Xu, Lu Zhang, Rui Yan, and Zhi Jin. 2016. Natural
+Language Inference by Tree-Based Convolution and Heuristic Matching. In
+Proceedings of the 54th Annual Meeting of the Association for Computational
+Linguistics (Volume 2: Short Papers), Vol. 2. 130–136.
+[13] Ulrike Padó. 2017. Question Difficulty–How to Estimate Without Norming, How
+to Use for Automated Grading. In Proceedings of the 12th Workshop on Innovative
+Use of NLP for Building Educational Applications. 1–10.
+[14] Qiu Ran, Peng Li, Weiwei Hu, and Jie Zhou. 2019. Option Comparison Net-
+work for Multiple-choice Reading Comprehension. CoRR abs/1903.03033 (2019).
+arXiv:1903.03033 http://arxiv.org/abs/1903.03033
+[15] Chandrika Rao, HL Kishan Prasad, K Sajitha, Harish Permi, Jayaprakash Shetty,
+et al.2016. Item analysis of multiple choice questions: Assessing an assessment
+tool in medical students. International Journal of Educational and Psychological
+Researches 2, 4 (2016), 201.
+[16] Yuni Susanti, Hitoshi Nishikawa, Takenobu Tokunaga, and Obari Hiroyuki. 2016.
+Item difficulty analysis of english vocabulary questions.. In CSEDU (1). 267–274.
+[17] Min Tang, Jiaran Cai, and Hankz Hankui Zhuo. 2019. Multi-Matching Network
+for Multiple Choice Reading Comprehension. In AAAI 2019.
+[18] Wim J van der Linden and Ronald K Hambleton. 2013. Handbook of modern item
+response theory. Springer Science & Business Media.
+[19] Shuohang Wang, Mo Yu, Jing Jiang, and Shiyu Chang. 2018. A Co-Matching
+Model for Multi-choice Reading Comprehension. In Proceedings of the 56th Annual
+Meeting of the Association for Computational Linguistics (Volume 2: Short Papers).
+[20] William Yang Wang and Zhenhao Hua. 2014. A semiparametric gaussian copula
+regression model for predicting financial risks from earnings calls. In Proceed-
+ings of the 52nd Annual Meeting of the Association for Computational Linguistics
+(Volume 1: Long Papers), Vol. 1. 1155–1165.
+[21] Kelly Wauters, Piet Desmet, and Wim Van Den Noortgate. 2012. Item difficulty
+estimation: An auspicious collaboration between data and judgment. Computers
+& Education 58, 4 (2012), 1183–1193.
+[22] Ming Yan, Jiangnan Xia, Chen Wu, Bin Bi, Zhongzhou Zhao, Ji Zhang, Luo Si,
+Rui Wang, Wei Wang, and Haiqing Chen. 2019. A Deep Cascade Model for
+Multi-Document Reading Comprehension. CoRR abs/1811.11374 (2019).
+[23] Shuailiang Zhang, Hai Zhao, Yuwei Wu, Zhuosheng Zhang, Xi Zhou, and Xiang
+Zhou. 2019. Dual Co-Matching Network for Multi-choice Reading Comprehen-
+sion. CoRR abs/1901.09381 (2019).
+[24] Xiao Zhang, Ji Wu, Zhiyang He, Xien Liu, and Ying Su. 2018. Medical exam
+question answering with large-scale reading comprehension. In Thirty-Second
+AAAI Conference on Artificial Intelligence.
+[25] Wayne Xin Zhao, Wenhui Zhang, Yulan He, Xing Xie, and Ji-Rong Wen. 2018.
+Automatically Learning Topics and Difficulty Levels of Problems in Online Judge
+Systems. ACM Trans. Inf. Syst. 36 (2018), 27:1–27:33.
+Session: Long - Biomedical Informatics
+CIKM ’19, November 3–7, 2019, Beijing, China
+148
+View publication stats
+
+--- Page Break ---
+

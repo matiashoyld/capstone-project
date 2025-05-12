@@ -1,0 +1,132 @@
+[
+  {
+    "config_name": "Model_1_Embeddings_Only",
+    "numerical_features_config": [],
+    "categorical_features_config": [],
+    "final_model_input_feature_count": null,
+    "test_metrics_correctness": {
+      "accuracy": 0.7496424063946151,
+      "auc": 0.7677681587433766,
+      "precision": 0.7813405047579645,
+      "recall": 0.8976293743687244,
+      "f1": 0.8354577377167031
+    },
+    "irt_comparison_metrics": {
+      "pearson": 0.6282891674933352,
+      "spearman": 0.6622869429207708,
+      "n": 470
+    }
+  },
+  {
+    "config_name": "Model_2_Embeddings_QuestionFeatures",
+    "numerical_features_config": [
+      "Has_Abstract_Symbols",
+      "has_image",
+      "question_avg_word_length",
+      "question_char_count",
+      "question_digit_count",
+      "question_latex_expressions",
+      "question_mathematical_symbols",
+      "question_special_char_count",
+      "question_word_count"
+    ],
+    "categorical_features_config": [],
+    "final_model_input_feature_count": 9,
+    "test_metrics_correctness": {
+      "accuracy": 0.7478754732856542,
+      "auc": 0.7668063195209116,
+      "precision": 0.7832131284624229,
+      "recall": 0.8903808448695859,
+      "f1": 0.8333657722786042
+    },
+    "irt_comparison_metrics": {
+      "pearson": 0.6286951427886375,
+      "spearman": 0.6629867910173255,
+      "n": 470
+    }
+  },
+  {
+    "config_name": "Model_3_Embeddings_Question_OptionFeatures",
+    "numerical_features_config": [
+      "Answer_Length_Variance",
+      "Has_Abstract_Symbols",
+      "Has_NoneAll_Option",
+      "Option_Length_Outlier_Flag",
+      "avg_option_length",
+      "avg_option_word_count",
+      "has_image",
+      "jaccard_similarity_std",
+      "question_avg_word_length",
+      "question_char_count",
+      "question_digit_count",
+      "question_latex_expressions",
+      "question_mathematical_symbols",
+      "question_special_char_count",
+      "question_word_count"
+    ],
+    "categorical_features_config": [],
+    "final_model_input_feature_count": 15,
+    "test_metrics_correctness": {
+      "accuracy": 0.7477071939419436,
+      "auc": 0.7648438664547074,
+      "precision": 0.7846558066211246,
+      "recall": 0.8871724793535738,
+      "f1": 0.8327709768271939
+    },
+    "irt_comparison_metrics": {
+      "pearson": 0.6196821017101786,
+      "spearman": 0.6478340871052005,
+      "n": 470
+    }
+  },
+  {
+    "config_name": "Model_4_Embeddings_Question_Option_LLMFeatures",
+    "numerical_features_config": [
+      "Answer_Length_Variance",
+      "Extreme_Wording_Option_Count",
+      "Has_Abstract_Symbols",
+      "Has_NoneAll_Option",
+      "LLM_Distractor_Plausibility_Max",
+      "LLM_Distractor_Plausibility_Mean",
+      "Mathematical_Notation_Density",
+      "Max_Expression_Nesting_Depth",
+      "Option_Length_Outlier_Flag",
+      "Question_Answer_Info_Gap",
+      "Ratio_Abstract_Concrete_Symbols",
+      "RealWorld_Context_Flag",
+      "Units_Check",
+      "avg_option_length",
+      "avg_option_word_count",
+      "avg_steps",
+      "has_image",
+      "jaccard_similarity_std",
+      "level",
+      "num_misconceptions",
+      "question_avg_word_length",
+      "question_char_count",
+      "question_digit_count",
+      "question_latex_expressions",
+      "question_mathematical_symbols",
+      "question_special_char_count",
+      "question_word_count"
+    ],
+    "categorical_features_config": [
+      "Knowledge_Dimension",
+      "Most_Complex_Number_Type",
+      "Problem_Archetype"
+    ],
+    "final_model_input_feature_count": 46,
+    "test_metrics_correctness": {
+      "accuracy": 0.7485065208245688,
+      "auc": 0.7715298492788473,
+      "precision": 0.7861927113548863,
+      "recall": 0.8856871249480126,
+      "f1": 0.8329794367456415
+    },
+    "irt_comparison_metrics": {
+      "pearson": 0.72866546731902,
+      "spearman": 0.704804766364295,
+      "n": 470
+    }
+  }
+]

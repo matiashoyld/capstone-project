@@ -176,3 +176,86 @@ This stage prepares the question data for the neural network, using the unfilter
 *   **Comprehensive Features & Robust Preprocessing**: Essential for model performance.
 
 This detailed strategy, centered around using unfiltered data with a 1PL IRT framework and a carefully tuned neural network, represents the current optimal approach for predicting question difficulty, achieving both strong correlation and quantifiable data efficiency. 
+
+## 11. Feature Ablation Study: Impact on Correctness and Difficulty Correlation (New Buckets Strategy)
+
+To investigate the contribution of different feature types, a new feature ablation study was conducted. This study used the final 1PL vs. 1PL comparison framework (unfiltered data, best NN hyperparameters: `config_F_lower_lr_more_patience`). Each model configuration included text embeddings and incrementally added feature buckets. The neural network was trained for student correctness, and its binarized predictions were used to derive 1PL IRT difficulty parameters, correlated with original 1PL IRT difficulties.
+
+### 11.1. Feature Buckets for New Ablation Study
+
+Features were grouped as follows. All models include **text embeddings** from `nomic-ai/modernbert-embed-base` on the `FORMATTED_TEXT_COL`.
+
+1.  **Bucket 1: Question Features (Non-LLM)**
+    *   *Numerical Components*: `question_word_count`, `question_char_count`, `question_avg_word_length`, `question_digit_count`, `question_special_char_count`, `question_mathematical_symbols`, `question_latex_expressions`, `has_image`, `Has_Abstract_Symbols`.
+    *   *Categorical Components (OHE)*: None.
+
+2.  **Bucket 2: Option Features (Non-LLM)**
+    *   *Numerical Components*: `jaccard_similarity_std`, `avg_option_length`, `avg_option_word_count`, `Has_NoneAll_Option`, `Answer_Length_Variance`, `Option_Length_Outlier_Flag`.
+    *   *Categorical Components (OHE)*: None.
+
+3.  **Bucket 3: LLM-Derived Features**
+    *   *Numerical Components*: `Mathematical_Notation_Density`, `Max_Expression_Nesting_Depth`, `Ratio_Abstract_Concrete_Symbols`, `Units_Check`, `avg_steps`, `level`, `num_misconceptions`, `Extreme_Wording_Option_Count`, `LLM_Distractor_Plausibility_Max`, `LLM_Distractor_Plausibility_Mean`, `Question_Answer_Info_Gap`, `RealWorld_Context_Flag`.
+    *   *Categorical Components (OHE)*: `Most_Complex_Number_Type`, `Knowledge_Dimension`, `Problem_Archetype`.
+
+### 11.2. Ablation Model Configurations and Results
+
+The following configurations were tested (metrics from the ablation study run on `2025-05-11` which generated `feature_ablation_new_buckets_results.json`):
+
+1.  **Model 1: Embeddings Only**
+    *   Features: Text Embeddings only.
+    *   Raw Numerical Features: 0
+    *   Categorical Features (OHE): 0
+    *   Test Set Correctness:
+        *   AUC: 0.7678
+        *   Accuracy: 0.7496
+        *   F1-score: 0.8355
+    *   1PL vs. 1PL Difficulty Correlation:
+        *   Pearson: 0.6283
+        *   Spearman: 0.6623
+
+2.  **Model 2: Embeddings + Question Features**
+    *   Features: Text Embeddings + Bucket 1 (Question Features).
+    *   Raw Numerical Features: 9
+    *   Categorical Features (OHE): 0
+    *   Test Set Correctness:
+        *   AUC: 0.7668
+        *   Accuracy: 0.7479
+        *   F1-score: 0.8334
+    *   1PL vs. 1PL Difficulty Correlation:
+        *   Pearson: 0.6287
+        *   Spearman: 0.6630
+
+3.  **Model 3: Embeddings + Question Features + Option Features**
+    *   Features: Text Embeddings + Bucket 1 (Question Features) + Bucket 2 (Option Features).
+    *   Raw Numerical Features: 15 (9 Question + 6 Option)
+    *   Categorical Features (OHE): 0
+    *   Test Set Correctness:
+        *   AUC: 0.7648
+        *   Accuracy: 0.7477
+        *   F1-score: 0.8328
+    *   1PL vs. 1PL Difficulty Correlation:
+        *   Pearson: 0.6197
+        *   Spearman: 0.6478
+
+4.  **Model 4: Embeddings + Question Features + Option Features + LLM Features (Full Model)**
+    *   Features: Text Embeddings + Bucket 1 (Question Features) + Bucket 2 (Option Features) + Bucket 3 (LLM Features).
+    *   Raw Numerical Features: 27 (9 Question + 6 Option + 12 LLM Numerical)
+    *   Categorical Features (OHE): 3 (LLM Categorical: `Most_Complex_Number_Type`, `Knowledge_Dimension`, `Problem_Archetype`)
+    *   Test Set Correctness:
+        *   AUC: 0.7715
+        *   Accuracy: 0.7485
+        *   F1-score: 0.8330
+    *   1PL vs. 1PL Difficulty Correlation:
+        *   Pearson: 0.7287
+        *   Spearman: 0.7048
+
+### 11.3. Ablation Study Conclusions (New Buckets Strategy)
+
+This new ablation study provides insights into the incremental value of different feature sets when built upon a base of text embeddings:
+
+*   **Baseline (Model 1: Embeddings Only):** Text embeddings alone achieve a respectable Pearson correlation of ~0.628 and Spearman of ~0.662 for 1PL difficulty. Correctness AUC is ~0.768.
+*   **Impact of Question Features (Model 2 vs. Model 1):** Adding basic non-LLM question features resulted in a negligible change in difficulty correlation (Pearson ~0.629, Spearman ~0.663) and a slight decrease in correctness AUC (~0.767). F1 score also slightly decreased. This suggests these specific lexical and structural question features, on top of powerful text embeddings, do not significantly enhance (and might slightly dilute) predictive power for difficulty in this setup.
+*   **Impact of Option Features (Model 3 vs. Model 2):** Further adding non-LLM option features led to a slight decrease in both difficulty correlations (Pearson ~0.620, Spearman ~0.648) and correctness AUC (~0.765) compared to Model 2. This might indicate that these option features, when combined with embeddings and question features, do not add further value or might introduce some noise for difficulty prediction.
+*   **Impact of LLM-Derived Features (Model 4 vs. Model 3):** The most significant improvement came from adding the LLM-derived features. Model 4 (full model) showed a substantial increase in difficulty correlation (Pearson ~0.729, Spearman ~0.705) compared to Model 3. Correctness AUC also increased to ~0.772. This highlights the strong contribution of the LLM-generated features for capturing nuances related to question difficulty, even when a strong baseline of text embeddings and other structural features are present.
+
+**Conclusion for Paper Claim (Revisited):** This revised ablation study confirms that LLM-derived features (Bucket 3) provide a significant boost in predicting IRT difficulty parameters when added to text embeddings and other non-LLM structural/lexical features (Buckets 1 & 2). While the foundational non-LLM features (Question and Option features) did not show a clear positive impact on difficulty correlation on top of embeddings in this particular sequence, the LLM features demonstrated a clear ability to enhance the model's performance in this regard. This supports the claim that LLM-generated features are valuable for this task. 

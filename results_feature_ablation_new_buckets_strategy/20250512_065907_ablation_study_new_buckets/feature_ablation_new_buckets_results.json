@@ -1,0 +1,136 @@
+[
+  {
+    "config_name": "Model_1_Embeddings_Only",
+    "numerical_features_config": [],
+    "categorical_features_config": [],
+    "final_model_input_feature_count": null,
+    "test_metrics_correctness": {
+      "accuracy": 0.7517685144478637,
+      "auc": 0.7740692523659316,
+      "precision": 0.7921277980870349,
+      "recall": 0.8847745832867211,
+      "f1": 0.8358918804660871
+    },
+    "irt_comparison_metrics": {
+      "pearson": 0.6822313261963922,
+      "spearman": 0.7064169019961276,
+      "n": 470
+    }
+  },
+  {
+    "config_name": "Model_2_Embeddings_QuestionFeatures",
+    "numerical_features_config": [
+      "Has_Abstract_Symbols",
+      "has_image",
+      "question_avg_word_length",
+      "question_char_count",
+      "question_digit_count",
+      "question_latex_expressions",
+      "question_mathematical_symbols",
+      "question_special_char_count",
+      "question_word_count"
+    ],
+    "categorical_features_config": [],
+    "final_model_input_feature_count": 9,
+    "test_metrics_correctness": {
+      "accuracy": 0.7523680108708685,
+      "auc": 0.7742723414913064,
+      "precision": 0.7966480446927374,
+      "recall": 0.8773912070701421,
+      "f1": 0.835072402044293
+    },
+    "irt_comparison_metrics": {
+      "pearson": 0.6842077194433088,
+      "spearman": 0.7064801252676082,
+      "n": 470
+    }
+  },
+  {
+    "config_name": "Model_3_Embeddings_Question_OptionFeatures",
+    "numerical_features_config": [
+      "Answer_Length_Variance",
+      "Correct_Distractor_CosineSim_Mean",
+      "Distractor_Embedding_Distance_Mean",
+      "Has_Abstract_Symbols",
+      "Has_NoneAll_Option",
+      "Option_Length_Outlier_Flag",
+      "avg_option_length",
+      "avg_option_word_count",
+      "has_image",
+      "jaccard_similarity_std",
+      "question_avg_word_length",
+      "question_char_count",
+      "question_digit_count",
+      "question_latex_expressions",
+      "question_mathematical_symbols",
+      "question_special_char_count",
+      "question_word_count"
+    ],
+    "categorical_features_config": [],
+    "final_model_input_feature_count": 17,
+    "test_metrics_correctness": {
+      "accuracy": 0.75128891730946,
+      "auc": 0.7753249750979923,
+      "precision": 0.7960075176512419,
+      "recall": 0.8765521870455308,
+      "f1": 0.8343404765073872
+    },
+    "irt_comparison_metrics": {
+      "pearson": 0.6758017818288804,
+      "spearman": 0.7044116724953632,
+      "n": 470
+    }
+  },
+  {
+    "config_name": "Model_4_Embeddings_Question_Option_LLMFeatures",
+    "numerical_features_config": [
+      "Answer_Length_Variance",
+      "Correct_Distractor_CosineSim_Mean",
+      "Distractor_Embedding_Distance_Mean",
+      "Extreme_Wording_Option_Count",
+      "Has_Abstract_Symbols",
+      "Has_NoneAll_Option",
+      "LLM_Distractor_Plausibility_Max",
+      "LLM_Distractor_Plausibility_Mean",
+      "Mathematical_Notation_Density",
+      "Max_Expression_Nesting_Depth",
+      "Option_Length_Outlier_Flag",
+      "Question_Answer_Info_Gap",
+      "Ratio_Abstract_Concrete_Symbols",
+      "RealWorld_Context_Flag",
+      "Units_Check",
+      "avg_option_length",
+      "avg_option_word_count",
+      "avg_steps",
+      "has_image",
+      "jaccard_similarity_std",
+      "level",
+      "num_misconceptions",
+      "question_avg_word_length",
+      "question_char_count",
+      "question_digit_count",
+      "question_latex_expressions",
+      "question_mathematical_symbols",
+      "question_special_char_count",
+      "question_word_count"
+    ],
+    "categorical_features_config": [
+      "Knowledge_Dimension",
+      "Most_Complex_Number_Type",
+      "Problem_Archetype"
+    ],
+    "final_model_input_feature_count": 48,
+    "test_metrics_correctness": {
+      "accuracy": 0.7530474401502738,
+      "auc": 0.7817804998637693,
+      "precision": 0.7984286515994082,
+      "recall": 0.8753775590110751,
+      "f1": 0.8351343418981296
+    },
+    "irt_comparison_metrics": {
+      "pearson": 0.7790958509187985,
+      "spearman": 0.7606459407221151,
+      "n": 470
+    }
+  }
+]

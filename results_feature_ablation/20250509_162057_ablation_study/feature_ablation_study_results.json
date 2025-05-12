@@ -1,0 +1,155 @@
+[
+  {
+    "config_name": "Model_A_Foundational",
+    "numerical_features_config": [
+      "Answer_Length_Variance",
+      "Correct_Distractor_CosineSim_Mean",
+      "Distractor_Embedding_Distance_Mean",
+      "Has_Abstract_Symbols",
+      "Has_NoneAll_Option",
+      "Option_Length_Outlier_Flag",
+      "avg_option_length",
+      "avg_option_word_count",
+      "has_image",
+      "jaccard_similarity_std",
+      "question_avg_word_length",
+      "question_char_count",
+      "question_digit_count",
+      "question_latex_expressions",
+      "question_mathematical_symbols",
+      "question_special_char_count",
+      "question_word_count"
+    ],
+    "categorical_features_config": [],
+    "test_metrics": {
+      "accuracy": 0.7476677212622698,
+      "auc": 0.7728160981605792,
+      "precision": 0.7880801632567631,
+      "recall": 0.8740134633240483,
+      "f1": 0.8288253583908868
+    }
+  },
+  {
+    "config_name": "Model_B_Foundational_SimpleLLM",
+    "numerical_features_config": [
+      "Answer_Length_Variance",
+      "Correct_Distractor_CosineSim_Mean",
+      "Distractor_Embedding_Distance_Mean",
+      "Has_Abstract_Symbols",
+      "Has_NoneAll_Option",
+      "Mathematical_Notation_Density",
+      "Max_Expression_Nesting_Depth",
+      "Option_Length_Outlier_Flag",
+      "Ratio_Abstract_Concrete_Symbols",
+      "Units_Check",
+      "avg_option_length",
+      "avg_option_word_count",
+      "has_image",
+      "jaccard_similarity_std",
+      "question_avg_word_length",
+      "question_char_count",
+      "question_digit_count",
+      "question_latex_expressions",
+      "question_mathematical_symbols",
+      "question_special_char_count",
+      "question_word_count"
+    ],
+    "categorical_features_config": [
+      "Most_Complex_Number_Type"
+    ],
+    "test_metrics": {
+      "accuracy": 0.7506692625943052,
+      "auc": 0.7787954726055966,
+      "precision": 0.7894709353945788,
+      "recall": 0.877205199628598,
+      "f1": 0.8310288902938509
+    }
+  },
+  {
+    "config_name": "Model_C_Foundational_AdvancedLLM",
+    "numerical_features_config": [
+      "Answer_Length_Variance",
+      "Correct_Distractor_CosineSim_Mean",
+      "Distractor_Embedding_Distance_Mean",
+      "Extreme_Wording_Option_Count",
+      "Has_Abstract_Symbols",
+      "Has_NoneAll_Option",
+      "LLM_Distractor_Plausibility_Max",
+      "LLM_Distractor_Plausibility_Mean",
+      "Option_Length_Outlier_Flag",
+      "Question_Answer_Info_Gap",
+      "RealWorld_Context_Flag",
+      "avg_option_length",
+      "avg_option_word_count",
+      "avg_steps",
+      "has_image",
+      "jaccard_similarity_std",
+      "level",
+      "num_misconceptions",
+      "question_avg_word_length",
+      "question_char_count",
+      "question_digit_count",
+      "question_latex_expressions",
+      "question_mathematical_symbols",
+      "question_special_char_count",
+      "question_word_count"
+    ],
+    "categorical_features_config": [
+      "Knowledge_Dimension",
+      "Problem_Archetype"
+    ],
+    "test_metrics": {
+      "accuracy": 0.7451529163624564,
+      "auc": 0.7739036740379114,
+      "precision": 0.7881770805916724,
+      "recall": 0.8689066852367688,
+      "f1": 0.826575395401474
+    }
+  },
+  {
+    "config_name": "Model_D_Full_All_Features",
+    "numerical_features_config": [
+      "Answer_Length_Variance",
+      "Correct_Distractor_CosineSim_Mean",
+      "Distractor_Embedding_Distance_Mean",
+      "Extreme_Wording_Option_Count",
+      "Has_Abstract_Symbols",
+      "Has_NoneAll_Option",
+      "LLM_Distractor_Plausibility_Max",
+      "LLM_Distractor_Plausibility_Mean",
+      "Mathematical_Notation_Density",
+      "Max_Expression_Nesting_Depth",
+      "Option_Length_Outlier_Flag",
+      "Question_Answer_Info_Gap",
+      "Ratio_Abstract_Concrete_Symbols",
+      "RealWorld_Context_Flag",
+      "Units_Check",
+      "avg_option_length",
+      "avg_option_word_count",
+      "avg_steps",
+      "has_image",
+      "jaccard_similarity_std",
+      "level",
+      "num_misconceptions",
+      "question_avg_word_length",
+      "question_char_count",
+      "question_digit_count",
+      "question_latex_expressions",
+      "question_mathematical_symbols",
+      "question_special_char_count",
+      "question_word_count"
+    ],
+    "categorical_features_config": [
+      "Knowledge_Dimension",
+      "Most_Complex_Number_Type",
+      "Problem_Archetype"
+    ],
+    "test_metrics": {
+      "accuracy": 0.747870528109029,
+      "auc": 0.7779832339274916,
+      "precision": 0.7926051848703782,
+      "recall": 0.8658310120705663,
+      "f1": 0.8276015087641446
+    }
+  }
+]
