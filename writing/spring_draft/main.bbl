@@ -463,8 +463,8 @@
       \strng{authornamehash}{0b72deb42c3548d802ae4efd28cd1cbd}
       \strng{authorfullhash}{4e4862ccb7218879b7f0fd3223611c7e}
       \field{extraname}{2}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprintclass}{cs.LG}
@@ -515,8 +515,8 @@
       \strng{authorbibnamehash}{3a4f5746b575132d0ce19c663c7480ca}
       \strng{authornamehash}{3a4f5746b575132d0ce19c663c7480ca}
       \strng{authorfullhash}{ff8eab4c1c94c7deb71db1f48c577e96}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Abstract General academic words are those which are typically learned through exposure to school texts and occur across disciplines. We examined academic vocabulary assessment data from a group of English-speaking middle school students (N = 1,747). We tested how word frequency, complexity, proximity, polysemy, and diversity related to students' knowledge of target words across ability levels. Our results affirm the strong relation between vocabulary and reading at the individual level. Strong readers were more likely to know the meanings of words than struggling readers were, regardless of the features of the academic words tested. Words with more meanings were easier for all students, on average. The relation between word frequency and item difficulty was stronger among better readers, whereas the relation between word complexity and item difficulty was stronger among less proficient readers. Our examination of academic words' characteristics and how these characteristics relate to word difficulty across reading performance has implications for instruction.}
@@ -750,8 +750,8 @@
       \strng{authorbibnamehash}{33fb47a650d12abe3599949f41d1f0e8}
       \strng{authornamehash}{33fb47a650d12abe3599949f41d1f0e8}
       \strng{authorfullhash}{8033ec202f8a63a9136e007507cebe00}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Standard tests aim to evaluate the performance of examinees using different tests with consistent difficulties. Thus, a critical demand is to predict the difficulty of each test question before the test is conducted. Existing studies are usually based on the judgments of education experts (e.g., teachers), which may be subjective and labor intensive. In this paper, we propose a novel Test-aware Attention-based Convolutional Neural Network (TACNN) framework to automatically solve this Question Difficulty Prediction (QDP) task for READING problems (a typical problem style in English tests) in standard tests. Specifically, given the abundant historical test logs and text materials of questions, we first design a CNN-based architecture to extract sentence representations for the questions. Then, we utilize an attention strategy to qualify the difficulty contribution of each sentence to questions. Considering the incomparability of question difficulties in different tests, we propose a test-dependent pairwise strategy for training TACNN and generating the difficulty prediction value. Extensive experiments on a real-world dataset not only show the effectiveness of TACNN, but also give interpretable insights to track the attention information for questions.}
@@ -789,8 +789,8 @@
       \strng{authorbibnamehash}{6ebdeb2fbabbacbdb1d0ea5170203a2c}
       \strng{authornamehash}{6ebdeb2fbabbacbdb1d0ea5170203a2c}
       \strng{authorfullhash}{6ebdeb2fbabbacbdb1d0ea5170203a2c}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-1-4503-6976-3}
@@ -878,8 +878,8 @@
       \strng{editorbibnamehash}{0f9989a68b9a4dd59d368e46c7ff0bda}
       \strng{editornamehash}{0f9989a68b9a4dd59d368e46c7ff0bda}
       \strng{editorfullhash}{f0e0c9246e2504d074d5a66c75e69b8f}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This paper investigates whether transfer learning can improve the prediction of the difficulty and response time parameters for 18,000 multiple-choice questions from a high-stakes medical exam. The type the signal that best predicts difficulty and response time is also explored, both in terms of representation abstraction and item component used as input (e.g., whole item, answer options only, etc.). The results indicate that, for our sample, transfer learning can improve the prediction of item difficulty when response time is used as an auxiliary task but not the other way around. In addition, difficulty was best predicted using signal from the item stem (the description of the clinical case), while all parts of the item were important for predicting the response time.}
@@ -995,8 +995,8 @@
       \strng{editornamehash}{0f9989a68b9a4dd59d368e46c7ff0bda}
       \strng{editorfullhash}{8442d1f6e6e6733173f97416d2f8f2f6}
       \field{extraname}{3}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Classical approaches to question calibration are either subjective or require newly created questions to be deployed before being calibrated. Recent works explored the possibility of estimating question difficulty from text, but did not experiment with the most recent NLP models, in particular Transformers. In this paper, we compare the performance of previous literature with Transformer models experimenting on a public and a private dataset. Our experimental results show that Transformers are capable of outperforming previously proposed models. Moreover, if an additional corpus of related documents is available, Transformers can leverage that information to further improve calibration accuracy. We characterized the dependence of the model performance on some properties of the questions, showing that it performs best on questions ending with a question mark and Multiple-Choice Questions (MCQs) with one correct choice.}
@@ -1093,8 +1093,8 @@
       \strng{editorbibnamehash}{df41e9a5ca12cc86216f5052f6ce595c}
       \strng{editornamehash}{df41e9a5ca12cc86216f5052f6ce595c}
       \strng{editorfullhash}{841a366687d9928cb111740d22869f40}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This paper describes a contribution to the BEA 2024 Shared Task on Automated Prediction of Item Difficulty and Response Time. The participants in this shared task are to develop models for predicting the difficulty and response time of multiple-choice items in the medical field. These items were taken from the United States Medical Licensing Examination{®} (USMLE{®}), a high-stakes medical exam. For this purpose, we evaluated multiple BERT-like pre-trained transformer encoder models, which we combined with Scalar Mixing and two custom 2-layer classification heads using learnable Rational Activations as an activation function, each for predicting one of the two variables of interest in a multi-task setup. Our best models placed first out of 43 for predicting item difficulty and fifth out of 34 for predicting Item Response Time.}
@@ -1145,8 +1145,8 @@
       \strng{authorbibnamehash}{035390a3eaa598717bbd9251a7d17833}
       \strng{authornamehash}{035390a3eaa598717bbd9251a7d17833}
       \strng{authorfullhash}{f6c2f8b0b4c5692c00bc225fd44089db}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprintclass}{cs.CL}
@@ -1180,8 +1180,8 @@
       \strng{authorbibnamehash}{29fcbc964fff0f485ec90ed92064562e}
       \strng{authornamehash}{29fcbc964fff0f485ec90ed92064562e}
       \strng{authorfullhash}{29fcbc964fff0f485ec90ed92064562e}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{12}
@@ -1229,8 +1229,8 @@
       \strng{authorbibnamehash}{c0b6c3fe74a540b233fe870ab3ccc612}
       \strng{authornamehash}{c0b6c3fe74a540b233fe870ab3ccc612}
       \strng{authorfullhash}{bae8f8b2f9bed03622d7255bb13a24da}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{ArXiv}
@@ -1303,8 +1303,8 @@
       \strng{authorbibnamehash}{e21f2e44353b4b98161d9f7b23ebc207}
       \strng{authornamehash}{e21f2e44353b4b98161d9f7b23ebc207}
       \strng{authorfullhash}{786802af6c50d3fe54ea91f2698f8146}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{ArXiv}
@@ -1345,14 +1345,14 @@
       \strng{authorbibnamehash}{885082dfa8ed2810c53ecbce22bc9de1}
       \strng{authornamehash}{885082dfa8ed2810c53ecbce22bc9de1}
       \strng{authorfullhash}{885082dfa8ed2810c53ecbce22bc9de1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Artificial Intelligence in Education}
       \field{isbn}{9783031642999}
       \field{issn}{1611-3349}
-      \field{title}{Automated Educational Question Generation at Different Bloom’s Skill Levels Using Large Language Models: Strategies and Evaluation}
+      \field{title}{Automated Educational Question Generation at Different Bloom's Skill Levels Using Large Language Models: Strategies and Evaluation}
       \field{year}{2024}
       \field{pages}{165\bibrangedash 179}
       \range{pages}{15}
@@ -1390,8 +1390,8 @@
       \strng{authorbibnamehash}{65986c1d5371c69502e84bfab37dc957}
       \strng{authornamehash}{65986c1d5371c69502e84bfab37dc957}
       \strng{authorfullhash}{65986c1d5371c69502e84bfab37dc957}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Submitted to Tsinghua University Course: Advanced Machine Learning}
@@ -1403,6 +1403,103 @@
       \endverb
       \verb{url}
       \verb https://openreview.net/forum?id=CE85qdNSlp
+      \endverb
+    \endentry
+    \entry{warner2024smarterbetterfasterlonger}{misc}{}
+      \name{author}{14}{}{%
+        {{hash=e0cc69084d6c37310e7853e32d88e19d}{%
+           family={Warner},
+           familyi={W\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=601fe57ad1ac74988e9b317635c576f2}{%
+           family={Chaffin},
+           familyi={C\bibinitperiod},
+           given={Antoine},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9817ecfe603ddeba925c0ec49d5eb417}{%
+           family={Clavié},
+           familyi={C\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=a390033bb496c7e945d44bfae3e5cb96}{%
+           family={Weller},
+           familyi={W\bibinitperiod},
+           given={Orion},
+           giveni={O\bibinitperiod}}}%
+        {{hash=4cb9fdd9a07c975baf1e6ef7393e932f}{%
+           family={Hallström},
+           familyi={H\bibinitperiod},
+           given={Oskar},
+           giveni={O\bibinitperiod}}}%
+        {{hash=ac4c7f3a590f85084a8f3a4d425fdc52}{%
+           family={Taghadouini},
+           familyi={T\bibinitperiod},
+           given={Said},
+           giveni={S\bibinitperiod}}}%
+        {{hash=95bf655d4ea3f33773854dc6761c7e3b}{%
+           family={Gallagher},
+           familyi={G\bibinitperiod},
+           given={Alexis},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3d5dd250419b91493fe8bb047b2d6507}{%
+           family={Biswas},
+           familyi={B\bibinitperiod},
+           given={Raja},
+           giveni={R\bibinitperiod}}}%
+        {{hash=ced0403c07861802e74bf36cea3d1460}{%
+           family={Ladhak},
+           familyi={L\bibinitperiod},
+           given={Faisal},
+           giveni={F\bibinitperiod}}}%
+        {{hash=fa841ccb24e93d64ad7a77ae3a74dc3c}{%
+           family={Aarsen},
+           familyi={A\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod}}}%
+        {{hash=e1340892f2f9159b54754ec358ebffc2}{%
+           family={Cooper},
+           familyi={C\bibinitperiod},
+           given={Nathan},
+           giveni={N\bibinitperiod}}}%
+        {{hash=8622a409ab2c55a8625fbda03488c11e}{%
+           family={Adams},
+           familyi={A\bibinitperiod},
+           given={Griffin},
+           giveni={G\bibinitperiod}}}%
+        {{hash=5ed422e177c5444b96679479aeed0c51}{%
+           family={Howard},
+           familyi={H\bibinitperiod},
+           given={Jeremy},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1f15655028757251dbf9447cde6ad33c}{%
+           family={Poli},
+           familyi={P\bibinitperiod},
+           given={Iacopo},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b17c1668f1cf81a68870d639565c4876}
+      \strng{fullhash}{8b2b539c0e9f8315f0a55766f318e050}
+      \strng{bibnamehash}{b17c1668f1cf81a68870d639565c4876}
+      \strng{authorbibnamehash}{b17c1668f1cf81a68870d639565c4876}
+      \strng{authornamehash}{b17c1668f1cf81a68870d639565c4876}
+      \strng{authorfullhash}{8b2b539c0e9f8315f0a55766f318e050}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CL}
+      \field{eprinttype}{arXiv}
+      \field{title}{Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference}
+      \field{year}{2024}
+      \verb{eprint}
+      \verb 2412.13663
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2412.13663
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2412.13663
       \endverb
     \endentry
   \enddatalist

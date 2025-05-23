@@ -162,6 +162,14 @@ def plot_difficulty_scatter(benchmark_df, predicted_df, model_name_label, output
     print(f"Mean benchmark: {merged_df['difficulty_benchmark'].mean():.2f}, Std Dev benchmark: {merged_df['difficulty_benchmark'].std():.2f}")
     print(f"--- End Debugging ---")
 
+    # Save the merged_df to a CSV file
+    csv_filename = os.path.join(output_dir, f"scatter_data_{model_name_label.replace(' ', '_').replace('(','').replace(')','')}.csv")
+    try:
+        merged_df[['question_id', 'difficulty_benchmark', 'difficulty_predicted_aligned']].to_csv(csv_filename, index=False)
+        print(f"Scatter plot data saved to: {csv_filename}")
+    except Exception as e:
+        print(f"Error saving scatter plot data to CSV for {model_name_label}: {e}")
+
     plt.figure(figsize=(8, 8))
     # Turn off the grid
     plt.grid(False)

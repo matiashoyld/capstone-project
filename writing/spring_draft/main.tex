@@ -244,10 +244,10 @@ A key advantage of transformer models is their ability to capture complex semant
 Recent studies have explored the use of Large Language Models (LLMs) not just for prediction but also for feature extraction:
 
 \begin{itemize}
-    \item \textbf{Procedural complexity:} Using LLMs to quantify the number of steps required to solve problems \textcite{liu2023improving}
-    \item \textbf{Skill identification:} Extracting the specific skills required to answer questions \textcite{didolkar2024metacognitive}
-    \item \textbf{Cognitive level assessment:} Classifying questions according to Bloom's taxonomy \textcite{scaria2024automated}
-    \item \textbf{Misconception analysis:} Identifying potential student misconceptions associated with questions \textcite{sadihin2024proposalml}
+    \item \textbf{Procedural complexity:} Using LLMs to quantify the number of steps required to solve problems \cite{liu2023improving}
+    \item \textbf{Skill identification:} Extracting the specific skills required to answer questions \cite{didolkar2024metacognitive}
+    \item \textbf{Cognitive level assessment:} Classifying questions according to Bloom's taxonomy \cite{scaria2024automated}
+    \item \textbf{Misconception analysis:} Identifying potential student misconceptions associated with questions \cite{sadihin2024proposalml}
 \end{itemize}
 
 These approaches leverage the reasoning capabilities of LLMs to extract pedagogically meaningful features that might be difficult to capture through conventional feature engineering approaches.
@@ -315,23 +315,42 @@ Finally, to train and evaluate our prediction model, we split the 4,696 question
 
 \section{Methods}
 
-This section outlines our methodological approach. Our method predicts question difficulty in a two-stage process. First, we train a neural network to predict whether a student will answer a given mathematics question correctly. This network uses three main types of information: (1) student representation (as a vector of features that the model learns from the training data), (2) a rich set of question features (including linguistic characteristics, structural properties, and pedagogical insights extracted by LLMs), and (3) semantic embeddings of the question text itself. Second, we use the network's correctness predictions across many simulated student-question interactions to derive Item Response Theory (IRT) difficulty parameters for each question.
+This section describes our methodological approach for predicting question difficulty. We employ a two-stage process where we first train a neural network to predict whether a student will answer a mathematics question correctly. The network processes both student representations and comprehensive question features (including text embeddings, linguistic characteristics, structural properties, answer option features, and LLM-generated pedagogical features detailed in the next section). For each student-question pair, the model outputs a probability of correct response, which, when applied across multiple students and questions, generates a complete prediction matrix of expected student performance.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\columnwidth]{figures/full-model.png}
-    \caption{Full prediction and estimation pipeline. The neural network makes a prediction for each student-question interaction, then we use the 1PL IRT model to estimate the difficulty parameters using a prediction matrix.}
-    \label{fig:model-pipeline}
+    \includegraphics[width=0.8\columnwidth]{figures/stage1.png}
+    \caption{Stage 1: Generation of a correctness prediction matrix using a neural network.}
+    \label{fig:stage1}
+\end{figure}
+
+Second, we apply a 1-Parameter Logistic (1PL) Item Response Theory model to the complete prediction matrix, using maximum likelihood estimation to derive difficulty parameters for each question. This approach transforms the neural network's correctness predictions into standardized difficulty values that are directly comparable to our benchmark parameters.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\columnwidth]{figures/stage2.png}
+    \caption{Stage 2: Estimation of IRT difficulty parameters from a correctness prediction matrix.}
+    \label{fig:stage2}
 \end{figure}
 
 
 \subsection{Stage 1: Neural Network for Correctness Prediction}
-Our neural network model is designed to predict the probability of a student answering a question correctly. It takes three primary types of inputs:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{figures/stage1-detailed.png}
+    \caption{Schematic of the neural network model for student correctness prediction, showing the integration of question embeddings, feature vectors, and student representations.}
+    \label{fig:stage1-detailed}
+\end{figure}
+
+Our neural network model predicts the probability of a student answering a question correctly by integrating information from five primary sources:
 
 \begin{enumerate}
-    \item \textbf{Question Embedding}: A 768-dimensional embedding vector representing the formatted question text and answer options.
-    \item \textbf{Question Features}: A vector of 48 engineered features capturing question characteristics (linguistic, structural, and LLM-derived pedagogical aspects, including one-hot encoded categorical features).
-    \item \textbf{User Embedding}: A learned embedding vector representing the student, for capturing student-question interactions.
+    \item \textbf{Question Text Embedding}: A semantic vector representing the combined text of the question title and its answer options.
+    \item \textbf{Question Features}: Linguistic and structural characteristics derived from the question\'s text (e.g., word count, presence of images or LaTeX).
+    \item \textbf{Option Features}: Linguistic and structural characteristics derived from the answer options (e.g., answer length variance, similarity between options).
+    \item \textbf{LLM-Generated Features}: Pedagogical insights extracted using Large Language Models (e.g., estimated solution steps, cognitive complexity, potential misconceptions).
+    \item \textbf{Student Embedding}: A learned vector representing the student, for capturing student-question interactions.
 \end{enumerate}
 
 \subsubsection{Question Text Embeddings}
@@ -345,84 +364,76 @@ To capture the semantic meaning of the entire question context, we generated con
         \textbf{Wrong Answer 4:} [wrong\_option\_4]
     \end{promptbox}
     
-This formatted text was processed using the \texttt{nomic-ai/modernbert-embed-base} model to generate 768-dimensional embeddings, which were L2 normalized. These serve as a direct input to the neural network.
+We fed this formatted text into the ModernBERT transformer model (\texttt{nomic-ai/modernbert-embed-base}) \cite{warner2024smarterbetterfasterlonger}. ModernBERT was selected due to its advantages over traditional transformer architectures, including a longer context window, superior performance on benchmark tasks such as GLUE, and increased efficiency compared to models like RoBERTa and DeBERTa. This model generates contextual representations from its internal layers for the input text. We then averaged these representations across the entire input (mean pooling) to create a single 768-dimensional vector (embedding) capturing the overall meaning. Finally, this embedding was L2 normalized—scaling it to unit length to ensure consistent input magnitudes for the network—and used directly as an input to our neural network.
 
-\subsubsection{Linguistic and Structural Features}
-A set of numerical features was engineered to capture textual complexity, mathematical content, and structural characteristics of the questions and their answer options. These features include:
+\subsubsection{Question Features}
+These features capture characteristics of the question\'s text and structure, independent of the answer options:
 \begin{itemize}
-    \item \textbf{From Question Title/Text:} \texttt{question\_word\_count}, \texttt{question\_char\_count}, \texttt{question\_avg\_word\_length}, \texttt{question\_digit\_count}, \texttt{question\_special\_char\_count}, \texttt{question\_mathematical\_symbols}, \texttt{question\_latex\_expressions}.
-    \item \textbf{From Answer Options:} \texttt{jaccard\_similarity\_std} (standard deviation of Jaccard similarities between option pairs), \texttt{avg\_option\_length}, \texttt{avg\_option\_word\_count}, \texttt{Answer\_Length\_Variance}, \texttt{Has\_NoneAll\_Option} (binary, treated as numerical), \texttt{Option\_Length\_Outlier\_Flag} (binary, treated as numerical).
-    \item \textbf{Structural/Metadata:} \texttt{has\_image} (binary, treated as numerical).
+    \item \textbf{Basic Text Metrics:} Word count, character count, average word length.
+    \item \textbf{Content Type Metrics:} Count of digits, special characters, mathematical symbols, and LaTeX expressions.
+    \item \textbf{Abstractness \& Structure:} Indicator for abstract symbols and presence of an image.
 \end{itemize}
-These features are part of the \texttt{BASE\_NUMERICAL\_FEATURE\_COLS} used in our primary model script.
+These features provide a basic profile of the question's textual complexity and format.
 
-
-
-\subsubsection{Options Embeddings and Derived Features}
-While individual option embeddings were also generated using \texttt{nomic-ai/modernbert-embed-base} for each answer choice (A through E), these raw embeddings were not directly fed into separate pathways in the final neural network. Instead, specific numerical features were pre-calculated from these option embeddings and included in the \texttt{BASE\_NUMERICAL\_FEATURE\_COLS}. These derived features are:
+\subsubsection{Option Features}
+These features focus on the characteristics of the answer options and their relationships:
 \begin{itemize}
-    \item \textbf{Correct\_Distractor\_CosineSim\_Mean:} The mean cosine similarity between the embedding of the correct option and the embeddings of each incorrect (distractor) option.
-    \item \textbf{Distractor\_Embedding\_Distance\_Mean:} The mean Euclidean distance between the embeddings of all pairs of distractor options.
+    \item \textbf{Option Text Metrics:} Average option length, average option word count, variance in option lengths.
+    \item \textbf{Inter-Option Similarity:} Standard deviation of Jaccard similarity between option texts.
+    \item \textbf{Option Structure:} Indicators for options with extreme wording like "None/All of the above" or outlier lengths.
+    \item \textbf{Embedding-Derived Metrics:} The average cosine similarity between the correct option and distractors, and the average distance between distractor embeddings. These capture semantic relationships between the answer choices.
 \end{itemize}
-These metrics provide insights into the semantic similarity between the correct answer and distractors, and among the distractors themselves.
+These features describe the choice set presented to the student, including how similar or distinct the options are, both textually and semantically.
 
 \subsubsection{Feature Extraction Using LLMs}
-We utilized Google's Gemini models (primarily \texttt{gemini-2.0-flash} for simpler feature extractions and \texttt{gemini-2.5-flash} or \texttt{gemini-2.5-pro} for more complex ones like archetype classification, as detailed in Appendix \ref{app:llm_prompts}) to extract pedagogically relevant features from the question text and, where applicable, provided solutions. To ensure stability and mitigate the probabilistic nature of LLMs, features were typically generated over N runs (e.g., 3 runs for numerical estimates like information gap, or 1 run for simpler classifications) and then aggregated (e.g., by averaging numerical values or using the mode for categorical ones). The prompts used aimed to elicit chain-of-thought reasoning from the LLM before providing the final structured JSON output. It is important to note that while a broader range of pedagogical features (such as a detailed taxonomy of mathematical skills) were explored during development, the final reported model incorporates the LLM-derived features listed below.
+We used Google's Gemini models (primarily \texttt{gemini-2.0-flash} for simpler feature extractions and \texttt{gemini-2.5-flash} or \texttt{gemini-2.5-pro} for more complex ones like archetype classification, as detailed in Appendix \ref{app:llm_prompts}) to extract pedagogically relevant features from the question text and, where applicable, provided solutions. To ensure stability and mitigate the probabilistic nature of LLMs, features were typically generated over N runs (e.g., 3 runs for numerical estimates like information gap, or 1 run for simpler classifications) and then aggregated (e.g., by averaging numerical values or using the mode for categorical ones). The prompts used aimed to elicit chain-of-thought reasoning from the LLM before providing the final structured JSON output.
 
 \paragraph{Procedural Complexity and Cognitive Demand}
 \begin{itemize}
-    \item \textbf{avg\_steps}: The average number of discrete, pedagogically atomic solution steps required to solve the question, determined by LLM analysis of the solution process (averaged over 3 runs). The prompt guided the LLM to break down solutions in a manner appropriate for student instruction (see Appendix \ref{app:prompt_avg_steps} for a conceptual prompt example, specific prompt for this automated feature might differ but follows this intent).
-    \item \textbf{level}: The primary cognitive level assessed by the question, based on Bloom's Taxonomy (1-6, see Appendix \ref{tab:blooms-taxonomy}), determined by LLM analysis (majority vote over 3 runs). This is an ordinal feature treated as numerical. (See Appendix \ref{app:prompt_bloom} for the conceptual prompt framework).
-    \item \textbf{num\_misconceptions}: The average number of potential student misconceptions associated with the question, identified by the LLM (averaged over 3 runs). The prompt asked for an exhaustive, atomic list (see Appendix \ref{app:prompt_misconceptions} for a conceptual prompt framework).
+    \item \textbf{Number of Steps}: The average number of discrete, pedagogically atomic solution steps required to solve the question. The prompt guided the LLM to break down solutions in a manner appropriate for student instruction (see Appendix \ref{app:prompt_avg_steps} for a conceptual prompt example).
+    \item \textbf{Bloom's Taxonomy Level}: The primary cognitive level assessed by the question, based on Bloom's Taxonomy (1-6, see Appendix \ref{app:bloom_taxonomy}).
+    \item \textbf{Number of Misconceptions}: The average number of potential student misconceptions associated with the question. The prompt asked for an exhaustive, atomic list (see an example in Appendix \ref{app:num_misconceptions}).
 \end{itemize}
 
-\paragraph{Mathematical and Symbolic Content Features (LLM-derived)}
+\paragraph{Mathematical and Symbolic Content Features}
 \begin{itemize}
-    \item \textbf{Mathematical\_Notation\_Density}: An LLM-derived measure assessing the density or complexity of mathematical notation. (While related to nesting depth, specific extraction might involve a nuanced prompt focusing on overall symbolic density, see Appendix \ref{app:prompt_nesting_depth} for the related nesting depth prompt which captures aspects of this).
-    \item \textbf{Max\_Expression\_Nesting\_Depth}: The maximum nesting depth of mathematical expressions (e.g., parentheses, functions, fractions) found in the question, determined by LLM analysis (mode over 3 runs, see Appendix \ref{app:prompt_nesting_depth}).
-    \item \textbf{Ratio\_Abstract\_Concrete\_Symbols}: The ratio of abstract symbols (variables) to concrete numerical values in the question, calculated from LLM counts (see Appendix \ref{app:prompt_abstract_ratio}).
-    \item \textbf{Has\_Abstract\_Symbols}: Binary indicator (1/0) if abstract symbols (beyond common variables) are present, determined by LLM analysis (1 run, see Appendix \ref{app:prompt_has_abstract_symbols}).
-    \item \textbf{Units\_Check}: Binary indicator (1/0) if checking or converting units is significantly involved, determined by LLM analysis (1 run, see Appendix \ref{app:prompt_units_check}).
+    \item \textbf{Max Expression Nesting Depth}: The maximum nesting depth of mathematical expressions (e.g., parentheses, functions, fractions) found in the question (see Appendix \ref{app:prompt_nesting_depth}).
+    \item \textbf{Ratio Abstract Concrete Symbols}: The ratio of abstract symbols (variables) to concrete numerical values in the question (see Appendix \ref{app:prompt_abstract_ratio}).
+    \item \textbf{Units Check}: Binary indicator (1/0) if checking or converting units is significantly involved (see Appendix \ref{app:prompt_units_check}).
 \end{itemize}
 
-\paragraph{Question-Answer Relationship and Context Features (LLM-derived)}
+\paragraph{Question-Answer Relationship and Context Features}
 \begin{itemize}
-    \item \textbf{Question\_Answer\_Info\_Gap}: An LLM-estimated measure (1-4 scale) of the information gap between the question stem and the knowledge needed to derive the answer (averaged over 3 runs, see Appendix \ref{app:prompt_info_gap}).
-    \item \textbf{RealWorld\_Context\_Flag}: Binary indicator (1/0) if the question is set in a real-world context versus purely abstract, determined by LLM analysis (1 run, see Appendix \ref{app:prompt_realworld_flag}).
+    \item \textbf{Question Answer Info Gap}: An LLM-estimated measure (1-4 scale) of the information gap between the question stem and the knowledge needed to derive the answer (see Appendix \ref{app:prompt_info_gap}).
+    \item \textbf{Real World Context Flag}: Binary indicator (1/0) if the question is set in a real-world context versus purely abstract, determined by LLM analysis (see Appendix \ref{app:prompt_realworld_flag}).
 \end{itemize}
 
-\paragraph{Distractor Plausibility Features (LLM-derived)}
+\paragraph{Distractor Plausibility Features}
 \begin{itemize}
-    \item \textbf{LLM\_Distractor\_Plausibility\_Max}: The average (over 3 runs) of the maximum plausibility scores (1-5 scale) assigned by an LLM among the distractor options for a given question (see Appendix \ref{app:prompt_distractor_plausibility}).
-    \item \textbf{LLM\_Distractor\_Plausibility\_Mean}: The average (over 3 runs) of the mean plausibility scores (1-5 scale) assigned by an LLM to the distractor options for a given question (see Appendix \ref{app:prompt_distractor_plausibility}).
-    \item \textbf{Extreme\_Wording\_Option\_Count}: Count of options containing extreme wording (e.g., "always", "never"). (This feature might be rule-based or LLM-derived; if LLM-derived, a specific prompt would assess this, otherwise it's pattern matching.)
+    \item \textbf{Distractor Plausibility (Max)}: The average (over 3 runs) of the maximum plausibility scores (1-5 scale) assigned by an LLM among the distractor options for a given question (see Appendix \ref{app:prompt_distractor_plausibility}).
+    \item \textbf{Distractor Plausibility (Mean)}: The average (over 3 runs) of the mean plausibility scores (1-5 scale) assigned by an LLM to the distractor options for a given question (see Appendix \ref{app:prompt_distractor_plausibility}).
+    \item \textbf{Extreme Wording Option Count}: Count of options containing extreme wording (e.g., "always", "never").
 \end{itemize}
 
-\paragraph{Categorical Pedagogical Features (LLM-derived, One-Hot Encoded)}
+\paragraph{Categorical Pedagogical Features}
+
+
 The following LLM-derived features were treated as categorical and subsequently one-hot encoded before being fed into the neural network:
+
 \begin{itemize}
-    \item \textbf{Knowledge\_Dimension}: The primary dimension of knowledge assessed (Factual, Conceptual, or Procedural), determined by LLM analysis (1 run, see Appendix \ref{app:prompt_knowledge_dimension}).
-    \item \textbf{Most\_Complex\_Number\_Type}: The highest level of numerical complexity (1-5 scale: Integer to Complex Number) present in the question or options, determined by LLM analysis (1 run, see Appendix \ref{app:prompt_complex_number_type}).
-    \item \textbf{Problem\_Archetype}: The general type or structure of the problem (e.g., Word Problem - Calculation, Equation Solving), determined by LLM analysis using \texttt{gemini-2.5-pro} (1 run, see Appendix \ref{app:prompt_problem_archetype}).
+    \item \textbf{Knowledge Dimension}: The primary dimension of knowledge assessed (Factual, Conceptual, or Procedural) (see Appendix \ref{app:prompt_knowledge_dimension}).
+    \item \textbf{Most Complex Number Type}: The highest level of numerical complexity (1-5 scale: Integer to Complex Number) present in the question or options (see Appendix \ref{app:prompt_complex_number_type}).
+    \item \textbf{Problem Archetype}: The general type or structure of the problem (e.g., Word Problem - Calculation, Equation Solving, Data Interpretation, etc.) (see Appendix \ref{app:prompt_problem_archetype}).
 \end{itemize}
-The combination of the raw numerical features listed above (linguistic, structural, LLM-derived numerical/binary) and the one-hot encoded versions of these three categorical features results in the 48 final numerical input features for the neural network.
 
-\subsubsection{User Embeddings}
+\subsubsection{Student Embeddings}
 
-The last piece of the puzzle in our modeling approach was incorporating user information, since we had student answer data for each question. Accounting for individual student abilities was essential for accurate predictions, but presented significant technical challenges. We initially attempted to incorporate user IDs as one-hot encoded features in a LightGBM model, but this approach proved problematic. With 1,867 binary features for users compared to only 146 question-related features, the model essentially functioned as a user classifier rather than a question difficulty estimator. This structural imbalance resulted in predictions with minimal variation across questions for the same user (standard deviation only 0.026), compromising our ability to assess question characteristics.
+To account for individual student abilities, our neural network incorporates a dedicated user embedding layer. This layer maps each unique student ID to a dense, learnable 8-dimensional vector. These embeddings allow the model to capture latent aspects of each student's proficiency from the data, effectively learning how a particular student might interact with and respond to a specific question. Incorporating these student-specific representations is crucial. Once the network has learned these student ability profiles from the training data (which involved approximately 1,800 unique students), it becomes highly flexible. We can then introduce any new mathematics question (represented by its own features) to the trained model. The model, leveraging the learned student embeddings, can then predict how each of those ~1,800 students would likely answer that new question. This process generates a full matrix of "synthetic student responses" for the new item without requiring actual student testing. These simulated responses, in turn, support a more robust estimation of the question's difficulty.
 
-To address this limitation, we implemented a neural network with a dedicated user embedding layer that mapped each user ID to an 8-dimensional vector space. This approach reduced the feature dimensionality while creating dense, continuous representations of user abilities. The embedding layer contained a learnable matrix of dimensions $(n\_users \times embedding\_dim)$ that captured latent ability factors conventional one-hot encoding could not efficiently represent. This embedding-based approach successfully balanced user and question influences, enabling our model to make meaningfully different predictions for different questions presented to the same user, while ensuring user characteristics did not overshadow the question features we were primarily interested in analyzing.
+\subsubsection{Neural Network Arquitecture}
 
-\subsection{Modeling Approach}
+The network's layer-by-layer structure is as follows:
 
-Our neural network model is designed to predict the probability of a student answering a question correctly. It takes three primary types of inputs:
-\begin{enumerate}
-    \item \textbf{User Input}: An embedding vector representing the student.
-    \item \textbf{Numerical Input}: A vector of 48 engineered features capturing question characteristics (linguistic, structural, and LLM-derived pedagogical aspects, including OHE categorical features).
-    \item \textbf{Text Embedding Input}: A 768-dimensional embedding vector representing the formatted question text.
-\end{enumerate}
-
-The architecture (as detailed in \texttt{modules/neural\_net.py} and configured by \texttt{run\_best\_model\_no\_filter.py}) is as follows:
 \begin{itemize}
     \item The user ID is passed through an embedding layer (8-dimensional output), followed by flattening and a dropout layer (rate 0.25).
     \item The 48 numerical features are processed by a dense layer (32 units, ReLU activation, L2 regularization of 0.0005), followed by a dropout layer (rate 0.25).
@@ -432,37 +443,20 @@ The architecture (as detailed in \texttt{modules/neural\_net.py} and configured 
     \item The final layer is a single dense unit with a sigmoid activation function to output the probability of a correct answer.
 \end{itemize}
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{ll}
-        \hline
-        \textbf{Component/Hyperparameter} & \textbf{Value/Setting} \\
-        \hline
-        User Embedding Dimension & 8 \\
-        Dense Layer Units (Input Pathways) & 32 (for numerical features), 32 (for text embeddings) \\
-        Dense Layer Units (Shared) & 64, then 32 \\
-        Activation Function (Hidden Layers) & ReLU \\
-        L2 Regularization (All weight matrices) & 0.0005 \\
-        Dropout Rate (All dropout layers) & 0.25 \\
-        Optimization & Adam optimizer \\
-        Learning Rate & 0.0002 (2e-4) \\
-        Loss Function & Binary cross-entropy  \\
-        Metrics & Accuracy, AUC \\
-        Batch Size & 1024 \\
-        Maximum Epochs & 60 \\
-        Early Stopping Patience & 12 (monitors \texttt{val\_loss}) \\
-        Restore Best Weights (Early Stopping) & True \\
-        \hline
-    \end{tabular}
-    \caption{Neural network architecture and training hyperparameters for the best performing model (\texttt{config\_F\_lower\_lr\_more\_patience}).}
-    \label{tab:model-details}
-\end{table}
+The specific hyperparameters for training and other configuration details of this model are summarized in Appendix \ref{app:nn_config_details}.
 
-\subsection{Prediction Task}
+\subsection{Stage 2: IRT Parameter Estimation from Predictions}
 
-After training the neural network on 70\% of the questions and validating on 20\%, we used the model to generate predictions for the 10\% completely unseen questions in the holdout test set. For each of the 470 holdout questions, we generated predictions for all unique users present in the training/validation data (approximately 1,862 users were involved in the final prediction matrix for the test questions as per the ablation script logs). We first preserved the raw probability outputs from the model, representing each student's likelihood of answering correctly. We then applied a 0.5 threshold to these probabilities to convert them to binary predictions (0 for incorrect, 1 for correct). This conversion produced a correctness matrix where each cell contained either 0 or 1.
+After training the neural network on 70\% of the questions and validating on 20\%, we used the model to generate predictions for the 10\% completely unseen questions in the holdout test set. For each of the 470 holdout questions, we generated predictions for all unique students present in the training/validation data. We first preserved the raw probability outputs from the model, representing each student's likelihood of answering correctly.
 
-We then used these binarized correctness matrices as inputs to an Item Response Theory estimation process. We implemented a 1-Parameter Logistic (1PL) IRT model to estimate question difficulty parameters. The parameter estimation employed a maximum likelihood approach using TensorFlow.
+To prepare these outputs for IRT modeling, we applied a 0.5 threshold to the probabilities to convert them to binary predictions (0 for incorrect, 1 for correct). This binarization step is crucial as it simulates the actual outcome of a student attempting a question—they either answer it correctly or incorrectly, rather than achieving a probabilistic score. This conversion thus produced a dichotomous correctness matrix where each cell contained either 0 or 1, mirroring real-world student response data.
+
+We then used these binarized correctness matrices as inputs to an Item Response Theory estimation process. We implemented a 1-Parameter Logistic (1PL) IRT model to estimate question difficulty parameters. The 1PL model is defined as:
+\begin{equation}
+P(X_{ij}=1 | \theta_j, \beta_i) = \frac{e^{(\theta_j - \beta_i)}}{1 + e^{(\theta_j - \beta_i)}}
+\end{equation}
+where $P(X_{ij}=1)$ is the probability of student $j$ answering question $i$ correctly, $\theta_j$ represents the ability of student $j$, and $\beta_i$ represents the difficulty of question $i$. In our application, the $\theta_j$ parameters are estimated based on the patterns in the binarized \textit{predicted} responses.
+The parameter estimation employed a maximum likelihood approach using TensorFlow.
 
 
 %----------------------------------------------------------------------------------------
@@ -472,7 +466,7 @@ We then used these binarized correctness matrices as inputs to an Item Response 
 
 \subsection{Model Performance}
 
-Our neural network model achieved strong performance in predicting student correctness. The following metrics were obtained on the holdout test set (470 questions) using the best performing model configuration (\texttt{config\_F\_lower\_lr\_more\_patience}):
+Our neural network model achieved good performance in predicting student correctness. The following metrics were obtained on the holdout test set (470 questions):
 
 \begin{table}[H]
     \centering
@@ -491,11 +485,11 @@ Our neural network model achieved strong performance in predicting student corre
     \label{tab:classification-metrics-test}
 \end{table}
 
-These metrics indicate the model's robust ability to predict student responses on unseen questions, providing a solid foundation for the subsequent IRT parameter estimation from these predictions.
+These metrics indicate the model's robust ability to predict student responses on unseen questions, providing a good foundation for the subsequent IRT parameter estimation from these predictions.
 
 \subsection{IRT Parameter Estimation}
 
-Our primary objective was to estimate 1-Parameter Logistic (1PL) IRT difficulty parameters from the neural network's binarized predictions on the holdout test set. The alignment between these NN-derived difficulty parameters and the benchmark 1PL IRT difficulty parameters (calculated from the full original student response dataset) is shown below for our best performing full-feature model (equivalent to Model 4 in the ablation study):
+Our primary objective was to estimate IRT difficulty parameters from the neural network's binarized predictions on the holdout test set. The alignment between these NN-derived difficulty parameters and the benchmark difficulty parameters (calculated from the full original student response dataset) is shown below:
 
 \begin{table}[H]
     \centering
@@ -505,12 +499,11 @@ Our primary objective was to estimate 1-Parameter Logistic (1PL) IRT difficulty 
         \hline
         Pearson correlation & 0.7791 \\
         Spearman rank correlation & 0.7606 \\
+        RMSE & 1.1857 \\
         Number of common questions & 470 \\
-        % MAE & [To be added if available for 1PL] \\
-        % RMSE (direct, unaligned) & [To be added if available for 1PL] \\
         \hline
     \end{tabular}
-    \caption{1PL IRT difficulty parameter estimation metrics on the holdout test set for the full feature model.}
+    \caption{IRT difficulty parameter estimation metrics on the holdout test set.}
     \label{tab:irt-metrics-1pl}
 \end{table}
 
@@ -518,10 +511,8 @@ The high correlation values demonstrate a strong positive relationship between t
 
 \begin{figure}[H]
     \centering
-    % USER: Please ensure 'difficulty_scatter_Model_4_Full.png' (or similar name from your script's output)
-    % is placed in a 'figures' subdirectory relative to main.tex, or update path.
     \includegraphics[width=0.8\columnwidth]{figures/difficulty_scatter_Model_4_Full.png} 
-    \caption{Correlation between benchmark 1PL IRT difficulty and NN-derived 1PL difficulty (Model 4 - Full Features) on the holdout test set.}
+    \caption{Correlation between benchmark 1PL IRT difficulty and NN-derived  difficulty on the holdout test set.}
     \label{fig:difficulty-correlation-1pl}
 \end{figure}
 
@@ -529,94 +520,83 @@ As shown in Figures \ref{fig:difficulty-correlation-1pl} and \ref{fig:difficulty
 
 \begin{figure}[H]
     \centering
-    % USER: Please ensure 'difficulty_density_Model_4_Full.png' (or similar name from your script's output)
-    % is placed in a 'figures' subdirectory relative to main.tex, or update path.
-    \includegraphics[width=1\columnwidth]{figures/difficulty_density_Model_4_Full.png} 
-    \caption{Distribution comparison of benchmark 1PL IRT difficulty and NN-derived 1PL difficulty (Model 4 - Full Features) for the holdout test set.}
+    \includegraphics[width=0.8\columnwidth]{figures/difficulty_density_Model_4_Full.png} 
+    \caption{Distribution comparison of benchmark difficulty and NN-derived difficulty for the holdout test set.}
     \label{fig:difficulty-distribution-1pl}
 \end{figure}
 
 \subsection{RMSE-Based Efficiency Evaluation}
-To further contextualize the performance of our NN-derived 1PL difficulty parameters, we conducted an RMSE-based efficiency evaluation. This analysis compares the accuracy of our model's difficulty estimates to those obtainable from traditional 1PL IRT estimations using varying amounts of real student data for the same 470 holdout questions. The ground truth for this comparison was established by calculating 1PL IRT difficulty parameters using all available answers for these 470 questions from the original unfiltered dataset.
 
-After aligning the scale (mean and standard deviation) of our NN-derived 1PL difficulties to these ground truth difficulties, the \textbf{NN-Derived 1PL Model RMSE was 1.1857}.
+To understand the practical value of our model, we compared its performance in estimating question difficulty to traditional methods that rely on actual student data. Specifically, we wanted to quantify how many real student responses would be needed in a standard Item Response Theory (IRT) analysis to achieve the same level of accuracy as our model, which uses no new student data for the holdout questions.
 
-Figure \ref{fig:rmse-efficiency} illustrates this comparison, showing the RMSE achieved by traditional 1PL IRT with different sample sizes against our model's performance. Table \ref{tab:rmse-efficiency} provides a subset of these data points.
+For this evaluation, we first established a "ground truth" set of difficulty parameters. These were calculated using a 1-Parameter Logistic (1PL) IRT model applied to \textit{all} available real student answers for the 470 questions in our holdout test set. This represents the most accurate difficulty estimation possible with our dataset for these items.
+
+Next, we took the difficulty parameters predicted by our neural network model for these same 470 holdout questions. The Root Mean Square Error (RMSE) between our model's predicted difficulties and the ground truth was \textbf{1.1857}.
+
+The core of the evaluation involved simulating traditional 1PL IRT analyses using different-sized subsamples of real student responses for the holdout questions. We progressively increased the percentage of real student data used (from 1\% up to 100\%), calculated the difficulty parameters for each subsample, and then computed the RMSE against the ground truth difficulties. To ensure stable estimates, this process of subsampling and RMSE calculation was repeated 10 times for each data percentage, and the average RMSE was used.
+
+Figure \ref{fig:rmse-efficiency} plots the RMSE achieved by these traditional 1PL IRT estimations as the amount of real student data increases. Our model's RMSE (1.1857) is marked on this plot for comparison. 
 
 \begin{figure}[H]
     \centering
-    % USER: Please ensure 'rmse_efficiency_curve.png' is placed in a 'figures' subdirectory relative to main.tex, or update path.
     \includegraphics[width=1\columnwidth]{figures/rmse_efficiency_curve.png}
-    \caption{RMSE-Based Efficiency of NN-Derived Difficulty Estimates compared to Traditional 1PL IRT using varying amounts of real student data.}
+    \caption{RMSE-Based Efficiency of NN-Derived Difficulty Estimates compared to Traditional 1PL IRT using varying amounts of real student data. As expected, the RMSE decreases as more real student data is used.}
     \label{fig:rmse-efficiency}
 \end{figure}
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{ccc}
-        \hline
-        \textbf{\% Real Data Used} & \textbf{Approx. Answer Count} & \textbf{Simulated RMSE} \\
-        \hline
-        1.0\% & 254 & \textasciitilde1.6807 \\
-        5.0\% & 1,272 & \textasciitilde1.6059 \\
-        10.0\% & 2,544 & \textasciitilde1.4834 \\
-        15.0\% & 3,816 & \textasciitilde1.3666 \\
-        20.0\% & 5,088 & \textasciitilde1.2475 \\
-        \textbf{Our Model's Performance} & \textbf{(NN-derived, ~5,818 equiv.)} & \textbf{1.1857} \\
-        25.0\% & 6,360 & \textasciitilde1.1399 \\
-        30.0\% & 7,632 & \textasciitilde1.0680 \\
-        % ... (selected entries for brevity, can include more from strategy doc) ...
-        50.0\% & 12,720 & \textasciitilde0.7815 \\
-        100.0\% & 25,440 & \textasciitilde0.0185 \\
-        \hline
-    \end{tabular}
-    \caption{RMSE of 1PL IRT difficulty estimates using varying amounts of real student data for 470 holdout questions, compared to NN-derived difficulty RMSE.}
-    \label{tab:rmse-efficiency}
-\end{table}
+This comparison reveals that our model's difficulty estimates achieve an accuracy comparable to what a traditional 1PL IRT analysis would achieve if it used approximately \textbf{5,818 real student answers} for these 470 holdout questions. This number of answers corresponds to roughly \textbf{22.87\%} of the total real student responses available for these particular items in our dataset.
 
-This evaluation indicates that our NN-derived 1PL difficulty estimates achieve an accuracy (RMSE of 1.1857) comparable to using approximately **5,818 real student answers** in a traditional 1PL IRT estimation for these same 470 holdout questions. This represents approximately **22.87\%** of the total available real responses for these items in the holdout set. This suggests a significant potential for data efficiency using our modeling approach.
+This finding suggests that our approach can estimate question difficulty with an accuracy that would typically require a substantial number of real student interactions. This highlights the potential of our model to make the assessment development process more efficient, reducing the reliance on extensive pre-testing with students while still achieving robust difficulty estimates.
 
 \subsection{Feature Ablation Study}
-To investigate the contribution of different feature types to the model's performance in predicting student correctness and subsequent IRT difficulty estimation, a feature ablation study was conducted. This study employed the same 1PL vs. 1PL comparison framework and neural network hyperparameters as our main reported model.
+To address our second research question (understanding how different types of features contribute to predicting question difficulty), we conducted a feature ablation study. In this study, we systematically built models by adding layers of features. We started with a model using only text embeddings and then progressively incorporated traditional linguistic and structural features (derived from both question statements and answer options), and finally added our LLM-extracted pedagogical features. 
 
-\subsubsection{Feature Buckets for Ablation Study}
-Features were incrementally added to a baseline of text embeddings:
+Each of these models used the same neural network architecture and IRT comparison framework as our primary reported model. This layered approach allowed us to isolate and observe the impact of each feature group on the accuracy of the estimated IRT difficulty parameters.
+
+The four models we built are described below:
+
 \begin{enumerate}
-    \item \textbf{Model 1 (Embeddings Only)}: Utilized only the \texttt{nomic-ai/modernbert-embed-base} text embeddings of the formatted question text.
-    \item \textbf{Model 2 (Embeddings + Question Features)}: Added linguistic and structural features derived from the question title and text (e.g., \texttt{question\_word\_count}, \texttt{has\_image}, \texttt{Has\_Abstract\_Symbols}). This corresponds to Bucket 1 in \texttt{modeling\_strategy.md}.
-    \item \textbf{Model 3 (Embeddings + Question + Option Features)}: Added linguistic and structural features derived from the answer options (e.g., \texttt{jaccard\_similarity\_std}, \texttt{avg\_option\_length}, \texttt{Has\_NoneAll\_Option}). This corresponds to Bucket 1 + Bucket 2 in \texttt{modeling\_strategy.md}.
-    \item \textbf{Model 4 (Embeddings + Question + Option + LLM Features)}: Added LLM-derived pedagogical features, both numerical (e.g., \texttt{avg\_steps}, \texttt{level}, \texttt{num\_misconceptions}, \texttt{Mathematical\_Notation\_Density}) and categorical (OHE: \texttt{Knowledge\_Dimension}, \texttt{Most\_Complex\_Number\_Type}, \texttt{Problem\_Archetype}). This corresponds to Bucket 1 + Bucket 2 + Bucket 3 in \texttt{modeling\_strategy.md} and represents the full feature set similar to our main reported model.
+    \item \textbf{Model 1 (Embeddings Only)}
+    Utilized only the \texttt{ModernBert} text embeddings of the formatted question text and options.
+    \item \textbf{Model 2 (Embeddings + Question Features)}
+    Added linguistic and structural features derived from the question problem statement (e.g., \texttt{word\_count}, \texttt{has\_image}, \texttt{has\_abstract\_symbols}).
+    \item \textbf{Model 3 (Embeddings + Question + Option Features)}
+    Added linguistic and structural features derived from the answer options (e.g., \texttt{jaccard\_similarity\_std}, \texttt{avg\_option\_length}, \texttt{has\_noneall\_option}, \texttt{cos\_sim\_mean}).
+    \item \textbf{Model 4 (Embeddings + Question + Option + LLM Features)}
+    Added LLM-derived pedagogical features, both numerical (e.g., \texttt{avg\_steps}, \texttt{level}, \texttt{num\_misconceptions}) and categorical (e.g., \texttt{knowledge\_dimension}, \texttt{problem\_archetype}).
 \end{enumerate}
 
-\subsubsection{Ablation Results}
 Table \ref{tab:ablation-results} summarizes the performance of these four models on the test set.
 
 \begin{table}[H]
     \centering
     \resizebox{\columnwidth}{!}{
-    \begin{tabular}{lccccc}
+    \begin{tabular}{lcc}
         \hline
-        \textbf{Model Configuration} & \textbf{Test AUC} & \textbf{Test Acc.} & \textbf{Test F1} & \textbf{Pearson (1PL)} & \textbf{Spearman (1PL)} \\
+        \textbf{Model Configuration} & \textbf{Pearson} & \textbf{Spearman} \\
         \hline
-        Model 1: Embeddings Only & 0.7741 & 0.7518 & 0.8359 & 0.6822 & 0.7064 \\
-        Model 2: Emb. + Question Feat. & 0.7743 & 0.7524 & 0.8351 & 0.6842 & 0.7065 \\
-        Model 3: Emb. + Q \& Opt. Feat. & 0.7753 & 0.7513 & 0.8343 & 0.6758 & 0.7044 \\
-        Model 4: Full Model (Emb. + Q \& Opt. + LLM) & 0.7818 & 0.7530 & 0.8351 & 0.7791 & 0.7606 \\
+        Embeddings Only & 0.6822 & 0.7064 \\
+        Emb. + Question Feat. & 0.6842 & 0.7065 \\
+        Emb. + Q \& Opt. Feat. & 0.6758 & 0.7044 \\
+        Full Model (All + LLM Feat.) & 0.7791 & 0.7606 \\
         \hline
     \end{tabular}
     }
-    \caption{Feature ablation study results: correctness and 1PL vs. 1PL difficulty correlation metrics.}
+    \caption{Feature ablation study results: difficulty correlation metrics.}
     \label{tab:ablation-results}
 \end{table}
 
-\subsubsection{Ablation Study Conclusions}
-This ablation study reveals the following insights:
+The results of this feature ablation study, presented in Table \ref{tab:ablation-results}, highlight the distinct contributions of each feature group to the estimation of IRT difficulty parameters:
+
 \begin{itemize}
-    \item \textbf{Baseline (Model 1: Embeddings Only):} Text embeddings alone achieve a Pearson correlation of \textasciitilde0.682 and Spearman of \textasciitilde0.706 for 1PL difficulty. Correctness AUC is \textasciitilde0.774.
-    \item \textbf{Impact of Non-LLM Question and Option Features (Model 2 \& 3 vs. Model 1):} Adding traditional linguistic/structural question features (Model 2) maintained similar performance. Further adding option features (Model 3, which now includes embedding-derived option metrics) showed a slight dip in Pearson correlation (\textasciitilde0.676) but maintained Spearman correlation and AUC, suggesting these foundational features provide a stable base but don't dramatically lift performance over embeddings alone for difficulty correlation in this setup.
-    \item \textbf{Impact of LLM-Derived Features (Model 4 vs. Model 3):} The most significant improvement came from adding the LLM-derived features. Model 4 (full model) showed a substantial increase in difficulty correlation (Pearson \textasciitilde0.779, Spearman \textasciitilde0.761) compared to Model 3. Correctness AUC also increased to \textasciitilde0.782. This highlights the strong contribution of the LLM-generated features for capturing nuances related to question difficulty.
+    \item \textbf{Embeddings as a Foundation:} Using only text embeddings (Model 1) provided a strong starting point. This model achieved a Pearson correlation of approximately 0.68 and a Spearman correlation of approximately 0.71 between its predicted difficulty parameters and the benchmark parameters. This indicates that the semantic meaning captured by embeddings alone can account for a substantial part of what makes a question difficult.
+
+    \item \textbf{Minimal Impact from Basic Question and Option Features:} Adding traditional linguistic and structural features derived from the question text (Model 2) offered virtually no improvement in difficulty correlation. Further incorporating similar features from the answer options (Model 3) actually resulted in a slight decrease in Pearson correlation (to around 0.68), while the Spearman correlation remained largely unchanged. This suggests that, once the rich semantic information from embeddings is available, these more basic textual and structural characteristics do not add much more predictive power for question difficulty.
+
+    \item \textbf{Significant Improvement from LLM-Extracted Features:} The most substantial gain in performance came with the addition of LLM-derived pedagogical features (Model 4, the Full Model). This model, which includes all feature types, reached a Pearson correlation of approximately 0.78 and a Spearman correlation of approximately 0.76. This is a marked improvement over the models that relied only on embeddings and traditional features.
 \end{itemize}
-These results underscore the significant contribution of the LLM-extracted features for capturing aspects of question difficulty that are not fully encompassed by text embeddings or basic structural/linguistic features alone. The full feature set in Model 4 demonstrates the strongest performance, aligning closely with our main reported model's capabilities.
+
+These findings underscore the value of the LLM-extracted pedagogical features. While text embeddings effectively capture the general meaning of a question and its options, and traditional features describe surface-level text properties, the LLM-derived features seem to tap into deeper aspects related to cognitive load, the complexity of the solution process, and common student challenges. The significant jump in performance when these LLM features were included suggests that these AI-generated pedagogical insights are relevant to more accurately estimating question difficulty without relying on actual student test data.
 
 \section{Discussion}
 
@@ -626,9 +606,7 @@ Our research demonstrates that Item Response Theory difficulty parameters can be
 
 The strong performance of our neural network model in predicting student correctness (test set F1 score of 0.8350, AUC of 0.7789) confirms that our feature engineering approach effectively captures many factors influencing student performance. By integrating traditional linguistic and structural features, semantic embeddings of question text, and LLM-extracted pedagogical insights (such as solution step count, cognitive level, and misconception count), we created a rich representation of question characteristics.
 
-Most importantly, the RMSE-based efficiency evaluation showed that our NN-derived 1PL difficulty estimates (RMSE of 1.1857 after scale alignment) are comparable in accuracy to using approximately 5,800 real student answers (representing about 22.87\% of the available data for the holdout questions) in a traditional 1PL IRT estimation. This highlights a substantial potential for data efficiency and cost reduction in assessment development.
-
-Furthermore, the feature ablation study confirmed the significant contribution of LLM-derived pedagogical features. When added to a baseline of text embeddings and other non-LLM structural/lexical features, the LLM features provided a notable boost in the correlation between predicted and benchmark IRT difficulty parameters. This supports the claim that these advanced, AI-extracted features are valuable for capturing nuances of question difficulty.
+Most importantly, the RMSE-based efficiency evaluation showed that our NN-derived 1PL difficulty estimates (RMSE of 1.1857) are comparable in accuracy to using approximately 5,800 real student answers (representing about 22\% of the available data for the holdout questions) in a traditional 1PL IRT estimation. This highlights a substantial potential for data efficiency and cost reduction in assessment development.
 
 These findings suggest that our simulation-based approach can reliably estimate question difficulty, potentially accelerating assessment development while maintaining psychometric quality, and opens new avenues for AI-assisted educational assessment design.
 
@@ -644,21 +622,16 @@ Despite the promising results, several limitations of our study should be acknow
     
 \paragraph{Model Sensitivity}: Additionally, our results may vary depending on which LLM vendor we use (e.g., OpenAI, Anthropic, Google) and which inference parameters we select (e.g., temperature, top-p sampling). These choices can significantly impact the quality and consistency of the LLM-extracted features that feed into our model.
 
-\subsection{Future Work}
+%----------------------------------------------------------------------------------------
+% ACKNOWLEDGMENTS
+%----------------------------------------------------------------------------------------
+\section{Acknowledgments}
 
-In future iterations of this research, we plan to address these limitations through several targeted improvements:
+I would like to thank my advisor Ben Domingue for his valuable feedback during the writing of this paper and for contributing important ideas like the RMSE difficulty estimation approach and other insights that made the paper clearer and more rigorous.
 
-\paragraph{Dataset Expansion}: We are currently in discussions to obtain the ASSISTments dataset to validate our approach on a different student population. This additional dataset would allow us to test the generalizability of our method across different educational contexts and student demographics.
-    
-\paragraph{Baseline Comparisons and Feature Analysis}: The feature ablation study provided initial insights. Further systematic removal or addition of specific LLM-derived features or other feature groups can help to more precisely quantify their individual and combined contributions to prediction accuracy and difficulty alignment. Comparing against simpler regression models using only subsets of features would also be beneficial.
-    
-\paragraph{Methodological Variations}: We will test variations of the model architecture, different LLM providers or versions for feature extraction, and alternative embedding models to evaluate the sensitivity of our results to these methodological choices. This exploration will help identify the most robust and effective configuration for difficulty prediction.
-    
-\paragraph{Refinement of LLM-Derived Pedagogical Features}: We plan to continue refining the LLM-based feature extraction process. This could involve exploring more sophisticated prompting techniques for features like `avg\_steps`, `level`, and `num\_misconceptions`, or investigating new types of pedagogical features that LLMs can extract to better capture question complexity.
-    
-\paragraph{Human Validation}: We will compare LLM annotations for features like cognitive level or misconception identification with human expert annotations for a subset of questions to assess the agreement between automated and human judgments. This validation will help establish the credibility of LLM-extracted features and identify areas where LLM performance could be improved.
+I am grateful to my program director Sanne Smith for her support and for accompanying me throughout the idea brainstorming process, helping me develop and refine this research concept and pursue it through to completion.
 
-By addressing these directions in future research, we aim to strengthen the validity, reliability, and generalizability of our approach to difficulty estimation, potentially establishing a new standard for efficient assessment development in educational contexts.
+I also thank my fellow MS Education Data Science classmates for all the valuable feedback they provided on early versions of this manuscript and for their support throughout the entire research process.
 
 %----------------------------------------------------------------------------------------
 % REFERENCES
@@ -687,7 +660,7 @@ By addressing these directions in future research, we aim to strengthen the vali
 \section{Appendix}
 
 \subsection{Step by Step Example}
-\label{sec:step-by-step-example}
+\label{app:prompt_avg_steps}
 The following is an example prompt used to generate step by step solution explanations for a mathematical problem:
 
 \begin{questionbox}{Prompt}
@@ -832,10 +805,11 @@ And here is the LLM's response:
 \end{llmbox}
 
 \subsection{Bloom's Cognitive Level Table}
+\label{app:bloom_taxonomy}
 Table \ref{tab:blooms-taxonomy} outlines Bloom's Taxonomy levels used to classify the cognitive demands of problems. Each level is an ordinal number in our feature encoding. The LLM was provided with this rubric and asked to determine the primary cognitive level for each question (feature: \texttt{level}).
 \begin{table}[H]
     \centering
-    \begin{tabular}{p{0.30\columnwidth}p{0.70\columnwidth}}
+    \begin{tabular}{p{0.30\columnwidth}p{0.60\columnwidth}}
         \hline
         \textbf{Cognitive Level} & \textbf{Description} \\
         \hline
@@ -852,7 +826,8 @@ Table \ref{tab:blooms-taxonomy} outlines Bloom's Taxonomy levels used to classif
 \end{table}
 
 \subsection{Example of Misconceptions List}
-Following the example from the appendix \ref{sec:step-by-step-example}, here is one of the outputs of the LLM when asked about common misconceptions for the question in the example. The prompt for the \texttt{num\_misconceptions} feature asked the LLM to generate an exhaustive, atomic list of such misconceptions, and the count was averaged over runs.
+\label{app:num_misconceptions}
+Following the example from the appendix \ref{app:prompt_avg_steps}, here is one of the outputs of the LLM when asked about common misconceptions for the question in the example. The prompt for the \texttt{num\_misconceptions} feature asked the LLM to generate an exhaustive, atomic list of such misconceptions, and the count was averaged over runs.
 
 \begin{enumerate}
     \item Students may confuse 'decreasing order' with 'increasing order', leading them to reverse the correct order of the numbers.
@@ -879,17 +854,30 @@ This section details the core prompts used with Google's Gemini models (primaril
 \textbf{Model Used:} \texttt{gemini-2.0-flash} (1 run)
 \begin{promptbox}
 Analyze the following math question. What primary type of knowledge does it assess? Choose one:
+
+\vspace{1em}
+
 - Factual: Recalling specific facts, definitions, formulas, or properties.
+
 - Conceptual: Understanding relationships between concepts, interpreting information, explaining ideas, applying knowledge flexibly.
+
 - Procedural: Executing a sequence of steps or applying a standard algorithm or method.
 
+\vspace{1em}
+
 Question:
+
 \$\{questionTitle\}
 
+\vspace{1em}
+
 Options:
+
 \$\{options.map(opt => `- \$\{opt\}`).join('\\n')\}
 
+\vspace{1em}
 Think step-by-step about what the student needs to know or do. Is it mainly recall, understanding connections, or following steps? Then state the single best classification.
+
 \end{promptbox}
 
 \subsubsection{Information Gap (Feature: \texttt{Question\_Answer\_Info\_Gap})}
@@ -898,17 +886,31 @@ Think step-by-step about what the student needs to know or do. Is it mainly reca
 \begin{promptbox}
 Analyze the following math question. How much information, knowledge, or reasoning *not explicitly stated* in the question text itself is required to arrive at the correct solution? Consider implicit assumptions, required prior knowledge (beyond basic arithmetic), or necessary intermediate reasoning steps.
 
+\vspace{1em}
+
 Use this scale:
+
 1 = None: The answer can be derived directly using only the information and numbers explicitly given.
+
 2 = Low: Requires minimal prior knowledge (e.g., a common definition) or a single, obvious implicit step.
+
 3 = Medium: Requires recall of specific formulas/theorems not given, multiple implicit reasoning steps, or interpretation of context.
+
 4 = High: Requires significant external knowledge, complex synthesis of unstated information, or bridging substantial gaps in the problem statement.
 
+\vspace{1em}
+
 Question:
+
 \$\{questionTitle\}
 
+\vspace{1em}
+
 Options:
+
 \$\{options.map(opt => `- \$\{opt\}`).join('\\n')\}
+
+\vspace{1em}
 
 Think step-by-step about the solution process. What external knowledge (formulas, theorems, concepts) is needed? What steps rely on implicit understanding? How large is the gap between the stated information and the required solution path?
 \end{promptbox}
@@ -919,15 +921,27 @@ Think step-by-step about the solution process. What external knowledge (formulas
 \begin{promptbox}
 Analyze the mathematical expressions in the following text. Consider nested parentheses, functions (like sqrt), fractions, exponents, etc. What is the maximum nesting depth required to parse the most complex part of any expression?
 
+\vspace{1em}
+
 For example:
-- '2 + 3' has depth 0.
-- 'sqrt(5)' has depth 1.
-- '3 * (4 + 5)' has depth 1.
-- 'sqrt(a + (b/c))' has depth 2 (division inside addition inside sqrt).
-- '((a+b)\^2) / (c - d)' has depth 2.
+
+- "2 + 3" has depth 0.
+
+- "sqrt(5)" has depth 1.
+
+- "3 * (4 + 5)" has depth 1.
+
+- "sqrt(a + (b/c))" has depth 2 (division inside addition inside sqrt).
+
+- "((a+b)\^2) / (c - d)" has depth 2.
+
+\vspace{1em}
 
 Text:
+
 \$\{questionTitle\}
+
+\vspace{1em}
 
 Think step-by-step about the structure of each expression. Identify the most deeply nested part. Count the levels of nesting.
 \end{promptbox}
@@ -937,23 +951,46 @@ Think step-by-step about the structure of each expression. Identify the most dee
 \textbf{Model Used:} \texttt{gemini-2.0-flash} (1 run)
 \begin{promptbox}
 Analyze the numbers involved in this math question, including those in the options.
+
+\vspace{1em}
+
 Consider integers, decimals, fractions, roots/irrationals (like sqrt(2) or pi), and complex numbers (like 3+2i).
+
+\vspace{1em}
+
 DO NOT consider abstract variables (like x) for this specific task.
 
+\vspace{1em}
+
 Based on the following hierarchy of *numerical* complexity (lowest to highest):
+
 1: Integer (e.g., 5, -2, 0)
+
 2: Decimal (e.g., 3.14, -0.5)
+
 3: Fraction (e.g., 1/2, 3/4)
+
 4: Root/Irrational (e.g., sqrt(3), pi)
+
 5: Complex Number (e.g., 2i, 1+i)
+
+\vspace{1em}
 
 What is the HIGHEST level of numerical complexity present in the question or its options?
 
+\vspace{1em}
+
 Question:
+
 \$\{questionTitle\}
 
+\vspace{1em}
+
 Options:
+
 \$\{options.map(opt => `- \$\{opt\}`).join('\\n')\}
+
+\vspace{1em}
 
 Think step-by-step. Identify the different types of numbers present. Determine the highest level reached according to the hierarchy. Ignore variables/abstract symbols.
 \end{promptbox}
@@ -964,11 +1001,19 @@ Think step-by-step. Identify the different types of numbers present. Determine t
 \begin{promptbox}
 Does the following math question or its options contain abstract symbols representing variables or unknown quantities (e.g., x, y, a, ?, width, length)? Ignore standard mathematical operators, functions, units, and concrete numbers.
 
+\vspace{1em}
+
 Question:
+
 \$\{questionTitle\}
 
+\vspace{1em}
+
 Options:
+
 \$\{options.map(opt => `- \$\{opt\}`).join('\\n')\}
+
+\vspace{1em}
 
 Think step-by-step. Look for letters or symbols used as variables.
 \end{promptbox}
@@ -979,8 +1024,13 @@ Think step-by-step. Look for letters or symbols used as variables.
 \begin{promptbox}
 Does the following math question involve units of measurement (like meters, kg, dollars, seconds, etc.) in a way that might require attention to units or potential conversions to solve correctly?
 
+\vspace{1em}
+
 Question:
+
 \$\{questionTitle\}
+
+\vspace{1em}
 
 Think step-by-step. Identify any units mentioned. Consider if conversions are needed.
 \end{promptbox}
@@ -990,17 +1040,32 @@ Think step-by-step. Identify any units mentioned. Consider if conversions are ne
 \textbf{Model Used:} \texttt{gemini-2.5-pro} (1 run)
 \begin{promptbox}
 Classify the primary task or structure of the following math question. Choose the single best fit from this list:
+
+\vspace{1em}
+
 - Word Problem - Calculation
+
 - Equation Solving
+
 - Geometric Reasoning/Proof
+
 - Data Interpretation
+
 - Conceptual Definition/Understanding
+
 - Formula Application
+
 - Pattern Recognition
+
 - Other
 
+\vspace{1em}
+
 Question:
+
 \$\{questionTitle\}
+
+\vspace{1em}
 
 Think step-by-step about what the question asks the student to *do*. What is the core task?
 \end{promptbox}
@@ -1011,10 +1076,17 @@ Think step-by-step about what the question asks the student to *do*. What is the
 \begin{promptbox}
 Does the context of the following math question primarily involve a real-world scenario (e.g., shopping, measuring objects, physics situations, stories about people) OR is it presented in a purely abstract mathematical way (e.g., manipulating equations, asking about number properties, abstract geometry without context)?
 
+\vspace{1em}
+
 Respond with either 'REALWORLD' or 'ABSTRACT'.
 
+\vspace{1em}
+
 Question:
+
 \$\{questionTitle\}
+
+\vspace{1em}
 
 Think step-by-step about the setting and elements described in the question.
 \end{promptbox}
@@ -1024,12 +1096,24 @@ Think step-by-step about the setting and elements described in the question.
 \textbf{Model Used:} \texttt{gemini-2.0-flash} (1 run, calculates ratio from counts)
 \begin{promptbox}
 Analyze the mathematical content in the text below.
+
+\vspace{1em}
+
 1. Count the number of concrete numerical values (e.g., 5, 3.14, -2, 1/2).
+
 2. Count the number of abstract symbols representing variables or unknown quantities (e.g., x, y, a, ?, width).
+
+\vspace{1em}
+
 Ignore standard mathematical operators (+, -, =), functions (sqrt), and units (m, kg).
 
+\vspace{1em}
+
 Text:
+
 \$\{questionTitle\}
+
+\vspace{1em}
 
 Think step-by-step. List the concrete numbers found. List the abstract symbols found. Provide the counts.
 \end{promptbox}
@@ -1039,25 +1123,73 @@ Think step-by-step. List the concrete numbers found. List the abstract symbols f
 \textbf{Model Used:} \texttt{gemini-2.5-flash} (3 runs, results aggregated for Mean and AvgMax)
 \begin{promptbox}
 Analyze the following math question and its options. The correct answer is '\$\{correctOption\}'.
+
+\vspace{1em}
+
 For each INCORRECT option provided below, rate its plausibility as a potential answer that a student might mistakenly choose.
+
+\vspace{1em}
+
 Use the following scale:
+
 1 = Very Unlikely: The option is nonsensical or completely unrelated.
+
 2 = Unlikely: The option results from a significant calculation error or conceptual misunderstanding.
+
 3 = Possible: The option might result from a common calculation mistake or a minor misunderstanding.
+
 4 = Plausible: The option is a common mistake or addresses a known misconception related to the question.
+
 5 = Very Plausible: The option is highly tempting, potentially resulting from a subtle error or a very common misconception.
 
+\vspace{1em}
+
 Question:
+
 \$\{questionTitle\}
 
+\vspace{1em}
+
 All Options:
+
 \$\{allOptionsStr\}
+
+\vspace{1em}
 
 Correct Answer: \$\{correctOption\}
 
+\vspace{1em}
 Think step-by-step about why each incorrect option might be chosen or not. Consider common student errors for this type of problem. Then, provide the rating for each incorrect option.
 \end{promptbox}
 
+\subsection{Neural Network Configuration Details}
+\label{app:nn_config_details}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{0.45\columnwidth}p{0.45\columnwidth}}
+        \hline
+        \textbf{Component} & \textbf{Value} \\
+        \hline
+        User Embedding Dimension & 8 \\
+        Dense Layer Units (Input Pathways) & 32 (for numerical features), 32 (for text embeddings) \\
+        Dense Layer Units (Shared) & 64, then 32 \\
+        Activation Function (Hidden Layers) & ReLU \\
+        L2 Regularization (All weight matrices) & 0.0005 \\
+        Dropout Rate (All dropout layers) & 0.25 \\
+        Optimization & Adam optimizer \\
+        Learning Rate & 0.0002 (2e-4) \\
+        Loss Function & Binary cross-entropy  \\
+        Metrics & Accuracy, AUC \\
+        Batch Size & 1024 \\
+        Maximum Epochs & 60 \\
+        Early Stopping Patience & 12 (monitors \texttt{val\_loss}) \\
+        Restore Best Weights (Early Stopping) & True \\
+        \hline
+    \end{tabular}
+    \caption{Neural network architecture and training hyperparameters for the best performing model.}
+    \label{tab:model-details}
+\end{table}
 
 \end{document}
 
