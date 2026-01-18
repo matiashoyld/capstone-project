@@ -175,12 +175,13 @@
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
-\usepackage[
-	backend=biber, % Use the biber backend for compiling the bibliography
-	citestyle=numeric, % In-text citation style
-	bibstyle=numeric, % Bibliography style
-	sorting=none, % Order references in the order in which they are used in the document
-]{biblatex}
+% Commented out for arXiv compatibility - using traditional BibTeX instead
+%\usepackage[
+%	backend=biber, % Use the biber backend for compiling the bibliography
+%	citestyle=numeric, % In-text citation style
+%	bibstyle=numeric, % Bibliography style
+%	sorting=none, % Order references in the order in which they are used in the document
+%]{biblatex}
 
 %----------------------------------------------------------------------------------------
 %	TABLES

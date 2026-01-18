@@ -31,7 +31,7 @@
 \usepackage{supertabular} % Add supertabular package for breakable tables across columns
 \usepackage{amsmath} % Add amsmath package for \text command and other math features
 
-\addbibresource{references.bib} % BibLaTeX bibliography file
+% Using traditional BibTeX for arXiv compatibility
 
 \runninghead{Synthetic Student Responses} % Updated running head
 
@@ -207,7 +207,7 @@ Linguistic characteristics of questions are strongly associated with their diffi
     \item \textbf{Semantic features:} Concept density, abstraction level, and semantic similarity between options \cite{bulut2023evaluating}
 \end{itemize}
 
-\textcite{hickendorff2013} demonstrated that linguistic factors significantly impact student performance on mathematics assessments, even when controlling for mathematical complexity.
+Hickendorff~\cite{hickendorff2013} demonstrated that linguistic factors significantly impact student performance on mathematics assessments, even when controlling for mathematical complexity.
 
 \subsubsection{Domain-specific Features}
 
@@ -219,7 +219,7 @@ Features specific to certain domains have been shown to improve prediction accur
     \item \textbf{Multiple-choice questions:} Similarity between options, plausibility of distractors \cite{kurdi2016experimental, yaneva2018automatic}
 \end{itemize}
 
-\textcite{toyama2021makes} emphasized that item difficulty is determined by the interplay of item characteristics, respondent characteristics, and the context in which assessment occurs.
+Toyama~\cite{toyama2021makes} emphasized that item difficulty is determined by the interplay of item characteristics, respondent characteristics, and the context in which assessment occurs.
 
 \subsection{Machine Learning Approaches for Difficulty Prediction}
 
@@ -227,17 +227,17 @@ Early approaches to difficulty prediction relied on deterministic methods or sim
 
 \subsubsection{Classical Machine Learning Methods}
 
-Traditional machine learning algorithms have been widely applied to the challenge of difficulty prediction. Linear and logistic regression models have proven effective in establishing relationships between text features and difficulty levels, as demonstrated by \textcite{yaneva2019predicting} in their work on high-stakes medical exams. More sophisticated approaches include the R2DE model proposed by \textcite{benedetto2020r2de}, which leverages random forests to simultaneously predict both IRT difficulty and discrimination parameters based on TF-IDF features extracted from question text. The literature also shows that feature-based ensemble methods have achieved notable success across various educational domains, with \textcite{yaneva2019predicting} demonstrating that combining different feature types can enhance prediction accuracy compared to single-feature approaches.
+Traditional machine learning algorithms have been widely applied to the challenge of difficulty prediction. Linear and logistic regression models have proven effective in establishing relationships between text features and difficulty levels, as demonstrated by Ha et al.~\cite{yaneva2019predicting} in their work on high-stakes medical exams. More sophisticated approaches include the R2DE model proposed by Benedetto et al.~\cite{benedetto2020r2de}, which leverages random forests to simultaneously predict both IRT difficulty and discrimination parameters based on TF-IDF features extracted from question text. The literature also shows that feature-based ensemble methods have achieved notable success across various educational domains, with Ha et al.~\cite{yaneva2019predicting} demonstrating that combining different feature types can enhance prediction accuracy compared to single-feature approaches.
 
 \subsubsection{Neural Network Models}
 
-Deep learning approaches have increasingly been applied to difficulty prediction, with several notable innovations emerging in recent years. Recurrent Neural Networks, particularly those utilizing Long Short-Term Memory (LSTM) architectures, have demonstrated effectiveness in capturing sequential patterns within question text, as shown in the work of \textcite{huang2017question}. Building on this foundation, \textcite{qiu2019question} introduced a more sophisticated approach with their Document-enhanced Attention Network (DAN), which improves prediction accuracy by enriching questions with relevant domain documents. This contextual enhancement allows the model to better understand the relationship between questions and their subject matter. Further advancing the field, \textcite{xue2020predicting} explored transfer learning techniques, demonstrating that models pre-trained on related tasks such as response time prediction can be effectively fine-tuned for difficulty estimation, leveraging knowledge gained from one educational assessment task to improve performance on another.
+Deep learning approaches have increasingly been applied to difficulty prediction, with several notable innovations emerging in recent years. Recurrent Neural Networks, particularly those utilizing Long Short-Term Memory (LSTM) architectures, have demonstrated effectiveness in capturing sequential patterns within question text, as shown in the work of Huang et al.~\cite{huang2017question}. Building on this foundation, Qiu et al.~\cite{qiu2019question} introduced a more sophisticated approach with their Document-enhanced Attention Network (DAN), which improves prediction accuracy by enriching questions with relevant domain documents. This contextual enhancement allows the model to better understand the relationship between questions and their subject matter. Further advancing the field, Xue et al.~\cite{xue2020predicting} explored transfer learning techniques, demonstrating that models pre-trained on related tasks such as response time prediction can be effectively fine-tuned for difficulty estimation, leveraging knowledge gained from one educational assessment task to improve performance on another.
 
 \subsubsection{Transformer-based Approaches}
 
-The most recent research has explored transformer-based models for difficulty prediction, leveraging their superior ability to capture contextual relationships. \textcite{benedetto2021transformers} compared BERT and DistilBERT models for difficulty estimation, finding that transformer models outperform previous approaches by up to 6.5\% in terms of RMSE. Building on this work, \textcite{gombert2024predicting} employed scalar-mixed transformer encoders with specialized regression heads, showing significant improvements over baseline models. Further advancing the field, \textcite{kapoor2025prediction} incorporated embeddings from various LLMs (ModernBERT, BERT, and LLAMA) alongside linguistic features, achieving a correlation of 0.77 between true and predicted difficulty.
+The most recent research has explored transformer-based models for difficulty prediction, leveraging their superior ability to capture contextual relationships. Benedetto et al.~\cite{benedetto2021transformers} compared BERT and DistilBERT models for difficulty estimation, finding that transformer models outperform previous approaches by up to 6.5\% in terms of RMSE. Building on this work, Gombert et al.~\cite{gombert2024predicting} employed scalar-mixed transformer encoders with specialized regression heads, showing significant improvements over baseline models. Further advancing the field, Kapoor et al.~\cite{kapoor2025prediction} incorporated embeddings from various LLMs (ModernBERT, BERT, and LLAMA) alongside linguistic features, achieving a correlation of 0.77 between true and predicted difficulty.
 
-A key advantage of transformer models is their ability to capture complex semantic relationships within text without requiring extensive feature engineering. \textcite{aradelli2020transformers} demonstrated that fine-tuning pre-trained transformers on domain-specific corpora further enhances prediction accuracy. These approaches represent the current state-of-the-art in difficulty prediction, combining the contextual understanding capabilities of transformer architectures with specialized training techniques to achieve unprecedented levels of accuracy in estimating question difficulty from text alone.
+A key advantage of transformer models is their ability to capture complex semantic relationships within text without requiring extensive feature engineering. Aradelli~\cite{aradelli2020transformers} demonstrated that fine-tuning pre-trained transformers on domain-specific corpora further enhances prediction accuracy. These approaches represent the current state-of-the-art in difficulty prediction, combining the contextual understanding capabilities of transformer architectures with specialized training techniques to achieve unprecedented levels of accuracy in estimating question difficulty from text alone.
 
 \subsection{Feature Extraction Using Language Models}
 
@@ -636,7 +636,8 @@ I also thank my fellow MS Education Data Science classmates for all the valuable
 %----------------------------------------------------------------------------------------
 % REFERENCES
 %----------------------------------------------------------------------------------------
-\printbibliography % Output the bibliography
+\bibliographystyle{unsrt}
+\bibliography{references}
 
 %----------------------------------------------------------------------------------------
 % APPENDICES
