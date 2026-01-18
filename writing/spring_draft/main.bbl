@@ -1,0 +1,1508 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{rudner2010implementing}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=374a3b93c848ab1571aca5fc907d7779}{%
+           family={Rudner},
+           familyi={R\bibinitperiod},
+           given={Lawrence},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{374a3b93c848ab1571aca5fc907d7779}
+      \strng{fullhash}{374a3b93c848ab1571aca5fc907d7779}
+      \strng{bibnamehash}{374a3b93c848ab1571aca5fc907d7779}
+      \strng{authorbibnamehash}{374a3b93c848ab1571aca5fc907d7779}
+      \strng{authornamehash}{374a3b93c848ab1571aca5fc907d7779}
+      \strng{authorfullhash}{374a3b93c848ab1571aca5fc907d7779}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-387-85459-5}
+      \field{month}{01}
+      \field{title}{Implementing the Graduate Management Admission Test Computerized Adaptive Test}
+      \field{year}{2010}
+      \field{pages}{151\bibrangedash 165}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1007/978-0-387-85461-8_8
+      \endverb
+    \endentry
+    \entry{impara1998teachers}{article}{}
+      \name{author}{2}{}{%
+        {{hash=df5a6c87d40017c89a3d62e848e1d9b8}{%
+           family={Impara},
+           familyi={I\bibinitperiod},
+           given={James\bibnamedelima C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=b081ea8efcc00c0506a2269fb4cdd068}{%
+           family={Plake},
+           familyi={P\bibinitperiod},
+           given={Barbara\bibnamedelima S.},
+           giveni={B\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{40e82c0e64587a17a687da504fa90f9b}
+      \strng{fullhash}{40e82c0e64587a17a687da504fa90f9b}
+      \strng{bibnamehash}{40e82c0e64587a17a687da504fa90f9b}
+      \strng{authorbibnamehash}{40e82c0e64587a17a687da504fa90f9b}
+      \strng{authornamehash}{40e82c0e64587a17a687da504fa90f9b}
+      \strng{authorfullhash}{40e82c0e64587a17a687da504fa90f9b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The Angoff (1971) standard setting method requires expert panelists to (a) conceptualize candidates who possess the qualifications of interest (e.g., the minimally qualified) and (b) estimate actual item performance for these candidates. Past and current research (Bejar, 1983; Shepard, 1994) suggests that estimating item performance is difficult for panelists. If panelists cannot perform this task, the validity of the standard based on these estimates is in question. This study tested the ability of 26 classroom teachers to estimate item performance for two groups of their students on a locally developed district-wide science test. Teachers were more accurate in estimating the performance of the total group than of the "borderline group," but in neither case was their accuracy level high. Implications of this finding for the validity of item performance estimates by panelists using the Angoff standard setting method are discussed.}
+      \field{journaltitle}{Journal of Educational Measurement}
+      \field{number}{1}
+      \field{title}{Teachers' Ability to Estimate Item Difficulty: A Test of the Assumptions in the Angoff Standard Setting Method}
+      \field{volume}{35}
+      \field{year}{1998}
+      \field{pages}{69\bibrangedash 81}
+      \range{pages}{13}
+      \verb{doi}
+      \verb https://doi.org/10.1111/j.1745-3984.1998.tb00528.x
+      \endverb
+      \verb{eprint}
+      \verb https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1745-3984.1998.tb00528.x
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1745-3984.1998.tb00528.x
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1745-3984.1998.tb00528.x
+      \endverb
+    \endentry
+    \entry{rasch1960}{article}{}
+      \name{author}{1}{}{%
+        {{hash=72bec79f8a64b0a276f2e4b763e4dea0}{%
+           family={Rasch},
+           familyi={R\bibinitperiod},
+           given={Georg},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{72bec79f8a64b0a276f2e4b763e4dea0}
+      \strng{fullhash}{72bec79f8a64b0a276f2e4b763e4dea0}
+      \strng{bibnamehash}{72bec79f8a64b0a276f2e4b763e4dea0}
+      \strng{authorbibnamehash}{72bec79f8a64b0a276f2e4b763e4dea0}
+      \strng{authornamehash}{72bec79f8a64b0a276f2e4b763e4dea0}
+      \strng{authorfullhash}{72bec79f8a64b0a276f2e4b763e4dea0}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Danish Institute for Educational Research}
+      \field{title}{Probabilistic models for some intelligence and attainment tests}
+      \field{year}{1960}
+    \endentry
+    \entry{alkhuzaey2023text}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{3}{}{%
+        {{hash=fcba49d6c27493335eb312c369e1e1e9}{%
+           family={AlKhuzaey},
+           familyi={A\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4ea20a723cbabe54753735cd578848a3}{%
+           family={Grasso},
+           familyi={G\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=b06858821a209e7589b1bd113041a7e7}{%
+           family={Payne},
+           familyi={P\bibinitperiod},
+           given={T.\bibnamedelimi R.},
+           giveni={T\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{c30870608d3e756f801e35c5c739b17e}
+      \strng{fullhash}{c30870608d3e756f801e35c5c739b17e}
+      \strng{bibnamehash}{c30870608d3e756f801e35c5c739b17e}
+      \strng{authorbibnamehash}{c30870608d3e756f801e35c5c739b17e}
+      \strng{authornamehash}{c30870608d3e756f801e35c5c739b17e}
+      \strng{authorfullhash}{c30870608d3e756f801e35c5c739b17e}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Artificial Intelligence in Education}
+      \field{title}{Text-based Question Difficulty Prediction: A Systematic Review of Automatic Approaches}
+      \field{volume}{34}
+      \field{year}{2024}
+      \field{pages}{862\bibrangedash 914}
+      \range{pages}{53}
+      \verb{doi}
+      \verb 10.1007/s40593-023-00362-1
+      \endverb
+    \endentry
+    \entry{choi2020predicting}{article}{}
+      \name{author}{2}{}{%
+        {{hash=025f28c0a5ae1a52ab3d7df530737047}{%
+           family={Choi},
+           familyi={C\bibinitperiod},
+           given={Inn-Chull},
+           giveni={I\bibinithyphendelim C\bibinitperiod}}}%
+        {{hash=0b44b3d3d604cff89e32f41da080cf1c}{%
+           family={Moon},
+           familyi={M\bibinitperiod},
+           given={Youngsun},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{6c967323d7d4f51b316861c28d526963}
+      \strng{fullhash}{6c967323d7d4f51b316861c28d526963}
+      \strng{bibnamehash}{6c967323d7d4f51b316861c28d526963}
+      \strng{authorbibnamehash}{6c967323d7d4f51b316861c28d526963}
+      \strng{authornamehash}{6c967323d7d4f51b316861c28d526963}
+      \strng{authorfullhash}{6c967323d7d4f51b316861c28d526963}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This study examines the relationships among various major factors that may affect the difficulty level of language tests in an attempt to enhance the robustness of item difficulty estimation, which constitutes a crucial factor ensuring the equivalency of high-stakes tests. The observed difficulties of the reading and listening sections of two EFL tests were compared using corpus linguistic features and expert judgments, i.e., native and nonnative speakers' perceived difficulty of the test items. The research findings are as follows: Some corpus features and the predicted difficulties demonstrated a moderate to high correlation with the test sections' observed difficulty. The native and nonnative speakers' predicted difficulties significantly explained the observed difficulty of the test sections, where the nonnative speakers' predicted difficulty explained a similar variance. When entered separately, the corpus features showed a stronger explanatory power than the predicted difficulties. The corpus features and predicted difficulty together accounted for the largest variance, which was more than half of the variance of the test sections. The current study suggests that corpus features and expert judgment capture different aspects of item difficulty and future research in this area needs to consider how these two can be combined for robust item difficulty estimation.}
+      \field{journaltitle}{Language Assessment Quarterly}
+      \field{number}{1}
+      \field{title}{Predicting the Difficulty of EFL Tests Based on Corpus Linguistic Features and Expert Judgment}
+      \field{volume}{17}
+      \field{year}{2020}
+      \field{pages}{18\bibrangedash 42}
+      \range{pages}{25}
+      \verb{doi}
+      \verb 10.1080/15434303.2019.1674315
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1080/15434303.2019.1674315
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1080/15434303.2019.1674315
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1080/15434303.2019.1674315
+      \endverb
+    \endentry
+    \entry{yaneva2019predicting}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=b96416c22ec687337de0b6c66a7e3930}{%
+           family={Ha},
+           familyi={H\bibinitperiod},
+           given={Le\bibnamedelima An},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=000cc0d8afa9514ead51e0a3ba90ad82}{%
+           family={Yaneva},
+           familyi={Y\bibinitperiod},
+           given={Victoria},
+           giveni={V\bibinitperiod}}}%
+        {{hash=6f76928ac5ea01a9587780f04d73d844}{%
+           family={Baldwin},
+           familyi={B\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=ce9c86818f46885285508a0d15ba41a3}{%
+           family={Mee},
+           familyi={M\bibinitperiod},
+           given={Janet},
+           giveni={J\bibinitperiod}}}%
+      }
+      \name{editor}{6}{}{%
+        {{hash=dbd61f3c096bbb90493d21827d98efc3}{%
+           family={Yannakoudakis},
+           familyi={Y\bibinitperiod},
+           given={Helen},
+           giveni={H\bibinitperiod}}}%
+        {{hash=99fc80aee89e42a6ff1dde48a2aabb65}{%
+           family={Kochmar},
+           familyi={K\bibinitperiod},
+           given={Ekaterina},
+           giveni={E\bibinitperiod}}}%
+        {{hash=4809f9384db164c4bec54eaa8c227a87}{%
+           family={Leacock},
+           familyi={L\bibinitperiod},
+           given={Claudia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=09e427d5638635b09579ef9fdafda760}{%
+           family={Madnani},
+           familyi={M\bibinitperiod},
+           given={Nitin},
+           giveni={N\bibinitperiod}}}%
+        {{hash=20f6c2c4a1bb76224136d4a806557939}{%
+           family={Pilán},
+           familyi={P\bibinitperiod},
+           given={Ildikó},
+           giveni={I\bibinitperiod}}}%
+        {{hash=d2bddcda907ea93d3a82a0623d8d0930}{%
+           family={Zesch},
+           familyi={Z\bibinitperiod},
+           given={Torsten},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Florence, Italy}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{8476b459dda398e078ebfa438ac8f54c}
+      \strng{fullhash}{35c898ae091e428ae19c8a2184eba650}
+      \strng{bibnamehash}{8476b459dda398e078ebfa438ac8f54c}
+      \strng{authorbibnamehash}{8476b459dda398e078ebfa438ac8f54c}
+      \strng{authornamehash}{8476b459dda398e078ebfa438ac8f54c}
+      \strng{authorfullhash}{35c898ae091e428ae19c8a2184eba650}
+      \strng{editorbibnamehash}{9c52e605d5eae3487297198d13c73c48}
+      \strng{editornamehash}{9c52e605d5eae3487297198d13c73c48}
+      \strng{editorfullhash}{f3a8db3f852816b6b045f754cc551f28}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Predicting the construct-relevant difficulty of Multiple-Choice Questions (MCQs) has the potential to reduce cost while maintaining the quality of high-stakes exams. In this paper, we propose a method for estimating the difficulty of MCQs from a high-stakes medical exam, where all questions were deliberately written to a common reading level. To accomplish this, we extract a large number of linguistic features and embedding types, as well as features quantifying the difficulty of the items for an automatic question-answering system. The results show that the proposed approach outperforms various baselines with a statistically significant difference. Best results were achieved when using the full feature set, where embeddings had the highest predictive power, followed by linguistic features. An ablation study of the various types of linguistic features suggested that information from all levels of linguistic processing contributes to predicting item difficulty, with features related to semantic ambiguity and the psycholinguistic properties of words having a slightly higher importance. Owing to its generic nature, the presented approach has the potential to generalize over other exams containing MCQs.}
+      \field{booktitle}{Proceedings of the Fourteenth Workshop on Innovative Use of NLP for Building Educational Applications}
+      \field{month}{8}
+      \field{title}{Predicting the Difficulty of Multiple Choice Questions in a High-stakes Medical Exam}
+      \field{year}{2019}
+      \field{pages}{11\bibrangedash 20}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.18653/v1/W19-4402
+      \endverb
+      \verb{urlraw}
+      \verb https://aclanthology.org/W19-4402/
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/W19-4402/
+      \endverb
+    \endentry
+    \entry{benedetto2020framework}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=da52cfbcb599f6b00692a9270e1155aa}{%
+           family={Benedetto},
+           familyi={B\bibinitperiod},
+           given={Luca},
+           giveni={L\bibinitperiod}}}%
+        {{hash=228036d7cfb597dea0d8ae9c05a1653c}{%
+           family={Cappelli},
+           familyi={C\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=27aa6a82b03db83f0a19dad47616e195}{%
+           family={Turrin},
+           familyi={T\bibinitperiod},
+           given={Roberto},
+           giveni={R\bibinitperiod}}}%
+        {{hash=ffacab86cd0c43d68349737683cb756a}{%
+           family={Cremonesi},
+           familyi={C\bibinitperiod},
+           given={Paolo},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{0b72deb42c3548d802ae4efd28cd1cbd}
+      \strng{fullhash}{4e4862ccb7218879b7f0fd3223611c7e}
+      \strng{bibnamehash}{0b72deb42c3548d802ae4efd28cd1cbd}
+      \strng{authorbibnamehash}{0b72deb42c3548d802ae4efd28cd1cbd}
+      \strng{authornamehash}{0b72deb42c3548d802ae4efd28cd1cbd}
+      \strng{authorfullhash}{4e4862ccb7218879b7f0fd3223611c7e}
+      \field{extraname}{1}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CL}
+      \field{eprinttype}{arXiv}
+      \field{title}{Introducing a framework to assess newly created questions with Natural Language Processing}
+      \field{year}{2020}
+      \verb{eprint}
+      \verb 2004.13530
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2004.13530
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2004.13530
+      \endverb
+    \endentry
+    \entry{bulut2023evaluating}{article}{}
+      \name{author}{3}{}{%
+        {{hash=4e9e5fb159528efed596bed3484bec16}{%
+           family={Bulut},
+           familyi={B\bibinitperiod},
+           given={Hatice\bibnamedelima Cigdem},
+           giveni={H\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=8db520995338e44a9de8ca3e80268b4b}{%
+           family={Bulut},
+           familyi={B\bibinitperiod},
+           given={Okan},
+           giveni={O\bibinitperiod}}}%
+        {{hash=835d924cce4f7df4e470fb0fd6c4d345}{%
+           family={Arikan},
+           familyi={A\bibinitperiod},
+           given={Serkan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{6f27c12a6e6d2bc696500dd40b783454}
+      \strng{fullhash}{6f27c12a6e6d2bc696500dd40b783454}
+      \strng{bibnamehash}{6f27c12a6e6d2bc696500dd40b783454}
+      \strng{authorbibnamehash}{6f27c12a6e6d2bc696500dd40b783454}
+      \strng{authornamehash}{6f27c12a6e6d2bc696500dd40b783454}
+      \strng{authorfullhash}{6f27c12a6e6d2bc696500dd40b783454}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This study examined group differences in online reading comprehension (ORC) using student data from the 2016 administration of the Progress in International Reading Literacy Study (ePIRLS). An explanatory item response modeling approach was used to explore the effects of item properties (i.e., item format, text complexity, and cognitive complexity), student characteristics (i.e., gender and language groups), and their interactions on dichotomous and polytomous item responses. The results showed that female students outperformed male students in ORC tasks and that the achievement difference between female and male students appeared to change text complexity increases. Similarly, the cognitive complexity of the items seems to play a significant role in explaining the gender gap in ORC performance. Students who never (or sometimes) spoke the test language at home particularly struggled with answering ORC tasks. The achievement gap between students who always (or almost always) spoke the test language at home and those who never (or sometimes) spoke the test language at home was larger for constructed-response items and items with higher cognitive complexity. Overall, the findings suggest that item properties could help understand performance differences between gender and language groups in ORC assessments.}
+      \field{journaltitle}{International Journal of Testing}
+      \field{number}{1}
+      \field{title}{Evaluating group differences in online reading comprehension: The impact of item properties}
+      \field{volume}{23}
+      \field{year}{2023}
+      \field{pages}{10\bibrangedash 33}
+      \range{pages}{24}
+      \verb{doi}
+      \verb 10.1080/15305058.2022.2044821
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1080/15305058.2022.2044821
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1080/15305058.2022.2044821
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1080/15305058.2022.2044821
+      \endverb
+    \endentry
+    \entry{hickendorff2013}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2b730aad2b7750cdd029e5b28e8a53f7}{%
+           family={Hickendorff},
+           familyi={H\bibinitperiod},
+           given={Marian},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{2b730aad2b7750cdd029e5b28e8a53f7}
+      \strng{fullhash}{2b730aad2b7750cdd029e5b28e8a53f7}
+      \strng{bibnamehash}{2b730aad2b7750cdd029e5b28e8a53f7}
+      \strng{authorbibnamehash}{2b730aad2b7750cdd029e5b28e8a53f7}
+      \strng{authornamehash}{2b730aad2b7750cdd029e5b28e8a53f7}
+      \strng{authorfullhash}{2b730aad2b7750cdd029e5b28e8a53f7}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The results of an exploratory study into measurement of elementary mathematics ability are presented. The focus is on the abilities involved in solving standard computation problems on the one hand and problems presented in a realistic context on the other. The objectives were to assess to what extent these abilities are shared or distinct, and the extent to which students' language level plays a differential role in these abilities. Data from a sample of over 2,000 students from first, second, and third grade in the Netherlands were analyzed in a multidimensional item response theory (IRT) framework. The latent correlation between the two ability dimensions (computational skills and applied mathematics problem solving) ranged from .81 in grade 1 to .87 in grade 3, indicating that the ability dimensions are highly correlated but still distinct. Moreover, students' language level had differential effects on the two mathematical abilities: Effects were larger on applied problem solving than on computational skills. The implications of these findings for measurement practices in the field of elementary mathematics are discussed.}
+      \field{journaltitle}{Applied Measurement in Education}
+      \field{number}{4}
+      \field{title}{The Language Factor in Elementary Mathematics Assessments: Computational Skills and Applied Problem Solving in a Multidimensional IRT Framework}
+      \field{volume}{26}
+      \field{year}{2013}
+      \field{pages}{253\bibrangedash 278}
+      \range{pages}{26}
+      \verb{doi}
+      \verb 10.1080/08957347.2013.824451
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1080/08957347.2013.824451
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1080/08957347.2013.824451
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1080/08957347.2013.824451
+      \endverb
+    \endentry
+    \entry{benedetto2020r2de}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=da52cfbcb599f6b00692a9270e1155aa}{%
+           family={Benedetto},
+           familyi={B\bibinitperiod},
+           given={Luca},
+           giveni={L\bibinitperiod}}}%
+        {{hash=228036d7cfb597dea0d8ae9c05a1653c}{%
+           family={Cappelli},
+           familyi={C\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=27aa6a82b03db83f0a19dad47616e195}{%
+           family={Turrin},
+           familyi={T\bibinitperiod},
+           given={Roberto},
+           giveni={R\bibinitperiod}}}%
+        {{hash=ffacab86cd0c43d68349737683cb756a}{%
+           family={Cremonesi},
+           familyi={C\bibinitperiod},
+           given={Paolo},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{0b72deb42c3548d802ae4efd28cd1cbd}
+      \strng{fullhash}{4e4862ccb7218879b7f0fd3223611c7e}
+      \strng{bibnamehash}{0b72deb42c3548d802ae4efd28cd1cbd}
+      \strng{authorbibnamehash}{0b72deb42c3548d802ae4efd28cd1cbd}
+      \strng{authornamehash}{0b72deb42c3548d802ae4efd28cd1cbd}
+      \strng{authorfullhash}{4e4862ccb7218879b7f0fd3223611c7e}
+      \field{extraname}{2}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{title}{R2DE: a NLP approach to estimating IRT parameters of newly generated questions}
+      \field{year}{2020}
+      \verb{eprint}
+      \verb 2001.07569
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2001.07569
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2001.07569
+      \endverb
+    \endentry
+    \entry{lawrence2022reading}{article}{}
+      \name{author}{5}{}{%
+        {{hash=3091a841a67ecb96cfda3d31466107bc}{%
+           family={Lawrence},
+           familyi={L\bibinitperiod},
+           given={Joshua\bibnamedelima F.},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=b524c8af86cd4799ddf8cd93015bf7be}{%
+           family={Knoph},
+           familyi={K\bibinitperiod},
+           given={Rebecca},
+           giveni={R\bibinitperiod}}}%
+        {{hash=e0836f1f6f47683365f8a0604edd27d2}{%
+           family={McIlraith},
+           familyi={M\bibinitperiod},
+           given={Autumn},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6b8aa981a133277096fde3d8d9abf84b}{%
+           family={Kulesz},
+           familyi={K\bibinitperiod},
+           given={Paulina\bibnamedelima A.},
+           giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=daa6ce7edb700aeec4c8bb7a85318403}{%
+           family={Francis},
+           familyi={F\bibinitperiod},
+           given={David\bibnamedelima J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a4f5746b575132d0ce19c663c7480ca}
+      \strng{fullhash}{ff8eab4c1c94c7deb71db1f48c577e96}
+      \strng{bibnamehash}{3a4f5746b575132d0ce19c663c7480ca}
+      \strng{authorbibnamehash}{3a4f5746b575132d0ce19c663c7480ca}
+      \strng{authornamehash}{3a4f5746b575132d0ce19c663c7480ca}
+      \strng{authorfullhash}{ff8eab4c1c94c7deb71db1f48c577e96}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract General academic words are those which are typically learned through exposure to school texts and occur across disciplines. We examined academic vocabulary assessment data from a group of English-speaking middle school students (N = 1,747). We tested how word frequency, complexity, proximity, polysemy, and diversity related to students' knowledge of target words across ability levels. Our results affirm the strong relation between vocabulary and reading at the individual level. Strong readers were more likely to know the meanings of words than struggling readers were, regardless of the features of the academic words tested. Words with more meanings were easier for all students, on average. The relation between word frequency and item difficulty was stronger among better readers, whereas the relation between word complexity and item difficulty was stronger among less proficient readers. Our examination of academic words' characteristics and how these characteristics relate to word difficulty across reading performance has implications for instruction.}
+      \field{journaltitle}{Reading Research Quarterly}
+      \field{number}{2}
+      \field{title}{Reading Comprehension and Academic Vocabulary: Exploring Relations of Item Features and Reading Proficiency}
+      \field{volume}{57}
+      \field{year}{2022}
+      \field{pages}{669\bibrangedash 690}
+      \range{pages}{22}
+      \verb{doi}
+      \verb https://doi.org/10.1002/rrq.434
+      \endverb
+      \verb{eprint}
+      \verb https://ila.onlinelibrary.wiley.com/doi/pdf/10.1002/rrq.434
+      \endverb
+      \verb{urlraw}
+      \verb https://ila.onlinelibrary.wiley.com/doi/abs/10.1002/rrq.434
+      \endverb
+      \verb{url}
+      \verb https://ila.onlinelibrary.wiley.com/doi/abs/10.1002/rrq.434
+      \endverb
+      \keyw{Vocabulary,Comprehension,Methodological perspectives,Academic Literacy / Literacies,Vocabulary - Selecting,Vocabulary - Word structure,3-Early adolescence}
+    \endentry
+    \entry{kurdi2016experimental}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=130eba6b546cdcdc02c94bce6f3e8849}{%
+           family={Kurdi},
+           familyi={K\bibinitperiod},
+           given={Ghader},
+           giveni={G\bibinitperiod}}}%
+        {{hash=d3a5757e7ae6ee7b209f2b76e6997a42}{%
+           family={Parsia},
+           familyi={P\bibinitperiod},
+           given={Bijan},
+           giveni={B\bibinitperiod}}}%
+        {{hash=4acfec0ba909012fe393c56da85b4fa9}{%
+           family={Sattler},
+           familyi={S\bibinitperiod},
+           given={Uli},
+           giveni={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{7e3e3e9a9e0bf943081e506c98e9a3f3}
+      \strng{fullhash}{7e3e3e9a9e0bf943081e506c98e9a3f3}
+      \strng{bibnamehash}{7e3e3e9a9e0bf943081e506c98e9a3f3}
+      \strng{authorbibnamehash}{7e3e3e9a9e0bf943081e506c98e9a3f3}
+      \strng{authornamehash}{7e3e3e9a9e0bf943081e506c98e9a3f3}
+      \strng{authorfullhash}{7e3e3e9a9e0bf943081e506c98e9a3f3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-319-54626-1}
+      \field{month}{02}
+      \field{title}{An Experimental Evaluation of Automatically Generated Multiple Choice Questions from Ontologies}
+      \field{year}{2017}
+      \field{pages}{24\bibrangedash 39}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1007/978-3-319-54627-8_3
+      \endverb
+    \endentry
+    \entry{yaneva2018automatic}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=b96416c22ec687337de0b6c66a7e3930}{%
+           family={Ha},
+           familyi={H\bibinitperiod},
+           given={Le\bibnamedelima An},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=000cc0d8afa9514ead51e0a3ba90ad82}{%
+           family={Yaneva},
+           familyi={Y\bibinitperiod},
+           given={Victoria},
+           giveni={V\bibinitperiod}}}%
+      }
+      \name{editor}{5}{}{%
+        {{hash=32d9493b21c7debeff93b29d5110a8d0}{%
+           family={Tetreault},
+           familyi={T\bibinitperiod},
+           given={Joel},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f974925c5c6cca1d67fd604cc9fc9c79}{%
+           family={Burstein},
+           familyi={B\bibinitperiod},
+           given={Jill},
+           giveni={J\bibinitperiod}}}%
+        {{hash=99fc80aee89e42a6ff1dde48a2aabb65}{%
+           family={Kochmar},
+           familyi={K\bibinitperiod},
+           given={Ekaterina},
+           giveni={E\bibinitperiod}}}%
+        {{hash=4809f9384db164c4bec54eaa8c227a87}{%
+           family={Leacock},
+           familyi={L\bibinitperiod},
+           given={Claudia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=dbd61f3c096bbb90493d21827d98efc3}{%
+           family={Yannakoudakis},
+           familyi={Y\bibinitperiod},
+           given={Helen},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New Orleans, Louisiana}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{b7adf5270ab0d991ce69d3c717db802a}
+      \strng{fullhash}{b7adf5270ab0d991ce69d3c717db802a}
+      \strng{bibnamehash}{b7adf5270ab0d991ce69d3c717db802a}
+      \strng{authorbibnamehash}{b7adf5270ab0d991ce69d3c717db802a}
+      \strng{authornamehash}{b7adf5270ab0d991ce69d3c717db802a}
+      \strng{authorfullhash}{b7adf5270ab0d991ce69d3c717db802a}
+      \strng{editorbibnamehash}{54984ce6d17f9cf68476f3e7c010a523}
+      \strng{editornamehash}{54984ce6d17f9cf68476f3e7c010a523}
+      \strng{editorfullhash}{cda10e0e19150e0bcba20282bc6b03c1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Developing plausible distractors (wrong answer options) when writing multiple-choice questions has been described as one of the most challenging and time-consuming parts of the item-writing process. In this paper we propose a fully automatic method for generating distractor suggestions for multiple-choice questions used in high-stakes medical exams. The system uses a question stem and the correct answer as an input and produces a list of suggested distractors ranked based on their similarity to the stem and the correct answer. To do this we use a novel approach of combining concept embeddings with information retrieval methods. We frame the evaluation as a prediction task where we aim to "predict" the human-produced distractors used in large sets of medical questions, i.e. if a distractor generated by our system is good enough it is likely to feature among the list of distractors produced by the human item-writers. The results reveal that combining concept embeddings with information retrieval approaches significantly improves the generation of plausible distractors and enables us to match around 1 in 5 of the human-produced distractors. The approach proposed in this paper is generalisable to all scenarios where the distractors refer to concepts.}
+      \field{booktitle}{Proceedings of the Thirteenth Workshop on Innovative Use of {NLP} for Building Educational Applications}
+      \field{month}{6}
+      \field{title}{Automatic Distractor Suggestion for Multiple-Choice Tests Using Concept Embeddings and Information Retrieval}
+      \field{year}{2018}
+      \field{pages}{389\bibrangedash 398}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.18653/v1/W18-0548
+      \endverb
+      \verb{urlraw}
+      \verb https://aclanthology.org/W18-0548/
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/W18-0548/
+      \endverb
+    \endentry
+    \entry{toyama2021makes}{article}{}
+      \name{author}{1}{}{%
+        {{hash=d7fa3e180b96614a37d272250490d9a6}{%
+           family={Toyama},
+           familyi={T\bibinitperiod},
+           given={Yukie},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{d7fa3e180b96614a37d272250490d9a6}
+      \strng{fullhash}{d7fa3e180b96614a37d272250490d9a6}
+      \strng{bibnamehash}{d7fa3e180b96614a37d272250490d9a6}
+      \strng{authorbibnamehash}{d7fa3e180b96614a37d272250490d9a6}
+      \strng{authornamehash}{d7fa3e180b96614a37d272250490d9a6}
+      \strng{authorfullhash}{d7fa3e180b96614a37d272250490d9a6}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{ABSTRACT In this study, I investigated the simultaneous effects of the reader, the text, and the task factors, and their interactions, on reading comprehension, using explanatory item response models. Analyses of a large data set from a commercially available online assessment system with a wide range of readers (n = 10,547) and passages (n = 48) uncovered factors that contribute to reading challenge in complex ways. Among the passage features, sentence length, word frequency, syntactic simplicity, and temporality were found to significantly affect comprehension difficulty. More importantly, these textual features were moderated by student general vocabulary and task type. In general, high-vocabulary readers benefited more from traditional textual affordances (e.g., shorter sentences, familiar words, simpler grammatical constructions) than low-vocabulary readers, especially when asked to recall localized information without accessing the passage. However, a reverse effect was found with temporality: Passages with more time markers helped low-vocabulary readers, whereas low-temporality passages helped high-vocabulary readers. Ultimately, understanding these complex interactions, as highlighted in the RAND Reading Study Group's heuristic model, will be key in supporting students with their comprehension development.}
+      \field{journaltitle}{Reading Research Quarterly}
+      \field{number}{4}
+      \field{title}{What Makes Reading Difficult? An Investigation of the Contributions of Passage, Task, and Reader Characteristics on Comprehension Performance}
+      \field{volume}{56}
+      \field{year}{2021}
+      \field{pages}{633\bibrangedash 642}
+      \range{pages}{10}
+      \verb{doi}
+      \verb https://doi.org/10.1002/rrq.440
+      \endverb
+      \verb{eprint}
+      \verb https://ila.onlinelibrary.wiley.com/doi/pdf/10.1002/rrq.440
+      \endverb
+      \verb{urlraw}
+      \verb https://ila.onlinelibrary.wiley.com/doi/abs/10.1002/rrq.440
+      \endverb
+      \verb{url}
+      \verb https://ila.onlinelibrary.wiley.com/doi/abs/10.1002/rrq.440
+      \endverb
+      \keyw{Comprehension,Assessment,Methodological perspectives,Cognitive,Cognitive Processes,Comprehension (General),Text Features,2-Childhood,3-Early adolescence,4-Adolescence}
+    \endentry
+    \entry{huang2017question}{inproceedings}{}
+      \name{author}{8}{}{%
+        {{hash=4ba20d456cacdd1f74a0d5b440adecf6}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Zhenya},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=0b07af422f6616fac129405a8b4b1de4}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Qi},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=439e8d5e114670edea6f746db3c18b5b}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Enhong},
+           giveni={E\bibinitperiod}}}%
+        {{hash=28d6a57a98a31fe2c68433935cccc0d7}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Hongke},
+           giveni={H\bibinitperiod}}}%
+        {{hash=1f333a735a7a347d0827bf2a4951d90a}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Mingyong},
+           giveni={M\bibinitperiod}}}%
+        {{hash=df95d8f2fc9a90d4871ca74a331521aa}{%
+           family={Wei},
+           familyi={W\bibinitperiod},
+           given={Si},
+           giveni={S\bibinitperiod}}}%
+        {{hash=836b28264fa64c2b3805965b81aad704}{%
+           family={Su},
+           familyi={S\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=34c2a3aa646cc4a68a6c1651c444a130}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Guoping},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {San Francisco, California, USA}%
+      }
+      \list{publisher}{1}{%
+        {AAAI Press}%
+      }
+      \strng{namehash}{33fb47a650d12abe3599949f41d1f0e8}
+      \strng{fullhash}{8033ec202f8a63a9136e007507cebe00}
+      \strng{bibnamehash}{33fb47a650d12abe3599949f41d1f0e8}
+      \strng{authorbibnamehash}{33fb47a650d12abe3599949f41d1f0e8}
+      \strng{authornamehash}{33fb47a650d12abe3599949f41d1f0e8}
+      \strng{authorfullhash}{8033ec202f8a63a9136e007507cebe00}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Standard tests aim to evaluate the performance of examinees using different tests with consistent difficulties. Thus, a critical demand is to predict the difficulty of each test question before the test is conducted. Existing studies are usually based on the judgments of education experts (e.g., teachers), which may be subjective and labor intensive. In this paper, we propose a novel Test-aware Attention-based Convolutional Neural Network (TACNN) framework to automatically solve this Question Difficulty Prediction (QDP) task for READING problems (a typical problem style in English tests) in standard tests. Specifically, given the abundant historical test logs and text materials of questions, we first design a CNN-based architecture to extract sentence representations for the questions. Then, we utilize an attention strategy to qualify the difficulty contribution of each sentence to questions. Considering the incomparability of question difficulties in different tests, we propose a test-dependent pairwise strategy for training TACNN and generating the difficulty prediction value. Extensive experiments on a real-world dataset not only show the effectiveness of TACNN, but also give interpretable insights to track the attention information for questions.}
+      \field{booktitle}{Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence}
+      \field{series}{AAAI'17}
+      \field{title}{Question difficulty prediction for READING problems in standard tests}
+      \field{year}{2017}
+      \field{pages}{1352\bibrangedash 1359}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.5555/3298239.3298437
+      \endverb
+    \endentry
+    \entry{qiu2019question}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=fd9f6ed19ecd97783681b13ac6d3f149}{%
+           family={Qiu},
+           familyi={Q\bibinitperiod},
+           given={Zhaopeng},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=3a8ac5ed3d061d6fd4375a30170119c8}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Xian},
+           giveni={X\bibinitperiod}}}%
+        {{hash=a3166e33c48f3979fb2eb732457cdab1}{%
+           family={Fan},
+           familyi={F\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{6ebdeb2fbabbacbdb1d0ea5170203a2c}
+      \strng{fullhash}{6ebdeb2fbabbacbdb1d0ea5170203a2c}
+      \strng{bibnamehash}{6ebdeb2fbabbacbdb1d0ea5170203a2c}
+      \strng{authorbibnamehash}{6ebdeb2fbabbacbdb1d0ea5170203a2c}
+      \strng{authornamehash}{6ebdeb2fbabbacbdb1d0ea5170203a2c}
+      \strng{authorfullhash}{6ebdeb2fbabbacbdb1d0ea5170203a2c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-1-4503-6976-3}
+      \field{month}{11}
+      \field{title}{Question Difficulty Prediction for Multiple Choice Problems in Medical Exams}
+      \field{year}{2019}
+      \field{pages}{139\bibrangedash 148}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/3357384.3358013
+      \endverb
+    \endentry
+    \entry{xue2020predicting}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=d6ddbbb566f9d597185c97b45e0d5439}{%
+           family={Xue},
+           familyi={X\bibinitperiod},
+           given={Kang},
+           giveni={K\bibinitperiod}}}%
+        {{hash=000cc0d8afa9514ead51e0a3ba90ad82}{%
+           family={Yaneva},
+           familyi={Y\bibinitperiod},
+           given={Victoria},
+           giveni={V\bibinitperiod}}}%
+        {{hash=9007f626b299d4660d0152d88e4ab777}{%
+           family={Runyon},
+           familyi={R\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod}}}%
+        {{hash=6f76928ac5ea01a9587780f04d73d844}{%
+           family={Baldwin},
+           familyi={B\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \name{editor}{7}{}{%
+        {{hash=f974925c5c6cca1d67fd604cc9fc9c79}{%
+           family={Burstein},
+           familyi={B\bibinitperiod},
+           given={Jill},
+           giveni={J\bibinitperiod}}}%
+        {{hash=99fc80aee89e42a6ff1dde48a2aabb65}{%
+           family={Kochmar},
+           familyi={K\bibinitperiod},
+           given={Ekaterina},
+           giveni={E\bibinitperiod}}}%
+        {{hash=4809f9384db164c4bec54eaa8c227a87}{%
+           family={Leacock},
+           familyi={L\bibinitperiod},
+           given={Claudia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=09e427d5638635b09579ef9fdafda760}{%
+           family={Madnani},
+           familyi={M\bibinitperiod},
+           given={Nitin},
+           giveni={N\bibinitperiod}}}%
+        {{hash=20f6c2c4a1bb76224136d4a806557939}{%
+           family={Pilán},
+           familyi={P\bibinitperiod},
+           given={Ildikó},
+           giveni={I\bibinitperiod}}}%
+        {{hash=dbd61f3c096bbb90493d21827d98efc3}{%
+           family={Yannakoudakis},
+           familyi={Y\bibinitperiod},
+           given={Helen},
+           giveni={H\bibinitperiod}}}%
+        {{hash=d2bddcda907ea93d3a82a0623d8d0930}{%
+           family={Zesch},
+           familyi={Z\bibinitperiod},
+           given={Torsten},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Seattle, WA, USA {\textrightarrow} Online}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{5d9e9ee3a8e81b76cd69a2595f8324d1}
+      \strng{fullhash}{fca6739657aca90ad1c705ce90d314c8}
+      \strng{bibnamehash}{5d9e9ee3a8e81b76cd69a2595f8324d1}
+      \strng{authorbibnamehash}{5d9e9ee3a8e81b76cd69a2595f8324d1}
+      \strng{authornamehash}{5d9e9ee3a8e81b76cd69a2595f8324d1}
+      \strng{authorfullhash}{fca6739657aca90ad1c705ce90d314c8}
+      \strng{editorbibnamehash}{0f9989a68b9a4dd59d368e46c7ff0bda}
+      \strng{editornamehash}{0f9989a68b9a4dd59d368e46c7ff0bda}
+      \strng{editorfullhash}{f0e0c9246e2504d074d5a66c75e69b8f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper investigates whether transfer learning can improve the prediction of the difficulty and response time parameters for 18,000 multiple-choice questions from a high-stakes medical exam. The type the signal that best predicts difficulty and response time is also explored, both in terms of representation abstraction and item component used as input (e.g., whole item, answer options only, etc.). The results indicate that, for our sample, transfer learning can improve the prediction of item difficulty when response time is used as an auxiliary task but not the other way around. In addition, difficulty was best predicted using signal from the item stem (the description of the clinical case), while all parts of the item were important for predicting the response time.}
+      \field{booktitle}{Proceedings of the Fifteenth Workshop on Innovative Use of NLP for Building Educational Applications}
+      \field{month}{7}
+      \field{title}{Predicting the Difficulty and Response Time of Multiple Choice Questions Using Transfer Learning}
+      \field{year}{2020}
+      \field{pages}{193\bibrangedash 197}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.18653/v1/2020.bea-1.20
+      \endverb
+      \verb{urlraw}
+      \verb https://aclanthology.org/2020.bea-1.20/
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/2020.bea-1.20/
+      \endverb
+    \endentry
+    \entry{benedetto2021transformers}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=da52cfbcb599f6b00692a9270e1155aa}{%
+           family={Benedetto},
+           familyi={B\bibinitperiod},
+           given={Luca},
+           giveni={L\bibinitperiod}}}%
+        {{hash=29fcbc964fff0f485ec90ed92064562e}{%
+           family={Aradelli},
+           familyi={A\bibinitperiod},
+           given={Giovanni},
+           giveni={G\bibinitperiod}}}%
+        {{hash=ffacab86cd0c43d68349737683cb756a}{%
+           family={Cremonesi},
+           familyi={C\bibinitperiod},
+           given={Paolo},
+           giveni={P\bibinitperiod}}}%
+        {{hash=228036d7cfb597dea0d8ae9c05a1653c}{%
+           family={Cappelli},
+           familyi={C\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e4e274671150ae2bc989d9f7896ac825}{%
+           family={Giussani},
+           familyi={G\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=27aa6a82b03db83f0a19dad47616e195}{%
+           family={Turrin},
+           familyi={T\bibinitperiod},
+           given={Roberto},
+           giveni={R\bibinitperiod}}}%
+      }
+      \name{editor}{9}{}{%
+        {{hash=f974925c5c6cca1d67fd604cc9fc9c79}{%
+           family={Burstein},
+           familyi={B\bibinitperiod},
+           given={Jill},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b7b73308bfb17ee8450eb0f5354fb5cc}{%
+           family={Horbach},
+           familyi={H\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=99fc80aee89e42a6ff1dde48a2aabb65}{%
+           family={Kochmar},
+           familyi={K\bibinitperiod},
+           given={Ekaterina},
+           giveni={E\bibinitperiod}}}%
+        {{hash=bb4c277c7bf8550279612281d7fc0eec}{%
+           family={Laarmann-Quante},
+           familyi={L\bibinithyphendelim Q\bibinitperiod},
+           given={Ronja},
+           giveni={R\bibinitperiod}}}%
+        {{hash=4809f9384db164c4bec54eaa8c227a87}{%
+           family={Leacock},
+           familyi={L\bibinitperiod},
+           given={Claudia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=09e427d5638635b09579ef9fdafda760}{%
+           family={Madnani},
+           familyi={M\bibinitperiod},
+           given={Nitin},
+           giveni={N\bibinitperiod}}}%
+        {{hash=20f6c2c4a1bb76224136d4a806557939}{%
+           family={Pilán},
+           familyi={P\bibinitperiod},
+           given={Ildikó},
+           giveni={I\bibinitperiod}}}%
+        {{hash=dbd61f3c096bbb90493d21827d98efc3}{%
+           family={Yannakoudakis},
+           familyi={Y\bibinitperiod},
+           given={Helen},
+           giveni={H\bibinitperiod}}}%
+        {{hash=d2bddcda907ea93d3a82a0623d8d0930}{%
+           family={Zesch},
+           familyi={Z\bibinitperiod},
+           given={Torsten},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Online}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{0b72deb42c3548d802ae4efd28cd1cbd}
+      \strng{fullhash}{b4989451701e3811c999cb2572a51ed5}
+      \strng{bibnamehash}{0b72deb42c3548d802ae4efd28cd1cbd}
+      \strng{authorbibnamehash}{0b72deb42c3548d802ae4efd28cd1cbd}
+      \strng{authornamehash}{0b72deb42c3548d802ae4efd28cd1cbd}
+      \strng{authorfullhash}{b4989451701e3811c999cb2572a51ed5}
+      \strng{editorbibnamehash}{0f9989a68b9a4dd59d368e46c7ff0bda}
+      \strng{editornamehash}{0f9989a68b9a4dd59d368e46c7ff0bda}
+      \strng{editorfullhash}{8442d1f6e6e6733173f97416d2f8f2f6}
+      \field{extraname}{3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Classical approaches to question calibration are either subjective or require newly created questions to be deployed before being calibrated. Recent works explored the possibility of estimating question difficulty from text, but did not experiment with the most recent NLP models, in particular Transformers. In this paper, we compare the performance of previous literature with Transformer models experimenting on a public and a private dataset. Our experimental results show that Transformers are capable of outperforming previously proposed models. Moreover, if an additional corpus of related documents is available, Transformers can leverage that information to further improve calibration accuracy. We characterized the dependence of the model performance on some properties of the questions, showing that it performs best on questions ending with a question mark and Multiple-Choice Questions (MCQs) with one correct choice.}
+      \field{booktitle}{Proceedings of the 16th Workshop on Innovative Use of NLP for Building Educational Applications}
+      \field{month}{4}
+      \field{title}{On the application of Transformers for estimating the difficulty of Multiple-Choice Questions from text}
+      \field{year}{2021}
+      \field{pages}{147\bibrangedash 157}
+      \range{pages}{11}
+      \verb{urlraw}
+      \verb https://aclanthology.org/2021.bea-1.16/
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/2021.bea-1.16/
+      \endverb
+    \endentry
+    \entry{gombert2024predicting}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=949acafb8b5afdd9022d075cdcfe5e5e}{%
+           family={Gombert},
+           familyi={G\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=89f7a3380130c6c4ec19dbfdd884faec}{%
+           family={Menzel},
+           familyi={M\bibinitperiod},
+           given={Lukas},
+           giveni={L\bibinitperiod}}}%
+        {{hash=a0f5589bfcaa70d6f8157cd2337914f2}{%
+           family={Di\bibnamedelima Mitri},
+           familyi={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Daniele},
+           giveni={D\bibinitperiod}}}%
+        {{hash=689f38ff40be056c3d65176f8e5c0cf6}{%
+           family={Drachsler},
+           familyi={D\bibinitperiod},
+           given={Hendrik},
+           giveni={H\bibinitperiod}}}%
+      }
+      \name{editor}{8}{}{%
+        {{hash=99fc80aee89e42a6ff1dde48a2aabb65}{%
+           family={Kochmar},
+           familyi={K\bibinitperiod},
+           given={Ekaterina},
+           giveni={E\bibinitperiod}}}%
+        {{hash=bef4f819fd62acaef4d0a168bd7ef16f}{%
+           family={Bexte},
+           familyi={B\bibinitperiod},
+           given={Marie},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f974925c5c6cca1d67fd604cc9fc9c79}{%
+           family={Burstein},
+           familyi={B\bibinitperiod},
+           given={Jill},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b7b73308bfb17ee8450eb0f5354fb5cc}{%
+           family={Horbach},
+           familyi={H\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=bb4c277c7bf8550279612281d7fc0eec}{%
+           family={Laarmann-Quante},
+           familyi={L\bibinithyphendelim Q\bibinitperiod},
+           given={Ronja},
+           giveni={R\bibinitperiod}}}%
+        {{hash=11fac2b8f4fb554da8138ef8c567db87}{%
+           family={Tack},
+           familyi={T\bibinitperiod},
+           given={Anaïs},
+           giveni={A\bibinitperiod}}}%
+        {{hash=000cc0d8afa9514ead51e0a3ba90ad82}{%
+           family={Yaneva},
+           familyi={Y\bibinitperiod},
+           given={Victoria},
+           giveni={V\bibinitperiod}}}%
+        {{hash=fc67a6ce608cde5cc7ac90add3c32d3b}{%
+           family={Yuan},
+           familyi={Y\bibinitperiod},
+           given={Zheng},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Mexico City, Mexico}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{f9977bcb56356f7634d85f207491836a}
+      \strng{fullhash}{c36657475c3337931c6083111d7b287a}
+      \strng{bibnamehash}{f9977bcb56356f7634d85f207491836a}
+      \strng{authorbibnamehash}{f9977bcb56356f7634d85f207491836a}
+      \strng{authornamehash}{f9977bcb56356f7634d85f207491836a}
+      \strng{authorfullhash}{c36657475c3337931c6083111d7b287a}
+      \strng{editorbibnamehash}{df41e9a5ca12cc86216f5052f6ce595c}
+      \strng{editornamehash}{df41e9a5ca12cc86216f5052f6ce595c}
+      \strng{editorfullhash}{841a366687d9928cb111740d22869f40}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper describes a contribution to the BEA 2024 Shared Task on Automated Prediction of Item Difficulty and Response Time. The participants in this shared task are to develop models for predicting the difficulty and response time of multiple-choice items in the medical field. These items were taken from the United States Medical Licensing Examination{®} (USMLE{®}), a high-stakes medical exam. For this purpose, we evaluated multiple BERT-like pre-trained transformer encoder models, which we combined with Scalar Mixing and two custom 2-layer classification heads using learnable Rational Activations as an activation function, each for predicting one of the two variables of interest in a multi-task setup. Our best models placed first out of 43 for predicting item difficulty and fifth out of 34 for predicting Item Response Time.}
+      \field{booktitle}{Proceedings of the 19th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2024)}
+      \field{month}{6}
+      \field{title}{Predicting Item Difficulty and Item Response Time with Scalar-mixed Transformer Encoder Models and Rational Network Regression Heads}
+      \field{year}{2024}
+      \field{pages}{483\bibrangedash 492}
+      \range{pages}{10}
+      \verb{urlraw}
+      \verb https://aclanthology.org/2024.bea-1.40/
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/2024.bea-1.40/
+      \endverb
+    \endentry
+    \entry{kapoor2025prediction}{misc}{}
+      \name{author}{5}{}{%
+        {{hash=0c3ee2809fc2e3b451c81ee06da49300}{%
+           family={Kapoor},
+           familyi={K\bibinitperiod},
+           given={Radhika},
+           giveni={R\bibinitperiod}}}%
+        {{hash=0e80cb6cc19a8ab4f5219206c2e7866c}{%
+           family={Truong},
+           familyi={T\bibinitperiod},
+           given={Sang\bibnamedelima T.},
+           giveni={S\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=fff250e164e6d22807fb93f68af9d124}{%
+           family={Haber},
+           familyi={H\bibinitperiod},
+           given={Nick},
+           giveni={N\bibinitperiod}}}%
+        {{hash=c19218e0f778d3e77b04143fa8dbfcd0}{%
+           family={Ruiz-Primo},
+           familyi={R\bibinithyphendelim P\bibinitperiod},
+           given={Maria\bibnamedelima Araceli},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=27b68e58e26be0cf63d93ad9f02b82e9}{%
+           family={Domingue},
+           familyi={D\bibinitperiod},
+           given={Benjamin\bibnamedelima W.},
+           giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{035390a3eaa598717bbd9251a7d17833}
+      \strng{fullhash}{f6c2f8b0b4c5692c00bc225fd44089db}
+      \strng{bibnamehash}{035390a3eaa598717bbd9251a7d17833}
+      \strng{authorbibnamehash}{035390a3eaa598717bbd9251a7d17833}
+      \strng{authornamehash}{035390a3eaa598717bbd9251a7d17833}
+      \strng{authorfullhash}{f6c2f8b0b4c5692c00bc225fd44089db}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CL}
+      \field{eprinttype}{arXiv}
+      \field{title}{Prediction of Item Difficulty for Reading Comprehension Items by Creation of Annotated Item Repository}
+      \field{year}{2025}
+      \verb{eprint}
+      \verb 2502.20663
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2502.20663
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2502.20663
+      \endverb
+    \endentry
+    \entry{aradelli2020transformers}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=29fcbc964fff0f485ec90ed92064562e}{%
+           family={Aradelli},
+           familyi={A\bibinitperiod},
+           given={Giovanni},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Politecnico di Milano}%
+      }
+      \strng{namehash}{29fcbc964fff0f485ec90ed92064562e}
+      \strng{fullhash}{29fcbc964fff0f485ec90ed92064562e}
+      \strng{bibnamehash}{29fcbc964fff0f485ec90ed92064562e}
+      \strng{authorbibnamehash}{29fcbc964fff0f485ec90ed92064562e}
+      \strng{authornamehash}{29fcbc964fff0f485ec90ed92064562e}
+      \strng{authorfullhash}{29fcbc964fff0f485ec90ed92064562e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{title}{Transformers for Question Difficulty Estimation from Text}
+      \field{type}{mathesis}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://hdl.handle.net/10589/170785
+      \endverb
+      \verb{url}
+      \verb https://hdl.handle.net/10589/170785
+      \endverb
+    \endentry
+    \entry{liu2023improving}{article}{}
+      \name{author}{5}{}{%
+        {{hash=c8c0e2e8882c8cbe0bbeb873ae3dc3df}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Yixin},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=4608e5ccafc8d895ef535a65b44457d3}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Avi},
+           giveni={A\bibinitperiod}}}%
+        {{hash=148b47742a9c028204b70046873dd757}{%
+           family={Freeman},
+           familyi={F\bibinitperiod},
+           given={C.\bibnamedelimi Daniel},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=d2a711461d39e21a75ab43453be54945}{%
+           family={Co-Reyes},
+           familyi={C\bibinithyphendelim R\bibinitperiod},
+           given={John\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=570360613a16cb233115feb5f8b4e526}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Peter\bibnamedelima J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{c0b6c3fe74a540b233fe870ab3ccc612}
+      \strng{fullhash}{bae8f8b2f9bed03622d7255bb13a24da}
+      \strng{bibnamehash}{c0b6c3fe74a540b233fe870ab3ccc612}
+      \strng{authorbibnamehash}{c0b6c3fe74a540b233fe870ab3ccc612}
+      \strng{authornamehash}{c0b6c3fe74a540b233fe870ab3ccc612}
+      \strng{authorfullhash}{bae8f8b2f9bed03622d7255bb13a24da}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ArXiv}
+      \field{title}{Improving Large Language Model Fine-tuning for Solving Math Problems}
+      \field{volume}{abs/2310.10047}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:264146593
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:264146593
+      \endverb
+    \endentry
+    \entry{didolkar2024metacognitive}{article}{}
+      \name{author}{10}{}{%
+        {{hash=917ef24596229b2ee1084f5f2a7e0fc5}{%
+           family={Didolkar},
+           familyi={D\bibinitperiod},
+           given={Aniket},
+           giveni={A\bibinitperiod}}}%
+        {{hash=eb6a43771a55bde951c0119ac5c7ad13}{%
+           family={Goyal},
+           familyi={G\bibinitperiod},
+           given={Anirudh},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ae67f83953c6a086ab60e4c5a8518aa4}{%
+           family={Ke},
+           familyi={K\bibinitperiod},
+           given={Nan\bibnamedelima Rosemary},
+           giveni={N\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=88cb45eb6bac5b8eab1fcc89a00a421a}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Siyuan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e25b9b55e0d33d8e554fb428b0122ba9}{%
+           family={Valko},
+           familyi={V\bibinitperiod},
+           given={Michal},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3a6fdf4df9a25f1d2d506ad9e86e1f6c}{%
+           family={Lillicrap},
+           familyi={L\bibinitperiod},
+           given={Timothy},
+           giveni={T\bibinitperiod}}}%
+        {{hash=ec9d0847975b9ff58f6b8ba2661c82fc}{%
+           family={Rezende},
+           familyi={R\bibinitperiod},
+           given={Danilo\bibnamedelima Jimenez},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=cd75fb853614da299a9abecaf5115db4}{%
+           family={Mozer},
+           familyi={M\bibinitperiod},
+           given={Michael\bibnamedelima Curtis},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=8e08b59145b9531815169c7ed0a0b055}{%
+           family={Arora},
+           familyi={A\bibinitperiod},
+           given={Sanjeev},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{e21f2e44353b4b98161d9f7b23ebc207}
+      \strng{fullhash}{786802af6c50d3fe54ea91f2698f8146}
+      \strng{bibnamehash}{e21f2e44353b4b98161d9f7b23ebc207}
+      \strng{authorbibnamehash}{e21f2e44353b4b98161d9f7b23ebc207}
+      \strng{authornamehash}{e21f2e44353b4b98161d9f7b23ebc207}
+      \strng{authorfullhash}{786802af6c50d3fe54ea91f2698f8146}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ArXiv}
+      \field{title}{Metacognitive Capabilities of LLMs: An Exploration in Mathematical Problem Solving}
+      \field{volume}{abs/2405.12205}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:269921384
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:269921384
+      \endverb
+    \endentry
+    \entry{scaria2024automated}{inbook}{}
+      \name{author}{3}{}{%
+        {{hash=7260c4f8373bda61f5dde57a3136e63e}{%
+           family={Scaria},
+           familyi={S\bibinitperiod},
+           given={Nicy},
+           giveni={N\bibinitperiod}}}%
+        {{hash=d0d11af440e841ba5b8fb97daeb85a3e}{%
+           family={Dharani\bibnamedelima Chenna},
+           familyi={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Suma},
+           giveni={S\bibinitperiod}}}%
+        {{hash=924e0a35e3041c3420ef0721c29ae395}{%
+           family={Subramani},
+           familyi={S\bibinitperiod},
+           given={Deepak},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Nature Switzerland}%
+      }
+      \strng{namehash}{885082dfa8ed2810c53ecbce22bc9de1}
+      \strng{fullhash}{885082dfa8ed2810c53ecbce22bc9de1}
+      \strng{bibnamehash}{885082dfa8ed2810c53ecbce22bc9de1}
+      \strng{authorbibnamehash}{885082dfa8ed2810c53ecbce22bc9de1}
+      \strng{authornamehash}{885082dfa8ed2810c53ecbce22bc9de1}
+      \strng{authorfullhash}{885082dfa8ed2810c53ecbce22bc9de1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Artificial Intelligence in Education}
+      \field{isbn}{9783031642999}
+      \field{issn}{1611-3349}
+      \field{title}{Automated Educational Question Generation at Different Bloom's Skill Levels Using Large Language Models: Strategies and Evaluation}
+      \field{year}{2024}
+      \field{pages}{165\bibrangedash 179}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1007/978-3-031-64299-9_12
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1007/978-3-031-64299-9_12
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/978-3-031-64299-9_12
+      \endverb
+    \endentry
+    \entry{sadihin2024proposalml}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=161d8cd6e788ca543509306736175c06}{%
+           family={Sadihin},
+           familyi={S\bibinitperiod},
+           given={Bryan\bibnamedelima Constantine},
+           giveni={B\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=6066366f1398f6790f977523db2b37e8}{%
+           family={Rodriguez},
+           familyi={R\bibinitperiod},
+           given={Hector\bibnamedelima Rodriguez},
+           giveni={H\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=6f25a922571c57bb5672e9a349205d56}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Matteo\bibnamedelima Jiahao},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{65986c1d5371c69502e84bfab37dc957}
+      \strng{fullhash}{65986c1d5371c69502e84bfab37dc957}
+      \strng{bibnamehash}{65986c1d5371c69502e84bfab37dc957}
+      \strng{authorbibnamehash}{65986c1d5371c69502e84bfab37dc957}
+      \strng{authornamehash}{65986c1d5371c69502e84bfab37dc957}
+      \strng{authorfullhash}{65986c1d5371c69502e84bfab37dc957}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Submitted to Tsinghua University Course: Advanced Machine Learning}
+      \field{note}{under review}
+      \field{title}{[Proposal-{ML}] Mining Misconception in Mathematics}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://openreview.net/forum?id=CE85qdNSlp
+      \endverb
+      \verb{url}
+      \verb https://openreview.net/forum?id=CE85qdNSlp
+      \endverb
+    \endentry
+    \entry{warner2024smarterbetterfasterlonger}{misc}{}
+      \name{author}{14}{}{%
+        {{hash=e0cc69084d6c37310e7853e32d88e19d}{%
+           family={Warner},
+           familyi={W\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=601fe57ad1ac74988e9b317635c576f2}{%
+           family={Chaffin},
+           familyi={C\bibinitperiod},
+           given={Antoine},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9817ecfe603ddeba925c0ec49d5eb417}{%
+           family={Clavié},
+           familyi={C\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=a390033bb496c7e945d44bfae3e5cb96}{%
+           family={Weller},
+           familyi={W\bibinitperiod},
+           given={Orion},
+           giveni={O\bibinitperiod}}}%
+        {{hash=4cb9fdd9a07c975baf1e6ef7393e932f}{%
+           family={Hallström},
+           familyi={H\bibinitperiod},
+           given={Oskar},
+           giveni={O\bibinitperiod}}}%
+        {{hash=ac4c7f3a590f85084a8f3a4d425fdc52}{%
+           family={Taghadouini},
+           familyi={T\bibinitperiod},
+           given={Said},
+           giveni={S\bibinitperiod}}}%
+        {{hash=95bf655d4ea3f33773854dc6761c7e3b}{%
+           family={Gallagher},
+           familyi={G\bibinitperiod},
+           given={Alexis},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3d5dd250419b91493fe8bb047b2d6507}{%
+           family={Biswas},
+           familyi={B\bibinitperiod},
+           given={Raja},
+           giveni={R\bibinitperiod}}}%
+        {{hash=ced0403c07861802e74bf36cea3d1460}{%
+           family={Ladhak},
+           familyi={L\bibinitperiod},
+           given={Faisal},
+           giveni={F\bibinitperiod}}}%
+        {{hash=fa841ccb24e93d64ad7a77ae3a74dc3c}{%
+           family={Aarsen},
+           familyi={A\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod}}}%
+        {{hash=e1340892f2f9159b54754ec358ebffc2}{%
+           family={Cooper},
+           familyi={C\bibinitperiod},
+           given={Nathan},
+           giveni={N\bibinitperiod}}}%
+        {{hash=8622a409ab2c55a8625fbda03488c11e}{%
+           family={Adams},
+           familyi={A\bibinitperiod},
+           given={Griffin},
+           giveni={G\bibinitperiod}}}%
+        {{hash=5ed422e177c5444b96679479aeed0c51}{%
+           family={Howard},
+           familyi={H\bibinitperiod},
+           given={Jeremy},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1f15655028757251dbf9447cde6ad33c}{%
+           family={Poli},
+           familyi={P\bibinitperiod},
+           given={Iacopo},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b17c1668f1cf81a68870d639565c4876}
+      \strng{fullhash}{8b2b539c0e9f8315f0a55766f318e050}
+      \strng{bibnamehash}{b17c1668f1cf81a68870d639565c4876}
+      \strng{authorbibnamehash}{b17c1668f1cf81a68870d639565c4876}
+      \strng{authornamehash}{b17c1668f1cf81a68870d639565c4876}
+      \strng{authorfullhash}{8b2b539c0e9f8315f0a55766f318e050}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CL}
+      \field{eprinttype}{arXiv}
+      \field{title}{Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference}
+      \field{year}{2024}
+      \verb{eprint}
+      \verb 2412.13663
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2412.13663
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2412.13663
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

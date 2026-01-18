@@ -1,0 +1,2013 @@
+669Reading Research Quarterly , 57(2)   
+pp. 669–690 | doi:10.1002/rrq.434   
+© 2021 The Authors. Reading Research Quarterly  published 
+by Wiley Periodicals LLC on behalf of International 
+Literacy Association . 
+This is an open access article under the terms of the 
+Creative Commons Attribution-NonCommercial License , 
+which permits use, distribution and reproduction in any 
+medium, provided the original work is properly cited and 
+is not used for commercial purposes.ABSTRACT
+General academic words are those which are typically learned through ex -
+posure to school texts and occur across disciplines. We examined academic 
+vocabulary assessment data from a group of English-  speaking middle school 
+students ( N = 1,747). We tested how word frequency, complexity, proxim -
+ity, polysemy, and diversity related to students’ knowledge of target words 
+across ability levels. Our results affirm the strong relation between vocab -
+ulary and reading at the individual level. Strong readers were more likely 
+to know the meanings of words than struggling readers were, regardless of 
+the features of the academic words tested. Words with more meanings were 
+easier for all students, on average. The relation between word frequency 
+and item difficulty was stronger among better readers, whereas the relation 
+between word complexity and item difficulty was stronger among less profi -
+cient readers. Our examination of academic words’ characteristics and how 
+these characteristics relate to word difficulty across reading performance has 
+implications for instruction.
+General academic words are used across academic disciplines 
+and more frequently in academic than nonacademic contexts 
+(Nagy & Townsend, 2012). These words have been advanced as 
+a promising target for instruction because of their importance for read -
+ing academic texts across disciplines (Townsend, Filippini, Collins, & 
+Biancarosa, 2012). General academic words are particularly important 
+for middle schoolers who encounter instructional texts that include 
+higher proportions of lower frequency words and morphologically 
+complex words (Hiebert, Goodwin, & Cervetti, 2018). There are many 
+reasons these words may be difficult for adolescent readers. Unlike 
+discipline-  specific vocabulary, general academic words may not receive 
+explicit instruction in content area classes (Hiebert & Lubliner, 2008). 
+These words may be longer and harder to pronounce than words that 
+students encounter in earlier grades. General academic words tend to 
+be morphologically complex. They occur less frequently than many 
+words learned in casual discussion. General academic words tend to 
+have multiple related senses, some or all of which are abstract (Nagy & 
+Townsend, 2012). In this article, we empirically examine what makes 
+academic vocabulary difficult for middle school students. Using vocab -
+ulary and reading data from 1,747 English-  speaking middle school stu -
+dents, in the present study, we examined which kinds of general 
+academic words are hard for students and examined the relation 
+between lexical features of items and item difficulty across the contin -
+uum of reading performance.Joshua F. Lawrence 
+Rebecca Knoph 
+University of Oslo, Norway
+Autumn McIlraith 
+Texas Education Agency, Austin, USA
+Paulina A. Kulesz 
+David J. Francis 
+University of Houston, Texas, USAReading Comprehension 
+and Academic Vocabulary: 
+Exploring Relations of Item 
+Features and Reading Proficiency
+
+
+--- Page Break ---
+
+670  |  Reading Research Quarterly , 57(2)Empirical Measures 
+of Lexical Dimensions
+Quantitative lexical measures have proliferated in the last 
+decade. On the one hand, new measures have allowed 
+researchers to test new models of how specific linguistic 
+features relate to lexical processing and especially lexical 
+access.1 On the other hand, the proliferation of measures 
+has made it difficult to generalize across studies using dif-
+ferent word metrics that are believed to measure the same 
+construct. As a practical matter, it is impossible to model all 
+the competing lexical measures simultaneously or argue 
+that one particular selection strategy is definitively better 
+than another. Thus, as a preliminary step in studying factors 
+that affect item performance on vocabulary tests, we made 
+use of prior research to create a reduced feature set for 
+inclusion in the models. This approach both reduced poten-
+tial bias introduced by our measure selection process and 
+helped us communicate our results to an audience who 
+may be unfamiliar with (and potentially uninterested in) 
+the details of the specific lexical measures. We began with 
+22 empirical word characteristics, each of which had clear 
+documentation and had been used in earlier research. We 
+excluded behavioral measures, such as age- of- acquisition 
+and abstractness ratings, because we intended to use result-
+ing factor scores as independent variables to model assess -
+ment and other behavioral data. Recent research (Knoph, 
+Lawrence, & Francis, 2021) on these features using a set of 
+high- frequency words (from the General Service List [GSL] 
+developed by West, 1957) and the general academic words 
+that are the focus of this article (from the Academic Word 
+List [AWL] developed by Coxhead, 2000) identified five 
+correlated factors: complexity, proximity, frequency, diver -
+sity, and polysemy. Next, we provide a brief overview of 
+research related to each of these factors.
+Vocabulary and Reading
+Reading comprehension is the process of extracting and 
+constructing meaning from print when a reader interacts 
+with a text for a specific purpose or activity (RAND Read-
+ing Study Group, 2002). This process supports word learn-
+ing by providing students with contextualized uses of new 
+words but, at the same time, requires that readers have 
+ sufficiently developed orthographic, phonological, and 
+semantic word knowledge (Perfetti & Hart, 2002). It is not 
+surprising, then, that reading researchers have consistently 
+found strong correlations between student performance on 
+vocabulary and reading comprehension assessments 
+(Cromley & Azevedo, 2007; Joshi, 2005; Joshi & Aaron, 
+2000; McKeown, Beck, Omanson, & Perfetti, 1983; Quinn, 
+Wagner, Petscher, & Lopez, 2015; Tannenbaum, Torgesen, & 
+Wagner, 2006; Wagner et al., 1997), across many language-  
+learning contexts (Kieffer & Box, 2013; Qian, 2002; Rydland, Aukrust, & Fulland, 2013), and across age groups 
+(Braze et al., 2016; Quinn et al., 2015; Snow, Porche, Tabors, 
+& Harris, 2007). However, the relative importance of com-
+ponent skills used in reading change as students age.
+Hoover and Gough (1990) showed that decoding skills 
+are more related to reading comprehension in younger 
+students but that verbal ability is more associated with 
+reading ability in later grade levels. The simple view of 
+reading also has implications for thinking about what 
+might make a word difficult for students: The words that 
+students find challenging to learn may vary in part as a 
+function of their reading ability. For instance, less profi -
+cient readers who struggle with decoding skills may find 
+orthographically complex words hard to master, even 
+though this dimension may not relate to word difficulty as 
+strongly among more skilled readers. As such, item perfor -
+mance may be jointly determined by reader ability and 
+word features. To examine the joint influence of student 
+and word features, in the current study, we examined item 
+difficulty as a function of individual reading ability and 
+word- level characteristics simultaneously. We also explored 
+interactions to see if some words are more challenging or 
+more manageable across ranges of reading ability.
+Complexity
+Word complexity is the orthographic and morphological 
+complexity of a word. The word feline may be more chal-
+lenging for some students to learn than the word cat sim -
+ply because feline is longer and more complex. Complexity 
+can be measured by the number of syllables, the number of 
+letters, or the number of morphemes and is related to indi-
+vidual differences in vocabulary learning (Goodwin & 
+Cho, 2016). In general, words with more letters take longer 
+to process and are read more slowly than shorter words 
+(for a review, see New, Ferrand, Pallier, & Brysbaert, 2006). 
+However, there is a complicated relation between orthog -
+raphy and phonology in English, so the consistency and 
+granularity of letter– sound mapping must also be consid-
+ered (Ziegler & Goswami, 2005). The presence of clusters 
+of consonants, for example, can slow down word reading 
+in younger readers (Olson, Forsberg, Wise, & Rack, 1994), 
+and clusters of vowels can result in less accurate decoding 
+(Gilbert, Compton, & Kearns, 2011). In addition to phono-
+logical and orthographic considerations, the presence of 
+multiple morphemes in a word can facilitate reading time 
+and accuracy (Carlisle & Stone, 2005; Deacon, Whalen, & 
+Kirby, 2011), especially if the base morpheme is higher in 
+frequency than the derived word. These features not only 
+affect word recognition but also impact access to meaning 
+(Goodwin & Cho, 2016).
+Proximity
+The phonological or orthographic proximity of words can 
+be measured by their overlap in letters or phonemes. 
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+Reading Comprehension and Academic Vocabulary: Exploring Relations of Item Features and Reading Proficiency  |  671Similarly, word forms that share phonemic patterns or let-
+ter sequences with many others reside in denser neighbor -
+hoods than words with unusual forms. Both phonological 
+and orthographic neighborhood density have facilitative 
+effects on visual word recognition, lexical decision, and 
+naming tasks. Coltheart’s N  (Coltheart, Davelaar, Jonasson, 
+& Besner, 1977) is a measure of orthographic overlap, 
+defined as the number of words that can be created by sub-
+stituting a single letter in the original word (e.g., rat, sat, 
+car, and cab are all neighbors of cat). Recently developed 
+metrics have expanded this definition to include additions, 
+subtractions, transpositions, and substitutions. Yarkoni, 
+Balota, and Y ap (2008) proposed a metric known as ortho-
+graphic Levenshtein distance, defined as the number of 
+operations (insertions, deletions, and substitutions) neces-
+sary to transform one word form to another. OLD20, the 
+mean Levenshtein distance from a word to its 20 closest 
+neighbors, then becomes another orthographic neighbor -
+hood density metric. It should be noted, however, that sim-
+pler words are often those with the densest neighborhoods. 
+This is demonstrated by the fact that it is easy to think of 
+near neighbors for the word cat but much harder to think 
+of near neighbors for the word necessarily. As a result, 
+proximity measures have loaded on the complexity factor 
+rather than with other neighborhood relatedness measures 
+in previous studies (see Brysbaert, Mandera, McCormick, 
+& Keuleers, 2019; Y ap, Balota, Sibley, & Ratcliff, 2012).
+Frequency
+Kučera and Francis (1967) used punch cards to tabulate 
+word frequency using IBM computers in creating what has 
+become known as the Brown University Standard Corpus 
+of Present- Day American English (or just Brown Corpus). 
+Because word frequency measures from sufficiently large 
+and diverse samples generalize well, these measures can be 
+used as a proxy for the relative number of encounters a 
+learner may have had to specific English words. Kuperman, 
+Stadthagen- Gonzalez, and Brysbaert (2012) found that Liv-
+ing Word Vocabulary levels, which indicate the grade level 
+at which a word is widely known (Dale & O’Rourke, 1981), 
+correlate strongly with item frequency as estimated with the 
+Brown Corpus ( r = −.69; Kučera & Francis, 1967). Biemiller 
+and Slonim (2001) tested 100 words from each Living Word 
+Vocabulary level and found a strong relation between word 
+frequency and the grade level at which 50% of students 
+knew a word (r  = −.57). Age of acquisition is similar to dif-
+ficulty in that it estimates the age at which a learner first 
+masters a word. Kuperman et al. found that age- of- 
+acquisition estimates based on adult self- reports correlated 
+(r = −.64) with the word frequency in the Brown Corpus 
+(see also Breland, 1996; L.T. Miller & Lee, 1993). Findings 
+like these motivated Coxhead (2000) to exclude the high-  
+frequency words from her AWL; high- frequency words are 
+likely already known or can be learned independently.Diversity
+Whereas it is relatively easy to count the number of occur -
+rences of a word, it is harder to quantify the diversity of its 
+usages within and across texts. Researchers have used latent 
+semantic analysis within texts to create the semantic diver -
+sity measure, which estimates how distinct word usages are 
+at the local level (Hoffman, Lambon Ralph, & Rogers, 2013). 
+This measure quantifies the diversity of words that occur 
+adjacent to or near a target word. For example, the word 
+aquarium has a low semantic diversity rating, indicating that 
+it appears next to a stable set of collocates (e.g., fish). A related 
+measure, contextual diversity, is a measure of the number of 
+times a word appears across text selections that make up a 
+text corpus, regardless of the document- level features (Adel-
+man, Brown, & Quesada, 2006; Brysbaert & New, 2009), 
+although contextual diversity could alternatively be consid-
+ered a way of measuring frequency.
+Educational researchers have taken the additional step 
+of categorizing the documents that make up a corpus by 
+academic discipline and analyzing the occurrence of words 
+in documents across categories. Zeno, Ivens, Millard, and 
+Duvvuri (1995) counted word occurrences across text 
+selections classified by the academic category of the texts in 
+which they appear to create dispersion estimates. Coxhead 
+(2000) analyzed a 3.5 million– word corpus containing over 
+400 texts that fell into the categories of arts, commerce, law, 
+and science. After refining target words based on frequency, 
+she excluded word families that did not occur in each of 
+the four disciplinary areas at least 10 times. The resulting 
+list of 570 word families provides much better coverage of 
+academic texts than an alternative list based only on fre-
+quency. The resulting AWL has been touted in influential 
+instructional books (Beck, McKeown, & Kucan, 2013) and 
+has been referenced in creating vocabulary interventions 
+for middle school students (Lawrence, Crosson, Paré-  
+Blagoev, & Snow, 2015; Lesaux, Kieffer, Kelley, & Harris, 
+2014).
+Polysemy
+We say a word is polysemous when it has several related 
+senses. A recent analysis of 13,783 nouns and 8,998 verbs 
+using results from WordNet found that the nouns average 
+2.9 senses (SD = 2.4) each and that the verbs average 4.3 
+senses ( SD = 4.5) each (Lawrence et al., 2021). General aca-
+demic words tend to have many senses. For instance, 
+according to WordNet, the word retain has four meanings, 
+and the word obtain has three. In contrast, disproportion-
+ately only has two meanings, and controversy has one.
+In English, word forms with more senses are more fre-
+quent than word forms with fewer senses ( r = .53; Hoff-
+man et al., 2013). A good deal of evidence demonstrates 
+that polysemous words are accessed more rapidly than 
+words with single senses (Azuma & Van Orden, 1997; Bo  -
+rowsky & Masson, 1996; Hino & Lupker, 1996). Homophones, in 
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+672  |  Reading Research Quarterly , 57(2)contrast, are word forms that have two or more distinct 
+meanings (e.g., bank meaning the side of a river vs. a place 
+for money). These words are much less frequent in English 
+and are processed less efficiently in speeded lexical deci-
+sion tasks (Beretta, Fiorentino, & Poeppel, 2005; Rodd, 
+Gaskell, & Marslen- Wilson, 2002) and semantic categori-
+zation tasks (Hino, Lupker, & Pexman, 2002). Given the 
+ubiquity of polysemy in English and that sense disambigu -
+ation is essential to skilled reading, it is surprising that 
+research into polysemy with educationally relevant out-
+comes has been rare. One study found that, controlling for 
+frequency, polysemous scientific words are more difficult 
+for elementary- age students at pretest. However, polyse-
+mous target words were learned more effectively during 
+the school year (when they were introduced as part of a 
+language- rich science curriculum). Controlling for pretest 
+scores, the number of target word meanings was a better 
+predictor of posttest knowledge than word frequency mea  -
+sures were (Cervetti, Hiebert, Pearson, & McClung, 2015). 
+In contrast, Hiebert, Scott, Castaneda, and Spichtig (2019) 
+did not find a relation between target word knowledge and 
+the number of word senses and meanings in an analysis of 
+synonym task data from students across grades 2– 12. 
+These mixed results suggest that this may be a productive 
+space for further study.
+Hypothetical Relations Between 
+Vocabulary and Reading
+Explanations of the possible mechanisms underlying the 
+correlations between measures of vocabulary knowledge 
+and reading ability have focused on the importance of 
+efficient lexical access, the importance of knowing a word 
+encountered by readers in target passages, the relation 
+between word knowledge and world knowledge, and the 
+correlations across verbal skills (Anderson & Freebody, 
+1981; Quinn et al., 2015). Here, we provide a brief over -
+view of these hypotheses, none of which is exclusive of the 
+others.
+Efficient Lexical Access
+Accurate and efficient retrieval of word knowledge is 
+essential for skilled reading (Mezynski, 1983; Perfetti, 
+1988), a point emphasized in text comprehension models 
+that focus on efficient lexical access (Perfetti & Hart, 2002; 
+Perfetti & Stafura, 2014). There are both individual differ -
+ences in lexical access and differences in access speeds 
+associated with lexical characteristics. Not surprisingly, 
+efficient lexical retrieval (measured by speeded lexical 
+decision tasks) at the individual level correlates with sub-
+ject vocabulary scores (Y ap et al., 2012). There are also 
+word-  level differences that influence speeded lexical retrieval 
+tasks. For instance, less complex words and high- frequency words are retrieved more efficiently (see, e.g., Brysbaert & 
+New, 2009). Interestingly, words with multiple senses are 
+also retrieved more efficiently, possibly because the pro-
+cess of learning words with multiple senses provides the 
+learner with the opportunity to compare and integrate 
+usages across encounters. There is much less known about 
+how word characteristics relate to student performance 
+on educationally relevant tasks. However, if words that are 
+more efficiently accessed are also better known, ortho-
+graphically complex words will be more challenging, 
+whereas frequent words with more meanings will be 
+easier.
+Instrumental Word Knowledge
+The instrumentalist perspective is based on the finding that 
+when a reader knows more words in a specific passage, the 
+reader comprehends it better (Schmitt, Jiang, & Grabe, 
+2011). Vocabulary training produces improved compre-
+hension when the target words are in the tested compre-
+hension passages (Beck, Perfetti, & McKeown, 1982; Mc-     
+Keown et al., 1983; for a review, see Wright & Cervetti, 
+2017). Unfortunately, these results can be hard to translate 
+into instructional practice across instructional contexts. 
+Given the volume and diversity of texts that students are 
+expected to read across classes in secondary schools, it can 
+be challenging to provide tailored prereading support for 
+unknown words. Instead, some researchers have resorted to 
+examining textual corpora to identify frequent, widely dis -
+persed words that students are most likely to encounter, and 
+which may therefore be good candidates for instruction 
+(Coxhead, 2000; Hiebert et al., 2018; Praninskas, 1972). 
+However, vocabulary interventions usually analyze data 
+aggregated at the individual, class, or school level: they do 
+not shed light on the efficacy of target word selection strate-
+gies. Intervention research has demonstrated that academic 
+vocabulary can be improved through targeted instruction 
+(Lawrence, Francis, Paré- Blagoev, & Snow, 2017; Lesaux, 
+Kieffer, Faller, & Kelley, 2010; Pany, Jenkins, & Schreck, 
+1982). However, meta- analyses of vocabulary interventions 
+have suggested only moderate effects on passage compre-
+hension as measured by researcher-  developed instruments, 
+and no impact on standardized reading measures (Elleman, 
+Lindo, Morphy, & Compton, 2009; Stahl & Fairbanks, 1986).
+Word Knowledge 
+and World Knowledge
+The knowledge hypothesis is predicated on the idea that 
+knowing a word entails knowing something about the 
+world and that the more learners know about the world, 
+the better their reading comprehension. For instance, 
+knowledge of domain-  and topically relevant words pre-
+dicted improvement in scenario-  based reading measures 
+(McCarthy et al., 2018). Among general academic vocabu-
+lary, there may also be words that help students understand 
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+Reading Comprehension and Academic Vocabulary: Exploring Relations of Item Features and Reading Proficiency  |  673the world or the way things can be related to each other. 
+Knowledge of these concepts may relate to the skilled 
+comprehension of a particular text passage, even if these 
+words do not appear in the passage. For instance, a class of 
+academic words known as connectives allows students to 
+understand and make connections across ideas (Crosson, 
+Lesaux, & Martiniello, 2008). Thus, knowledge of the word 
+notwithstanding might be a marker of a student’s under -
+standing of how integrative arguments work. This under -
+standing of integrative argumentation might help the 
+student comprehend a text in which such a relation is 
+implied, even if the word notwithstanding is not used in 
+the text to signal the nature of the relation.
+Words with multiple senses mark world knowledge as 
+well. Words acquire these multiple senses through the 
+countless ways their usage is broadened, extended, and 
+refined (Aitchison, 2012). Students who know two or more 
+senses of the same word have the opportunity to reflect on 
+these relations and on the abstract conceptual relations 
+that may link related meanings. Nagy and Townsend 
+(2012) suggested that one class of these relations, gram-
+matical metaphor, is one of the defining characteristics of 
+academic language. Grammatical metaphor extends the 
+range of a word’s most frequent or etymologically primary 
+meaning by metaphorical usage (e.g., boils down to), nomi -
+nalization (employing derived inflections or zero deriva-
+tion), or idiomatic phrasing. Grammatical metaphor is 
+ubiquitous in academic writing and “is the largest diver -
+sion from social/conversational language and presents the 
+most significant issue for students” (Nagy & Townsend, 
+2012, p. 94). Knowledge of polysemous words may support 
+students’ understanding of linguistic and conceptual rela -
+tions that have broad utility.
+Verbal Skill and Metalinguistic Ability
+General factors can explain high correlations across dis-
+crete cognitive skills (Spearman, 1904; Tucker- Drob, 2009). 
+Carroll (1941) argued that verbal ability is connected to 
+how well one can infer and retain the meanings of newly 
+encountered words (see also Sternberg & Powell, 1983). 
+Tunmer and Herriman (1984) identified metalinguistic 
+awareness as a similarly general verbal ability that learners 
+use to “reflect on and manipulate the structural features of 
+spoken language” (p. 136). Nagy (2007) pointed to metalin-
+guistic awareness in explaining individual differences in 
+vocabulary learning and retention rates. Whereas some 
+researchers have pointed to a common underlying cause, 
+such as metalinguistic awareness, or general verbal ability, 
+to account for the correlation between reading comprehen-
+sion and vocabulary knowledge, others have linked vocab-
+ulary knowledge and reading comprehension in a relation 
+of reciprocal causality (Stanovich, 1986; Verhoeven, van 
+Leeuwe, & Vermeer, 2011). The reciprocity argument views vocabulary as causally implicated in understanding lan -
+guage in written form, and exposure to word usage through 
+written language as one way in which word meanings are 
+acquired.
+We argue that interaction between readers’ abilities and 
+word features in predicting word knowledge is not directly 
+compatible with the spurious correlation view without 
+modification, whereas these interactions are more easily 
+explained through reciprocal causality models. Although 
+these two views of the basis for the correlation between 
+vocabulary and reading imply quite different causal models 
+for the role of vocabulary in reading, that vocabulary knowl-
+edge and reading comprehension are strongly correlated is 
+not in dispute. The magnitude of interindividual differences 
+complicates any investigation of word-  level features which 
+might seek to average over individuals to get at relations at 
+the word level and suggests the need for intensive data col-
+lection that is both wide (i.e., many words) and deep (i.e., 
+many individuals), with many covariates at both the word 
+and person levels. The present study was not intended to 
+arbitrate these different views of the correlation between 
+reading and vocabulary but to determine which characteris-
+tics of academic words are associated with item difficulty 
+and to examine some characteristics of readers that might 
+affect vocabulary knowledge and possibly alter the relation 
+between word characteristics and item difficulty.
+Research Questions
+General academic word knowledge is strongly related to 
+reading comprehension (Townsend et al., 2012; Lawrence, 
+Hagen, Hwang, Lin, & Lervåg, 2019). However, little is 
+known about which lexical features may make an aca-
+demic word difficult for students to learn or if the word 
+features that make these words challenging for students 
+are consistent across students at different reading perfor -
+mance levels. Therefore, three research questions guided 
+our study:
+1. What are the characteristics of middle school read-
+ers (measured via reading ability, socioeconomic 
+status [SES], gifted and talented education [GATE] 
+status, and grade level) that account for individual 
+differences in vocabulary knowledge?
+2. What is the relation between features of academic 
+vocabulary (measured via item frequency, com-
+plexity, proximity, polysemy, and diversity) and 
+item difficulty on a test of academic word knowl -
+edge for middle school students?
+3. How does student knowledge of words with differ -
+ent features relate to reading ability? Specifically, to 
+what extent is the influence of word features on 
+item difficulty different for good and poor readers?
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+674  |  Reading Research Quarterly , 57(2)Method
+To answer our research questions, we needed to model item 
+difficulty with word-  and person- level data and explore 
+interactions. We now present a technical description of the 
+approach we used. This description is essential for scientific 
+replication purposes, although readers with more substan -
+tive interests may wish to skip the next couple of para-
+graphs. We used explanatory item response theory (EIRT) 
+models and examined middle school students’ performance 
+on a test of academic vocabulary. EIRT models are multi-
+variate, cross- classified random- effects models that can be 
+used to jointly explain differences in person ability and item 
+difficulty by modeling item responses on a test in terms of 
+(a) the effects of student characteristics on a latent ability 
+(θp; in our case, vocabulary knowledge as measured by aca -
+demic words), (b) the effects of word features on item diffi-
+culty ( βi; difficulty of an item designed to measure the latent 
+ability; De Boeck & Wilson, 2004), and (c) cross- level inter -
+actions between person characteristics and word features. 
+These models are particularly advantageous when one is 
+interested in investigating moderating effects of test fea -
+tures (in our case, item/word features) on relations between 
+students’ characteristics and students’ performance on an 
+outcome measure (i.e., student– test interactions). Although 
+interaction effects often account for a small proportion of 
+variance explained in EIRT models (controlling for main 
+effects of student characteristics and test features), interac-
+tion effects provide unique insights about how the same 
+item feature affects students differently depending on their 
+individual characteristics. Importantly, these insights can-
+not be easily examined when looking at interaction effects 
+based on composite scores.
+The specific EIRT models used in the current study are 
+well suited for binary outcome data. A general mathemati-
+cal formulation of the EIRT model proposed for the pres-
+ent study can be found in Kulesz, Francis, Barnes, and 
+Fletcher (2016). We applied the binary form of the model 
+because item responses to test items had a correct/incorrect 
+format (missing values were coded as incorrect responses). 
+We used a multivariate structure because item difficulty 
+was simultaneously modeled for all items. We used a cross-  
+classified random- effects structure to deal with dependen-
+cies among the responses to items, as these dependencies 
+result from administering all items to all students and stu-
+dents responding to all items. Treating items as random 
+effects further improves the estimation of the model and 
+has the inferential advantage of treating items as being 
+sampled from a universe of items. Thus, inferences about 
+item features are not specific to the sample of items but to 
+the universe of items from which the specific items have 
+been sampled. The specific cross- classified structure em -
+ployed in the present study comprised two levels: The first 
+level was responses to items (dummy variables where 
+0  = incorrect, and 1  =  correct), and the second level was item and student parameters, which are completely crossed 
+in this design because all students completed all test items. 
+Thus, we considered item responses cross- classified within 
+a person and item. In all EIRT models, we standardized 
+continuous student characteristics and word features to 
+provide a correct and meaningful interpretation of param-
+eter estimates.
+We estimated the models in several steps. Step 1 fits an 
+unconditional variance components model (model 1). We 
+compared the unconditional variances from model 1 with 
+residual variances of subsequent models that included student 
+characteristics and word features, to estimate the variance 
+explained by student characteristics and word features. Step 2 
+incorporated predictors of student ability, including grade, 
+reading comprehension, SES status, and GATE status, that 
+were sequentially entered in models 2– 4. We used sequential 
+entry of student characteristics to the models to estimate 
+unique variance explained by different student characteristics. 
+In step 3 (model 5), we added word features to model 1 (fre-
+quency, complexity, proximity, polysemy, and diversity) to 
+explain item difficulty in the absence of student characteristics. 
+In step 4 (model 6), we integrated student characteristics from 
+model 4 and word features from model 5 to explain student 
+ability and item difficulty, respectively, without inclusion of 
+interactions between student characteristics and word fea-
+tures. In models 7– 11, we extended model 6 by adding interac-
+tion terms individually. We added the interaction effects one at 
+a time to examine their statistical significance in the absence of 
+other interaction terms. In the final model, model 12, we 
+included predictors from model 6 and interaction effects of 
+reading comprehension with all word features (five interaction 
+terms) to assess the importance of interaction terms relative to 
+one another. Because the interaction terms are correlated with 
+one another and the main effect terms, examining them indi-
+vidually and in conjunction with one another allowed us to 
+evaluate their individual and joint contributions to the predic-
+tion of word difficulty and student ability. All EIRT models 
+were estimated in R using the glmer function of the lme4 
+package (Bates et al., 2021) using nonlinear optimization of 
+the Nelder– Mead and bound optimization by quadratic 
+approximation methods.
+Student Sample
+Students who contributed data to this study attended 
+schools participating in the randomized efficacy trial of the 
+Word Generation program (Strategic Education Research 
+Partnership, 2021). The students were recruited from 12 
+middle schools from a large urban school district in Califor -
+nia. The students participating in the initial study included a 
+diverse range of language speakers. Linguistic diversity pre -
+sented a challenge in this analysis because cognate advan-
+tages varied across language– word dyads. Therefore, we 
+restricted this analysis to all monolingual English speakers 
+from the initial study who contributed valid data. Our 
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+Reading Comprehension and Academic Vocabulary: Exploring Relations of Item Features and Reading Proficiency  |  675analytic sample of monolinguals is not typical of the district 
+because only 34% of students in participating schools were 
+monolingual English speakers. The monolingual students 
+in our sample were similar to other monolingual students in 
+the district in being less likely than their peers to be eligible 
+for free or reduced- price lunch (Mmonolingual_English  = 37% vs. 
+Mnonmonolingual_English = 64%). Forty- six percent of the students 
+in our analytic sample were identified as being enrolled in 
+the GATE program. This rate was similar to the district’s 
+identification rate (41%). Our analytic sample consisted of 
+students in grades 6 (28%), 7 (38%), and 8 (34%; see Table 1). 
+Performance levels on the Comprehension subtest (which 
+has been nationally normed) of the Gates– MacGinitie 
+Reading Tests (GMRT) indicate that our sample was typical 
+to somewhat above average in reading performance relative 
+to students in similar grades nationwide.
+Student Measures
+In addition to information about home language (which 
+we used to determine the analytic sample), the district also 
+provided information about students’ grade level, eligibility 
+for free or reduced- price lunch, and identification for the 
+district’s GATE program.2
+Grade- Level Cohort
+To control for differences across grade levels, we assigned 
+values for dummy variables to each of the students accord -
+ing to their grade level.
+SES Status
+We used eligibility for free or reduced- price lunch as an 
+indicator of students’ SES status. We created a student- level 
+dummy variable to indicate students who received free or 
+reduced- price lunch (SES status = 1) and those who did 
+not (SES status = 0).
+GATE
+The district used eight categories, such as “specific aca-
+demic achievement” and “high potential, ” to identify students as gifted. The GATE variable indicates whether students 
+were identified as being enrolled in the GATE program 
+(GATE = 1) or not (GATE = 0).
+Reading Comprehension
+We used the Comprehension subtest of the GMRT to mea-
+sure overall reading comprehension. Sixth- grade students 
+completed level 6 of the assessment. Seventh-  and eighth-  
+grade students completed level 7/9, as suggested by the test-
+ing manual. The GMRT is a nationally normed test 
+composed of 48 multiple- choice questions. Each item 
+relates to a short reading passage. Kuder– Richardson for -
+mula 20 reliability coefficients were high (.92 for level 6 and 
+.91 for level 7/9; Maria, Hughes, MacGinitie, MacGinitie, & 
+Dreyer, 2007). We used the extended scale scores in this 
+analysis because they place scores from different GMRT 
+test levels onto a common scale, which allows progress in 
+reading to be tracked over time and across grades on a sin-
+gle, continuous scale. For the present study, the extended 
+scale scores allowed us to place students’ performance on 
+levels 6 and 7/9 of the GMRT on a common scale. The 
+internal reliability of the test in our sample was high (Cron-
+bach’s α = .91). The extended scale scores ranged from 361 
+to 643 (M  = 536.3, SD = 35.8) in our sample.
+Academic Vocabulary Test
+This researcher-  developed test was group administered to 
+measure students’ academic vocabulary knowledge. Stu -
+dents were presented with target words placed within a 
+neutral context suggesting a part of speech and were then 
+asked to choose from four options, with the correct option 
+indicating the target word’s synonym. For instance, the 
+key for the target word suspended was “The tests were sus -
+pended , ” and the choices were (a) allowed, (b) hard for 
+students, (c) suspicious, and (d) stopped for a while. Target 
+words were general academic words, and stems reference 
+common senses of the target words. There were 50 items 
+administered each year for two years. We included 22 
+anchor items both years, so this analysis uses information 
+for 78 different words. These words were mostly taken 
+TABLE 1  
+ Reading Score, Total Academic Vocabulary Score, GATE Identification Rate, and Percentage of Students Eligible for 
+Free or Reduced-  Price Lunch
+Grade Reading score M ( SD) Academic vocabulary scorea  M (SD) GATE M ( SD) SES M ( SD)
+6 (n = 492) 514.3 (40.1) 32.7 (9.8) .45 (.5) .37 (.5)
+7 (n = 661) 537.4 (40.5) 35.4 (10.4) .48 (.5) .39 (.5)
+8 (n = 594) 550.1 (43.0) 37.7 (9.6) .45 (.5) .35 (.5)
+Total (N = 1,747) 535.5 (43.9) 35.4 (10.1) .46 (.5) .37 (.5)
+Note. GATE = enrollment in the Gifted and Talented Education program; Reading score = the extended scale score on the Comprehension subtest of the 
+Gates– MacGinitie Reading Tests; SES = eligibility for free or reduced-  price lunch.  
+ aThe maximum score is 50.
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+676  |  Reading Research Quarterly , 57(2)from the AWL (Coxhead, 2000) and seem to represent the 
+class of words on the AWL with respect to word charac-
+teristics, as we subsequently discuss in detail. Within-  
+sample internal consistency reliabilities for grades 6– 8 
+ranged from .81 to .93. All Academic Vocabulary Test 
+forms that were developed by the Word Generation 
+research team can be found in the IRIS digital depository 
+(https ://w  ww.i  ris-  dat  ab a se.o rg/).
+Factor Scores
+Insofar as the words on the Academic Vocabulary Test are 
+considered a sample of academic words, it is important to 
+consider how the sample of 50 words included on the test 
+relate to the universe of academic words. As such, we con-
+sidered their characteristics in comparison with the char -
+acteristics of words from Coxhead’s (2000) AWL and also 
+West’s (1957) GSL, a list of approximately 2,000 high-    
+frequency words considered important for basic under -
+standing of the English language.We fitted exploratory factor models with a set of high-  
+frequency words ( n  =  2,136; GSL), and general academic 
+words ( n  =  1,082; AWL). Inspection of the factor scores 
+provides some useful information about the generalizabil-
+ity of our findings to other academic and nonacademic 
+words. We used the factor structure derived from the analy-
+sis of the AWL and GSL to create factor scores for the Aca-
+demic Vocabulary Test words. These factor scores are used 
+in the analyses reported here (see Tables A1 and A2 in the 
+Appendix for a complete list of the variables used in deter -
+mining the factors and estimating the beta weights used to 
+estimate the factor scores). Figure 1 presents distributions 
+of and correlations among the five factor scores,3 color-  
+coded according to the words’ source. Notice that the distri-
+bution of each factor for our sample (Academic Vocabulary 
+Test) largely overlaps with the distribution of a random 
+sample of 500 words from the larger class of academic 
+words (AWL). Similarly, the correlations across factors are 
+similar in our set of words and the larger set of academic 
+FIGURE 1  
+ Correlations and Density Plots for the Word Feature Factor Scores
+Note. AVT = Academic Vocabulary Test; AWL = Academic Word List; Corr = correlation; GSL = General Service List. Correlation coefficients above the 
+diagonal include all 78 words on the AVT, 1,082 words on the AWL, and all 2,136 words on the GSL. The diagonal includes density plots color-  coded by 
+list: red for the AVT words, green for the AWL words, and blue for the GSL words. Scatterplots below the diagonal contain a random sample of 500 
+words for the AWL and GSL each, plus the entire set of AVT words, using the same color scheme. The color figure can be viewed in the online version 
+of this article at http:  //il a.on line libr ary. wile y.co m.
++p < .10. *p  < .05. ***p  < .001.
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+Reading Comprehension and Academic Vocabulary: Exploring Relations of Item Features and Reading Proficiency  |  677words. These results gave us confidence that the findings 
+presented here generalize to other academic words. We also 
+present information about these factor scores for a random 
+sample of 500 words from a set of high- frequency words 
+(the GSL). Not surprisingly, these words appear to have 
+higher frequencies and are less complex than academic 
+words. Still, the relations between factors in the GSL are 
+similar to those in the AWL sample, meaning that to some 
+extent, our findings here may generalize to nonacademic 
+words. For a full discussion, see Knoph et al. (2021).
+Figure 1 can also help in understanding the relations 
+between factors. Note the strong negative correlation 
+between complexity and proximity (r  = −.513, p < .001), 
+which we expected given the large number of relatively 
+simple words with related forms in English (e.g., bat, cat). 
+Note also the relatively high correlation between polysemy 
+and frequency ( r = .370, p < .001) and between polysemy 
+and diversity ( r  =  .283, p  <  .001), which we expected 
+because polysemous word forms have more semantic util-
+ity for writers. Clearly, the five factor scores that we used to 
+summarize the characteristics of words and their mean-
+ings are correlated, or overlapping. As such, the individual 
+factors will account for both unique and shared variance in 
+predicting word difficulty in our EIRT models. It is impor -
+tant to recognize that the coefficient attached to a factor in 
+any model that involves multiple factor scores will reflect 
+both the relation of the factor to word difficulty and to the 
+other factor scores. In the analyses that follow, we have not 
+attempted to identify the best prediction model of a given 
+size but rather to understand each feature’s possible contri-
+bution in light of the contribution of other factors, as well 
+as to examine possible interactions with characteristics of 
+readers. Still, even with these 22 characteristics reduced to 
+only five dimensions, there is still a rich diversity in the 
+data trends across word forms, as seen in the example 
+words presented in Table 2. Take the words controversy  and retain, for example. Controversy is more frequent (fre-
+quency = 0.096) and complex (complexity = 2.085) than 
+the word retain (frequency = −0.048; complexity = −0.526). 
+Given that retain is less complex, it is not surprising that it 
+has more orthographic and phonological neighbors (prox-
+imity = 0.429). Interestingly, retain has a higher polysemy 
+rating (0.015) than controversy (−1.529) even though con-
+troversy is more frequent.
+Results
+EIRT Models
+All models are based on the analysis of binary test items 
+using a logit link function. Thus, model parameters esti-
+mate the effect of a particular feature on the log odds of 
+answering an item correctly, either via an effect on person 
+ability or an effect on item easiness. Tables 3 and 4 contain 
+estimates of logistic regression parameters and their stan -
+dard errors for models involving (a) only main effects of 
+student characteristics (models 2– 4), (b) only main effects 
+of word features (model 5), (c) main effects of student 
+characteristics and word features (model 6), and (d) inter -
+action effects of student reading ability and word features 
+(models 7– 12).
+Table 5 provides fit indices and random effects for all 12 
+models. Each regression parameter describes the difference 
+in log odds for a unit change in the student characteristic or 
+word feature associated with the regression parameter. Bear -
+ing in mind that we standardized all continuous predictors 
+for inclusion in the models, a unit change in the associated 
+variable implies a change of one standard deviation. For 
+dichotomous student predictors (e.g., participation in the 
+GATE program) in models 2– 4, the regression parameter 
+describes the difference in mean log odds of correctly 
+answering an item of average item easiness for the group 
+TABLE 2  
+ Example Academic Vocabulary Test Words and Factor Scores
+Word Frequency Complexity Proximity Polysemy Diversity
+retain −0.048 −0.526 0.429 0.015 0.834
+controversy 0.096 2.085 −0.613 −1.529 0.259
+circumstances 0.668 3.017 −0.649 0.079 1.095
+concept 0.789 0.099 −0.366 −1.246 0.273
+constrain −1.638 0.658 −0.546 −0.744 −1.495
+disproportionately −1.269 4.850 −0.703 −1.414 −0.182
+equity −0.166 0.006 −0.537 −0.306 −1.525
+maintained 0.286 0.736 −0.543 1.208 1.284
+obtain 0.516 −0.399 −0.519 −0.466 0.891
+subsequent 0.135 1.723 −0.598 −1.757 1.299
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+678  |  Reading Research Quarterly , 57(2)TABLE 3  
+ Fixed Effects for the Main Effects Models
+Fixed effectModel 1 Model 2 Model 3 Model 4 Model 5 Model 6
+b SE b SE b SE b SE b SE b SE
+Intercept 1.39 0.17 0.98 0.18 1.52 0.17 1.38 0.17 0.90 0.13 1.38 0.15
+Grade 7 0.41*** 0.08 −0.21*** 0.05 −0.13** 0.05 −0.13*** 0.05
+Grade 8 0.75*** 0.08 −0.20*** 0.05 −0.07 0.05 −0.07 0.05
+Reading 1.17*** 0.02 1.00*** 0.03 1.00*** 0.03
+GATE 0.37*** 0.05 0.36*** 0.05
+SES −0.25*** 0.04 −0.25*** 0.04
+Frequency 0.12 0.14 0.10 0.16
+Complexity −0.21 0.15 −0.24 0.18
+Proximity −0.14 0.15 −0.15 0.17
+Polysemy 0.35** 0.13 0.39* 0.16
+Diversity 0.25 0.14 0.23 0.15
+Note. N = 1,747 for models 1 – 6. b = log odds; GATE = enrollment in the Gifted and Talented Education program; Reading = the extended scale score on 
+the Comprehension subtest of the Gates – MacGinitie Reading Tests; SE  = standard error of log odds; SES = eligibility for free or reduced-  price lunch.  
+ *p < .05. ** p < .01. *** p < .001.
+TABLE 4  
+ Fixed Effects for the Interaction Effects Models
+Fixed effectModel 7 Model 8 Model 9 Model 10 Model 11 Model 12
+b SE b SE b SE b SE b SE b SE
+Intercept 1.38 0.15 1.38 0.15 1.38 0.15 1.38 0.15 1.37 0.15 1.39 0.15
+Grade 7 −0.13** 0.05 −0.13** 0.05 −0.13** 0.05 −0.13** 0.05 −0.13** 0.05 −0.13** 0.05
+Grade 8 −0.07 0.05 −0.07 0.05 −0.07 0.05 −0.07 0.05 −0.07 0.05 −0.07 0.05
+Reading 1.01*** 0.03 1.01*** 0.03 1.01*** 0.03 1.00*** 0.03 1.01*** 0.03 1.02*** 0.03
+GATE 0.37*** 0.05 0.37*** 0.05 0.37*** 0.05 0.36*** 0.05 0.37*** 0.05 0.37*** 0.05
+SES −0.25*** 0.04 −0.25*** 0.04 −0.25*** 0.04 −0.25*** 0.04 −0.25*** 0.04 −0.25*** 0.04
+Frequency 0.12 0.16 0.11 0.16 0.11 0.16 0.10 0.16 0.10 0.16 0.13 0.16
+Complexity −0.24 0.18 −0.23 0.18 −0.26 0.18 −0.24 0.18 −0.23 0.18 −0.27 0.18
+Proximity −0.16 0.17 −0.15 0.17 −0.15 0.17 −0.15 0.17 −0.13 0.17 −0.15 0.17
+Polysemy 0.39* 0.16 0.40* 0.16 0.38* 0.16 0.39* 0.16 0.39* 0.16 0.38* 0.16
+Diversity 0.23 0.15 0.23 0.15 0.23 0.15 0.24 0.15 0.23 0.15 0.23 0.15
+Frequency × Reading 0.07*** 0.01 0.07*** 0.01
+Polysemy × Reading 0.03** 0.01 −0.01 0.01
+Complexity × Reading −0.08*** 0.01 −0.07*** 0.01
+Diversity × Reading 0.02 0.01 −0.01 0.01
+Proximity × Reading 0.06*** 0.01 0.02 0.01
+Note. N = 1,747 for models 7-  12. b = log odds; GATE = enrollment in the Gifted and Talented Education program; Reading = the extended scale score on 
+the Comprehension subtest of the Gates – MacGinitie Reading Tests; SE  = standard error of log odds; SES = eligibility for free or reduced-  price lunch.  
+ *p < .05. ** p < .01. *** p < .001.
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+Reading Comprehension and Academic Vocabulary: Exploring Relations of Item Features and Reading Proficiency  |  679coded 1.0 on the dichotomous predictor for students in the 
+group who are at the mean of any continuous predictors in 
+the model. For dichotomous item predictors in model 5, the 
+regression parameter describes the difference in mean log 
+odds of correctly answering items of the type described by 
+the dichotomous item feature as compared with items in the 
+reference category for a person of average ability. When 
+both item and person features and their interactions are in 
+the model, the precise interpretation of individual regres-
+sion parameters will depend on other effects in the model.
+Research Question 1: Main Effects 
+of Student Characteristics
+Results indicated that reading comprehension was a statisti-
+cally significant predictor of word knowledge, controlling for 
+grade level, GATE status, and SES status. As expected, word 
+knowledge was also positively related to student grade, with 
+students in grades 7 (β  =  0.41, standard error [SE] =  0.08, 
+p < .001) and 8 (β = 0.75, SE = 0.08, p  < .001) having better 
+odds of answering an average item correctly than students in 
+grade 6. Not surprisingly, reading comprehension was posi -
+tively strongly related to vocabulary knowledge (β = 1.17, SE =  
+.02, p < 0.001). When reading comprehension is in the model, 
+the regression coefficients for grades 7 and 8 remain statisti-
+cally significant but change in sign because these effects now 
+compare students in grades 7 and 8 who are at the mean of 
+reading comprehension with grade 6 students who are at the 
+sample mean on the GMRT extended scale scores. Not sur -
+prisingly, a student in grade 6 who is reading at the mean for the full sample has a somewhat higher probability of answer -
+ing an average item correctly, as this student is an above-  
+average student for grade 6. Students who were eligible for 
+free or reduced- price lunch and those who were not enrolled 
+in the district’s GATE program had a lower chance of 
+answering an item correctly on average as compared with 
+their peers. Effects of grade were not statistically significant 
+for grade 8 when SES status and participation in GATE pro-
+grams were included in the model. Although the negative 
+effect of grade 7 remained statistically significant, it was sub-
+stantially smaller (−0.13 vs. −0.21).
+As expected, adding reading comprehension to the 
+model (model 3) substantially decreased the unexplained 
+variance in student ability but had no effect on the variance 
+in item difficulties (relative to the unconditional model, 
+model 1). Model 3 accounted for 73.4% of the variance 
+associated with student ability relative to the unconditional 
+model, that is, (1.69 − 0.45)/1.69. At the same time, adding 
+GATE status and SES status to the model (model 4) reduced 
+the unexplained variance in student ability relative to model 
+3 by an additional 8.8%, that is, (0.45 − 0.41)/0.45. Com-
+pared with model 1, model 4 reduced the unexplained vari-
+ance in student ability by 75.8%, that is, (1.69 − 0.41)/1.69.
+Research Question 2: Main Effects 
+of Word Features
+The second research question asked about the relations 
+between features of academic vocabulary (measured via item 
+frequency, complexity, proximity, polysemy, and diversity) TABLE 5  
+ Computed Fit Indices and Random Effects
+Model AIC BIC DeviancePerson side Item side
+Variance ( SE)Variance reduction Variance ( SE)Variance reduction
+1 76,363.8 76,391.9 76,357.8 1.69 (1.30) 1.36 (1.17)
+2 76,283.9 76,330.7 76,273.9 1.61 (1.27) 0.05 1.36 (1.17) 0
+3 74,428.8 74,484.9 74,416.8 0.45 (0.67) 0.73 1.36 (1.17) 0
+4 74,319.2 74,394.1 74,303.2 0.41 (0.64) 0.76 1.36 (1.17) 0
+5 360,150.2 360,236.6 360,134.2 1.48 (1.22) 0.12 0.91 (0.95) 0.33
+6 74,315.3 74,437.1 74,289.3 0.41 (0.64) 0.76 1.03 (1.01) 0.24
+7 74,272.3 74,403.4 74,244.3 0.41 (0.64) 0.76 1.04 (1.02) 0.24
+8 74,308.1 74,439.2 74,280.1 0.41 (0.64) 0.76 1.03 (1.01) 0.24
+9 74,265.5 74,396.6 74,237.5 0.41 (0.64) 0.76 1.02 (1.01) 0.25
+10 74,315.4 74,446.5 74,287.4 0.41 (0.64) 0.76 1.03 (1.02) 0.24
+11 74,287.7 74,418.8 74,259.7 0.41 (0.64) 0.76 1.02 (1.01) 0.25
+12 74,233.1 74,401.7 74,197.1 0.41 (0.64) 0.76 1.03 (1.01) 0.24
+Note. N = 1747 for models 1 – 12. AIC = Akaike information criterion; BIC = Bayesian information criterion; SE  = standard error. Model 1 is the 
+unconditional model, models 2 – 6 are the main effects models, and models 7 – 12 are the interaction effects models. We were interested in estimating 
+variance reduction for models 2 – 12 using the unconditional model (model 1) as a reference point.
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+680  |  Reading Research Quarterly , 57(2)and item difficulty. We answered this question with refer -
+ence to model 5. The model indicated that polysemy was 
+the only statistically significant predictor of correct responses 
+to the word knowledge items, over and above word fre-
+quency, complexity, proximity, and diversity. Words with 
+more meanings were easier relative to words with fewer 
+meanings (β = 0.35, SE = 0.13, p  < .01). Adding word fea-
+tures to the model decreased the residual item variance 
+and residual student variance relative to the unconditional 
+model (model 1). Model 5 accounted for 33% of the vari-
+ance in item difficulty and 12% of the variance in student 
+ability as compared with model 1.
+Combined Main Effects of Student 
+Characteristics and Word Features
+As expected, the combined model findings in model 6 for 
+person characteristics and word features were identical to 
+the results reported for these features separately in models 
+4 and 5, respectively, because person and word characteris-
+tics are not correlated in the design. That is, effects of stu-
+dent characteristics in model 6 parallel those observed in 
+model 4, and effects of word features in model 6 parallel 
+those observed in model 5. As such, student characteristics 
+predominantly explain variance in student ability, and 
+word features predominantly explain variance in item dif -
+ficulty. At the same time, we expected that in the interac-
+tion effects model, the two sets of characteristics would 
+jointly impact student ability and item difficulty.
+Research Question 3: Interaction 
+of Student Characteristics and 
+Word Features
+Although results suggested statistically significant main 
+effects of reading comprehension, SES status, participation 
+in GATE programs, and polysemy, these main effects dis-
+cussed in regard to research question 1 may not tell the 
+whole story with respect to vocabulary learning insofar as 
+student characteristics and word features may interact in 
+determining students’ responses to vocabulary items. Mod -
+els 7– 11 examined the interaction of reading comprehen-
+sion and word features individually and found statistically 
+significant interactions between reading comprehension 
+and (a) word frequency (β  =  0.07, SE =  0.01, p   <  .001), 
+(b) polysemy (β = 0.03, SE = 0.01, p  = .002), (c) complexity 
+(β = −0.08, SE = 0.01, p  < .001), and (d) proximity (β = 0.06, 
+SE = 0.01, p  < .001), over and above the main effect of word 
+and person features in the models. Although the magni-
+tude of individual main effects in models 7– 11 were com-
+parable to those reported above for the same effect, the 
+main effect of any term involved in an interaction should 
+not be interpreted, as the interaction indicates that the 
+effect is moderated by another variable, either another stu-
+dent characteristic or word feature.Insofar as models 7– 11 examine the interactions indi-
+vidually, these effects are correlated and must be considered 
+in combination with one another to identify those that exert 
+a unique influence on student responses to the vocabulary 
+items. When all interactions of reading comprehension and 
+word features were simultaneously entered in model 12, only 
+interactions of reading comprehension with word frequency 
+(β  =  0.07, SE =  0.01, p   <  .001) and complexity (β  =  −0.07,  
+SE = 0.01, p  < .001) remained statistically significant. These 
+interaction effects were small compared with the main 
+effects. The interpretation of the main effects in light of the 
+interactions is best appreciated by examining graphs depict-
+ing the interaction effects. As can be seen in Figure 2, there 
+were large differences in the probability of answering an item 
+correctly associated with overall reading ability. Although the 
+interactions with reading ability are continuous by continu-
+ous interactions and generalize across reading skill abilities, 
+we present prototypical plots of stronger (1.5 SD) and weaker 
+(−1.5 SD) readers to demonstrate how these interactions 
+work. Strong readers (dashed line) were more likely to 
+answer items correctly than struggling readers (bold solid 
+line). Figure 2 also demonstrates that high- frequency words 
+were easier for both strong and struggling readers (based on 
+the statistically nonsignificant main effect of frequency). 
+FIGURE 2  
+ Probability of Correctly Answering an Item About a 
+Low-  , Average-  , or High-  Frequency Word, by Student 
+Reading Proficiency Level
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+Reading Comprehension and Academic Vocabulary: Exploring Relations of Item Features and Reading Proficiency  |  681What is harder to see in the figure is that in addition to these 
+two main effects, there is an interaction such that the effect of 
+frequency is slightly stronger for high- ability readers than for 
+struggling readers. Figure 3 is similar in many ways. How -
+ever, in this case, more complex words are harder for all stu-
+dents, but it is the struggling readers (bold solid line) who are 
+more sensitive to the effects of complexity.
+Interaction effects were generally small in their magni-
+tudes. We can conceptualize this difference between variance 
+accounted for in the two sides of the model as indicating that 
+readers who are higher in ability tend to know more words 
+regardless of the features of the words being tested. Although 
+polysemy affects the probability of knowing a word, it exerts a 
+similar effect on knowledge for good and poor readers. In 
+contrast, although complexity and frequency interacted with 
+reader ability, these interaction effects were relatively small in 
+comparison with the main effect of reader ability.
+Discussion
+Summary of Findings
+In this study, we explored the relations between five lexical 
+dimensions and academic vocabulary knowledge by simultaneously modeling the effects of student and word 
+characteristics. Our results affirm the strong relation 
+between vocabulary and reading at the individual level. 
+Strong readers were more likely than struggling readers to 
+know the meanings of words, regardless of the features of 
+the academic words tested. Our results also show that 
+words with more meanings were easier for students, which 
+aligns with an extensive literature showing that polyse-
+mous words are accessed more efficiently in adults 
+(Eddington & Tokowicz, 2015). We tested reading ability 
+by item characteristic interactions. These analyses showed 
+that the relation between frequency and item difficulty is 
+stronger for better readers and that the relation between 
+complexity and difficulty is stronger for weaker readers.
+The strong relation between reading and vocabulary 
+achievement at the individual level is not surprising. 
+Word knowledge has long been considered one of the 
+best measures of general verbal skill, and vocabulary 
+knowledge is strongly correlated with reading ability. 
+Including individual- level covariates related to student 
+SES status and academic achievement reduced the partial 
+correlations between reading ability and academic vocab -
+ulary. In other words, the relation between reading ability 
+and vocabulary is due in part to differences among stu-
+dents in characteristics such as SES status, participation 
+in GATE programs, and grade level. These results align 
+with one of the hypotheses presented in our introduction, 
+namely, that the correlation between reading and vocabu-
+lary is at least partly spurious and due to differences in 
+general skill, such as verbal ability, or metalinguistic 
+awareness. Although our models lack a direct measure of 
+general verbal ability, or metalinguistic awareness, the 
+reduction in the correlation due to the inclusion of such 
+student characteristics is consistent with this idea. Thus, 
+although we expected these findings, this study’s novel 
+contribution is the exploration of these relations within 
+the class of words known as academic words and using 
+random effects models that allow generalization of the 
+demonstrated relations back to the universe of academic 
+words.
+Given the large, multivariate space of word character -
+istics and the small set of words on which students can rea-
+sonably be tested, in the interest of parsimony, we relied on 
+prior work by our group (Knoph et al., 2021) to reduce the 
+dimensionality of the word characteristics for inclusion in 
+the models. This prior work suggested five underlying fac-
+tors related to frequency, complexity, proximity, polysemy, 
+and diversity. We used factor scores on these five dimen-
+sions to examine the relation between word characteristics 
+and item difficulty for words from the Academic Vocabu-
+lary Test, while treating the words as a source of random 
+variation in the data. This treatment of words as random 
+effects allows our findings to generalize back to the broad 
+class of academic words from which we chose words on 
+the Academic Vocabulary Test. We found that words with FIGURE 3  
+ Probability of Correctly Answering an Item About a 
+Low-  , Average-  , or High-  Complexity Word, by Student 
+Reading Proficiency Level
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+682  |  Reading Research Quarterly , 57(2)more senses were easier for students than words with 
+fewer senses. Researchers using data from speeded lexical 
+decision tasks with adults have also found an advantage for 
+words with related senses. In contrast, Cervetti et al. (2015) 
+found that polysemous words were more challenging for 
+second, third, and fourth graders at the start of the inter -
+vention. Interestingly, students in that study learned poly-
+semous words faster during instruction. These seemingly 
+incongruent findings may make sense from a word-  
+learning perspective, which we subsequently discuss.
+We also modeled interactions between reading ability 
+and item characteristics in predicting item difficulty. In 
+this way, we could test whether the relation between word 
+characteristics and item difficulty would vary as a function 
+of student reading ability, controlling for the main effects 
+of both. We found that the relation between word fre-
+quency and target word knowledge was stronger for better 
+readers. This finding aligns with research showing that 
+better readers are skilled at inferring the meanings of 
+words they independently encounter in print (Swanborn 
+& de Glopper, 1999). Poor readers are less efficient at infer -
+ring the meanings of newly encountered words, so the 
+relation between the number of encounters they experi -
+ence with a new word and their knowledge of it may be 
+relatively weak. Less skilled readers are probably similarly 
+inefficient at learning new words from other contexts. In 
+either case, if we accept that item-  level frequency measures 
+are an appropriate proxy for student encounters with a 
+word across print and other contexts, our findings align 
+with those of research on incidental word learning. In con-
+trast, because differences in students’ independent reading 
+diets are related to their reading ability, it is likely that item-  
+level frequency measures are not an equally good proxy for 
+encounters with texts for all students. If so, the interaction 
+may also be related to differences in reading amounts.
+We also found a stronger relation between word com-
+plexity and item difficulty for weaker readers. These results 
+suggest that poor readers were more likely to struggle with 
+the orthographic representation of a word and may need 
+extra assistance to learn the meanings of orthographically 
+complex words. For stronger readers, this dimension of 
+word knowledge was not as related to word difficulty. 
+These results align with theories suggesting that novice 
+readers need to attend to decoding more than skilled read-
+ers do and that skilled readers can allocate more attention 
+to higher order comprehension (LaBerge & Samuels, 
+1974).
+Possible Implications for Instruction
+Our findings align with those of research suggesting the 
+importance of considering orthographic and morphologi -
+cal aspects of academic word instruction in middle grades 
+and suggest that these dimensions may be particularly 
+important for struggling readers. Intervention research with middle school students has shown the importance of 
+morphological training, especially for students with weaker 
+baseline scores (Lesaux et al., 2014). Instructional texts 
+emphasize morphological and orthographic considerations 
+in terms of how teachers select words for middle school 
+learners (Beck et al., 2013) and support them (Dobbs, 2013; 
+Templeton et al. 2015).
+Research in incidental word learning has demon-
+strated individual differences in determining the mean -
+ings of newly encountered words (Swanborn & de Glopper, 
+1999). Our results align with those from incidental learn-
+ing studies but also demonstrate why item selection can be 
+challenging for vocabulary instruction. In our models, the 
+best readers are the most likely to know words, and high-  
+frequency words are more likely to be known than less fre-
+quent words are. On top of these effects, stronger readers 
+are even more likely than poor readers to know high-  
+frequency words. These differences present teachers with 
+an instructional challenge. High- frequency words are es -
+sential for reading, so struggling students need to master 
+them. However, stronger readers likely know these words 
+well. This skill disparity may make it difficult for strug-
+gling students to feel comfortable acknowledging their dif -
+ficulty with words that their classmates may consider easy. 
+Instructional leaders acknowledge these challenges. They 
+can be addressed in part by supporting an open and 
+exploratory classroom culture (Scott, Skobel, & Wells, 
+2008) and providing students with explicit strategies for 
+learning about new words when encountering them. In 
+particular, support should be provided to help students 
+master the spellings and morphological structures of com -
+plex words.
+Polysemy is ubiquitous in English, which provides 
+challenges and opportunities for vocabulary instruction. 
+Researchers have shown how difficult it can be to learn 
+new senses of conceptually rich words that are already par -
+tially known (González- Fernández & Schmitt, 2020; Nagy, 
+Anderson, & Herman, 1987). To do so, learners must first 
+notice that a newly encountered usage is novel by referenc-
+ing both what they currently know about the word and the 
+semantic constraints of the new context. Next, they must 
+update what they know about the word form and register 
+how this new meaning or sense is novel. This entire pro-
+cess is likely to support a rich representation of the word, 
+especially when the word encounters are staggered. From 
+this perspective, the learning of polysemous words may be 
+another example of the trade- off between short- term per -
+formance and long- term learning (Soderstrom & Bjork, 
+2015). Y ounger students may find polysemous words 
+harder to learn (Cervetti et al., 2015), but the process of 
+learning them results in a more robust lexical representa-
+tion, which explains the posttest results reported by Cer -
+vetti et al. (2015) and the results reported here.
+The explicit teaching of word forms with distinct 
+meanings (homophones and homonyms) is a staple in 
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+Reading Comprehension and Academic Vocabulary: Exploring Relations of Item Features and Reading Proficiency  |  683elementary classrooms. There is more variability in how 
+strongly instructional texts and approaches emphasize the 
+instruction of words with multiple related senses. Beck 
+et al. (2013) noted that words with distinct meanings can 
+be confusing, and suggested emphasizing multiple mean-
+ings “when introducing a word that has a meaning that 
+students already know” (p. 79). Beck et al. noted that exam-
+ining words with multiple senses provides an opportunity 
+for teachers to talk about how language grows and how the 
+same word can be used in several different ways. In Teach-
+ing Words and How They Work: Small Changes for Big 
+Vocabulary Results, Hiebert (2019) extended this approach. 
+She presented an instructional schema for talking about 
+how words develop multiple meanings. Remixing is when 
+a word takes a new meaning, and recycling is when words 
+are combined in novel ways. Hiebert devoted a chapter to 
+the history of English and a second chapter to these two 
+processes, thereby emphasizing these aspects of vocabu-
+lary instruction to a significant degree.
+Our research findings suggest that this emphasis is 
+warranted. Although the effect of polysemy is modest rela-
+tive to person- level variables in our models, our analysis is 
+of words that had not been systematically taught at the 
+time they were assessed. Students had no structured 
+encounters with the multiple meanings of words or instruc-
+tional support for learning them prior to testing. Thus, the 
+advantage that students may have enjoyed while learning 
+polysemous words was probably not fully realized in these 
+results. The approaches advocated by Hiebert (2019) could 
+help students extend and consolidate their learning in pro-
+ductive ways. If the relation between vocabulary and read-
+ing comprehension is driven in part by the fact that 
+know   ledge of words is also knowledge of the world and 
+conceptual relations, this approach may also be particularly 
+valuable in supporting reading comprehension.
+Methods and Limitations
+The contrasting results from the separate models involv-
+ing individual interaction terms and the joint model 
+involving all terms highlight the need for additional 
+research. It is important to understand that the dynamic 
+between specific terms across models changes as a func-
+tion of effects being added or removed from these models 
+due to the correlations betweem terms. In the current 
+study, the observed effects were small, although the study 
+was not designed to use words that would be explicitly 
+sampled for specific features. As a result, effects of word 
+features are correlated in this sample. A different study 
+design could sample words so word feature effects were 
+less correlated and so words were targeted to differ more 
+on dimensions of interest. Such design would aid in disen -
+tangling relations among specific features of words, read -
+ing comprehension, and word knowledge. Furthermore, it 
+is important to keep in mind that the power of the design for detecting the effects of word features is more a function 
+of the numbers of words with specific features and has lit-
+tle to do with the sample size in terms of students. Stan-
+dard errors for the regression parameters for word features 
+could be reduced by increasing the sample size with 
+respect to the number of items on the test, whereas effect 
+sizes could be increased by sampling words to differ more 
+on the dimensions of interest.
+Clearly, as evidenced in Figure 1 and the table of factor 
+correlations in the figure, the five factor scores that we 
+used to summarize the characteristics of words and their 
+meanings are correlated, leading them to account for both 
+unique and shared variance in predicting word difficulty. 
+The same can be said for the interaction terms in our 
+models. When effects are correlated, the dynamic that 
+plays out across different models for a given factor reflects 
+variations in the unique contribution of the specific term 
+after accounting for other terms in one model relative to 
+another. Our analytic approach did not attempt to identify 
+the best prediction model of a given size, but rather was 
+designed to understand each feature’s possible contribu -
+tion in light of the contribution of other factors. Due to the 
+intercorrelation across interaction terms, we examined 
+these both individually and collectively. The fact that only 
+two of the five interactions were statistically significant when 
+all five terms were included in a single model, whereas four 
+of five interaction terms were statistically significant when 
+examined individually, reflects the fact that the different 
+interaction terms account for overlapping information. As 
+such, the specific interaction terms that are retained in the 
+final model should be regarded with a certain degree of 
+caution, as one might expect that the specific retained 
+terms may fluctuate across replicate studies using different 
+sets of words, and/or samples of readers, and could be 
+expected to fluctuate if the sample size were varied, leading 
+to greater or lesser power for detecting unique effects of 
+specific terms (e.g., as sample size is increased or decreased, 
+all other things being equal).
+Given that we used factors scores as predictors in these 
+models, it might be objected that the two- step approach we 
+employed ignores the errors in estimating factor scores, 
+which can lead to bias in the stage 2 regression parameters. 
+This bias stems from the attenuation of correlations due to 
+treating the factor scores as if they have been measured 
+without error. In general, bivariate relations are biased 
+toward 0, suggesting a reduction in power. However, in 
+regression with multiple predictors measured with error, 
+the relations among the predictors are also attenuated, 
+which can result in some regression parameters being 
+biased upward (i.e., inflated), whereas others are biased 
+toward 0. This problem is most acute when scores differ in 
+their precisions, with some scores having low standard 
+errors and others having substantially larger ones. At the 
+same time, from the standpoint of prediction through 
+multiple regression, this bias is most concerning when our 
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+684  |  Reading Research Quarterly , 57(2)interest is tied to causal inferences based on the regression 
+parameters. In prediction, this bias due to error is viewed 
+less problematically because it contributes to the overall 
+lack of precision in prediction.
+There are at least two potential remedies. One is to 
+conduct all analyses in a single step. Such an approach is 
+unwieldy here because of the cross- classified random-  
+effects structure and the relative sparseness of the design 
+matrix for variable on factor regressions if untested words 
+are included in the estimation of the factors in a single-  
+stage model. More than likely, one would be forced to 
+drop words from the AWL and GSL that were not tested 
+on the vocabulary test. Restricting the single- stage analy-
+sis to the tested words would lead to poorer estimation of 
+the factor scores for the tested words, which would then 
+lead to bias in estimating the regression coefficients asso-
+ciated with the factors even though a single- stage analysis 
+was used. An alternative is to conduct the second- stage 
+regression by carrying forward the standard errors of the 
+factor scores and using these standard errors to weight 
+the second- stage regression analyses. If we were inclined 
+toward causal inference for the second- stage regression 
+coefficients rather than simple prediction of item diffi-
+culty, this added complexity in the second- stage regres-
+sions would be essential.
+Whether the effects of word features on item difficulty 
+can be leveraged to improve vocabulary instruction has 
+only begun to be researched (Cervetti et al., 2015; Good-
+win & Cho, 2016). We did not investigate the possibility of 
+higher level interactions (e.g., Frequency × Complexity × 
+Reading Ability × SES Status), primarily because our sam-
+ple of words is limited to 50 items, which limits the num-
+ber of interaction terms that should reasonably be included 
+in the models. At the same time, based on the present find-
+ings, it is not unreasonable to speculate that a study 
+designed specifically to investigate such heterogeneity in 
+the effects of word and reader characteristics could have 
+important implications for the design of instruction aimed 
+at improving vocabulary knowledge for struggling readers. 
+Similarly, we excluded English learners from the sample, 
+but it is plausible that word features may interact with 
+other student characteristics other than reading ability. 
+Our focus in the present study was on the moderating 
+effects of reading ability on word knowledge, but other 
+characteristics of students are at least as important to con-
+sider in future research.
+Finally, it seems worthwhile to point out the value of 
+cross- classified random- effects models in reading research. 
+In the present study, we made use of EIRT models, one 
+type of cross- classified random- effects model for simulta-
+neously modeling effects of the stimulus and the respon-
+dent on the response. Goodwin, Gilbert, Cho, and Kearns 
+(2014) were among the first to apply these models in read-
+ing research and showed the value of these models for 
+exploring complex theoretical questions, such as the lexical quality hypothesis (Perfetti & Hart, 2002) in reading 
+comprehension. Kulesz et al. (2016) used a similar item 
+response model to integrate component skills and text and 
+discourse frameworks to investigate reading comprehen -
+sion on a standardized reading assessment. Francis, Kulesz, 
+and Benoit (2018) expanded on this general idea to show 
+how cross- classified random- effects models could inte-
+grate these frameworks in developmental contexts, while 
+also incorporating reading purpose and other contextual 
+moderators, simultaneously allowing the functional form 
+of the model to vary across respondents. This extension 
+allows the separation of person- specific and person- general 
+effects of stimulus attributes on response probabilities. 
+Allowing stimulus characteristics to exert both person-  
+specific and person- general effects has important implica-
+tions for teaching but poses significant challenges for 
+research because of the need for intensive data collection 
+(i.e., many stimulus items) on large numbers of subjects, if 
+the person- specific functions are to be estimated with suf-
+ficient precision to support instructional decisions. How -
+ever, as automated measurement becomes more ubiquitous 
+through interaction with personal electronic devices in 
+educational contexts, such data collection becomes feasible 
+and minimally burdensome to a student while simultane -
+ously creating the possibility for presenting learning op -
+portunities tailored to the precise needs of the student. 
+Our understanding of the student and stimulus character -
+istics that affect learning and the extent to which these fea-
+tures interact will determine the success of any such 
+endeavors to craft effective student- specific instruction.
+The current study has important limitations. First, our 
+focus was on monolingual students. We are currently 
+advancing these models with a more diverse range of stu-
+dents to understand how language proficiency may be 
+related to word learning, item characteristics, and reading 
+comprehension. Second, there are many ways to know a 
+word, and the ways that one may know a word can vary 
+according to the word (Nagy & Scott, 2000). In our analy-
+sis, we examined results from a synonym task. We are cur -
+rently working to extend our analysis of word features to 
+understand how they may support or disrupt word learn-
+ing across a broader range of vocabulary assessment types. 
+Third, we only examined general academic words in this 
+analysis. Although the factor structures that we described 
+among these words look similar in discipline- specific aca-
+demic words, it is difficult to establish valid and reliable 
+reading performance estimates across domains. Conse -
+quently, we have yet to replicate these analyses with 
+discipline- specific vocabulary and discipline- specific mea-
+sures of reading comprehension. Still, this study extends 
+how we think about what makes academic vocabulary 
+challenging for middle school students, the extent to which 
+these challenges vary across students, and how student 
+learning might be supported across a broad range of stu-
+dent vocabulary and reading proficiency ranges.
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+Reading Comprehension and Academic Vocabulary: Exploring Relations of Item Features and Reading Proficiency  |  685NOTES
+This work was supported by the Institute of Education Sciences of the 
+U.S. Department of Education through a grant (R305A120045, “Improv-
+ing the Accuracy of Academic Vocabulary Assessment for English Lan-
+guage Learners”) awarded to David Francis (principal investigator) and 
+a grant (R305A090555, “Word Generation: An Efficacy Trial”) awarded 
+to Catherine Snow (principal investigator). The content and opinions are 
+solely the responsibility of the authors and do not represent the official 
+views of the Institute of Education Sciences or the U.S. Department of 
+Education.
+1  These tasks require participants to indicate whether a particular iso-
+lated string of letters is an English word. Because participants can per -
+form judgment tasks on hundreds of words per session, researchers 
+have been able to establish estimates of processing efficiency for tens of 
+thousands of words and related these to word characteristics.
+2  The district also provided other student- level data related to home 
+language use, school entry date, language fluency, score on a language 
+proficiency test, and the language guardians requested the report card 
+be printed in. These data were used in previous analyses but are not 
+relevant to the current analysis of data from English monolinguals. 
+Thus, we selected individual- level variables used in this analysis for 
+convenience. No other individual- level data were modeled in our 
+analysis for this article.
+3  We provided descriptive labels for each factor to facilitate reference to 
+them throughout the article. These labels are purely descriptive and were 
+derived based on the best available evidence at this time with respect to 
+the nature of each factor. It is important to note that the interpretation of 
+factors is not strictly a matter of examining factor loadings when factors 
+are correlated. However, it is even more important to realize that the pre-
+cise nature of latent constructs is rarely, if ever, settled by a single study but 
+is certainly never clear from a single exploratory factor analysis. Although 
+we believe that the proposed working labels are reasonably accurate 
+descriptions and reflect our current understanding, additional research is 
+warranted and may lead to different understandings regarding the nature 
+of the factors, as well as the number of required dimensions.
+REFERENCES
+Adelman, J.S., Brown, G.D.A., & Quesada, J.F. (2006). Contextual diver -
+sity, not word frequency, determines word-  naming and lexical deci -
+sion times. Psychological Science, 17(9), 814– 823. https ://d  oi.o rg/1 0.  
+11 11/j  .146 7- 9 280. 2006 .017 87.x
+Aitchison, J. (2012). Words in the mind: An introduction to the mental 
+lexicon (4th ed.). Malden, MA: John Wiley & Sons.
+Anderson, R.C., & Freebody, P . (1981). Vocabulary knowledge. In J.T. 
+Guthrie (Ed.), Comprehension and teaching: Research reviews (pp. 
+77– 117). Newark, DE: International Reading Association.
+Azuma, T., & Van Orden, G.C. (1997). Why SAFE is better than FAST: 
+The relatedness of a word’s meanings affects lexical decision times. 
+Journal of Memory and Language, 36(4), 484– 504. https ://d  oi.o rg/1 
+0.10 06/j mla. 1997 .250 2
+Balota, D.A., Y ap, M.J., Hutchison, K.A., Cortese, M.J., Kessler, B., Loftis, B., 
+… Treiman, R. (2007). The English Lexicon Project. Behavior Research 
+Methods, 39(3), 445– 459. https ://d  oi.o rg/1 0.37 58/B  F031  930 14
+Bates, D., Maechler, M., & Dai, B. (2021). lme4: Linear mixed- effects 
+models using “Eigen” and S4 (Version 1.1- 27) [Computer software]. 
+Vienna, Austria: R Foundation for Statistical Computing. Retrieved 
+from http: //cr an.r  - pr oje  ct.o rg/w  eb/p  acka   ges /lme 4/in  dex. html
+Beck, I.L., McKeown, M.G., & Kucan, L. (2013). Bringing words to life: 
+Robust vocabulary instruction (2nd ed.). New Y ork, NY: Guilford.
+Beck, I.L., Perfetti, C.A., & McKeown, M.G. (1982). Effects of long- term 
+vocabulary instruction on lexical access and reading comprehension. 
+Journal of Educational Psychology, 74(4), 506– 521. https ://d  oi.o rg/1 
+0.10 37/0 022-  066 3.74 .4.5 06Beretta, A., Fiorentino, R., & Poeppel, D. (2005). The effects of homon-
+ymy and polysemy on lexical access: An MEG study. Cognitive Brain 
+Research, 24(1), 57– 65. https ://d  oi.o rg/1 0.10 16/j  .cog br a  inre s.20 04.  
+12.00 6
+Biemiller, A., & Slonim, N. (2001). Estimating root word vocabulary 
+growth in normative and advantaged populations: Evidence for a com-
+mon sequence of vocabulary acquisition. Journal of Educational Psy-
+chology, 93(3), 498– 520. https ://d  oi.o rg/1 0.10 37/0 022-  066 3.93 . 3.4 98
+Borowsky, R., & Masson, M.E.J. (1996). Semantic ambiguity effects in 
+word identification. Journal of Experimental Psychology: Learning, 
+Memory, and Cognition, 22(1), 63– 85. https ://d  oi.o rg/1 0.10 37/0 278-  
+ 739 3.22 .1.6 3
+Braze, D., Katz, L., Magnuson, J.S., Mencl, W .E., Tabor, W ., Van Dyke, 
+J.A., … Shankweiler, D.P . (2016). Vocabulary does not complicate the 
+simple view of reading. Reading and Writing, 29, 435– 451. https ://  
+doi.o  rg/1 0.10 07/s 1114  5-  015-  960 8- 6
+Breland, H.M. (1996). Word frequency and word difficulty: A compari-
+son of counts in four corpora. Psychological Science, 7(2), 96– 99. 
+https ://d  oi.o rg/1 0.11 11/j  .146 7- 9 280. 1996 .tb0 03 3 6.x
+Brysbaert, M., Mandera, P ., McCormick, S.F., & Keuleers, E. (2019). 
+Word prevalence norms for 62,000 English lemmas. Behavior 
+Research Methods, 51, 467– 479. https ://d  oi.o rg/1 0.37 58/s 1342  8-  018-  
+ 107 7- 9
+Brysbaert, M., & New, B. (2009). Moving beyond Kučera and Francis: A 
+critical evaluation of current word frequency norms and the intro-
+duction of a new and improved word frequency measure for Ameri-
+can English. Behavior Research Methods, 41(4), 977– 990. https ://doi.
+o rg/1 0.37 58/B  RM.4 1.4. 977
+Carlisle, J.F., & Stone, C.A. (2005). Exploring the role of morphemes in 
+word reading. Reading Research Quarterly, 40(4), 428– 449. https ://  
+doi.o  rg/1 0.15 98/R RQ.4 0.4. 3
+Carroll, J.B. (1941). A factor analysis of verbal abilities. Psychometrika, 
+6(5), 279– 307. https ://d  oi.o rg/1 0.10 07/B  F022  885 85
+Cervetti, G.N., Hiebert, E.H., Pearson, P .D., & McClung, N.A. (2015). 
+Factors that influence the difficulty of science words. Journal of Lit-
+eracy Research, 47(2), 153– 185. https ://d  oi.o rg/1 0.11 77/1 0862  96X 15  
+6 1536 3
+Coltheart, M., Davelaar, E., Jonasson, J.T., & Besner, D. (1977). Access to 
+the internal lexicon. In S. Dornič (Ed.), Attention and performance  
+(Vol. 6, pp. 535– 556). Hillsdale, NJ: Erlbaum.
+Coxhead, A. (2000). A new academic word list. TESOL Quarterly, 34(2), 
+213– 238. https ://d  oi.o rg/1 0.23 07/3 5879 51
+Cromley, J.G., & Azevedo, R. (2007). Testing and refining the direct and 
+inferential mediation model of reading comprehension. Journal of 
+Educational Psychology, 99(2), 311– 325. https ://d  oi.o rg/1 0.10 37/0  
+022-  066 3.99 .2.3 11
+Crosson, A.C., Lesaux, N.K., & Martiniello, M. (2008). Factors that influ-
+ence comprehension of connectives among language minority chil -
+dren from Spanish- speaking backgrounds. Applied Psycholinguistics, 
+29(4), 603– 625. https ://d  oi.o rg/1 0.10 17/S 0142  716 40 8 0802 60
+Dale, E., & O’Rourke, J. (1981). The living word vocabulary: A 
+national vocabulary inventory. Chicago, IL: World Book- Childcraft 
+International.
+Davies, M. (2009). The 385+ million word Corpus of Contemporary 
+American English (1990– 2008+): Design, architecture, and linguistic 
+insights. International Journal of Corpus Linguistics, 14(2), 159– 190. 
+https ://d  oi.o rg/1 0.10 75/i  jcl. 14.2 .02d  av
+Deacon, S.H., Whalen, R., & Kirby, J.R. (2011). Do children see the dan-
+ger in dangerous? Grade 4, 6, and 8 children’s reading of morphologi-
+cally complex words. Applied Psycholinguistics, 32(3), 467– 481. https  
+://d oi.o rg/1 0.10 17/S 0142  716 41 1 0001 66
+De Boeck, P ., & Wilson, M. (2004). A framework for item response 
+models. In P . De Boeck & M. Wilson (Eds.), Explanatory item 
+response models: A generalized linear and nonlinear approach (pp. 
+3– 41). New Y ork, NY: Springer.
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+686  |  Reading Research Quarterly , 57(2)Dobbs, C.L. (2013). Vocabulary in practice: Creating word- curious 
+classrooms. In J. Ippolito, J.F. Lawrence, & C. Zaller (Eds.), Adolescent 
+literacy in the era of the Common Core: From research into practice  
+(pp. 73– 83). Cambridge, MA: Harvard Education Press.
+Eddington, C.M., & Tokowicz, N. (2015). How meaning similarity 
+influences ambiguous word processing: The current state of the lit -
+erature. Psychonomic Bulletin & Review, 22(1), 13– 37. https ://d  oi. 
+org/1 0.37 58/s 1342  3-  014-  066 5- 7
+Elleman, A.M., Lindo, E.J., Morphy, P ., & Compton, D.L. (2009). The 
+impact of vocabulary instruction on passage-  level comprehension of 
+school- age children: A meta- analysis. Journal of Research on Educa-
+tional Effectiveness, 2(1), 1– 44. https ://d  oi.o rg/1 0.10 80/1 9345  740 80 2  
+5392 00
+Francis, D.J., Kulesz, P .A., & Benoit, J.S. (2018). Extending the simple view 
+of reading to account for variation within readers and across texts: 
+The complete view of reading (CVRi ). Remedial and Special Educa-
+tion, 39(5), 274– 288. https ://d  oi.o rg/1 0.11 77/0 7419  325 18 7 7290 4
+Gilbert, J.K., Compton, D.L., & Kearns, D.M. (2011). Word and person 
+effects on decoding accuracy: A new look at an old question. Journal 
+of Educational Psychology, 103(2), 489– 507. https ://d  oi.o rg/1 0.10 37/
+a 0023 001
+González- Fernández, B., & Schmitt, N. (2020). Word knowledge: 
+Exploring the relationships and order of acquisition of vocabulary 
+knowledge components. Applied Linguistics, 41(4), 481– 505. https ://
+d oi.o rg/1 0.10 93/a  ppli  n/a my05 7
+Goodwin, A.P ., & Cho, S.- J. (2016). Unraveling vocabulary learning: 
+Reader and item- level predictors of vocabulary learning within com-
+prehension instruction for fifth and sixth graders. Scientific Studies of 
+Reading, 20(6), 490– 514. https ://d  oi.o rg/1 0.10 80/1 0888  438 .201 6.12  
+4573 4
+Goodwin, A.P ., Gilbert, J.K., Cho, S.- J., & Kearns, D.M. (2014). Probing 
+lexical representations: Simultaneous modeling of word and reader 
+contributions to multidimensional lexical representations. Journal of 
+Educational Psychology, 106(2), 448– 468. https ://d  oi.o rg/1 0.10 37/a  
+0034 754
+Hiebert, E.H. (2019). Teaching words and how they work: Small changes 
+for big vocabulary results. New Y ork, NY: Teachers College Press.
+Hiebert, E.H., Goodwin, A.P ., & Cervetti, G.N. (2018). Core vocabulary: 
+Its morphological content and presence in exemplar texts. Reading 
+Research Quarterly, 53(1), 29– 49. https ://d  oi.o rg/1 0.10 02/r  rq.1 83
+Hiebert, E.H., & Lubliner, S. (2008). The nature, learning, and instruc-
+tion of general academic vocabulary. In A.E. Farstrup & S.J. Samuels 
+(Eds.), What research has to say about vocabulary instruction (pp. 
+106– 129). Newark, DE: International Reading Association.
+Hiebert, E.H., Scott, J.A., Castaneda, R., & Spichtig, A. (2019). An anal-
+ysis of the features of words that influence vocabulary difficulty. 
+Education in Science, 9(1), Article 8. https ://d  oi.o rg/1 0.33 90/e  ducs  
+ci9 01 0 008
+Hino, Y ., & Lupker, S.J. (1996). Effects of polysemy in lexical decision 
+and naming: An alternative to lexical access accounts. Journal of 
+Experimental Psychology: Human Perception and Performance, 
+22(6), 1331– 1356. https ://d  oi.o rg/1 0.10 37/0 096-  152 3.22 .6.1 331
+Hino, Y ., Lupker, S.J., & Pexman, P .M. (2002). Ambiguity and synony -
+ my effects in lexical decision, naming, and semantic categorization 
+tasks: Interactions between orthography, phonology, and semantics. 
+Journal of Experimental Psychology: Learning, Memory, and Cogni-
+tion, 28(4), 686– 713. https ://d  oi.o rg/1 0.10 37/0 278-  739 3.28 .4.6 86
+Hoffman, P ., Lambon Ralph, M.A., & Rogers, T.T. (2013). Semantic 
+diversity: A measure of semantic ambiguity based on variability in 
+the contextual usage of words. Behavior Research Methods, 45(3), 
+718– 730. https ://d  oi.o rg/1 0.37 58/s 1342  8-  012-  027 8- x
+Hoover, W .A., & Gough, P .B. (1990). The simple view of reading. Read-
+ing and Writing, 2(2), 127– 160. https ://d  oi.o rg/1 0.10 07/B  F004  017 99
+Joshi, R.M. (2005). Vocabulary: A critical component of comprehen-
+sion. Reading & Writing Quarterly, 21(3), 209– 219. https ://d  oi.o rg/ 
+10. 10 80/1 0573  560 59 0 9492 78Joshi, R.M., & Aaron, P .G. (2000). The component model of reading: 
+Simple view of reading made a little more complex. Reading Psychol-
+ogy, 21(2), 85– 97. https ://d  oi.o rg/1 0.10 80/0 2702  710 05 0 0844 28
+Kieffer, M.J., & Box, C.D. (2013). Derivational morphological aware-
+ness, academic vocabulary, and reading comprehension in linguisti -
+cally diverse sixth graders. Learning and Individual Differences, 24, 
+168– 175. https ://d  oi.o rg/1 0.10 16/j  .lin dif. 2012 .12. 017
+Knoph, R.E., Lawrence, J.F., & Francis, D.J. (2021). The dimensionality of 
+empirical lexical features in general, academic, and disciplinary 
+vocabulary. Manuscript in preparation.
+Kučera, H., & Francis, W .N. (1967). Computational analysis of present-  
+day American English. Providence, RI: Brown University Press.
+Kulesz, P .A., Francis, D.J., Barnes, M.A., & Fletcher, J.M. (2016). The 
+influence of properties of the test and their interactions with reader 
+characteristics on reading comprehension: An explanatory item 
+response study. Journal of Educational Psychology, 108(8), 1078–  
+1097. https ://d  oi.o rg/1 0.10 37/e  du00  001 26
+Kuperman, V ., Stadthagen- Gonzalez, H., & Brysbaert, M. (2012). Age-  
+of- acquisition ratings for 30,000 English words. Behavior Research 
+Methods, 44(4), 978– 990. https ://d  oi.o rg/1 0.37 58/s 1342  8-  012-  021  
+0- 4
+LaBerge, D., & Samuels, S.J. (1974). Toward a theory of automatic infor -
+mation processing in reading. Cognitive Psychology, 6, 293– 323. https  
+://d oi.o rg/1 0.10 16/0 010-  028 5(74 )900 15 -  2
+Lawrence, J.F., Crosson, A.C., Paré- Blagoev, E.J., & Snow, C.E. (2015). 
+Word Generation randomized trial: Discussion mediates the impact 
+of program treatment on academic word learning. American Educa-
+tional Research Journal, 52(4), 750– 786. https ://d  oi.o rg/1 0.31 02/0  
+0028  312 15 5 7948 5
+Lawrence, J.F., Francis, D., Paré- Blagoev, J., & Snow, C.E. (2017). The 
+poor get richer: Heterogeneity in the efficacy of a school-  level inter -
+vention for academic language. Journal of Research on Educational 
+Effectiveness, 10(4), 767– 793. https ://d  oi.o rg/1 0.10 80/1 9345  747 .201 6.  
+12 3759 6
+Lawrence, J.F., Hagen, A.M., Hwang, J.K., Lin, G., & Lervåg, A. (2019). 
+Academic vocabulary and reading comprehension: Exploring the 
+relationships across measures of vocabulary knowledge. Reading 
+and Writing, 32(2), 285– 306. https ://d  oi.o rg/1 0.10 07/s 1114  5-  018-  
+ 986 5- 2
+Lawrence, J.F., Lin, G., Jaeggi, S., Kreger, N., Hwang, J.K., & Hagen, Å. 
+(2021). Measures of lexical ambiguity for 62,954 words from Word-
+Net. Manuscript in preparation.
+Lesaux, N.K., Kieffer, M.J., Faller, E., & Kelley, J. (2010). The effectiveness 
+and ease of implementation of an academic vocabulary intervention 
+for linguistically diverse students in urban middle schools. Reading 
+Research Quarterly, 45(2), 196– 228. https ://d  oi.o rg/1 0.15 98/R RQ.4  
+5.2. 3
+Lesaux, N.K., Kieffer, M.J., Kelley, J.G., & Harris, J.R. (2014). Effects of 
+academic vocabulary instruction for linguistically diverse adoles -
+cents: Evidence from a randomized field trial. American Educational 
+Research Journal, 51(6), 1159– 1194. https ://d  oi.o rg/1 0.31 02/0 0028   
+312 14 5 3216 5
+Lin, Y ., Michel, J.- B., Lieberman Aiden, E., Orwant, J., Brockman, W ., & 
+Petrov, S. (2012). Syntactic annotations for the Google Books Ngram 
+Corpus. In Proceedings of the 50th annual meeting of the Association 
+for Computational Linguistics: Vol. 2. Demo papers (pp. 169– 174). 
+Stroudsburg, PA: Association for Computational Linguistics.
+Lund, K., & Burgess, C. (1996). Producing high- dimensional semantic 
+spaces from lexical co- occurrence. Behavior Research Methods, 
+Instruments, & Computers, 28(2), 203– 208. https ://d  oi.o rg/1 0.37 58/
+B F032  047 66
+Maria, K., Hughes, K.E., MacGinitie, W .H., MacGinitie, R.K., & Dreyer, 
+L.G. (2007). Lexile conversions for the Gates– MacGinitie Reading 
+Tests (4th ed.). Rolling Meadows, IL: Riverside.
+McCarthy, K.S., Guerrero, T.A., Kent, K.M., Allen, L.K., McNamara, 
+D.S., Chao, S.- F., … Sabatini, J. (2018). Comprehension in a 
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+Reading Comprehension and Academic Vocabulary: Exploring Relations of Item Features and Reading Proficiency  |  687scenario- based assessment: Domain and topic- specific background 
+knowledge. Discourse Processes, 55(5/6), 510– 524. https ://d  oi.o rg/1 
+0.10 80/0 1638  53X .201 8.14 6015 9
+McKeown, M.G., Beck, I.L., Omanson, R.C., & Perfetti, C.A. (1983). The 
+effects of long- term vocabulary instruction on reading comprehen-
+sion: A replication. Journal of Reading Behavior, 15(1), 3– 18. https ://
+d oi.o rg/1 0.10 80/1 0862  968 30 9 5474 74
+Mezynski, K. (1983). Issues concerning the acquisition of knowledge: 
+Effects of vocabulary training on reading comprehension. Review of 
+Educational Research, 53(2), 253– 279. https ://d  oi.o rg/1 0.31 02/0 0346   
+543 05 3 0022 53
+Miller, G.A. (Ed.). (1990). WordNet: An on- line lexical database. Inter-
+national Journal of Lexicography, 3(4), 235– 312.
+Miller, L.T., & Lee, C.J. (1993). Construct validation of the Peabody Pic-
+ture Vocabulary Test– revised: A structural equation model of the 
+acquisition order of words. Psychological Assessment, 5(4), 438. https  
+://d oi.o rg/1 0.10 37/1 040-  359 0.5. 4.43 8
+Nagy, W . (2007). Metalinguistic awareness and the vocabulary–  
+comprehension connection. In R.K. Wagner, A.E. Muse, & K.R. Tan-
+nenbaum (Eds.), Vocabulary acquisition: Implications for reading 
+comprehension (pp. 52– 77). New Y ork, NY: Guilford.
+Nagy, W .E., Anderson, R.C., & Herman, P .A. (1987). Learning word 
+meanings from context during normal reading. American Educa-
+tional Research Journal, 24(2), 237– 270. https ://d  oi.o rg/1 0.31 02/0  
+0028  312 02 4 0022 37
+Nagy, W .E., & Scott, J.A. (2000). Vocabulary processes. In M.L. Kamil, 
+P .B. Mosenthal, P .D. Pearson, & R. Barr (Eds.), Handbook of reading 
+research (Vol. 3, pp. 269– 284). Mahwah, NJ: Erlbaum.
+Nagy, W ., & Townsend, D. (2012). Words as tools: Learning academic 
+vocabulary as language acquisition. Reading Research Quarterly, 
+47(1), 91– 108. https ://d  oi.o rg/1 0.10 02/R RQ.0 11
+New, B., Ferrand, L., Pallier, C., & Brysbaert, M. (2006). Reexamining the 
+word length effect in visual word recognition: New evidence from 
+the English Lexicon Project. Psychonomic Bulletin & Review, 13(1), 
+45– 52. https ://d  oi.o rg/1 0.37 58/B  F031  938 11
+Olson, R., Forsberg, H., Wise, B., & Rack, J. (1994). Measurement of word 
+recognition, orthographic, and phonological skills. In G.R. Lyon 
+(Ed.), Frames of reference for the assessment of learning disabilities: 
+New views on measurement issues (pp. 243– 277). Baltimore, MD: 
+Paul H. Brookes.
+Oxford online dictionary. (2015). Retrieved from https ://e  n.ox for   ddic  t 
+io nar  ies. com/
+Pany, D., Jenkins, J.R., & Schreck, J. (1982). Vocabulary instruction: 
+Effects on word knowledge and reading comprehension. Learning 
+Disability Quarterly, 5(3), 202– 215. https ://d  oi.o rg/1 0.23 07/1 5102 88
+Parks, R., Ray, J., & Bland, S. (1998). Wordsmyth English dictionary-  
+thesaurus. Chicago, IL: University of Chicago Retrieved from https ://
+w ww.w  ords   myt h.ne t/
+Perfetti, C.A. (1988). Verbal efficiency in reading ability. In M. Dane-
+man, T. MacKinnon, & T.G. Waller (Eds.), Reading research: Ad -
+vances in theory and practice (Vol. 6, pp. 109– 143). New Y ork, NY: 
+Academic.
+Perfetti, C.A., & Hart, L. (2002). The lexical quality hypothesis. In L. Ver -
+hoeven, C. Elbro, & P . Reitsma (Eds.), Precursors of functional literacy  
+(pp. 189– 213). Amsterdam, Netherlands: John Benjamins.
+Perfetti, C., & Stafura, J. (2014). Word knowledge in a theory of reading 
+comprehension. Scientific Studies of Reading, 18(1), 22– 37. https ://  
+d oi.o rg/1 0.10 80/1 0888  438 .201 3.82 7687
+Praninskas, J. (1972). American university word list. London, UK: 
+Longman.
+Qian, D.D. (2002). Investigating the relationship between vocabulary 
+knowledge and academic reading performance: An assessment per -
+spective. Language Learning, 52(3), 513– 536. https ://d  oi.o rg/1 0.11  
+11/1 467-  992 2.00 193
+Quinn, J.M., Wagner, R.K., Petscher, Y ., & Lopez, D. (2015). Developmen-
+tal relations between vocabulary knowledge and reading comprehension: A latent change score modeling study. Child Development, 86(1), 159–  
+175. https ://d  oi.o rg/1 0.11 11/c  dev. 1229 2
+RAND Reading Study Group. (2002). Reading for understanding: 
+Toward an R&D program in reading comprehension. Santa Monica, 
+CA: RAND.
+Rodd, J., Gaskell, G., & Marslen- Wilson, W . (2002). Making sense of 
+semantic ambiguity: Semantic competition in lexical access. Journal 
+of Memory and Language, 46(2), 245– 266. https ://d  oi.o rg/1 0.10 06/j  
+mla. 2001 .281 0
+Rydland, V ., Aukrust, V .G., & Fulland, H. (2013). Living in neighbor -
+hoods with high or low co- ethnic concentration: Turkish– Norwegian-  
+speaking students’ vocabulary skills and reading comprehension. 
+International Journal of Bilingual Education and Bilingualism, 16(6), 
+657– 674. https ://d  oi.o rg/1 0.10 80/1 3670  050 .201 2.70 9224
+Schmitt, N., Jiang, X., & Grabe, W . (2011). The percentage of words 
+known in a text and reading comprehension. Modern Language Jour-
+nal, 95(1), 26– 43. https ://d  oi.o rg/1 0.11 11/j  .154 0- 4 781. 2011 .011 46.x
+Scott, J.A., Skobel, B.J., & Wells, J. (2008). The word- conscious classroom: 
+Building the vocabulary readers and writers need. New Y ork, NY: 
+Scholastic.
+Snow, C.E., Porche, M.V ., Tabors, P ., & Harris, S.R. (2007). Is literacy 
+enough? Pathways to academic success for adolescents. Baltimore, 
+MD: Paul H. Brookes.
+Soderstrom, N.C., & Bjork, R.A. (2015). Learning versus performance: 
+an integrative review. Perspectives on Psychological Science, 10(2), 
+176– 199. https ://d  oi.o rg/1 0.11 77/1 7456  916 15 5 6900 0
+Spearman, C. (1904). “General intelligence” , objectively determined and 
+measured. The American Journal of Psychology, 15(2), 201– 292. https  
+://d oi.o rg/1 0.23 07/1 4121 07
+Stahl, S.A., & Fairbanks, M.M. (1986). The effects of vocabulary instruc-
+tion: A model- based meta- analysis. Review of Educational Research, 
+56(1), 72– 110. https ://d  oi.o rg/1 0.31 02/0 0346  543 05 6 0010 72
+Stanovich, K.E. (1986). Matthew effects in reading: Some consequences of 
+individual differences in the acquisition of literacy. Reading Research 
+Quarterly, 21(4), 360– 407. https ://d  oi.o rg/1 0.15 98/R RQ.2 1.4. 1
+Sternberg, R.J., & Powell, J.S. (1983). Comprehending verbal compre-
+hension. The American Psychologist, 38(8), 878– 893. https ://d  oi.  
+o rg/1 0.10 37/0 003-  066 X.38 .8.8 78
+Strategic Education Research Project. (2021). WordGen Weekly: Aca-
+demic Language strategies for today’s youth. Retrieved from https ://w 
+ww.s  erpi  nst it u te.o rg/w  ordg   en-  wee  kly
+Swanborn, M.S.L., & de Glopper, K. (1999). Incidental word learning 
+while reading: A meta- analysis. Review of Educational Research, 
+69(3), 261– 285. https ://d  oi.o rg/1 0.31 02/0 0346  543 06 9 0032 61
+Tannenbaum, K.R., Torgesen, J.K., & Wagner, R.K. (2006). Relationships 
+between word knowledge and reading comprehension in third-  
+grade children. Scientific Studies of Reading, 10(4), 381– 398. https ://  
+doi.o  rg/1 0.12 07/s 1532  799 xs  s r100 4_3
+Templeton, S., Bear, D.R., Invernizzi, M., Johnston, F., Flanigan, K., 
+Townsend, D.R., … Hayes, L. (2015). Words their way: Vocabulary 
+for middle and secondary students. Upper Saddle River, NJ: Pearson.
+Townsend, D., Filippini, A., Collins, P ., & Biancarosa, G. (2012). Evidence 
+for the importance of academic word knowledge for the academic 
+achievement of diverse middle school students. The Elementary 
+School Journal, 112(3), 497– 518. https ://d  oi.o rg/1 0.10 86/6 6330 1
+Tucker- Drob, E.M. (2009). Differentiation of cognitive abilities across 
+the life span. Developmental Psychology, 45(4), 1097– 1118. https ://  
+doi.o  rg/1 0.10 37/a 0015 864
+Tunmer, W .E., & Herriman, M.L. (1984). The development of metalinguis-
+tic awareness: A conceptual overview. In W .E. Tunmer, C. Pratt, & M.L. 
+Herriman (Eds.), Metalinguistic awareness in children: Theory, research, 
+and implications (pp. 27– 36). Berlin, Germany: Springer- Verlag.
+Verhoeven, L., van Leeuwe, J., & Vermeer, A. (2011). Vocabulary growth 
+and reading development across the elementary school years. Scientific 
+Studies of Reading, 15(1), 8– 25. https ://d  oi.o rg/1 0.10 80/1 0888  438 .201 1.  
+53 6125
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+688  |  Reading Research Quarterly , 57(2)Wagner, R.K., Torgesen, J.K., Rashotte, C.A., Hecht, S.A., Barker, T.A., Bur -
+gess, S.R., … Garon, T. (1997). Changing relations between phonological 
+processing abilities and word-  level reading as children develop from 
+beginning to skilled readers: A 5- year longitudinal study. Developmental 
+Psychology, 33(3), 468– 479. https ://d  oi.o rg/1 0. 10 37/0 012-  164 9.33 .3.4 68
+West, M. (1957). A general service list of English words: With semantic 
+frequencies and a supplementary word- list for the writing of popular 
+science and technology. London, UK: Longmans, Green.
+Wright, T.S., & Cervetti, G.N. (2017). A systematic review of the 
+research on vocabulary instruction that impacts text comprehen-
+sion. Reading Research Quarterly, 52(2), 203– 226. https ://d  oi.o rg/1 
+0.10 02/r  rq.1 63
+Y ap, M.J., Balota, D.A., Sibley, D.E., & Ratcliff, R. (2012). Individual dif-
+ferences in visual word recognition: Insights from the English Lexi-
+con Project. Journal of Experimental Psychology: Human Perception 
+and Performance, 38(1), 53– 79. https ://d  oi.o rg/1 0.10 37/a 0024 177
+Y arkoni, T., Balota, D., & Y ap, M. (2008). Moving beyond Coltheart’s N : 
+A new measure of orthographic similarity. Psychonomic Bulletin & 
+Review, 15(5), 971– 979. https ://d  oi.o rg/1 0.37 58/P  BR.1 5.5. 971
+Zeno, S.M., Ivens, S.H., Millard, R.T., & Duvvuri, R. (1995). The educa-
+tor’s word frequency guide. New Y ork, NY: Touchstone Applied Sci-
+ence Associates.
+Ziegler, J.C., & Goswami, U. (2005). Reading acquisition, developmental 
+dyslexia, and skilled reading across languages: A psycholinguistic 
+grain size theory. Psychological Bulletin, 131(1), 3– 29. https ://d  oi.o 
+rg/1 0.10 37/0 033-  290 9.13 1.1. 3
+Submitted July 15, 2020   
+Final revision received May 11, 2021   
+Accepted May 14, 2021
+JOSHUA F. LAWRENCE  (corresponding author) is a professor 
+in the Department of Education at the University of Oslo, 
+Norway; email joshua.lawrence@iped.uio.no. His research 
+interests relate to understanding adolescent literacy development, second-  language acquisition, hybrid learning, 
+and improving instruction through coaching and leadership.
+REBECCA KNOPH  is a doctoral student at the University of 
+Oslo, Norway; email rebecca.knoph@iped.uio.no. Her 
+research interests include second-  language acquisition and 
+testing fairness and equivalency for native and non-  native 
+students.
+AUTUMN MCILRAITH  was a postdoctoral fellow at the Texas 
+Institute for Measurement, Evaluation, and Statistics at the 
+University of Houston, Texas, USA, at the time this work was 
+completed and is now a data analyst and independent 
+researcher; email autumnlorayne@gmail.com. Her research 
+interests include word reading, reading comprehension, reading 
+disorders, and statistical methods.
+PAULINA A. KULESZ  is a research associate at the Texas 
+Institute for Measurement, Evaluation, and Statistics at the 
+University of Houston, Texas, USA; email paulina.kulesz@
+times.uh.edu. Her primary research focus is cognitive processes 
+underlying reading comprehension.
+DAVID J. FRANCIS is a Hugh Roy and Lillie Cranz Cullen 
+Distinguished University Chair and the director of the Texas 
+Institute for Measurement, Evaluation, and Statistics at the 
+University of Houston, Texas, USA; email dfrancis@uh.edu. 
+His research interests focus on the application of advanced 
+statistical models to problems in education and child 
+development, especially as related to the study of reading and 
+language, the identification and treatment of reading and 
+related developmental disabilities, and the education of at-  risk 
+populations, especially English learners.
+APPENDIX 
+TABLE A1  
+ Variable Names, Descriptions, and Citations
+Variable name Description Citation
+bg_mean Mean frequency of bigrams in a word (e.g., the = th + he) Balota et al. (2007)
+cd Number of documents in which a word appears (contextual diversity) in 
+the Touchstone Applied Sciences Associates corpusAdelman, Brown, and Quesada 
+(2006)
+cocazipf Zipfian- transformed frequency in the Corpus of Contemporary 
+American EnglishDavies (2009)
+d Number of subject areas in which a word appears (dispersion) in The 
+Educator’s Word Frequency GuideZeno, Ivens, Millard, and Duvvuri 
+(1995)
+(continued)
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+Reading Comprehension and Academic Vocabulary: Exploring Relations of Item Features and Reading Proficiency  |  689Variable name Description Citation
+freqband Frequency groupings from the Oxford Online Dictionary based on raw 
+frequencies from NgramOxford Online Dictionary (2015)
+length Number of letters Balota et al. (2007)
+lg10cd Log- transformed percentage of film and television series transcripts in 
+which a word occurs in the SubtlexUS corpusBrysbaert and New (2009)
+lg10wf Log- transformed frequency per million words in the SubtlexUS corpus Brysbaert and New (2009)
+log_freq_hal Log- transformed frequency in the Hyperspace Analogue to Language 
+corpusLund and Burgess (1996)
+log_freq_kf Log- transformed frequency in the Brown University Standard Corpus of 
+Present- Day American EnglishKučera and Francis (1967)
+nmorph Number of morphemes Balota et al. (2007)
+nphon Number of phonemes Balota et al. (2007)
+nsyll Number of syllables Balota et al. (2007)
+og_n Raw number of phonographic neighbors (e.g., stove /stone) Balota et al. (2007)
+old Mean Levenshtein distance of 20 closest orthographic neighbors Yarkoni, Balota, and Yap (2008)
+ortho_n Raw number of orthographic neighbors (e.g., love/dove) Balota et al. (2007)
+phono_n Raw number of phonologic neighbors (e.g., hear/hare) Balota et al. (2007)
+pld Mean Levenshtein distance of 20 closest phonologic neighbors Balota et al. (2007)
+semd Mean cosine of latent semantic analysis vectors of all pairwise 
+combinations of contexts containing a word (semantic diversity)Hoffman, Lambon Ralph, and 
+Rogers (2013)
+sfi Weighted frequency per million tokens divided by dispersion 
+(standardized frequency index)Zeno et al. (1995)
+subzipf Zipfian- transformed frequency in the SubtlexUS corpus Brysbaert and New (2009)
+word_age Age of a word as of 2000, from the Oxford Online Dictionary Oxford Online Dictionary (2015)
+wordage Age of a word as of 2000, from Google Ngram Lin et al. (2012)
+wordnet_lnapossam Log- transformed senses and meanings across parts of speech from 
+WordNetG.A. Miller (1990)
+wordsmyth_lnapossam Log- transformed senses and meanings across parts of speech from 
+WordsmythParks, Ray, and Bland (1998)
+z_sem_prec z- transformed depth scores averaged by part of speech from WordNet G.A. Miller (1990)
+zenozipf Zipfian- transformed frequency from The Educator’s Word Frequency 
+GuideZeno et al. (1995)TABLE A1  
+ Variable Names, Descriptions, and Citations ( continued )
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+690  |  Reading Research Quarterly , 57(2)TABLE A2  
+ Factor Score Estimation Beta Weights for Word Features
+Variable nameBeta weights for factor score estimates
+Frequency Complexity Proximity Polysemy Diversity
+bg_mean Omitted because of low measure of sampling adequacy (MSA < .60)
+cd 0.036 0.002 0.006 0.000 0.023
+cocazipf 0.365 0.008 0.000 −0.045 −0.061
+d 0.026 −0.001 0.001 0.003 0.325
+freqband 0.052 −0.005 −0.005 −0.003 −0.036
+length −0.007 0.324 −0.006 0.086 0.003
+lg10cd Omitted because of high correlation with lg10wf and subzipf
+lg10wf Omitted because of high correlation with lg10cd and subzipf
+log_freq_hal 0.171 −0.012 −0.001 0.021 −0.094
+log_freq_kf 0.138 0.010 0.000 0.019 0.061
+nmorph −0.006 0.047 0.002 −0.001 −0.002
+nphon −0.003 0.297 −0.004 0.045 −0.011
+nsyll 0.009 0.114 −0.006 −0.035 −0.105
+og_n −0.003 0.018 0.565 0.007 −0.019
+old 0.000 0.113 −0.013 −0.079 0.084
+ortho_n −0.005 −0.018 0.347 −0.011 −0.010
+phono_n 0.001 −0.014 0.085 −0.002 0.009
+pld 0.002 0.148 −0.008 −0.071 0.044
+semd −0.002 0.000 0.000 0.006 0.497
+sfi Omitted because of high correlation with zenozipf
+subzipf 0.053 −0.008 0.000 0.035 0.036
+word_age Omitted because of low MSA
+wordage 0.015 0.003 −0.001 0.024 0.105
+wordnet_lnapossam 0.011 −0.010 −0.002 0.200 −0.048
+wordsmyth_lnapossam 0.000 −0.009 0.002 0.705 0.021
+z_sem_prec 0.011 0.003 0.000 0.045 −0.154
+zenozipf 0.233 −0.001 0.002 0.032 0.101
+ 19362722, 2022, 2, Downloaded from https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.434 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+

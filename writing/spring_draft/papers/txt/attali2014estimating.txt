@@ -1,0 +1,391 @@
+Estimating Item Difﬁculty With
+Comparative Judgments
+December 2014
+Research Report
+ETS RR–14-39
+Yigal Attali
+Luis Saldivia
+Carol Jackson
+Fred Schuppan
+Wilbur Wanamaker
+
+--- Page Break ---
+
+ETS Research Report Series
+EIGNOR EXECUTIVE EDITOR
+James Carlson
+PrincipalPsychometrician
+ASSOCIATE EDITORS
+BeataBeigmanKlebanov
+ResearchScientist
+Heather Buzick
+ResearchScientist
+BrentBridgeman
+DistinguishedPresidentialAppointee
+KeelanEvanini
+Managing Research Scientist
+MarnaGolub-Smith
+PrincipalPsychometrician
+ShelbyHaberman
+DistinguishedPresidentialAppointeeDonaldPowers
+M anagingPrincipalResearchScien tist
+GautamPuhan
+SeniorPsychometrician
+JohnSabatini
+M anagingPrincipalResearchScien tist
+MatthiasvonDavier
+SeniorResearchDirector
+RebeccaZwick
+DistinguishedPresidentialAppointee
+PRODUCTION EDITORS
+KimFryer
+Manager,EditingServicesAyleenStellhorn
+Editor
+Sinceits1947founding,ETShasconductedanddisseminatedscientificresearchtosupportitsproductsandservices,and
+toadvancethemeasurementandeducationfields.Inkeepingwiththesegoals,ETSiscommittedtomakingitsresearchfreely available to the professional community and to the general public. Published accounts of ETS research, includingpapers in the ETS Research Report series, undergo a formal peer-review process by ETS staff to ensure that they meetestablishedscientificandprofessionalstandards.AllsuchETS-conductedpeerreviewsareinadditiontoanyreviewsthatoutsideorganizationsmayprovideaspartoftheirownpublicationprocesses.Peerreviewnotwithstanding,thepositionsexpressedintheETSResearchReportseriesandotherpublishedaccountsofETSresearcharethoseoftheauthorsandnotnecessarilythoseoftheOfficersandTrusteesofEducationalTestingService.
+TheDanielEignorEditorshipisnamedinhonorofDr.DanielR.Eignor,whofrom2001until2011servedtheResearchand
+DevelopmentdivisionasEditorfortheETSResearchReportseries.TheEignorEditorshiphasbeencreatedtorecognizethepivotalleadershiprolethatDr.EignorplayedintheresearchpublicationprocessatETS.
+ 23308516, 2014, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ets2.12042 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+ETS Research Report Series ISSN 2330-8516
+RESEARCH REPORT
+Estimating Item Difﬁculty With Comparative Judgments
+Yigal Attali, Luis Saldivia, Carol Jackson, Fred Schuppan, & Wilbur Wanamaker
+Educational Testing Service, Princeton, NJ
+Previousinvestigationsoftheabilityofcontentexpertsandtestdeveloperstoestimateitemdifficultyhave,forthemostpart,produced
+disappointing results. These investigations were based on a noncomparative method of independently rating the difficulty of items.
+In this article, we argue that, by eliciting comparative judgments of difficulty, judges can more accurately estimate item difficulties.In this study, judges from different backgrounds rank ordered the difficulty of SAT®mathematics items in sets of 7 items. Results
+showed that judges are reasonably successful in rank ordering several items in terms of difficulty, with little variability across judges
+andcontentareas.Simulationsofapossibleimplementationofcomparativejudgmentsfordifficultyestimationshowthatitispossibleto achieve high correlations between true and estimated difficulties with relatively few comparisons. Implications of these results for
+thetestdevelopmentprocessarediscussed.
+Keywords Testdevelopment;itemdifficulty;raters
+doi:10.1002/ets2.12042
+In Embretson’s (1983) conceptualization of construct validity, construct representation concerns identifying the theo-
+retical mechanisms (i.e., the processes, strategies, and knowledge) that underlie test performanceand, thus, support theinterpretationoftestscores.Suchrepresentationsestablishthebasisforinterpretationoftestscoresbutrequireascientificandtheoreticalfoundationforitemandtestdesignprinciples(Embretson,1998).Thatis,scientificevidenceandtheory
+areneededonhowtesttakersusetheirknowledge,skills,andabilitieswhentheyinteractwithtestitems.Abetterunder-
+standing of the relevant processes guiding the test taker in arriving at a response to an item may increase the accuracyof prediction of an item’s psychometric features. Principles for test design are emerging for some item types, includingpopulartestitemssuchasparagraphcomprehension(Freedle&Kostin,1993;Gorin&Embretson,2006)andmathemat-
+ical problem solving (Enright, Morley, & Sheehan, 1999; Singley & Bennett, 2002), as well as other item types on ability
+tests, such as spatial items (Bejar, 1993) and nonverbal reasoning items (Embretson, 1998). Nevertheless, a much largerfoundationisneededtosupporttestmeaningfromthiskindofevidence(Embretson,2007).
+Onesourceofevidencethatcouldpotentiallysupporttheseinvestigationsisexperts’intuitivejudgmentsofitemdif-
+fi c u l t y .Th e s ej u d g m e n t sa r ea ni n d i s p e n s a b l ep a r to ft e s td e v e l o p m e n t ,a st h e yc o n s t i t u t ea ni m p o r t a n ta s p e c to ft h e
+appropriatenessofanitemwithinthesetofotheravailableitemsandtheconceptualframeworkforthetest.Testdevelop-ersareoftenexplicitlytargetingaspecificrangeofdifficultywhiledevelopinganitembecausedifferentsetsofknowledge,skills,andabilitiesaremeasuredindifferentranges.Surprisingly,investigationsoftheabilityofexpertstoestimateitemdifficulty have generally not found much success. Thorndike (1982) asked judges to estimate absolute difficulty on a 9-
+pointscale(withextremepointsbeing wouldbepassedbynomorethan30%ofexaminees andwouldbepassedby75%or
+moreofexaminees )onverbalanalogies,quantitativerelations,andfigureanalogiesitems.Heestimatedcorrelationsof.83,
+.74,and.72betweenempiricalitemdifficulty( p
++)andaverageratingsof20raters.UsinganapplicationoftheSpearman-
+Brownpredictionformula,1thesecorrelationsforaverageratingstranslatetosinglejudgecorrelationsof.23to.32.Bejar
+(1983)providedexpertswithsupportingmaterialsintheformoftypicaldistributionsofdifficultyforeveryitemtypeand
+askedthemtorateitemdifficulty.Hefoundcorrelationsof.15to.49with p+acrossratersanditemtypes.Inthecontextof
+item-levelstandardsetting,severalstudiesreportcorrelationsbetweenratingsofitemdifficultyandactualitemdifficulty.Melican,Mills,andPlake(1989)foundcorrelationsof.26and.27betweenratingsofdifficultyofmathematicsitemsand
+p
++.Cross,Impara,Frary,andJaeger(1984)alsoreportedlowcorrelationsintherangeof0tothelow30s.
+Inanotherstudy,Hambleton,Sireci,Swaminathan,Xing,andRizavi(2003)addressedwhattheyviewasamajorshort-
+comingofpreviousresearch—thelackofaframeofreferenceforjudgments.Theydevelopedandfield-testedtwomethods
+Corresponding author: Y. Attali, E-mail: yattali@ets.org
+ETS Research Report No. RR-14-39. © 2014 Educational Testing Service 1
+ 23308516, 2014, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ets2.12042 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+Y. Attali et al . Estimating Item Difﬁculty
+thatrelyonauxiliaryitemswithknown p+asanaidintheestimationofthedifficultyofotheritems.Intheiranchor-based
+method, judges first discussed attributes of easy, medium, and hard items (defined in terms of three threshold points onthep
++scale: 25%, 50%, and 75%) and were then provided with two representative items in each of the three difficulty
+bands.Inonestudy ofreadingcomprehensionitems,theseanchoritems wereusedtohelpratethedifficultyof21otheritems.Theaveragecorrelationbetweentheratingsandempirical p
++was.32(Hambletonetal.,2003,Table2).Thejudges
+ratedthedifficultiesoftheitemsagainafteragroupdiscussionoftheirinitialratings.Theaveragecorrelationbetweentherevisedratingsand p
++was.44.Inasecondstudywith18analyticalreasoningitems,theaveragecorrelationbetweenthe
+ratingsand p+was.37and.50fortheinitialandrevisedratings(Hambletonetal.,2003,Table6).Intheiritem-mapping
+method,anentiretestwaspresentedwith p+valuesasanaidforratingnewitems.Withthismethod,sixjudgesrated21
+logicalreasoningitems,andtheaveragecorrelationbetweentheratingsand p+was.61and.76fortheinitialandrevised
+ratings(Hambletonetal.,2003,Table4).
+The item-mapping method seems to have produced significantly better results than the anchor-based method and
+conventional rating methods. This method also has more in common with comparative judgment methods than withindependent rating, because it essentially requires placing the item in an appropriate position within a presorted list,instead of independently rating its difficulty. In one early study of item difficulty judgments, Lorge and Kruglov (1953)askedexpertstorankorderthedifficultyof45arithmeticitems.Resultsofthisstudyarecomparabletotheresultsoftheitem-mappingmethod,withrankordercorrelationsthatvariedbetweenthe.50sand.80s,withanaverageofaround.70.
+In this article, we argue that the main reason for the inability of experts to judge the difficulty of test items accu-
+rately is the use of noncomparative methods for eliciting judgments of difficulty. With the rating task, experts are askedto provide a direct measurement of the difficulty of an item, independently of other items. Therefore, this task assumesthat the judge possesses a scale that can be used to perform this measurement. However, as Hambleton etal. (2003)argued, even experts lack a frame of reference for this kind of judgment. This lack of a mental scale means that thedifficulty of items can be best judged in comparison to the difficulty of other items. Measurement through methods ofcomparative judgment has a long history in psychology (Thurstone, 1927). The method of paired comparisons is themost flexible as a basis for scaling, but it is less efficient than rank ordering a larger set of items. In this article, we setforth to explore a comparative judgment method for item difficulty that is based on rank ordering. Rankings of itemdifficulty by test developers on a large pool of SAT
+®mathematics items were collected and analyzed. Then, a simula-
+tion was conducted to estimate the success of one possible method for generating difficulty judgments that are based
+on item comparisons—asking judges to compare the difficulty of a new item to a series of anchor items with knowndifficulty.
+Method
+Toexplorethecomparativejudgmentmethodforitemdifficulty,weaskedagroupofmathematicstestdeveloperstorank
+ordersetsofitemsbydifficulty.Aftersomeinitialexperimentation,wedecidedthatrankorderingsevenitemsprovidesa
+goodbalancebetweencognitiveloadandefficiency.Afullorderingofsevenitemsindirectlyprovidesinformationabout21 paired comparisons (the first item is compared with six other items, the second with five others, etc.) and can beaccomplishedrelativelyquickly.
+Materials
+Eight major content areas from the SAT mathematics section were selected for analysis: (a) numbers and operations
+withintegers,(b)numbersandoperationswithrealnumbers,(c)algebraictranslations,(d)algebraicproblemsolving,(e)algebraicfunctions,(f)geometry—triangles,(g)coordinategeometry,and(h)dataanalysis.Ineachcontentarea,asampleof28releasedmultiple-choiceitemswasselected.Foreachitemconsideredforthisstudy,ameasureoftheitemdifficulty,the equated delta,
+2w a sa v a i l a b l e .D u r i n gi t e ms e l e c t i o n ,t h ee a s i e s ta n dh a r d e s ti t e m sw e r eo v e r s a m p l e dt oi n c r e a s et h e
+likelihoodofalltypesofcomparisonsacrossthedifficultyspectrum(e.g.,toensurethatjudgeswouldcompareeasyitemswith easy, medium, and hard items). As a consequence, the delta distribution of the 224 selected items had a negativekurtosis( −1.0),butitwassymmetric(skewnessof0.0),withameanof12.0andastandarddeviationof3.6.Theitemsin
+eachcontentareawerearrangedinbookletsinrandomorder(from1to28),suchthateachsuccessivesetofsevenitemsoccupiedtwopages.
+2 ETS Research Report No. RR-14-39. © 2014 Educational Testing Service
+ 23308516, 2014, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ets2.12042 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+Y. Attali et al . Estimating Item Difﬁculty
+Participants
+Atotalof26EducationalTestingService(ETS)testdevelopersandexternal(toETS)itemwritersparticipatedinthestudy.
+Participants had different backgrounds and levels of experience: six SAT test developers, five GRE®test developers, 10
+experienceditemwriters,andfiverelativelynewitemwriters.TheSATtestdeveloperswerebothfamiliarwithSATitemsand are regularly exposed to item difficulty indices. GRE test developers are regularly exposed to item difficulty indicesbutlackexperiencewithSATitemtypesandtheSATpopulationofexaminees.Itemwritersarenotregularlyexposedtoitemindices,butexperienceditemwritersarefamiliarwiththeSATitemtypes.
+Procedures
+Ratershadtowritedowntheitemnumbersineachsetintheorderofjudgeddifficulty,fromeasiesttohardest.Inseven
+cases, raters accidentally repeated one of the item numbers and skipped another item. It was decided not to analyze theresultsofthesesets.
+Theinstructionsfortestdeveloperswereasfollows:
+Forthisstudy,wehaveassembledeightpacketsofitemsindifferentcontentareas.Eachpacketcontains28items.For
+eachpacket,weaskthatyouconsiderthefollowingfoursetsofitemsseparately:1–7,8–14,15–21,and22–28.Foreachset,yourtaskistorankthesevenitemsinestimatedorderofdifficulty.Typically,youwouldsolveeachitem,formanimpressionofitsdifficulty,andcompareittopreviousitems.Sometimesitiseasiertoformpartialrankorders(forsetsofsimilaritems)andfinallycombinethesevenitemsintoasingleorder.
+Analyses
+Two types of analyses were conducted. First, as an initial descriptive analysis of the rankings, rank-order correlations
+between difficulty judgments and actual item difficulties (equated delta values) were computed for each set of items.However,thesecorrelationscannotbeusedasunbiasedestimatesoftheaccuracyofcomparativejudgmentsbecausetheitemsinthesetswerenotrandomlyselectedfromalargebankofitems.Tobetterestimatetheaccuracyofraterjudgments,aswellasthevariabilityacrosscontentareasandraters,ananalysisofindividualpairedcomparisonswasconducted.Thecomplete ranking of each set of seven items produced 21 paired comparisons (7 times 6 divided by 2). In each of thesecomparisons,theratereithercorrectlyidentifiedtheharderitemornot.Theprimarypredictorofthisbinaryoutcomeisthedifferenceinempiricaldifficultyvalues(delta)ofthetwoitems(inabsolutevalue).
+Atwo-levelcross-classifiedhierarchicalgenerallinearmodel(Raudenbush&Bryk,2002)wasestimatedforthesedata.
+At level 1, the outcome Y
+ijkfor an individual comparison iof raterjfor content area ki sa s s u m e dt oh a v eaB e r n o u l l i
+distributionwithprobabilityofsuccess 𝜑ijk.Traditionally,itisthelogoftheoddsofsuccessthatismodeled:
+𝜂ijk=log(
+𝜑ijk
+1−𝜑ijk)
+.
+Iftheprobabilityofsuccessis.5,theoddsofsuccessare.5/.5 =1.0andthelog-odds,or logit,islog(1) =0.
+Thelinearstructuralmodelatlevel1issimply
+𝜂ijk=𝛽1jkDijk,
+whereDijkistheempiricaldifferenceindifficultyfortheindividualcomparison,and 𝛽1jkistheregressioncoefficientrelat-
+ingdifferenceindifficultyandprobabilityofsuccess.Notethatthestructuralmodeldoesnothaveaninterceptcoefficient,becauseitisassumedthatacomparisonbetweentwoitemswiththesamedifficultywillresultinaprobabilityof success
+of.5andalogitof0.
+Thelevel-2modelrepresentsthevariationacrosstworandomfactors,ratersandcontentareas.Thesefactorsarecon-
+ceived as random because it is assumed that the specific raters and content areas in this study are just a random samplefrom a much larger universe of possible raters or content areas. Variation of slope coefficients is attributable to ratereffectsandcontenteffectsand,inaddition,possibleraterandcontentpredictors.Onlyonepossiblepredictorwasexam-ined. Based on the background of raters, three dummy variables were created, GRE (whether the rater was a GRE test
+ETS Research Report No. RR-14-39. © 2014 Educational Testing Service 3
+ 23308516, 2014, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ets2.12042 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+Y. Attali et al . Estimating Item Difﬁculty
+developer or not), EIW (experienced item writer or not), and NIW (new item writer or not). The initial level-2 model
+was
+𝛽1jk=𝜃1+b10j+c10k+𝛾11(GRE)j+𝛾12(EIW)j+𝛾13(NIW)j
+b10j∼N(0,𝜏b10)
+c10k∼N(0,𝜏c10),
+where𝜃1is the expected slope when all dummy variables are 0 (that is, for an SAT rater), b10jis the random effect of
+raterj,andc10kistherandomeffectofcontent k.
+Results
+Rank Correlations Between Delta Values and Rater Rank Ordering
+Table 1 presents descriptive statistics about the Spearman rank-order correlations between difficulty judgments and
+equated delta values. Correlations were computed for each set of seven items, with a total of 32 sets (four sets in each of
+eightcontentareas)perrater.Theexpectednumberofsetsis104(foursetsand26raters),butduetothemissingvalues
+discussedabove,somecontentareasaremissingoneortwosets.Theoverallmediancorrelationwas.79,withasomewhat
+lower average correlation of .70, due to a small number of very low correlations. Table 1 also shows some variability in
+resultsacrosscontentareas(thestandarddeviationofthemediancorrelationacrosstheeightcontentareaswas.06),with
+lowerresultsfortranslationsandtriangles.Interestingly,testdeveloperspredictedthatfunctionsanddataanalysiswouldbe more difficult for raters. Some variability of results also occurred across raters (not shown in Table 1); the standard
+deviationofthemediancorrelationsacrossthe26raterswas.06.
+Paired Comparison Analysis
+Inthissection,wepresenttheresultsformodelingtheprobabilitythataratercorrectlyjudgestheharderoftwoitems,as
+a function of the difference in the actual difficulty between the two items. In the initial two-level cross-classified hierar-
+chicalgenerallinearmodeldescribedinthe“Method”section,noneoftheparametersforthethreedummyvariablesforrater background were statistically significant, suggesting that rater background did not have an effect on the quality of
+discriminationbetweenitems.Therefore,arevisedmodelwithoutraterbackgroundisshowninTable2,whichpresents
+theestimatesoflevel-2coefficients.Itshowsthattheaverage(orintercept)slopefor Dis.370,withanoddsratioofnearly
+1.5, which means that, for the average rater and content, the odds of a successful comparison increases by half for each
+increase of 1 in the delta difference between the two items.
+3The standard deviation of the slope across raters was .061,
+andthestandarddeviationoftheslopeacrosscontentwas.055.
+Figure 1 presents (the solid line) the expected probability of success for an average rater, as a function of the delta
+differencebetweentheitems.Thedottedlinesrepresentthesuccessprobabilitiesforaparticularlylow(1standarddevi-
+ation below the average) and high (1 standard deviation above the average) discriminatingrater. Predicted probabilitiesofsuccesswereconvertedfrompredictedlog-odds( ̂𝜂
+jk)bycomputing
+̂𝜑jk=⎛
+⎜
+⎜⎜⎝1
+1+exp{
+−̂𝜂jk}⎞
+⎟
+⎟⎟⎠.
+Forexample,ifthedeltadifferenceis2,thenthepredictedlogit( ̂𝜂)foranaverageraterandcontentis2times.370,or
+.740,andthepredictedprobabilityofsuccessis1/(1 +exp{−.740})=.677.
+Simulation of Implementation
+Resultsoftheempiricalstudyshowedthatratersarereasonablysuccessfulinrankorderingafewitemsintermsofdiffi-
+culty.Apossiblemethodforgeneratingdifficultyjudgmentsthatarebasedonitemcomparisonsistoaskraterstocompare
+the difficulty of a new item to a series of anchor items with known difficulty. An efficient set of comparisons (similar to
+4 ETS Research Report No. RR-14-39. © 2014 Educational Testing Service
+ 23308516, 2014, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ets2.12042 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+Y. Attali et al . Estimating Item Difﬁculty
+Table 1SummaryStatisticsofRankOrderCorrelationsBetweenEmpiricalDifficultyandRaterJudgments
+Contentarea N Median Mean SD 5thPercentile
+Integers 102 .82 .75 .25 .21
+Realnumbers 102 .85 .78 .20 .39Translations 102 .71 .62 .27 .04Problemsolving 104 .77 .71 .21 .32Functions 104 .77 .68 .29 .21Triangles 103 .68 .59 .27 .07Coordinategeometry 104 .82 .78 .15 .43Dataanalysis 104 .75 .72 .21 .25
+All 825 .79 .70 .24 .21
+Table 2EstimatesofLevel2Coefficients
+Fixedeffect Coefficient SE Approx.df t -ratio Oddsratio
+ForDslope,𝛽1
+Intercept, 𝜃1 .370 .024 17,239 15.7 1.45
+Randomeffect SD df 𝜒2p-Value
+Raters,b00j .061 25 156.3 <.001
+Content,c00k .055 7 117.5 <.001
+Figure 1 Expectedprobabilityofsuccessforanaveragerater.Dottedlinesrepresentprobabilityofsuccessforraters1SDaboveand1
+SDbelowaverage.
+a binary search algorithm) would start with an anchor item with median difficulty, an item at the 50th percentile of the
+distributionofitemdifficulty.Ifthenewitemisjudgedmore(less)difficultthantheinitialanchoritem,asecondanchoritematthe75th(25th)percentileofthedistributioncanbepresentedforcomparison.Dependingonthefirsttwocompar-isons,athirdanchoritematthe12.5,37.5,62.5,or87.5percentilecouldbepresented.Inthismanner,pairedcomparisons
+can be translated into judgments of difficulty. Each new comparison provides an opportunity to associate the item with
+ah i g h e ro rl o w e rl e v e lo fd i ffi c u l t y .Th et o t a ln u m b e ro fl e v e l so fj u d g e dd i ffi c u l t yw o u l db ee q u a lt o2
+k,w h e r ekis the
+number of comparisons. With three comparisons, the final estimates of the difficulty of the item could be at the 6.25,18.75, 31.25, 43.75, 56.25, 68.75, 81.25, or 93.75 percentile of the distribution. In addition, more than one rater can beaskedtoperformthisprocess,sothatjudgmentsofdifferentraterscouldbeaveraged.Notethat,inpractice,thismethodcan be implemented as either a series of binary judgments (as described above) or as a simultaneous judgment process,
+wherebyallanchoritemsarepresentedatonceandthejudgeneedstoselecttheregionforthenewitem.
+Toevaluatethismethod,asimulationwasperformed.Inthissimulation,10,000itemsweresystematicallydrawnfroma
+(normal)distributionofitemdifficulties,andeachitemwascomparedtoaseriesofanchoritemsinthemannerdescribed
+ETS Research Report No. RR-14-39. © 2014 Educational Testing Service 5
+ 23308516, 2014, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ets2.12042 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+Y. Attali et al . Estimating Item Difﬁculty
+Figure 2 Correlationsbetweentrueandjudgeddifficultybynumberofraters.
+above. The result of each comparison was randomly determined based on the probability of success estimated in the
+previoussection.Toestimatethisprobability,thedifferenceindifficultybetweenthetwoitems(newitemandanchoritem)wascomputedandan averageraterwasassumedtocomparethetwoitems(onewithaslopeof.370).Thereafter,arandom
+number from a uniform distribution in the range 0–1 was generated and was compared to the estimated probability of
+success.Iftherandomnumberwassmallerthanthisprobability,theresultofthesimulatedcomparisonwassuccessful.
+4
+The simulations were repeated with one to four comparisons and with one to six raters, for a total of 24 simulations.
+For each simulation, the correlation between true difficulty and average judged difficulty level was computed for the
+10,000simulateditems.Figure2presentsthesecorrelationsforeachsimulation.Thefigureshowsthatevenwithasingle
+comparison and a single rater, the resulting two levels of judged difficulty (more or less difficult than the anchor item)resultinacorrelationofalmost.5withtrueitemdifficulty.Thefigureshowsthattheaddedvalueofincreasingthenumber
+of comparisons diminishes beyond three comparisons. With respect to the number of raters, a significant increase in
+correlations can be seen even beyond four or five raters. As an example, with three comparisons, the use of two raters
+resultsinacorrelationof.80,andtheuseoffiveratersresultsinacorrelationof.90.
+Thesecorrelationscanbecomparedtoexpectedcorrelationsbetweentrueandempiricaldifficultyestimates,obtained
+fromasampleofexamineesinanitemtryout.Withreasonableassumptionsabouttherangeof p
++values,itcanbeshown5
+that,forasamplesizeof100examinees,thiscorrelationwillbearound.90,andforasamplesizeof200examinees,itwill
+bearound.95.Inotherwords,thesimulationaboveshowedthatfiveratersmakingcomparisonswiththreeanchoritems
+couldreplicatetheaccuracyof p+estimateswith100examinees.
+Discussion
+Inthisarticle,weshowedthat,contrarytopreviousinvestigations,judgesareabletodiscriminatequitewellbetweeneasier
+andharderitemswhentheyaregivenacomparativejudgmenttask.Aninterestingresultofthisstudyistherelativelysmallvariabilityacrosscontentareasandraters,inthequalityofjudgmentsthatweregenerated.Infact,thegenerallinearmodel
+results showed no statistically significant differences between the different groups of raters. That is, SAT raters who are
+most familiar with the items and are regularly exposed to item statistics did not perform better than, for example, new
+item writers who are not familiar with the items and are not exposed to item statistics. This is an important result, as it
+suggeststhattheabilitytodiscriminatebetweenthedifficultiesofitemsislessrelatedtotestdevelopmentexperienceand
+toexperiencewithaparticulardifficultyscale.
+Inanefforttotestthelimitsofthispremise,the14-year-oldsonofoneoftheauthorswasaskedtoperformthedifficulty
+rankingtask.Althoughfamiliarwithmultiple-choicequestions,hehadneversolvedSATquestionsbefore.Nevertheless,
+therankordercorrelationsforhisjudgmentswere.60.
+Apossiblemethodforgeneratingdifficultyjudgmentsthatarebasedonitemcomparisonsistoaskraterstocompare
+t h ed i ffi c u l t yo fan e wi t e mt os e v e r a la n c h o ri t e m sw i t hk n o w nd i ffi c u l t i e s .Th es i m u l a t i o n sr e p o r t e da b o v eh a v eu s e d
+a sequential binary judgment task, because it was easier to model the results of binary decisions. However, it is possible
+toimplementthisapproachasasinglemappingtask,similartotheoneusedbyHambletonetal.(2003).Forexample,a
+seriesoftwocomparisonsrequiresthreeitemstoimplement,onemiddledifficultyitem,asecondeasieritem,andathird
+6 ETS Research Report No. RR-14-39. © 2014 Educational Testing Service
+ 23308516, 2014, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ets2.12042 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+Y. Attali et al . Estimating Item Difﬁculty
+harderitem.Threecomparisonswillrequiresevenitems,andfourcomparisonswillrequire15anchoritems.Theabove
+resultssuggestthatthreecomparisonsorsevenanchoritemsmaybeenoughtoproduceaccuratejudgmentsofdifficulty,especiallyifthejudgmentsofmorethanoneraterareaveraged.Naturally,thechoiceofanchoritemsisimportant.Some
+itemsaremoredifficulttojudgethanothers,andtheseshouldnotbeusedasanchoritems.
+Theabilitytopredictitemdifficulty,eitherjudgmentallyorthroughananalysisofitemfeatures,alsocanhavepracti-
+cal applications in the test-development process. One possible advantage of obtaining estimates of item difficulty in the
+processoftestdevelopmentisloweringthesamplesizesrequiredforitempretesting,leadingtolowercostsandincreased
+securityofitems.Mislevy,Sheehan,andWingersky(1993)andSwaminathan,Hambleton,Sireci,Xing,andRizavi(2003)showedhowestimatesofitemstatisticscouldbeimprovedbycombiningempiricalitemstatisticsfromareducedsample
+of test takers with information on item parameters available from other sources, such as judgments of content experts
+ortheoriesabouttheskillsandknowledgeneededtosolvedifferentitems.However,thesesuggestionsremainedlargely
+hypothetical, given the difficulty of obtaining such additional information. This study shows that, with a comparative
+task,theprospectofgainingsubstantialbenefitsfromjudgmentalpredictionsofitemdifficultyispossible.Anadditionalbenefit of comparative judgments in this context is that, with comparative judgments, the difficulty estimations are not
+likelytoshowsystematicbiasesinjudgments.Ontheotherhand,withnoncomparativeratingsofdifficulty,thethreatof
+systematicbiasesisconstant;itcannotbeovercomebyaveragingjudgmentsfromseveralraters,andconsiderabletrainingisneededtoovercomeit.
+This study focused on mathematics problem-solving items. An interesting issue for future research is the generaliz-
+abilityoftheseresultstoothercontentareas,especiallydifferenttypesofverbalreasoningitems.Aspecialcomplicationarises with items that naturally appear in sets, such as reading comprehension items. For these items, it could be more
+difficulttocompareitemsfromdifferentsets,and,therefore,itcouldbemoredifficulttofindanchoritemswithexisting
+itemdifficultyestimates.
+Notes
+1 Thecorrelationbetweenaverageratingsand p+canbeassumedtobeanestimateofthecorrelationbetweentrueandobserved
+scores.Itfollowsthatthereliabilityofaverageratings(e.g.,.83for20ratings)isthesquaredvalueofthiscorrelation(.69forthe
+abovecase).ThepredictedreliabilityofanindividualratingcanthenbeestimatedusingtheSpearman-Brownformula(.10for
+theabovecase),andthepredictedcorrelationbetweenasingleratingand p+isthesquarerootofthispredictedreliability(.32for
+theabovecase).
+2 Thedeltametricisobtainedfromthe p+throughtheinversenormaltransformationandisscaledtohaveameanof13anda
+standarddeviationof4.Onthisscale,deltaincreasesformoredifficultitems.
+3Th e a d j u s t e d R-square(Nagelkerke,1991)oftheregularlogisticregressionmodelwas.49,suggesting Dexplainsapproximately
+halfofthevarianceinraterdecisions.
+4 Notethatthissimulationassumesaconstantdiscriminationpoweralongthedifficultycontinuum.Inseparatelogisticregression
+analysesforeasy,medium,andharditems,wedidnotfindevidencetothecontrary.
+5 Thecorrelationbetweenempirical( x)andtrue( t)p+valuesisgivenby
+rxt=√
+𝜎2
+t∕𝜎2
+x=𝜎2
+t∕(
+𝜎2
+t+𝜎2
+e)
+,
+andtheerrorvarianceisequaltotheaverage,acrossitems,of
+𝜎2
+e=p(
+1−p)
+∕N,
+wherepisthetrue p+fortheitem,and Nisthesamplesizeforitemtryout.Foracollectionofitemswith p+rangingfrom.2to.8,
+wecanassumethat 𝜎tisabout.15andthattheaveragefor p(1–p)valuesisaround.24(correspondingtovaluesfora p+of.4
+or.6).
+References
+Bejar,I.I.(1983).Subjectmatterexperts’assessmentofitemstatistics. AppliedPsychologicalMeasurement ,7,303–310.
+Bejar,I.I.(1993).Agenerativeapproachtopsychologicalandeducationalmeasurement.InN.Frederiksen,R.J.Mislevy,&I.I.Bejar
+(Eds.),Testtheoryforanewgenerationoftests (pp.323–359).Hillsdale,NJ:Erlbaum.
+Cross,L.H.,Impara,J.C.,Frary,R.B.,&Jaeger,R.M.(1984).Acomparisonofthreemethodsforestablishingminimumstandardson
+theNationalTeacherExaminations. JournalofEducationalMeasurement ,21,113–129.
+ETS Research Report No. RR-14-39. © 2014 Educational Testing Service 7
+ 23308516, 2014, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ets2.12042 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
+Y. Attali et al . Estimating Item Difﬁculty
+Embretson, S. E. (Whitely). (1983). Construct validity: Construct representation versus nomothetic span. Psychological Bulletin ,93,
+179–197.
+Embretson,S.E.(1998).Acognitivedesignsystemapproachtogeneratingvalidtests:Applicationtoabstractreasoning. Psychological
+Methods,3,380–396.
+Embretson, S. E. (2007). Construct validity: A universal validity system or just another test evaluation procedure? Educational
+Researcher ,36,449–455.
+Enright, M. K., Morley, M., & Sheehan, K. M. (1999). Items by design: The impact of systematic feature variation on item statistical
+characteristics. AppliedMeasurementinEducation ,15,49–74.
+Freedle,R.,&Kostin,I.(1993).ThepredictionofTOEFLreadingitemdifficulty:Implicationsforconstructvalidity. LanguageTesting ,
+10,133–170.
+Gorin,J.S.,&Embretson,S.E.(2006).Itemdifficultymodelingofparagraphcomprehensionitems. AppliedPsychologicalMeasurement ,
+30,394–411.
+Hambleton,R.K.,Sireci,S.G.,Swaminathan,H.,Xing,D.,&Rizavi,S.(2003). Anchor-basedmethodsforjudgmentallyestimatingitem
+difficultyparameters (LSACResearchReport98-05).Newtown,PA:LawSchoolAdmissionCouncil.
+Lorge,I.,&Kruglov,L.(1953).Theimprovementofestimatesoftestdifficulty. EducationalandPsychologicalMeasurement ,13,34–46.
+Melican, G. J., Mills, C. N., & Plake, B. S. (1989). Accuracy of item performance predictions based on the Nedelsky standard setting
+method.EducationalandPsychologicalMeasurement ,49,467–478.
+Mislevy,R.J.,Sheehan,K.M.,&Wingersky,M.(1993).Howtoequatetestswithlittleornodata. JournalofEducationalMeasurement ,
+30,55–78.
+Nagelkerke,N.J.D.(1991).Anoteonageneraldefinitionofthecoefficientofdetermination. Biometrika ,78,691–692.
+Raudenbush,S.W.,&Bryk,A.S.(2002). Hierarchicallinearmodels (2nded.).ThousandOaks,CA:Sage.
+Singley,M.,&Bennett,R.E.(2002).Itemgenerationandbeyond:Applicationsofschematheorytomathematicsassessment.InS.H.
+Irvine&P .C.K yllonen(Eds.), Item generation for test development (pp.361–384).Mahwah,NJ:LawrenceErlbaum.
+Swaminathan, H., Hambleton, R. K., Sireci, S. G., Xing, D., & Rizavi, S. M. (2003). Small sample estimation in dichotomous item
+responsemodels:Effectofpriorsbasedonjudgmentalinformationontheaccuracyofitemparameterestimates. AppliedPsychological
+Measurement ,27,27–51.
+Thorndike, R. L. (1982). Item and score conversion by pooled judgment. In P. W. Holland & D. B. Rubin (Eds.), Test equating (pp.
+309–326).NewYork,NY:Academic.
+Thurstone,L.L.(1927).Alawofcomparativejudgment. PsychologicalReview ,34,273–286.
+Suggested citation:
+Attali,Y.,Saldivia,L.,Jackson,C.,Schuppan,F.,&Wanamaker,W.(2014). Estimating itemdifficultywith comparative judgments (ETS
+ResearchReportNo.RR-14-39).Princeton,NJ:EducationalTestingService.doi:10.1002/ets2.12042
+Action Editor: James Carlson
+Reviewers: Kathleen Sheehan and Lixiong Gu
+ETS, the ETS logo, and LISTENING. LEARNING. LEADING. are registered trademarks of Educational Testing Service (ETS). SAT is a
+registered trademark of the College Board. All other trademarks are property of their respective owners.
+Find other ETS-published reports by searching the ETS ReSEARCHER database at http://search.ets.org/researcher/
+8 ETS Research Report No. RR-14-39. © 2014 Educational Testing Service
+ 23308516, 2014, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ets2.12042 by Stanford University, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- Page Break ---
+
